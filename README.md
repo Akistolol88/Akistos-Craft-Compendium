@@ -1,9 +1,18 @@
-# Ditt projekt
+# Your Project
 
-Detta är ditt projekts GitLab-projekt och här hittar du bland annat Wikin i vilken du ska dokumentera ditt projekt. Du hittar länk till din Wiki i menyn till vänster.
+This is your project's GitLab repository. You have **Owner** access — you can configure pipelines, manage members, and set up integrations freely.
 
-Detta GitLab-projekt kan du använda för att spara ner saker som hör till din applikation som helhet men du bör skapa egna projekt för respektive del i ditt projekt. Kanske ett projekt för en webbklient och ett för ett API. Ska du ta fram flera _"microservices"_? Då kanske ett GitLab-projekt per service är att föredra. Har du bara en kodbas så kan du naturligtvis använda detta GitLab-projekt, men observera att du inte är "maintainer" på detta projekt varför du inte kan skapa egna pipelines.
+## What lives here
 
-Det är på detta GitLab-projekt du kommer att göra din _"merge request"_.
+This repository is the hub for your project. Use it to:
 
-👉 __Ersätt gärna denna sida med eget innehåll.__
+- Document your project in the **[Wiki](../../-/wikis/home)**
+- Track requirements in **[GitLab Requirements](../../-/requirements_management/requirements)**
+- Plan and track work in **[Issues](../../-/issues)** and **[Milestones](../../-/milestones)**
+- Set up your **CI/CD pipeline** via `.gitlab-ci.yml`
+
+If your project has multiple components (e.g. a frontend and a backend), consider creating separate repositories for each and using this one as the project hub.
+
+---
+
+👉 **Replace this README with a description of your own project.**

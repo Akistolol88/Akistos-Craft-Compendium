@@ -11,7 +11,7 @@ This repository is the hub for your project. Use it to:
 - Plan and track work in **Issues** and **Milestones** (Plan → Issues)
 - Set up your **CI/CD pipeline** via `.gitlab-ci.yml`
 
-If your project has multiple components (e.g. a frontend and a backend), consider creating separate repositories for each and using this one as the project hub.
+If your project has multiple components (e.g. a frontend and a backend), create separate repositories for each within your GitLab `workspace` group, and use this repository as the project hub.
 
 ---
 

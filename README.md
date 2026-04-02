@@ -1,6 +1,6 @@
 # Your Project
 
-This is your project's GitLab repository. You have **Owner** access — you can configure pipelines, manage members, and set up integrations freely.
+This is your project's GitLab repository. You have **Maintainer** access — you can configure pipelines, manage project settings, and work freely within the repository.
 
 ## What lives here
 

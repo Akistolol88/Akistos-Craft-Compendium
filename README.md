@@ -14,12 +14,12 @@ Account-wide recipe tracking — see which recipes you know and on which charact
 Installation
 
 Download the addon folder
-Place the RecipeBook folder into your WoW Classic addons directory:
+Place the AkistosCraftCompendium folder into your WoW Classic addons directory:
 
    World of Warcraft/_classic_/Interface/AddOns/AkistosCraftCompendium
 
 Launch WoW Classic and log in
-Type /rb or /recipebook in chat to open the interface
+Type /acr or /craftcomp in chat to open the interface
 
 
 Tech stack
@@ -31,7 +31,7 @@ Static data tables — hand-curated recipe database (sources, materials, costs)
 
 
 Project status
-🚧 In development — school project, 1DV613, Linnaeus University
+🚧 In development — WoW Addon
 
 Documentation
 Full project documentation lives in the Wiki:

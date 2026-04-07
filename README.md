@@ -1,18 +1,43 @@
-# Your Project
+Akistos Craft Compendium
+A World of Warcraft Classic (Vanilla) addon that lets you browse every crafting recipe in the game, see where to find it, what it costs to make — and track which recipes each of your characters has learned.
 
-This is your project's GitLab repository. You have **Maintainer** access — you can configure pipelines, manage project settings, and work freely within the repository.
+Features
 
-## What lives here
+Browse all professions: Blacksmithing, Leatherworking, Tailoring, Alchemy, Engineering, Enchanting, First Aid, Cooking, and Fishing
+View each recipe's source — vendor name and location, creature drop, or quest
+See the full material list with exact quantities required to craft
+Engineering recipes are flagged as requiring Goblin or Gnomish specialization
+Account-wide recipe tracking — see which recipes you know and on which character
+(Planned) Search and filter recipes by name, profession, or source type
 
-This repository is the hub for your project. Use it to:
 
-- Document your project in the **Wiki** (Plan → Wiki)
-- Track requirements in **Requirements Management** (Plan → Requirements)
-- Plan and track work in **Issues** and **Milestones** (Plan → Issues)
-- Set up your **CI/CD pipeline** via `.gitlab-ci.yml`
+Installation
 
-If your project has multiple components (e.g. a frontend and a backend), create separate repositories for each within your GitLab `workspace` group, and use this repository as the project hub.
+Download the addon folder
+Place the RecipeBook folder into your WoW Classic addons directory:
 
----
+   World of Warcraft/_classic_/Interface/AddOns/AkistosCraftCompendium
 
-👉 **Replace this README with a description of your own project.**
+Launch WoW Classic and log in
+Type /rb or /recipebook in chat to open the interface
+
+
+Tech stack
+
+Lua — all addon logic and UI behaviour
+WoW XML (FrameXML) — UI layout and frame definitions
+SavedVariables — persistent per-character recipe tracking
+Static data tables — hand-curated recipe database (sources, materials, costs)
+
+
+Project status
+🚧 In development — school project, 1DV613, Linnaeus University
+
+Documentation
+Full project documentation lives in the Wiki:
+
+Project Vision
+Project Plan & Risks (coming soon)
+Architecture (coming soon)
+Design (coming soon)
+Requirements (coming soon)

@@ -2,7 +2,7 @@
 ## Title: Akistos Craft Compendium
 ## Notes: Filestructure
 ## Author: Otsika
-## Version: 0.1.0
+## Version: 0.2.0
 ## SavedVariables: ACC_CharacterData
 
 

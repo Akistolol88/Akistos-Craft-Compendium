@@ -5,6 +5,7 @@
 ACC_Data = ACC_Data or {}
 ACC_Data["First Aid"] = {
     {
+        spellId = 3273,
         name = "First Aid",
         skill = 9999,
         creates = nil,
@@ -31,6 +32,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 3274,
         name = "First Aid",
         skill = 50,
         creates = nil,
@@ -57,6 +59,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 3275,
         name = "Linen Bandage",
         skill = 1,
         colors = { 1, 30, 45, 60 },
@@ -71,6 +74,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 3276,
         name = "Heavy Linen Bandage",
         skill = 40,
         colors = { 40, 50, 75, 100 },
@@ -85,6 +89,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 3277,
         name = "Wool Bandage",
         skill = 80,
         colors = { 80, 80, 115, 150 },
@@ -114,6 +119,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 3278,
         name = "Heavy Wool Bandage",
         skill = 115,
         colors = { 115, 115, 150, 185 },
@@ -143,6 +149,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 7924,
         name = "First Aid",
         skill = 9999,
         creates = nil,
@@ -154,6 +161,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 7928,
         name = "Silk Bandage",
         skill = 150,
         colors = { 150, 150, 180, 210 },
@@ -183,6 +191,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 7929,
         name = "Heavy Silk Bandage",
         skill = 180,
         colors = { 180, 180, 210, 240 },
@@ -197,6 +206,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 7934,
         name = "Anti-Venom",
         skill = 80,
         colors = { 80, 80, 115, 150 },
@@ -226,6 +236,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 7935,
         name = "Strong Anti-Venom",
         skill = 130,
         colors = { 130, 130, 165, 200 },
@@ -240,6 +251,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 10840,
         name = "Mageweave Bandage",
         skill = 210,
         colors = { 210, 210, 240, 270 },
@@ -254,6 +266,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 10841,
         name = "Heavy Mageweave Bandage",
         skill = 240,
         colors = { 240, 240, 270, 300 },
@@ -268,6 +281,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 10846,
         name = "First Aid",
         skill = 9999,
         creates = nil,
@@ -279,6 +293,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 18629,
         name = "Runecloth Bandage",
         skill = 260,
         colors = { 260, 260, 290, 320 },
@@ -293,6 +308,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 18630,
         name = "Heavy Runecloth Bandage",
         skill = 290,
         colors = { 290, 290, 320, 350 },
@@ -307,6 +323,7 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        spellId = 23787,
         name = "Powerful Anti-Venom",
         skill = 300,
         colors = { 300, 300, 330, 360 },

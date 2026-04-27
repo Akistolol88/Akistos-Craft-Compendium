@@ -2,27 +2,27 @@
 ## Title: Akistos Craft Compendium
 ## Notes: Filestructure
 ## Author: Otsika
-## Version: 0.2.0
+## Version: 0.3.0
 ## SavedVariables: ACC_CharacterData
 
 
-data\CraftingLocations.lua
-data\Alchemy.lua
-data\Blacksmithing.lua
-data\Cooking.lua
-data\Enchanting.lua
-data\Engineering.lua
-data\FirstAid.lua
-data\Herbalism.lua
-data\Skinning.lua
-data\Leatherworking.lua
-data\Mining.lua
-data\Tailoring.lua
+Model\data\CraftingLocations.lua
+Model\data\Alchemy.lua
+Model\data\Blacksmithing.lua
+Model\data\Cooking.lua
+Model\data\Enchanting.lua
+Model\data\Engineering.lua
+Model\data\FirstAid.lua
+Model\data\Herbalism.lua
+Model\data\Skinning.lua
+Model\data\Leatherworking.lua
+Model\data\Mining.lua
+Model\data\Tailoring.lua
 
-core\DataManager.lua
-core\Tracker.lua
+Model\core\DataManager.lua
+Model\core\Tracker.lua
 
-ui\Browser.lua
-ui\RecipeDetail.lua
+View\ui\Browser.lua
+View\ui\RecipeDetail.lua
 
-Main.lua
+Controller\Main.lua

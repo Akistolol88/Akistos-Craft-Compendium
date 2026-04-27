@@ -5,6 +5,7 @@
 ACC_Data = ACC_Data or {}
 ACC_Data["Tailoring"] = {
     {
+        spellId = 2385,
         name = "Brown Linen Vest",
         skill = 10,
         colors = { 10, 45, 57, 70 },
@@ -44,6 +45,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2386,
         name = "Linen Boots",
         skill = 65,
         colors = { 65, 90, 107, 125 },
@@ -84,6 +86,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2387,
         name = "Linen Cloak",
         skill = 1,
         colors = { 1, 35, 47, 60 },
@@ -99,6 +102,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2389,
         name = "Red Linen Robe",
         skill = 40,
         colors = { 40, 65, 82, 100 },
@@ -151,6 +155,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2392,
         name = "Red Linen Shirt",
         skill = 40,
         colors = { 40, 65, 82, 100 },
@@ -191,6 +196,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2393,
         name = "White Linen Shirt",
         skill = 1,
         colors = { 1, 35, 47, 60 },
@@ -231,6 +237,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2394,
         name = "Blue Linen Shirt",
         skill = 40,
         colors = { 40, 65, 82, 100 },
@@ -271,6 +278,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2395,
         name = "Barbaric Linen Vest",
         skill = 70,
         colors = { 70, 95, 112, 130 },
@@ -311,6 +319,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2396,
         name = "Green Linen Shirt",
         skill = 70,
         colors = { 70, 95, 112, 130 },
@@ -351,6 +360,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2397,
         name = "Reinforced Linen Cape",
         skill = 60,
         colors = { 60, 85, 102, 120 },
@@ -390,6 +400,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2399,
         name = "Green Woolen Vest",
         skill = 85,
         colors = { 85, 110, 127, 145 },
@@ -422,6 +433,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2401,
         name = "Woolen Boots",
         skill = 95,
         colors = { 95, 120, 137, 155 },
@@ -454,6 +466,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2402,
         name = "Woolen Cape",
         skill = 75,
         colors = { 75, 100, 117, 135 },
@@ -493,6 +506,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2403,
         name = "Gray Woolen Robe",
         skill = 105,
         colors = { 105, 130, 147, 165 },
@@ -556,6 +570,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2406,
         name = "Gray Woolen Shirt",
         skill = 100,
         colors = { 100, 110, 120, 130 },
@@ -588,6 +603,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2963,
         name = "Bolt of Linen Cloth",
         skill = 1,
         colors = { 1, 25, 37, 50 },
@@ -602,6 +618,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 2964,
         name = "Bolt of Woolen Cloth",
         skill = 75,
         colors = { 75, 90, 97, 105 },
@@ -640,6 +657,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3755,
         name = "Linen Bag",
         skill = 45,
         colors = { 45, 70, 87, 105 },
@@ -679,6 +697,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3757,
         name = "Woolen Bag",
         skill = 80,
         colors = { 80, 105, 122, 140 },
@@ -710,6 +729,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3758,
         name = "Green Woolen Bag",
         skill = 95,
         colors = { 95, 120, 137, 155 },
@@ -768,6 +788,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3813,
         name = "Small Silk Pack",
         skill = 150,
         colors = { 150, 170, 185, 200 },
@@ -800,6 +821,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3839,
         name = "Bolt of Silk Cloth",
         skill = 125,
         colors = { 125, 135, 140, 145 },
@@ -830,6 +852,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3840,
         name = "Heavy Linen Gloves",
         skill = 35,
         colors = { 35, 60, 77, 95 },
@@ -869,6 +892,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3841,
         name = "Green Linen Bracers",
         skill = 60,
         colors = { 60, 85, 102, 120 },
@@ -909,6 +933,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3842,
         name = "Handstitched Linen Britches",
         skill = 70,
         colors = { 70, 95, 112, 130 },
@@ -948,6 +973,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3843,
         name = "Heavy Woolen Gloves",
         skill = 85,
         colors = { 85, 110, 127, 145 },
@@ -979,6 +1005,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3844,
         name = "Heavy Woolen Cloak",
         skill = 100,
         colors = { 100, 125, 142, 160 },
@@ -1040,6 +1067,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3845,
         name = "Soft-soled Linen Boots",
         skill = 80,
         colors = { 80, 105, 122, 140 },
@@ -1072,6 +1100,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3847,
         name = "Red Woolen Boots",
         skill = 95,
         colors = { 95, 120, 137, 155 },
@@ -1146,6 +1175,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3848,
         name = "Double-stitched Woolen Shoulders",
         skill = 110,
         colors = { 110, 135, 152, 170 },
@@ -1177,6 +1207,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3849,
         name = "Reinforced Woolen Shoulders",
         skill = 120,
         colors = { 120, 145, 162, 180 },
@@ -1236,6 +1267,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3850,
         name = "Heavy Woolen Pants",
         skill = 110,
         colors = { 110, 135, 152, 170 },
@@ -1267,6 +1299,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3851,
         name = "Phoenix Pants",
         skill = 125,
         colors = { 125, 150, 167, 185 },
@@ -1325,6 +1358,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3852,
         name = "Gloves of Meditation",
         skill = 130,
         colors = { 130, 150, 165, 180 },
@@ -1357,6 +1391,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3854,
         name = "Azure Silk Gloves",
         skill = 145,
         colors = { 145, 165, 180, 195 },
@@ -1377,6 +1412,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3855,
         name = "Spidersilk Boots",
         skill = 125,
         colors = { 125, 150, 167, 185 },
@@ -1410,6 +1446,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3856,
         name = "Spider Silk Slippers",
         skill = 140,
         colors = { 140, 160, 175, 190 },
@@ -1453,6 +1490,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3857,
         name = "Enchanter's Cowl",
         skill = 165,
         colors = { 165, 185, 200, 215 },
@@ -1469,6 +1507,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3858,
         name = "Shadow Hood",
         skill = 170,
         colors = { 170, 190, 205, 220 },
@@ -1492,6 +1531,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3859,
         name = "Azure Silk Vest",
         skill = 150,
         colors = { 150, 170, 185, 200 },
@@ -1523,6 +1563,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3860,
         name = "Boots of the Enchanter",
         skill = 175,
         colors = { 175, 195, 210, 225 },
@@ -1539,6 +1580,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3861,
         name = "Long Silken Cloak",
         skill = 185,
         colors = { 185, 205, 220, 235 },
@@ -1562,6 +1604,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3862,
         name = "Icy Cloak",
         skill = 200,
         colors = { 200, 220, 235, 250 },
@@ -1582,6 +1625,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3863,
         name = "Spider Belt",
         skill = 180,
         colors = { 180, 200, 215, 230 },
@@ -1631,6 +1675,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3864,
         name = "Star Belt",
         skill = 200,
         colors = { 200, 220, 235, 250 },
@@ -1655,6 +1700,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3865,
         name = "Bolt of Mageweave",
         skill = 175,
         colors = { 175, 180, 182, 185 },
@@ -1676,6 +1722,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3866,
         name = "Stylish Red Shirt",
         skill = 110,
         colors = { 110, 135, 152, 170 },
@@ -1708,6 +1755,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3868,
         name = "Phoenix Gloves",
         skill = 125,
         colors = { 125, 150, 167, 185 },
@@ -1777,6 +1825,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3869,
         name = "Bright Yellow Shirt",
         skill = 135,
         colors = { 135, 145, 150, 155 },
@@ -1795,6 +1844,7 @@ ACC_Data["Tailoring"] = {
         faction = "alliance",
     },
     {
+        spellId = 3870,
         name = "Dark Silk Shirt",
         skill = 155,
         colors = { 155, 165, 170, 175 },
@@ -1815,6 +1865,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3871,
         name = "Formal White Shirt",
         skill = 170,
         colors = { 170, 180, 185, 190 },
@@ -1838,6 +1889,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3872,
         name = "Rich Purple Silk Shirt",
         skill = 185,
         colors = { 185, 195, 200, 205 },
@@ -1860,6 +1912,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3873,
         name = "Black Swashbuckler's Shirt",
         skill = 200,
         colors = { 200, 210, 215, 220 },
@@ -1878,6 +1931,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3908,
         name = "Tailoring",
         skill = 9999,
         creates = nil,
@@ -1913,6 +1967,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3909,
         name = "Tailoring",
         skill = 50,
         creates = nil,
@@ -1940,6 +1995,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3910,
         name = "Tailoring",
         skill = 125,
         creates = nil,
@@ -1958,6 +2014,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3914,
         name = "Brown Linen Pants",
         skill = 30,
         colors = { 30, 55, 72, 90 },
@@ -1997,6 +2054,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 3915,
         name = "Brown Linen Shirt",
         skill = 1,
         colors = { 1, 35, 47, 60 },
@@ -2012,6 +2070,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 6521,
         name = "Pearl-clasped Cloak",
         skill = 90,
         colors = { 90, 115, 132, 150 },
@@ -2044,6 +2103,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 6686,
         name = "Red Linen Bag",
         skill = 70,
         colors = { 70, 95, 112, 130 },
@@ -2072,6 +2132,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 6688,
         name = "Red Woolen Bag",
         skill = 115,
         colors = { 115, 140, 157, 175 },
@@ -2106,6 +2167,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 6690,
         name = "Lesser Wizard's Robe",
         skill = 135,
         colors = { 135, 155, 170, 185 },
@@ -2138,6 +2200,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 6692,
         name = "Robes of Arcana",
         skill = 150,
         colors = { 150, 170, 185, 200 },
@@ -2157,6 +2220,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 6693,
         name = "Green Silk Pack",
         skill = 175,
         colors = { 175, 195, 210, 225 },
@@ -2207,6 +2271,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 6695,
         name = "Black Silk Pack",
         skill = 185,
         colors = { 185, 205, 220, 235 },
@@ -2227,6 +2292,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 7623,
         name = "Brown Linen Robe",
         skill = 30,
         colors = { 30, 55, 72, 90 },
@@ -2266,6 +2332,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 7624,
         name = "White Linen Robe",
         skill = 30,
         colors = { 30, 55, 72, 90 },
@@ -2306,6 +2373,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 7629,
         name = "Red Linen Vest",
         skill = 55,
         colors = { 55, 80, 97, 115 },
@@ -2358,6 +2426,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 7630,
         name = "Blue Linen Vest",
         skill = 55,
         colors = { 55, 80, 97, 115 },
@@ -2380,6 +2449,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 7633,
         name = "Blue Linen Robe",
         skill = 70,
         colors = { 70, 95, 112, 130 },
@@ -2402,6 +2472,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 7639,
         name = "Blue Overalls",
         skill = 100,
         colors = { 100, 125, 142, 160 },
@@ -2424,6 +2495,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 7643,
         name = "Greater Adept's Robe",
         skill = 115,
         colors = { 115, 140, 157, 175 },
@@ -2447,6 +2519,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 7892,
         name = "Stylish Blue Shirt",
         skill = 120,
         colors = { 120, 145, 162, 180 },
@@ -2508,6 +2581,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 7893,
         name = "Stylish Green Shirt",
         skill = 120,
         colors = { 120, 145, 162, 180 },
@@ -2576,6 +2650,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8465,
         name = "Simple Dress",
         skill = 40,
         colors = { 40, 65, 82, 100 },
@@ -2617,6 +2692,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8467,
         name = "White Woolen Dress",
         skill = 110,
         colors = { 110, 135, 152, 170 },
@@ -2649,6 +2725,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8483,
         name = "White Swashbuckler's Shirt",
         skill = 160,
         colors = { 160, 170, 175, 180 },
@@ -2672,6 +2749,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8489,
         name = "Red Swashbuckler's Shirt",
         skill = 175,
         colors = { 175, 185, 190, 195 },
@@ -2695,6 +2773,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8758,
         name = "Azure Silk Pants",
         skill = 140,
         colors = { 140, 160, 175, 190 },
@@ -2727,6 +2806,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8760,
         name = "Azure Silk Hood",
         skill = 145,
         colors = { 145, 155, 160, 165 },
@@ -2759,6 +2839,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8762,
         name = "Silk Headband",
         skill = 160,
         colors = { 160, 170, 175, 180 },
@@ -2781,6 +2862,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8764,
         name = "Earthen Vest",
         skill = 170,
         colors = { 170, 190, 205, 220 },
@@ -2804,6 +2886,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8766,
         name = "Azure Silk Belt",
         skill = 175,
         colors = { 175, 195, 210, 225 },
@@ -2829,6 +2912,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8770,
         name = "Robe of Power",
         skill = 190,
         colors = { 190, 210, 225, 240 },
@@ -2855,6 +2939,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8772,
         name = "Crimson Silk Belt",
         skill = 175,
         colors = { 175, 195, 210, 225 },
@@ -2879,6 +2964,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8774,
         name = "Green Silken Shoulders",
         skill = 180,
         colors = { 180, 200, 215, 230 },
@@ -2901,6 +2987,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8776,
         name = "Linen Belt",
         skill = 15,
         colors = { 15, 50, 67, 85 },
@@ -2940,6 +3027,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8780,
         name = "Hands of Darkness",
         skill = 145,
         colors = { 145, 165, 180, 195 },
@@ -2986,6 +3074,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8782,
         name = "Truefaith Gloves",
         skill = 150,
         colors = { 150, 170, 185, 200 },
@@ -3059,6 +3148,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8784,
         name = "Green Silk Armor",
         skill = 165,
         colors = { 165, 185, 200, 215 },
@@ -3110,6 +3200,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8786,
         name = "Azure Silk Cloak",
         skill = 175,
         colors = { 175, 195, 210, 225 },
@@ -3129,6 +3220,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8789,
         name = "Crimson Silk Cloak",
         skill = 180,
         colors = { 180, 200, 215, 230 },
@@ -3149,6 +3241,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8791,
         name = "Crimson Silk Vest",
         skill = 185,
         colors = { 185, 205, 215, 225 },
@@ -3172,6 +3265,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8793,
         name = "Crimson Silk Shoulders",
         skill = 190,
         colors = { 190, 210, 225, 240 },
@@ -3189,6 +3283,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8795,
         name = "Azure Shoulders",
         skill = 190,
         colors = { 190, 210, 225, 240 },
@@ -3242,6 +3337,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8797,
         name = "Earthen Silk Belt",
         skill = 195,
         colors = { 195, 215, 230, 245 },
@@ -3260,6 +3356,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8799,
         name = "Crimson Silk Pantaloons",
         skill = 195,
         colors = { 195, 215, 225, 235 },
@@ -3283,6 +3380,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8802,
         name = "Crimson Silk Robe",
         skill = 205,
         colors = { 205, 220, 235, 250 },
@@ -3301,6 +3399,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 8804,
         name = "Crimson Silk Gloves",
         skill = 210,
         colors = { 210, 225, 240, 255 },
@@ -3327,6 +3426,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12044,
         name = "Simple Linen Pants",
         skill = 1,
         colors = { 1, 35, 47, 60 },
@@ -3342,6 +3442,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12045,
         name = "Simple Linen Boots",
         skill = 20,
         colors = { 20, 50, 67, 85 },
@@ -3382,6 +3483,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12046,
         name = "Simple Kilt",
         skill = 75,
         colors = { 75, 100, 117, 135 },
@@ -3421,6 +3523,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12047,
         name = "Colorful Kilt",
         skill = 120,
         colors = { 120, 145, 162, 180 },
@@ -3477,6 +3580,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12048,
         name = "Black Mageweave Vest",
         skill = 205,
         colors = { 205, 220, 235, 250 },
@@ -3499,6 +3603,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12049,
         name = "Black Mageweave Leggings",
         skill = 205,
         colors = { 205, 220, 235, 250 },
@@ -3521,6 +3626,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12050,
         name = "Black Mageweave Robe",
         skill = 210,
         colors = { 210, 225, 240, 255 },
@@ -3543,6 +3649,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12052,
         name = "Shadoweave Pants",
         skill = 210,
         colors = { 210, 225, 240, 255 },
@@ -3562,6 +3669,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12053,
         name = "Black Mageweave Gloves",
         skill = 215,
         colors = { 215, 230, 245, 260 },
@@ -3584,6 +3692,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12055,
         name = "Shadoweave Robe",
         skill = 215,
         colors = { 215, 230, 245, 260 },
@@ -3603,6 +3712,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12056,
         name = "Red Mageweave Vest",
         skill = 215,
         colors = { 215, 230, 245, 260 },
@@ -3619,6 +3729,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12059,
         name = "White Bandit Mask",
         skill = 215,
         colors = { 215, 220, 225, 230 },
@@ -3673,6 +3784,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12060,
         name = "Red Mageweave Pants",
         skill = 215,
         colors = { 215, 230, 245, 260 },
@@ -3735,6 +3847,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12061,
         name = "Orange Mageweave Shirt",
         skill = 215,
         colors = { 215, 220, 225, 230 },
@@ -3758,6 +3871,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12064,
         name = "Orange Martial Shirt",
         skill = 220,
         colors = { 220, 225, 230, 235 },
@@ -3777,6 +3891,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12065,
         name = "Mageweave Bag",
         skill = 225,
         colors = { 225, 240, 255, 270 },
@@ -3799,6 +3914,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12066,
         name = "Red Mageweave Gloves",
         skill = 225,
         colors = { 225, 240, 255, 270 },
@@ -3867,6 +3983,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12067,
         name = "Dreamweave Gloves",
         skill = 225,
         colors = { 225, 240, 255, 270 },
@@ -3891,6 +4008,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12069,
         name = "Cindercloth Robe",
         skill = 225,
         colors = { 225, 240, 255, 270 },
@@ -3914,6 +4032,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12070,
         name = "Dreamweave Vest",
         skill = 225,
         colors = { 225, 240, 255, 270 },
@@ -3938,6 +4057,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12071,
         name = "Shadoweave Gloves",
         skill = 225,
         colors = { 225, 240, 255, 270 },
@@ -3957,6 +4077,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12072,
         name = "Black Mageweave Headband",
         skill = 230,
         colors = { 230, 245, 260, 275 },
@@ -3976,6 +4097,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12073,
         name = "Black Mageweave Boots",
         skill = 230,
         colors = { 230, 245, 260, 275 },
@@ -3996,6 +4118,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12074,
         name = "Black Mageweave Shoulders",
         skill = 230,
         colors = { 230, 245, 260, 275 },
@@ -4015,6 +4138,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12075,
         name = "Lavender Mageweave Shirt",
         skill = 230,
         colors = { 230, 235, 240, 245 },
@@ -4034,6 +4158,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12076,
         name = "Shadoweave Shoulders",
         skill = 235,
         colors = { 235, 250, 265, 280 },
@@ -4053,6 +4178,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12077,
         name = "Simple Black Dress",
         skill = 235,
         colors = { 235, 240, 245, 250 },
@@ -4074,6 +4200,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12078,
         name = "Red Mageweave Shoulders",
         skill = 235,
         colors = { 235, 250, 265, 280 },
@@ -4131,6 +4258,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12079,
         name = "Red Mageweave Bag",
         skill = 235,
         colors = { 235, 250, 265, 280 },
@@ -4151,6 +4279,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12080,
         name = "Pink Mageweave Shirt",
         skill = 235,
         colors = { 235, 240, 245, 250 },
@@ -4170,6 +4299,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12081,
         name = "Admiral's Hat",
         skill = 240,
         colors = { 240, 255, 270, 285 },
@@ -4188,6 +4318,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12082,
         name = "Shadoweave Boots",
         skill = 240,
         colors = { 240, 255, 270, 285 },
@@ -4208,6 +4339,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12084,
         name = "Red Mageweave Headband",
         skill = 240,
         colors = { 240, 255, 270, 285 },
@@ -4274,6 +4406,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12085,
         name = "Tuxedo Shirt",
         skill = 240,
         colors = { 240, 245, 250, 255 },
@@ -4292,6 +4425,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12086,
         name = "Shadoweave Mask",
         skill = 245,
         colors = { 245, 260, 275, 290 },
@@ -4310,6 +4444,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12088,
         name = "Cindercloth Boots",
         skill = 245,
         colors = { 245, 260, 275, 290 },
@@ -4331,6 +4466,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12089,
         name = "Tuxedo Pants",
         skill = 245,
         colors = { 245, 250, 255, 260 },
@@ -4349,6 +4485,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12091,
         name = "White Wedding Dress",
         skill = 250,
         colors = { 250, 255, 260, 265 },
@@ -4368,6 +4505,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12092,
         name = "Dreamweave Circlet",
         skill = 250,
         colors = { 250, 265, 280, 295 },
@@ -4391,6 +4529,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12093,
         name = "Tuxedo Jacket",
         skill = 250,
         colors = { 250, 265, 280, 295 },
@@ -4409,6 +4548,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 12180,
         name = "Tailoring",
         skill = 200,
         creates = nil,
@@ -4424,6 +4564,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18401,
         name = "Bolt of Runecloth",
         skill = 250,
         colors = { 250, 255, 257, 260 },
@@ -4442,6 +4583,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18402,
         name = "Runecloth Belt",
         skill = 255,
         colors = { 255, 270, 285, 300 },
@@ -4461,6 +4603,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18403,
         name = "Frostweave Tunic",
         skill = 255,
         colors = { 255, 270, 285, 300 },
@@ -4501,6 +4644,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18404,
         name = "Frostweave Robe",
         skill = 255,
         colors = { 255, 270, 285, 300 },
@@ -4565,6 +4709,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18405,
         name = "Runecloth Bag",
         skill = 260,
         colors = { 260, 275, 290, 305 },
@@ -4583,6 +4728,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18406,
         name = "Runecloth Robe",
         skill = 260,
         colors = { 260, 275, 290, 305 },
@@ -4601,6 +4747,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18407,
         name = "Runecloth Tunic",
         skill = 260,
         colors = { 260, 275, 290, 305 },
@@ -4674,6 +4821,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18408,
         name = "Cindercloth Vest",
         skill = 260,
         colors = { 260, 275, 290, 305 },
@@ -4692,6 +4840,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18409,
         name = "Runecloth Cloak",
         skill = 265,
         colors = { 265, 280, 295, 310 },
@@ -4710,6 +4859,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18410,
         name = "Ghostweave Belt",
         skill = 265,
         colors = { 265, 280, 295, 310 },
@@ -4729,6 +4879,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18411,
         name = "Frostweave Gloves",
         skill = 265,
         colors = { 265, 280, 295, 310 },
@@ -4792,6 +4943,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18412,
         name = "Cindercloth Gloves",
         skill = 270,
         colors = { 270, 285, 300, 315 },
@@ -4810,6 +4962,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18413,
         name = "Ghostweave Gloves",
         skill = 270,
         colors = { 270, 285, 300, 315 },
@@ -4830,6 +4983,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18414,
         name = "Brightcloth Robe",
         skill = 270,
         colors = { 270, 285, 300, 315 },
@@ -4915,6 +5069,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18415,
         name = "Brightcloth Gloves",
         skill = 270,
         colors = { 270, 285, 300, 315 },
@@ -5001,6 +5156,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18416,
         name = "Ghostweave Vest",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5020,6 +5176,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18417,
         name = "Runecloth Gloves",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5038,6 +5195,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18418,
         name = "Cindercloth Cloak",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5056,6 +5214,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18419,
         name = "Felcloth Pants",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5074,6 +5233,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18420,
         name = "Brightcloth Cloak",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5151,6 +5311,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18421,
         name = "Wizardweave Leggings",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5169,6 +5330,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18422,
         name = "Cloak of Fire",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5189,6 +5351,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18423,
         name = "Runecloth Boots",
         skill = 280,
         colors = { 280, 295, 310, 325 },
@@ -5208,6 +5371,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18424,
         name = "Frostweave Pants",
         skill = 280,
         colors = { 280, 295, 310, 325 },
@@ -5277,6 +5441,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18434,
         name = "Cindercloth Pants",
         skill = 280,
         colors = { 280, 295, 310, 325 },
@@ -5295,6 +5460,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18436,
         name = "Robe of Winter Night",
         skill = 285,
         colors = { 285, 300, 315, 330 },
@@ -5315,6 +5481,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18437,
         name = "Felcloth Boots",
         skill = 285,
         colors = { 285, 300, 315, 330 },
@@ -5374,6 +5541,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18438,
         name = "Runecloth Pants",
         skill = 285,
         colors = { 285, 300, 315, 330 },
@@ -5449,6 +5617,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18439,
         name = "Brightcloth Pants",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -5518,6 +5687,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18440,
         name = "Mooncloth Leggings",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -5552,6 +5722,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18441,
         name = "Ghostweave Pants",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -5570,6 +5741,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18442,
         name = "Felcloth Hood",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -5640,6 +5812,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18444,
         name = "Runecloth Headband",
         skill = 295,
         colors = { 295, 310, 325, 340 },
@@ -5706,6 +5879,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18445,
         name = "Mooncloth Bag",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -5770,6 +5944,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18446,
         name = "Wizardweave Robe",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -5788,6 +5963,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18447,
         name = "Mooncloth Vest",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -5823,6 +5999,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18448,
         name = "Mooncloth Shoulders",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -5859,6 +6036,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18449,
         name = "Runecloth Shoulders",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -5953,6 +6131,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18450,
         name = "Wizardweave Turban",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -5972,6 +6151,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18451,
         name = "Felcloth Robe",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6066,6 +6246,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18452,
         name = "Mooncloth Circlet",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6097,6 +6278,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18453,
         name = "Felcloth Shoulders",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6189,6 +6371,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18454,
         name = "Gloves of Spell Mastery",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6220,6 +6403,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18455,
         name = "Bottomless Bag",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6238,6 +6422,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18456,
         name = "Truefaith Vestments",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6262,6 +6447,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18457,
         name = "Robe of the Archmage",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6283,6 +6469,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18458,
         name = "Robe of the Void",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6304,6 +6491,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 18560,
         name = "Mooncloth",
         skill = 250,
         colors = { 250, 290, 305, 320 },
@@ -6338,6 +6526,7 @@ ACC_Data["Tailoring"] = {
         },
     },
     {
+        spellId = 19435,
         name = "Mooncloth Boots",
         skill = 290,
         colors = { 290, 295, 310, 325 },
@@ -6357,6 +6546,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 20848,
         name = "Flarecore Mantle",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6377,6 +6567,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 20849,
         name = "Flarecore Gloves",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6397,6 +6588,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 21945,
         name = "Green Holiday Shirt",
         skill = 190,
         colors = { 190, 200, 205, 210 },
@@ -6419,6 +6611,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 22759,
         name = "Flarecore Wraps",
         skill = 300,
         colors = { 300, 320, 335, 350 },
@@ -6453,6 +6646,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 22813,
         name = "Gordok Ogre Suit",
         skill = 285,
         colors = { 0, 285, 290, 295 },
@@ -6472,6 +6666,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 22866,
         name = "Belt of the Archmage",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6494,6 +6689,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 22867,
         name = "Felcloth Gloves",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6514,6 +6710,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 22868,
         name = "Inferno Gloves",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6533,6 +6730,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 22869,
         name = "Mooncloth Gloves",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6552,6 +6750,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 22870,
         name = "Cloak of Warding",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6571,6 +6770,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 22902,
         name = "Mooncloth Robe",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6590,6 +6790,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 23662,
         name = "Wisdom of the Timbermaw",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -6609,6 +6810,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 23663,
         name = "Mantle of the Timbermaw",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6628,6 +6830,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 23664,
         name = "Argent Boots",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -6650,6 +6853,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 23665,
         name = "Argent Shoulders",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6670,6 +6874,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 23666,
         name = "Flarecore Robe",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6690,6 +6895,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 23667,
         name = "Flarecore Leggings",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6710,6 +6916,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 24091,
         name = "Bloodvine Vest",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6730,6 +6937,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 24092,
         name = "Bloodvine Leggings",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6750,6 +6958,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 24093,
         name = "Bloodvine Boots",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6770,6 +6979,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 24901,
         name = "Runed Stygian Leggings",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6789,6 +6999,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 24902,
         name = "Runed Stygian Belt",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6809,6 +7020,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 24903,
         name = "Runed Stygian Boots",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6829,6 +7041,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 26085,
         name = "Soul Pouch",
         skill = 260,
         colors = { 260, 275, 290, 305 },
@@ -6848,6 +7061,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 26086,
         name = "Felcloth Bag",
         skill = 285,
         colors = { 285, 300, 315, 330 },
@@ -6865,6 +7079,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 26087,
         name = "Core Felcloth Bag",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6900,6 +7115,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 26403,
         name = "Festive Red Dress",
         skill = 250,
         colors = { 250, 265, 280, 295 },
@@ -6917,6 +7133,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 26407,
         name = "Festive Red Pant Suit",
         skill = 250,
         colors = { 250, 265, 280, 295 },
@@ -6934,6 +7151,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 27658,
         name = "Enchanted Mageweave Pouch",
         skill = 225,
         colors = { 225, 240, 255, 270 },
@@ -6960,6 +7178,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 27659,
         name = "Enchanted Runecloth Bag",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -6979,6 +7198,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 27660,
         name = "Big Bag of Enchantment",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6998,6 +7218,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 27724,
         name = "Cenarion Herb Bag",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -7017,6 +7238,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 27725,
         name = "Satchel of Cenarius",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7036,6 +7258,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 28205,
         name = "Glacial Gloves",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7055,6 +7278,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 28207,
         name = "Glacial Vest",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7074,6 +7298,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 28208,
         name = "Glacial Cloak",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7093,6 +7318,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 28209,
         name = "Glacial Wrists",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7112,6 +7338,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 28210,
         name = "Gaea's Embrace",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7131,6 +7358,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 28480,
         name = "Sylvan Vest",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7150,6 +7378,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 28481,
         name = "Sylvan Crown",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7167,6 +7396,7 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        spellId = 28482,
         name = "Sylvan Shoulders",
         skill = 300,
         colors = { 300, 315, 330, 345 },

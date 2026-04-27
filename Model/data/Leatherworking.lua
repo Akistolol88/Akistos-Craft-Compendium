@@ -5,6 +5,7 @@
 ACC_Data = ACC_Data or {}
 ACC_Data["Leatherworking"] = {
     {
+        spellId = 2108,
         name = "Leatherworking",
         skill = 9999,
         creates = nil,
@@ -43,6 +44,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2149,
         name = "Handstitched Leather Boots",
         skill = 1,
         colors = { 1, 40, 55, 70 },
@@ -58,6 +60,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2152,
         name = "Light Armor Kit",
         skill = 1,
         colors = { 1, 30, 45, 60 },
@@ -72,6 +75,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2153,
         name = "Handstitched Leather Pants",
         skill = 15,
         colors = { 15, 45, 60, 75 },
@@ -113,6 +117,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2158,
         name = "Fine Leather Boots",
         skill = 90,
         colors = { 90, 120, 135, 150 },
@@ -179,6 +184,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2159,
         name = "Fine Leather Cloak",
         skill = 85,
         colors = { 85, 105, 120, 135 },
@@ -209,6 +215,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2160,
         name = "Embossed Leather Vest",
         skill = 40,
         colors = { 40, 70, 85, 100 },
@@ -250,6 +257,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2161,
         name = "Embossed Leather Boots",
         skill = 55,
         colors = { 55, 85, 100, 115 },
@@ -291,6 +299,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2162,
         name = "Embossed Leather Cloak",
         skill = 60,
         colors = { 60, 90, 105, 120 },
@@ -332,6 +341,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2163,
         name = "White Leather Jerkin",
         skill = 60,
         colors = { 60, 90, 105, 120 },
@@ -393,6 +403,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2164,
         name = "Fine Leather Gloves",
         skill = 75,
         colors = { 75, 105, 120, 135 },
@@ -457,6 +468,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2165,
         name = "Medium Armor Kit",
         skill = 100,
         colors = { 100, 115, 122, 130 },
@@ -487,6 +499,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2166,
         name = "Toughened Leather Armor",
         skill = 120,
         colors = { 120, 145, 157, 170 },
@@ -518,6 +531,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2167,
         name = "Dark Leather Boots",
         skill = 100,
         colors = { 100, 125, 137, 150 },
@@ -549,6 +563,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2168,
         name = "Dark Leather Cloak",
         skill = 110,
         colors = { 110, 135, 147, 160 },
@@ -580,6 +595,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2169,
         name = "Dark Leather Tunic",
         skill = 100,
         colors = { 100, 125, 137, 150 },
@@ -644,6 +660,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 2881,
         name = "Light Leather",
         skill = 1,
         colors = { 1, 20, 30, 40 },
@@ -658,6 +675,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3104,
         name = "Leatherworking",
         skill = 50,
         creates = nil,
@@ -684,6 +702,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3753,
         name = "Handstitched Leather Belt",
         skill = 25,
         colors = { 25, 55, 70, 85 },
@@ -725,6 +744,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3756,
         name = "Embossed Leather Gloves",
         skill = 55,
         colors = { 55, 85, 100, 115 },
@@ -766,6 +786,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3759,
         name = "Embossed Leather Pants",
         skill = 75,
         colors = { 75, 105, 120, 135 },
@@ -808,6 +829,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3760,
         name = "Hillman's Cloak",
         skill = 150,
         colors = { 150, 170, 180, 190 },
@@ -838,6 +860,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3761,
         name = "Fine Leather Tunic",
         skill = 85,
         colors = { 85, 115, 130, 145 },
@@ -869,6 +892,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3762,
         name = "Hillman's Leather Vest",
         skill = 100,
         colors = { 100, 125, 137, 150 },
@@ -951,6 +975,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3763,
         name = "Fine Leather Belt",
         skill = 80,
         colors = { 80, 110, 125, 140 },
@@ -981,6 +1006,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3764,
         name = "Hillman's Leather Gloves",
         skill = 145,
         colors = { 145, 170, 182, 195 },
@@ -1011,6 +1037,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3765,
         name = "Dark Leather Gloves",
         skill = 120,
         colors = { 120, 155, 167, 180 },
@@ -1068,6 +1095,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3766,
         name = "Dark Leather Belt",
         skill = 125,
         colors = { 125, 150, 162, 175 },
@@ -1100,6 +1128,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3767,
         name = "Hillman's Belt",
         skill = 120,
         colors = { 120, 145, 157, 170 },
@@ -1154,6 +1183,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3768,
         name = "Hillman's Shoulders",
         skill = 130,
         colors = { 130, 155, 167, 180 },
@@ -1185,6 +1215,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3769,
         name = "Dark Leather Shoulders",
         skill = 140,
         colors = { 140, 165, 177, 190 },
@@ -1228,6 +1259,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3770,
         name = "Toughened Leather Gloves",
         skill = 135,
         colors = { 135, 160, 172, 185 },
@@ -1261,6 +1293,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3771,
         name = "Barbaric Gloves",
         skill = 150,
         colors = { 150, 170, 180, 190 },
@@ -1319,6 +1352,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3772,
         name = "Green Leather Armor",
         skill = 155,
         colors = { 155, 175, 185, 195 },
@@ -1339,6 +1373,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3773,
         name = "Guardian Armor",
         skill = 175,
         colors = { 175, 195, 205, 215 },
@@ -1388,6 +1423,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3774,
         name = "Green Leather Belt",
         skill = 160,
         colors = { 160, 180, 190, 200 },
@@ -1411,6 +1447,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3775,
         name = "Guardian Belt",
         skill = 170,
         colors = { 170, 190, 200, 210 },
@@ -1428,6 +1465,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3776,
         name = "Green Leather Bracers",
         skill = 180,
         colors = { 180, 200, 210, 220 },
@@ -1450,6 +1488,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3777,
         name = "Guardian Leather Bracers",
         skill = 195,
         colors = { 195, 215, 225, 235 },
@@ -1466,6 +1505,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3778,
         name = "Gem-studded Leather Belt",
         skill = 185,
         colors = { 185, 205, 215, 225 },
@@ -1487,6 +1527,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3779,
         name = "Barbaric Belt",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -1511,6 +1552,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3780,
         name = "Heavy Armor Kit",
         skill = 150,
         colors = { 150, 170, 180, 190 },
@@ -1541,6 +1583,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3811,
         name = "Leatherworking",
         skill = 125,
         creates = nil,
@@ -1557,6 +1600,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3816,
         name = "Cured Light Hide",
         skill = 35,
         colors = { 35, 55, 65, 75 },
@@ -1598,6 +1642,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3817,
         name = "Cured Medium Hide",
         skill = 100,
         colors = { 100, 115, 122, 130 },
@@ -1628,6 +1673,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 3818,
         name = "Cured Heavy Hide",
         skill = 150,
         colors = { 150, 160, 165, 170 },
@@ -1658,6 +1704,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 4096,
         name = "Raptor Hide Harness",
         skill = 165,
         colors = { 165, 185, 195, 205 },
@@ -1676,6 +1723,7 @@ ACC_Data["Leatherworking"] = {
         faction = "horde",
     },
     {
+        spellId = 4097,
         name = "Raptor Hide Belt",
         skill = 165,
         colors = { 165, 185, 195, 205 },
@@ -1694,6 +1742,7 @@ ACC_Data["Leatherworking"] = {
         faction = "alliance",
     },
     {
+        spellId = 5244,
         name = "Kodo Hide Bag",
         skill = 40,
         colors = { 40, 70, 85, 100 },
@@ -1712,6 +1761,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 6661,
         name = "Barbaric Harness",
         skill = 190,
         colors = { 190, 210, 220, 230 },
@@ -1733,6 +1783,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 6702,
         name = "Murloc Scale Belt",
         skill = 90,
         colors = { 90, 120, 135, 150 },
@@ -1759,6 +1810,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 6703,
         name = "Murloc Scale Breastplate",
         skill = 95,
         colors = { 95, 125, 140, 155 },
@@ -1786,6 +1838,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 6704,
         name = "Thick Murloc Armor",
         skill = 170,
         colors = { 170, 190, 200, 210 },
@@ -1813,6 +1866,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 6705,
         name = "Murloc Scale Bracers",
         skill = 190,
         colors = { 190, 210, 220, 230 },
@@ -1839,6 +1893,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 7126,
         name = "Handstitched Leather Vest",
         skill = 1,
         colors = { 1, 40, 55, 70 },
@@ -1854,6 +1909,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 7133,
         name = "Fine Leather Pants",
         skill = 105,
         colors = { 105, 130, 142, 155 },
@@ -1917,6 +1973,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 7135,
         name = "Dark Leather Pants",
         skill = 115,
         colors = { 115, 140, 152, 165 },
@@ -1948,6 +2005,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 7147,
         name = "Guardian Pants",
         skill = 160,
         colors = { 160, 180, 190, 200 },
@@ -1969,6 +2027,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 7149,
         name = "Barbaric Leggings",
         skill = 170,
         colors = { 170, 190, 200, 210 },
@@ -1991,6 +2050,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 7151,
         name = "Barbaric Shoulders",
         skill = 175,
         colors = { 175, 195, 205, 215 },
@@ -2012,6 +2072,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 7153,
         name = "Guardian Cloak",
         skill = 185,
         colors = { 185, 205, 215, 225 },
@@ -2028,6 +2089,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 7156,
         name = "Guardian Gloves",
         skill = 190,
         colors = { 190, 210, 220, 230 },
@@ -2049,6 +2111,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 7953,
         name = "Deviate Scale Cloak",
         skill = 90,
         colors = { 90, 120, 135, 150 },
@@ -2067,6 +2130,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 7954,
         name = "Deviate Scale Gloves",
         skill = 105,
         colors = { 105, 130, 142, 155 },
@@ -2085,6 +2149,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 7955,
         name = "Deviate Scale Belt",
         skill = 115,
         colors = { 115, 140, 152, 165 },
@@ -2103,6 +2168,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 8322,
         name = "Moonglow Vest",
         skill = 90,
         colors = { 90, 115, 130, 145 },
@@ -2122,6 +2188,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9058,
         name = "Handstitched Leather Cloak",
         skill = 1,
         colors = { 1, 40, 55, 70 },
@@ -2137,6 +2204,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9059,
         name = "Handstitched Leather Bracers",
         skill = 1,
         colors = { 1, 40, 55, 70 },
@@ -2152,6 +2220,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9060,
         name = "Light Leather Quiver",
         skill = 30,
         colors = { 30, 60, 75, 90 },
@@ -2193,6 +2262,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9062,
         name = "Small Leather Ammo Pouch",
         skill = 30,
         colors = { 30, 60, 75, 90 },
@@ -2234,6 +2304,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9064,
         name = "Rugged Leather Pants",
         skill = 35,
         colors = { 35, 65, 80, 95 },
@@ -2295,6 +2366,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9065,
         name = "Light Leather Bracers",
         skill = 70,
         colors = { 70, 100, 115, 130 },
@@ -2336,6 +2408,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9068,
         name = "Light Leather Pants",
         skill = 95,
         colors = { 95, 125, 140, 155 },
@@ -2367,6 +2440,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9070,
         name = "Black Whelp Cloak",
         skill = 100,
         colors = { 100, 125, 137, 150 },
@@ -2385,6 +2459,7 @@ ACC_Data["Leatherworking"] = {
         faction = "alliance",
     },
     {
+        spellId = 9072,
         name = "Red Whelp Gloves",
         skill = 120,
         colors = { 120, 145, 157, 170 },
@@ -2403,6 +2478,7 @@ ACC_Data["Leatherworking"] = {
         faction = "alliance",
     },
     {
+        spellId = 9074,
         name = "Nimble Leather Gloves",
         skill = 120,
         colors = { 120, 145, 157, 170 },
@@ -2434,6 +2510,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9145,
         name = "Fletcher's Gloves",
         skill = 125,
         colors = { 125, 150, 162, 175 },
@@ -2465,6 +2542,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9146,
         name = "Herbalist's Gloves",
         skill = 135,
         colors = { 135, 160, 172, 185 },
@@ -2483,6 +2561,7 @@ ACC_Data["Leatherworking"] = {
         faction = "alliance",
     },
     {
+        spellId = 9147,
         name = "Earthen Leather Shoulders",
         skill = 135,
         colors = { 135, 160, 172, 185 },
@@ -2501,6 +2580,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9148,
         name = "Pilferer's Gloves",
         skill = 140,
         colors = { 140, 165, 177, 190 },
@@ -2562,6 +2642,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9149,
         name = "Heavy Earthen Gloves",
         skill = 145,
         colors = { 145, 170, 182, 195 },
@@ -2579,6 +2660,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9193,
         name = "Heavy Quiver",
         skill = 150,
         colors = { 150, 170, 180, 190 },
@@ -2609,6 +2691,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9194,
         name = "Heavy Leather Ammo Pouch",
         skill = 150,
         colors = { 150, 170, 180, 190 },
@@ -2639,6 +2722,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9195,
         name = "Dusky Leather Leggings",
         skill = 165,
         colors = { 165, 185, 195, 205 },
@@ -2683,6 +2767,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9196,
         name = "Dusky Leather Armor",
         skill = 175,
         colors = { 175, 195, 205, 215 },
@@ -2704,6 +2789,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9197,
         name = "Green Whelp Armor",
         skill = 175,
         colors = { 175, 195, 205, 215 },
@@ -2754,6 +2840,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9198,
         name = "Frost Leather Cloak",
         skill = 180,
         colors = { 180, 200, 210, 220 },
@@ -2776,6 +2863,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9201,
         name = "Dusky Bracers",
         skill = 185,
         colors = { 185, 205, 215, 225 },
@@ -2797,6 +2885,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9202,
         name = "Green Whelp Bracers",
         skill = 190,
         colors = { 190, 210, 220, 230 },
@@ -2819,6 +2908,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9206,
         name = "Dusky Belt",
         skill = 195,
         colors = { 195, 215, 225, 235 },
@@ -2841,6 +2931,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9207,
         name = "Dusky Boots",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -2869,6 +2960,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 9208,
         name = "Swift Boots",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -2918,6 +3010,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10482,
         name = "Cured Thick Hide",
         skill = 200,
         colors = { 200, 200, 200, 200 },
@@ -2938,6 +3031,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10487,
         name = "Thick Armor Kit",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -2958,6 +3052,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10490,
         name = "Comfortable Leather Hat",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -2984,6 +3079,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10499,
         name = "Nightscape Tunic",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -3004,6 +3100,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10507,
         name = "Nightscape Headband",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -3024,6 +3121,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10509,
         name = "Turtle Scale Gloves",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -3040,6 +3138,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10511,
         name = "Turtle Scale Breastplate",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -3061,6 +3160,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10516,
         name = "Nightscape Shoulders",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -3080,6 +3180,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10518,
         name = "Turtle Scale Bracers",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -3101,6 +3202,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10525,
         name = "Tough Scorpid Breastplate",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3119,6 +3221,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10529,
         name = "Wild Leather Shoulders",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3138,6 +3241,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10531,
         name = "Big Voodoo Mask",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3154,6 +3258,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10533,
         name = "Tough Scorpid Bracers",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3172,6 +3277,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10542,
         name = "Tough Scorpid Gloves",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3190,6 +3296,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10544,
         name = "Wild Leather Vest",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3211,6 +3318,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10546,
         name = "Wild Leather Helmet",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3230,6 +3338,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10548,
         name = "Nightscape Pants",
         skill = 230,
         colors = { 230, 250, 260, 270 },
@@ -3248,6 +3357,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10552,
         name = "Turtle Scale Helm",
         skill = 230,
         colors = { 230, 250, 260, 270 },
@@ -3267,6 +3377,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10554,
         name = "Tough Scorpid Boots",
         skill = 235,
         colors = { 235, 255, 265, 275 },
@@ -3285,6 +3396,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10556,
         name = "Turtle Scale Leggings",
         skill = 235,
         colors = { 235, 255, 265, 275 },
@@ -3304,6 +3416,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10558,
         name = "Nightscape Boots",
         skill = 235,
         colors = { 235, 255, 265, 275 },
@@ -3322,6 +3435,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10560,
         name = "Big Voodoo Pants",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -3393,6 +3507,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10562,
         name = "Big Voodoo Cloak",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -3453,6 +3568,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10564,
         name = "Tough Scorpid Shoulders",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -3473,6 +3589,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10566,
         name = "Wild Leather Boots",
         skill = 245,
         colors = { 245, 265, 275, 285 },
@@ -3492,6 +3609,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10568,
         name = "Tough Scorpid Leggings",
         skill = 245,
         colors = { 245, 265, 275, 285 },
@@ -3510,6 +3628,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10570,
         name = "Tough Scorpid Helm",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -3530,6 +3649,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10572,
         name = "Wild Leather Leggings",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -3549,6 +3669,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10574,
         name = "Wild Leather Cloak",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -3568,6 +3689,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10619,
         name = "Dragonscale Gauntlets",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3588,6 +3710,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10621,
         name = "Wolfshead Helm",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3609,6 +3732,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10630,
         name = "Gauntlets of the Sea",
         skill = 230,
         colors = { 230, 250, 260, 270 },
@@ -3630,6 +3754,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10632,
         name = "Helm of Fire",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -3651,6 +3776,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10647,
         name = "Feathered Breastplate",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -3672,6 +3798,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10650,
         name = "Dragonscale Breastplate",
         skill = 255,
         colors = { 255, 275, 285, 295 },
@@ -3692,6 +3819,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10656,
         name = "Dragonscale Leatherworking",
         skill = 9999,
         creates = nil,
@@ -3703,6 +3831,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10658,
         name = "Elemental Leatherworking",
         skill = 9999,
         creates = nil,
@@ -3714,6 +3843,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10660,
         name = "Tribal Leatherworking",
         skill = 9999,
         creates = nil,
@@ -3725,6 +3855,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 10662,
         name = "Leatherworking",
         skill = 200,
         creates = nil,
@@ -3739,6 +3870,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 14930,
         name = "Quickdraw Quiver",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3761,6 +3893,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 14932,
         name = "Thick Leather Ammo Pouch",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3783,6 +3916,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19047,
         name = "Cured Rugged Hide",
         skill = 250,
         colors = { 250, 250, 255, 260 },
@@ -3801,6 +3935,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19048,
         name = "Heavy Scorpid Bracers",
         skill = 255,
         colors = { 255, 275, 285, 295 },
@@ -3819,6 +3954,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19049,
         name = "Wicked Leather Gauntlets",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3838,6 +3974,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19050,
         name = "Green Dragonscale Breastplate",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3856,6 +3993,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19051,
         name = "Heavy Scorpid Vest",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -3874,6 +4012,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19052,
         name = "Wicked Leather Bracers",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -3892,6 +4031,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19053,
         name = "Chimeric Gloves",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -3910,6 +4050,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19054,
         name = "Red Dragonscale Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3928,6 +4069,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19055,
         name = "Runic Leather Gauntlets",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -3997,6 +4139,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19058,
         name = "Rugged Armor Kit",
         skill = 250,
         colors = { 250, 250, 260, 270 },
@@ -4014,6 +4157,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19059,
         name = "Volcanic Leggings",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4033,6 +4177,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19060,
         name = "Green Dragonscale Leggings",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4051,6 +4196,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19061,
         name = "Living Shoulders",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4070,6 +4216,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19062,
         name = "Ironfeather Shoulders",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4089,6 +4236,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19063,
         name = "Chimeric Boots",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4161,6 +4309,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19064,
         name = "Heavy Scorpid Gauntlets",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4179,6 +4328,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19065,
         name = "Runic Leather Bracers",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4198,6 +4348,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19066,
         name = "Frostsaber Boots",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4216,6 +4367,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19067,
         name = "Stormshroud Pants",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4236,6 +4388,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19068,
         name = "Warbear Harness",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4260,6 +4413,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19070,
         name = "Heavy Scorpid Belt",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -4325,6 +4479,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19071,
         name = "Wicked Leather Headband",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -4343,6 +4498,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19072,
         name = "Runic Leather Belt",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -4415,6 +4571,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19073,
         name = "Chimeric Leggings",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -4480,6 +4637,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19074,
         name = "Frostsaber Leggings",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4498,6 +4656,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19075,
         name = "Heavy Scorpid Leggings",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4516,6 +4675,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19076,
         name = "Volcanic Breastplate",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4535,6 +4695,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19077,
         name = "Blue Dragonscale Breastplate",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4554,6 +4715,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19078,
         name = "Living Leggings",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4573,6 +4735,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19079,
         name = "Stormshroud Armor",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4593,6 +4756,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19080,
         name = "Warbear Woolies",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4611,6 +4775,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19081,
         name = "Chimeric Vest",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4680,6 +4845,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19082,
         name = "Runic Leather Headband",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4698,6 +4864,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19083,
         name = "Wicked Leather Pants",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4765,6 +4932,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19084,
         name = "Devilsaur Gauntlets",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4783,6 +4951,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19085,
         name = "Black Dragonscale Breastplate",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4802,6 +4971,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19086,
         name = "Ironfeather Breastplate",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4822,6 +4992,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19087,
         name = "Frostsaber Gloves",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -4840,6 +5011,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19088,
         name = "Heavy Scorpid Helm",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -4859,6 +5031,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19089,
         name = "Blue Dragonscale Shoulders",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -4879,6 +5052,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19090,
         name = "Stormshroud Shoulders",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -4899,6 +5073,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19091,
         name = "Runic Leather Pants",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -4989,6 +5164,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19092,
         name = "Wicked Leather Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5007,6 +5183,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19093,
         name = "Onyxia Scale Cloak",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5023,6 +5200,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19094,
         name = "Black Dragonscale Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5043,6 +5221,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19095,
         name = "Living Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5063,6 +5242,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19097,
         name = "Devilsaur Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5085,6 +5265,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19098,
         name = "Wicked Leather Armor",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5105,6 +5286,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19100,
         name = "Heavy Scorpid Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5124,6 +5306,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19101,
         name = "Volcanic Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5143,6 +5326,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19102,
         name = "Runic Leather Armor",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5163,6 +5347,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19103,
         name = "Runic Leather Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5183,6 +5368,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19104,
         name = "Frostsaber Tunic",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5202,6 +5388,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 19107,
         name = "Black Dragonscale Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5222,6 +5409,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 20648,
         name = "Medium Leather",
         skill = 100,
         colors = { 100, 100, 105, 110 },
@@ -5251,6 +5439,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 20649,
         name = "Heavy Leather",
         skill = 150,
         colors = { 150, 150, 155, 160 },
@@ -5280,6 +5469,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 20650,
         name = "Thick Leather",
         skill = 200,
         colors = { 200, 200, 202, 205 },
@@ -5299,6 +5489,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 20853,
         name = "Corehound Boots",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5318,6 +5509,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 20854,
         name = "Molten Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5337,6 +5529,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 20855,
         name = "Black Dragonscale Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5357,6 +5550,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 21943,
         name = "Gloves of the Greatfather",
         skill = 190,
         colors = { 190, 210, 220, 230 },
@@ -5377,6 +5571,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 22331,
         name = "Rugged Leather",
         skill = 250,
         colors = { 250, 250, 250, 250 },
@@ -5394,6 +5589,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 22711,
         name = "Shadowskin Gloves",
         skill = 200,
         colors = { 200, 210, 220, 230 },
@@ -5415,6 +5611,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 22727,
         name = "Core Armor Kit",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5446,6 +5643,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 22815,
         name = "Gordok Ogre Suit",
         skill = 285,
         colors = { 0, 285, 290, 295 },
@@ -5465,6 +5663,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 22921,
         name = "Girdle of Insight",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5484,6 +5683,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 22922,
         name = "Mongoose Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5504,6 +5704,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 22923,
         name = "Swift Flight Bracers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5524,6 +5725,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 22926,
         name = "Chromatic Cloak",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5545,6 +5747,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 22927,
         name = "Hide of the Wild",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5566,6 +5769,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 22928,
         name = "Shifting Cloak",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5587,6 +5791,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 23190,
         name = "Heavy Leather Ball",
         skill = 150,
         colors = { 150, 150, 155, 160 },
@@ -5605,6 +5810,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 23399,
         name = "Barbaric Bracers",
         skill = 155,
         colors = { 155, 175, 185, 195 },
@@ -5626,6 +5832,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 23703,
         name = "Might of the Timbermaw",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -5646,6 +5853,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 23704,
         name = "Timbermaw Brawlers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5666,6 +5874,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 23705,
         name = "Dawn Treaders",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -5688,6 +5897,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 23706,
         name = "Golden Mantle of the Dawn",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5710,6 +5920,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 23707,
         name = "Lava Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5728,6 +5939,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 23708,
         name = "Chromatic Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5749,6 +5961,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 23709,
         name = "Corehound Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5769,6 +5982,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 23710,
         name = "Molten Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5789,6 +6003,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24121,
         name = "Primal Batskin Jerkin",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5808,6 +6023,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24122,
         name = "Primal Batskin Gloves",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5827,6 +6043,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24123,
         name = "Primal Batskin Bracers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5846,6 +6063,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24124,
         name = "Blood Tiger Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5865,6 +6083,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24125,
         name = "Blood Tiger Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5884,6 +6103,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24654,
         name = "Blue Dragonscale Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5904,6 +6124,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24655,
         name = "Green Dragonscale Gauntlets",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -5924,6 +6145,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24703,
         name = "Dreamscale Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5944,6 +6166,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24846,
         name = "Spitfire Bracers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5962,6 +6185,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24847,
         name = "Spitfire Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5981,6 +6205,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24848,
         name = "Spitfire Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6000,6 +6225,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24849,
         name = "Sandstalker Bracers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6018,6 +6244,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24850,
         name = "Sandstalker Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6035,6 +6262,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24851,
         name = "Sandstalker Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6054,6 +6282,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 24940,
         name = "Black Whelp Tunic",
         skill = 100,
         colors = { 100, 125, 137, 150 },
@@ -6073,6 +6302,7 @@ ACC_Data["Leatherworking"] = {
         faction = "alliance",
     },
     {
+        spellId = 26279,
         name = "Stormshroud Gloves",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6094,6 +6324,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 28219,
         name = "Polar Tunic",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6114,6 +6345,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 28220,
         name = "Polar Gloves",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6134,6 +6366,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 28221,
         name = "Polar Bracers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6154,6 +6387,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 28222,
         name = "Icy Scale Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6174,6 +6408,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 28223,
         name = "Icy Scale Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6194,6 +6429,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 28224,
         name = "Icy Scale Bracers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6214,6 +6450,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 28472,
         name = "Bramblewood Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6231,6 +6468,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 28473,
         name = "Bramblewood Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6248,6 +6486,7 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        spellId = 28474,
         name = "Bramblewood Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },

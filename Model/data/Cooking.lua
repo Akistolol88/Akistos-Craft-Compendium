@@ -5,6 +5,7 @@
 ACC_Data = ACC_Data or {}
 ACC_Data["Cooking"] = {
     {
+        spellId = 818,
         name = "Basic Campfire",
         skill = 25,
         colors = { 0, 25, 50, 75 },
@@ -19,6 +20,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 2538,
         name = "Charred Wolf Meat",
         skill = 0,
         colors = { 0, 45, 65, 85 },
@@ -33,6 +35,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 2539,
         name = "Spiced Wolf Meat",
         skill = 10,
         colors = { 10, 50, 70, 90 },
@@ -63,6 +66,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 2540,
         name = "Roasted Boar Meat",
         skill = 0,
         colors = { 0, 45, 65, 85 },
@@ -77,6 +81,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 2541,
         name = "Coyote Steak",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -106,6 +111,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 2542,
         name = "Goretusk Liver Pie",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -128,6 +134,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 2543,
         name = "Westfall Stew",
         skill = 75,
         colors = { 75, 115, 135, 155 },
@@ -151,6 +158,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 2544,
         name = "Crab Cake",
         skill = 75,
         colors = { 75, 115, 135, 155 },
@@ -181,6 +189,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 2545,
         name = "Cooked Crab Claw",
         skill = 85,
         colors = { 85, 125, 145, 165 },
@@ -215,6 +224,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 2546,
         name = "Dry Pork Ribs",
         skill = 80,
         colors = { 80, 120, 140, 160 },
@@ -245,6 +255,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 2547,
         name = "Redridge Goulash",
         skill = 100,
         colors = { 100, 135, 155, 175 },
@@ -267,6 +278,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 2548,
         name = "Succulent Pork Ribs",
         skill = 110,
         colors = { 110, 130, 150, 170 },
@@ -300,6 +312,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 2549,
         name = "Seasoned Wolf Kabob",
         skill = 100,
         colors = { 100, 140, 160, 180 },
@@ -322,6 +335,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 2550,
         name = "Cooking",
         skill = 9999,
         creates = nil,
@@ -348,6 +362,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 2795,
         name = "Beer Basted Boar Ribs",
         skill = 25,
         colors = { 25, 60, 80, 100 },
@@ -370,6 +385,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 3102,
         name = "Cooking",
         skill = 50,
         creates = nil,
@@ -396,6 +412,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 3370,
         name = "Crocolisk Steak",
         skill = 80,
         colors = { 80, 120, 140, 160 },
@@ -418,6 +435,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 3371,
         name = "Blood Sausage",
         skill = 60,
         colors = { 60, 100, 120, 140 },
@@ -441,6 +459,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 3372,
         name = "Murloc Fin Soup",
         skill = 90,
         colors = { 90, 130, 150, 170 },
@@ -463,6 +482,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 3373,
         name = "Crocolisk Gumbo",
         skill = 120,
         colors = { 120, 160, 180, 200 },
@@ -485,6 +505,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 3376,
         name = "Curiously Tasty Omelet",
         skill = 130,
         colors = { 130, 170, 190, 210 },
@@ -509,6 +530,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 3377,
         name = "Gooey Spider Cake",
         skill = 110,
         colors = { 110, 150, 170, 190 },
@@ -531,6 +553,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 3397,
         name = "Big Bear Steak",
         skill = 110,
         colors = { 110, 150, 170, 190 },
@@ -554,6 +577,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 3398,
         name = "Hot Lion Chops",
         skill = 125,
         colors = { 125, 175, 195, 215 },
@@ -577,6 +601,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 3399,
         name = "Tasty Lion Steak",
         skill = 150,
         colors = { 150, 190, 210, 230 },
@@ -594,6 +619,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 3400,
         name = "Soothing Turtle Bisque",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -612,6 +638,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 3413,
         name = "Cooking",
         skill = 9999,
         creates = nil,
@@ -623,6 +650,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 4094,
         name = "Barbecued Buzzard Wing",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -640,6 +668,7 @@ ACC_Data["Cooking"] = {
         faction = "horde",
     },
     {
+        spellId = 6412,
         name = "Kaldorei Spider Kabob",
         skill = 10,
         colors = { 10, 50, 70, 90 },
@@ -656,6 +685,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 6413,
         name = "Scorpid Surprise",
         skill = 20,
         colors = { 20, 60, 80, 100 },
@@ -672,6 +702,7 @@ ACC_Data["Cooking"] = {
         faction = "horde",
     },
     {
+        spellId = 6414,
         name = "Roasted Kodo Meat",
         skill = 35,
         colors = { 35, 75, 95, 115 },
@@ -689,6 +720,7 @@ ACC_Data["Cooking"] = {
         faction = "horde",
     },
     {
+        spellId = 6415,
         name = "Fillet of Frenzy",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -706,6 +738,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 6416,
         name = "Strider Stew",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -728,6 +761,7 @@ ACC_Data["Cooking"] = {
         faction = "horde",
     },
     {
+        spellId = 6417,
         name = "Dig Rat Stew",
         skill = 90,
         colors = { 90, 130, 150, 170 },
@@ -744,6 +778,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 6418,
         name = "Crispy Lizard Tail",
         skill = 100,
         colors = { 100, 140, 160, 180 },
@@ -761,6 +796,7 @@ ACC_Data["Cooking"] = {
         faction = "horde",
     },
     {
+        spellId = 6419,
         name = "Lean Venison",
         skill = 110,
         colors = { 110, 150, 170, 190 },
@@ -779,6 +815,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 6499,
         name = "Boiled Clams",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -809,6 +846,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 6500,
         name = "Goblin Deviled Clams",
         skill = 125,
         colors = { 125, 165, 185, 205 },
@@ -839,6 +877,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 6501,
         name = "Clam Chowder",
         skill = 90,
         colors = { 90, 130, 150, 170 },
@@ -858,6 +897,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 7213,
         name = "Giant Clam Scorcho",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -875,6 +915,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 7751,
         name = "Brilliant Smallfish",
         skill = 1,
         colors = { 1, 45, 65, 85 },
@@ -899,6 +940,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 7752,
         name = "Slitherskin Mackerel",
         skill = 1,
         colors = { 1, 45, 65, 85 },
@@ -919,6 +961,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 7753,
         name = "Longjaw Mud Snapper",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -942,6 +985,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 7754,
         name = "Loch Frenzy Delight",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -959,6 +1003,7 @@ ACC_Data["Cooking"] = {
         faction = "alliance",
     },
     {
+        spellId = 7755,
         name = "Bristle Whisker Catfish",
         skill = 100,
         colors = { 100, 140, 160, 180 },
@@ -981,6 +1026,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 7827,
         name = "Rainbow Fin Albacore",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -1006,6 +1052,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 7828,
         name = "Rockscale Cod",
         skill = 175,
         colors = { 175, 190, 210, 230 },
@@ -1030,6 +1077,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 8238,
         name = "Savory Deviate Delight",
         skill = 85,
         colors = { 85, 125, 145, 165 },
@@ -1062,6 +1110,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 8604,
         name = "Herb Baked Egg",
         skill = 1,
         colors = { 1, 45, 65, 85 },
@@ -1077,6 +1126,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 8607,
         name = "Smoked Bear Meat",
         skill = 40,
         colors = { 40, 80, 100, 120 },
@@ -1094,6 +1144,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 9513,
         name = "Thistle Tea",
         skill = 60,
         colors = { 60, 100, 120, 140 },
@@ -1117,6 +1168,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 13028,
         name = "Goldthorn Tea",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1134,6 +1186,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 15853,
         name = "Lean Wolf Steak",
         skill = 125,
         colors = { 125, 165, 185, 205 },
@@ -1151,6 +1204,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 15855,
         name = "Roast Raptor",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1174,6 +1228,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 15856,
         name = "Hot Wolf Ribs",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1193,6 +1248,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 15861,
         name = "Jungle Stew",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1213,6 +1269,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 15863,
         name = "Carrion Surprise",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1233,6 +1290,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 15865,
         name = "Mystery Stew",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1252,6 +1310,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 15906,
         name = "Dragonbreath Chili",
         skill = 200,
         colors = { 200, 240, 260, 280 },
@@ -1272,6 +1331,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 15910,
         name = "Heavy Kodo Stew",
         skill = 200,
         colors = { 200, 240, 260, 280 },
@@ -1292,6 +1352,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 15915,
         name = "Spiced Chili Crab",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1311,6 +1372,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 15933,
         name = "Monster Omelet",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1330,6 +1392,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 15935,
         name = "Crispy Bat Wing",
         skill = 1,
         colors = { 1, 45, 65, 85 },
@@ -1347,6 +1410,7 @@ ACC_Data["Cooking"] = {
         faction = "horde",
     },
     {
+        spellId = 18238,
         name = "Spotted Yellowtail",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1363,6 +1427,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 18239,
         name = "Cooked Glossy Mightfish",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1380,6 +1445,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 18240,
         name = "Grilled Squid",
         skill = 240,
         colors = { 240, 280, 300, 320 },
@@ -1397,6 +1463,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 18241,
         name = "Filet of Redgill",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1413,6 +1480,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 18242,
         name = "Hot Smoked Bass",
         skill = 240,
         colors = { 240, 280, 300, 320 },
@@ -1430,6 +1498,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 18243,
         name = "Nightfin Soup",
         skill = 250,
         colors = { 250, 290, 310, 330 },
@@ -1447,6 +1516,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 18244,
         name = "Poached Sunscale Salmon",
         skill = 250,
         colors = { 250, 290, 310, 330 },
@@ -1463,6 +1533,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 18245,
         name = "Lobster Stew",
         skill = 275,
         colors = { 275, 315, 335, 355 },
@@ -1481,6 +1552,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 18246,
         name = "Mightfish Steak",
         skill = 275,
         colors = { 275, 315, 335, 355 },
@@ -1500,6 +1572,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 18247,
         name = "Baked Salmon",
         skill = 275,
         colors = { 275, 315, 335, 355 },
@@ -1518,6 +1591,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 18260,
         name = "Cooking",
         skill = 9999,
         creates = nil,
@@ -1529,6 +1603,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 20626,
         name = "Undermine Clam Chowder",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1547,6 +1622,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 20916,
         name = "Mithril Headed Trout",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1561,6 +1637,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 21143,
         name = "Gingerbread Cookie",
         skill = 1,
         colors = { 1, 45, 65, 85 },
@@ -1583,6 +1660,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 21144,
         name = "Egg Nog",
         skill = 35,
         colors = { 35, 75, 95, 115 },
@@ -1607,6 +1685,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 21175,
         name = "Spider Sausage",
         skill = 200,
         colors = { 200, 240, 260, 280 },
@@ -1636,6 +1715,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 22480,
         name = "Tender Wolf Steak",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1655,6 +1735,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 22761,
         name = "Runn Tum Tuber Surprise",
         skill = 275,
         colors = { 275, 315, 335, 355 },
@@ -1672,6 +1753,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 24418,
         name = "Heavy Crocolisk Stew",
         skill = 150,
         colors = { 150, 160, 180, 200 },
@@ -1689,6 +1771,7 @@ ACC_Data["Cooking"] = {
         faction = "horde",
     },
     {
+        spellId = 24801,
         name = "Smoked Desert Dumplings",
         skill = 285,
         colors = { 285, 325, 345, 365 },
@@ -1706,6 +1789,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 25659,
         name = "Dirge's Kickin' Chimaerok Chops",
         skill = 300,
         colors = { 300, 325, 345, 365 },
@@ -1725,6 +1809,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 25704,
         name = "Smoked Sagefish",
         skill = 80,
         colors = { 80, 120, 140, 160 },
@@ -1756,6 +1841,7 @@ ACC_Data["Cooking"] = {
         faction = nil,
     },
     {
+        spellId = 25954,
         name = "Sagefish Delight",
         skill = 175,
         colors = { 175, 215, 235, 255 },

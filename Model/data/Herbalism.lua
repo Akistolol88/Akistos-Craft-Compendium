@@ -33,7 +33,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Earthroot",
         item    = 2449,
-        colors  = { 15, 39, 64, 114 },
+        colors  = { 15, 40, 65, 115 },
         terrain = "Found near rocky terrain, cliff bases and boulders",
         zones   = {
             "Arathi Highlands", "Darkshore", "Dun Morogh", "Durotar",
@@ -46,8 +46,9 @@ ACC_Data.Herbalism = {
     {
         name    = "Mageroyal",
         item    = 785,
-        colors  = { 50, 74, 99, 149 },
+        colors  = { 50, 75, 100, 150 },
         terrain = "Found in open fields and scrubland",
+        note    = "Can drop Swiftthistle",
         zones   = {
             "Arathi Highlands", "Darkshore", "Duskwood", "Hillsbrad Foothills",
             "Loch Modan", "Redridge Mountains", "Silverpine Forest",
@@ -59,8 +60,9 @@ ACC_Data.Herbalism = {
     {
         name    = "Briarthorn",
         item    = 2450,
-        colors  = { 70, 94, 119, 169 },
+        colors  = { 70, 95, 120, 170 },
         terrain = "Found in wooded and hilly terrain, forest undergrowth",
+        note    = "Can drop Swiftthistle",
         zones   = {
             "Arathi Highlands", "Ashenvale", "Darkshore", "Duskwood",
             "Hillsbrad Foothills", "Redridge Mountains", "Silverpine Forest",
@@ -69,21 +71,9 @@ ACC_Data.Herbalism = {
     },
 
     {
-        name    = "Swiftthistle",
-        item    = 2452,
-        colors  = { 70, 94, 119, 169 },
-        terrain = "Rare spawn sharing node locations with Mageroyal and Briarthorn",
-        zones   = {
-            "Arathi Highlands", "Ashenvale", "Darkshore", "Duskwood",
-            "Hillsbrad Foothills", "Redridge Mountains", "Stranglethorn Vale",
-            "Wetlands",
-        },
-    },
-
-    {
         name    = "Stranglekelp",
         item    = 3820,
-        colors  = { 85, 109, 134, 184 },
+        colors  = { 85, 110, 135, 185 },
         terrain = "Found underwater only, on ocean and river floors",
         zones   = {
             "Arathi Highlands", "Azshara", "Dustwallow Marsh", "Feralas",
@@ -95,7 +85,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Bruiseweed",
         item    = 2453,
-        colors  = { 100, 124, 149, 199 },
+        colors  = { 100, 125, 150, 200 },
         terrain = "Found in open ground, often near roads and paths",
         zones   = {
             "Alterac Mountains", "Arathi Highlands", "Ashenvale", "Desolace",
@@ -107,7 +97,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Wild Steelbloom",
         item    = 3355,
-        colors  = { 115, 139, 164, 214 },
+        colors  = { 115, 140, 165, 215 },
         terrain = "Found on hillsides and rocky highland terrain",
         zones   = {
             "Alterac Mountains", "Arathi Highlands", "Badlands",
@@ -119,7 +109,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Grave Moss",
         item    = 3369,
-        colors  = { 120, 144, 169, 219 },
+        colors  = { 120, 145, 170, 220 },
         terrain = "Found near graveyards, crypts and undead-inhabited areas",
         zones   = {
             "Darkshore", "Duskwood", "Hillsbrad Foothills",
@@ -130,7 +120,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Kingsblood",
         item    = 3356,
-        colors  = { 125, 149, 174, 224 },
+        colors  = { 125, 150, 175, 225 },
         terrain = "Found in open plains, meadows and forest clearings",
         zones   = {
             "Arathi Highlands", "Ashenvale", "Desolace", "Duskwood",
@@ -142,7 +132,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Liferoot",
         item    = 3357,
-        colors  = { 150, 174, 199, 249 },
+        colors  = { 150, 175, 200, 250 },
         terrain = "Found near water sources, riverbanks and lake shores",
         zones   = {
             "Alterac Mountains", "Arathi Highlands", "Ashenvale", "Desolace",
@@ -154,7 +144,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Fadeleaf",
         item    = 3818,
-        colors  = { 150, 174, 199, 249 },
+        colors  = { 160, 185, 210, 260 },
         terrain = "Found in dense forest floors and deep shaded undergrowth",
         zones   = {
             "Alterac Mountains", "Arathi Highlands", "Duskwood",
@@ -165,7 +155,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Goldthorn",
         item    = 3821,
-        colors  = { 170, 194, 219, 269 },
+        colors  = { 170, 195, 220, 270 },
         terrain = "Found on hillsides and near cliff faces in mid-level zones",
         zones   = {
             "Alterac Mountains", "Arathi Highlands", "Badlands",
@@ -177,7 +167,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Khadgar's Whisker",
         item    = 3358,
-        colors  = { 185, 209, 234, 284 },
+        colors  = { 185, 210, 235, 285 },
         terrain = "Found in dense forest and darkened shaded areas",
         zones   = {
             "Azshara", "Blasted Lands", "Feralas", "Stranglethorn Vale",
@@ -188,7 +178,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Wintersbite",
         item    = 3819,
-        colors  = { 195, 219, 244, 294 },
+        colors  = { 195, 220, 245, 295 },
         terrain = "Found in snowy mountain terrain",
         zones   = {
             "Alterac Mountains",
@@ -198,7 +188,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Firebloom",
         item    = 4625,
-        colors  = { 205, 229, 254, 304 },
+        colors  = { 205, 230, 255, 305 },
         terrain = "Found in volcanic, fire-scorched and arid rocky terrain",
         zones   = {
             "Blasted Lands", "Burning Steppes", "Searing Gorge", "Tanaris",
@@ -208,8 +198,9 @@ ACC_Data.Herbalism = {
     {
         name    = "Purple Lotus",
         item    = 8831,
-        colors  = { 210, 234, 259, 309 },
+        colors  = { 210, 235, 255, 305 },
         terrain = "Found in desert, jungle and open terrain of high-level zones",
+        note    = "Can drop Wildvine",
         zones   = {
             "Azshara", "Feralas", "Felwood", "Tanaris", "Un'Goro Crater",
         },
@@ -218,7 +209,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Arthas' Tears",
         item    = 8836,
-        colors  = { 220, 244, 269, 319 },
+        colors  = { 220, 245, 270, 320 },
         terrain = "Found in blight-affected and plague-corrupted terrain",
         zones   = {
             "Eastern Plaguelands", "Western Plaguelands",
@@ -228,7 +219,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Sungrass",
         item    = 8838,
-        colors  = { 230, 254, 279, 329 },
+        colors  = { 230, 255, 280, 330 },
         terrain = "Found in open elevated terrain with sun exposure",
         zones   = {
             "Azshara", "Eastern Plaguelands", "Felwood", "Feralas",
@@ -239,7 +230,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Blindweed",
         item    = 8839,
-        colors  = { 235, 259, 284, 334 },
+        colors  = { 235, 260, 285, 335 },
         terrain = "Found near water, in swampy and marshy terrain",
         zones   = {
             "Azshara", "Dustwallow Marsh", "Feralas",
@@ -250,7 +241,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Ghost Mushroom",
         item    = 8845,
-        colors  = { 245, 269, 294, 344 },
+        colors  = { 245, 270, 295, 345 },
         terrain = "Found in caves and underground passages only",
         zones   = {
             "Maraudon", "The Hinterlands", "Un'Goro Crater",
@@ -260,7 +251,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Gromsblood",
         item    = 8846,
-        colors  = { 250, 274, 299, 349 },
+        colors  = { 250, 275, 300, 350 },
         terrain = "Found in demon-corrupted and fel-tainted terrain",
         zones   = {
             "Blasted Lands", "Desolace", "Felwood",
@@ -270,7 +261,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Golden Sansam",
         item    = 13463,
-        colors  = { 260, 284, 309, 359 },
+        colors  = { 260, 285, 310, 360 },
         terrain = "Found in open terrain of high-level zones",
         zones   = {
             "Azshara", "Eastern Plaguelands", "Felwood",
@@ -281,7 +272,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Dreamfoil",
         item    = 13464,
-        colors  = { 270, 294, 319, 369 },
+        colors  = { 270, 295, 320, 370 },
         terrain = "Found in open fields and varied terrain of high-level zones",
         zones   = {
             "Azshara", "Blasted Lands", "Eastern Plaguelands",
@@ -292,7 +283,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Mountain Silversage",
         item    = 13465,
-        colors  = { 280, 304, 329, 379 },
+        colors  = { 280, 305, 330, 380 },
         terrain = "Found on rocky slopes, mountain ridges and high elevations",
         zones   = {
             "Azshara", "Burning Steppes", "Eastern Plaguelands",
@@ -303,7 +294,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Plaguebloom",
         item    = 13466,
-        colors  = { 285, 309, 334, 384 },
+        colors  = { 285, 310, 335, 385 },
         terrain = "Found in heavily plague-ravaged and corrupted terrain",
         zones   = {
             "Eastern Plaguelands", "Felwood", "Western Plaguelands",
@@ -313,7 +304,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Icecap",
         item    = 13467,
-        colors  = { 290, 314, 339, 389 },
+        colors  = { 290, 315, 340, 390 },
         terrain = "Found in frozen, icy and snow-covered terrain",
         zones   = {
             "Winterspring",
@@ -323,7 +314,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Black Lotus",
         item    = 13468,
-        colors  = { 300, 324, 349, 399 },
+        colors  = { 300, 325, 350, 400 },
         terrain = "Extremely rare spawn, heavily contested — typically 1-3 nodes per zone",
         zones   = {
             "Blasted Lands", "Burning Steppes", "Eastern Plaguelands",

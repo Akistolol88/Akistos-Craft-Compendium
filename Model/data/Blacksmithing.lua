@@ -5,6 +5,7 @@
 ACC_Data = ACC_Data or {}
 ACC_Data["Blacksmithing"] = {
     {
+        spellId = 2018,
         name = "Blacksmithing",
         skill = 9999,
         creates = nil,
@@ -38,6 +39,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 2660,
         name = "Rough Sharpening Stone",
         skill = 1,
         colors = { 1, 15, 35, 55 },
@@ -52,6 +54,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 2661,
         name = "Copper Chain Belt",
         skill = 35,
         colors = { 35, 75, 95, 115 },
@@ -89,6 +92,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2662,
         name = "Copper Chain Pants",
         skill = 1,
         colors = { 1, 50, 70, 90 },
@@ -126,6 +130,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2663,
         name = "Copper Bracers",
         skill = 1,
         colors = { 1, 20, 40, 60 },
@@ -141,6 +146,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2664,
         name = "Runed Copper Bracers",
         skill = 90,
         colors = { 90, 115, 127, 140 },
@@ -168,6 +174,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2665,
         name = "Coarse Sharpening Stone",
         skill = 65,
         colors = { 65, 65, 72, 80 },
@@ -204,6 +211,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 2666,
         name = "Runed Copper Belt",
         skill = 70,
         colors = { 70, 110, 130, 150 },
@@ -241,6 +249,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2667,
         name = "Runed Copper Breastplate",
         skill = 80,
         colors = { 80, 120, 140, 160 },
@@ -308,6 +317,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2668,
         name = "Rough Bronze Leggings",
         skill = 105,
         colors = { 105, 145, 160, 175 },
@@ -334,6 +344,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2670,
         name = "Rough Bronze Cuirass",
         skill = 105,
         colors = { 105, 145, 160, 175 },
@@ -360,6 +371,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2672,
         name = "Patterned Bronze Bracers",
         skill = 120,
         colors = { 120, 150, 165, 180 },
@@ -387,6 +399,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2673,
         name = "Silvered Bronze Breastplate",
         skill = 130,
         colors = { 130, 160, 175, 190 },
@@ -447,6 +460,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2674,
         name = "Heavy Sharpening Stone",
         skill = 125,
         colors = { 125, 125, 132, 140 },
@@ -472,6 +486,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 2675,
         name = "Shining Silver Breastplate",
         skill = 145,
         colors = { 145, 175, 190, 205 },
@@ -502,6 +517,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2737,
         name = "Copper Mace",
         skill = 15,
         colors = { 15, 55, 75, 95 },
@@ -541,6 +557,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2738,
         name = "Copper Axe",
         skill = 20,
         colors = { 20, 60, 80, 100 },
@@ -579,6 +596,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2739,
         name = "Copper Shortsword",
         skill = 25,
         colors = { 25, 65, 85, 105 },
@@ -618,6 +636,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2740,
         name = "Bronze Mace",
         skill = 110,
         colors = { 110, 140, 155, 170 },
@@ -646,6 +665,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2741,
         name = "Bronze Axe",
         skill = 115,
         colors = { 115, 145, 160, 175 },
@@ -674,6 +694,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 2742,
         name = "Bronze Shortsword",
         skill = 120,
         colors = { 120, 150, 165, 180 },
@@ -702,6 +723,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3100,
         name = "Blacksmithing",
         skill = 50,
         creates = nil,
@@ -725,6 +747,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3115,
         name = "Rough Weightstone",
         skill = 1,
         colors = { 1, 15, 35, 55 },
@@ -740,6 +763,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 3116,
         name = "Coarse Weightstone",
         skill = 65,
         colors = { 65, 65, 72, 80 },
@@ -777,6 +801,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 3117,
         name = "Heavy Weightstone",
         skill = 125,
         colors = { 125, 125, 132, 140 },
@@ -803,6 +828,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 3292,
         name = "Heavy Copper Broadsword",
         skill = 95,
         colors = { 95, 135, 155, 175 },
@@ -832,6 +858,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3293,
         name = "Copper Battle Axe",
         skill = 35,
         colors = { 35, 75, 95, 115 },
@@ -873,6 +900,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3294,
         name = "Thick War Axe",
         skill = 70,
         colors = { 70, 110, 130, 150 },
@@ -914,6 +942,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3295,
         name = "Deadly Bronze Poniard",
         skill = 125,
         colors = { 125, 155, 170, 185 },
@@ -984,6 +1013,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3296,
         name = "Heavy Bronze Mace",
         skill = 130,
         colors = { 130, 160, 175, 190 },
@@ -1015,6 +1045,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3297,
         name = "Mighty Iron Hammer",
         skill = 145,
         colors = { 145, 175, 190, 205 },
@@ -1056,6 +1087,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3319,
         name = "Copper Chain Boots",
         skill = 20,
         colors = { 20, 60, 80, 100 },
@@ -1093,6 +1125,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3320,
         name = "Rough Grinding Stone",
         skill = 25,
         colors = { 25, 45, 65, 85 },
@@ -1130,6 +1163,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3321,
         name = "Copper Chain Vest",
         skill = 35,
         colors = { 35, 75, 95, 115 },
@@ -1201,6 +1235,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3323,
         name = "Runed Copper Gauntlets",
         skill = 40,
         colors = { 40, 80, 100, 120 },
@@ -1239,6 +1274,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3324,
         name = "Runed Copper Pants",
         skill = 45,
         colors = { 45, 85, 105, 125 },
@@ -1278,6 +1314,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3325,
         name = "Gemmed Copper Gauntlets",
         skill = 60,
         colors = { 60, 100, 120, 140 },
@@ -1340,6 +1377,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3326,
         name = "Coarse Grinding Stone",
         skill = 75,
         colors = { 75, 75, 87, 100 },
@@ -1377,6 +1415,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3328,
         name = "Rough Bronze Shoulders",
         skill = 110,
         colors = { 110, 140, 155, 170 },
@@ -1405,6 +1444,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3330,
         name = "Silvered Bronze Shoulders",
         skill = 125,
         colors = { 125, 155, 170, 185 },
@@ -1469,6 +1509,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3331,
         name = "Silvered Bronze Boots",
         skill = 130,
         colors = { 130, 160, 175, 190 },
@@ -1497,6 +1538,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3333,
         name = "Silvered Bronze Gauntlets",
         skill = 135,
         colors = { 135, 165, 180, 195 },
@@ -1525,6 +1567,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3334,
         name = "Green Iron Boots",
         skill = 145,
         colors = { 145, 175, 190, 205 },
@@ -1584,6 +1627,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3336,
         name = "Green Iron Gauntlets",
         skill = 150,
         colors = { 150, 180, 195, 210 },
@@ -1645,6 +1689,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3337,
         name = "Heavy Grinding Stone",
         skill = 125,
         colors = { 125, 125, 137, 150 },
@@ -1671,6 +1716,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3491,
         name = "Big Bronze Knife",
         skill = 105,
         colors = { 105, 135, 150, 165 },
@@ -1701,6 +1747,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3492,
         name = "Hardened Iron Shortsword",
         skill = 160,
         colors = { 160, 185, 197, 210 },
@@ -1724,6 +1771,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3493,
         name = "Jade Serpentblade",
         skill = 175,
         colors = { 175, 200, 212, 225 },
@@ -1777,6 +1825,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3494,
         name = "Solid Iron Maul",
         skill = 155,
         colors = { 155, 180, 192, 205 },
@@ -1800,6 +1849,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3495,
         name = "Golden Iron Destroyer",
         skill = 170,
         colors = { 170, 195, 207, 220 },
@@ -1850,6 +1900,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3496,
         name = "Moonsteel Broadsword",
         skill = 180,
         colors = { 180, 205, 217, 230 },
@@ -1869,6 +1920,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3497,
         name = "Frost Tiger Blade",
         skill = 200,
         colors = { 200, 225, 237, 250 },
@@ -1928,6 +1980,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3498,
         name = "Massive Iron Axe",
         skill = 185,
         colors = { 185, 210, 222, 235 },
@@ -1950,6 +2003,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3500,
         name = "Shadow Crescent Axe",
         skill = 200,
         colors = { 200, 225, 237, 250 },
@@ -2010,6 +2064,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3501,
         name = "Green Iron Bracers",
         skill = 165,
         colors = { 165, 190, 202, 215 },
@@ -2030,6 +2085,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3502,
         name = "Green Iron Helm",
         skill = 170,
         colors = { 170, 195, 207, 220 },
@@ -2051,6 +2107,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3503,
         name = "Golden Scale Coif",
         skill = 190,
         colors = { 190, 215, 227, 240 },
@@ -2070,6 +2127,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3504,
         name = "Green Iron Shoulders",
         skill = 160,
         colors = { 160, 185, 197, 210 },
@@ -2121,6 +2179,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3505,
         name = "Golden Scale Shoulders",
         skill = 175,
         colors = { 175, 200, 212, 225 },
@@ -2138,6 +2197,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3506,
         name = "Green Iron Leggings",
         skill = 155,
         colors = { 155, 180, 192, 205 },
@@ -2159,6 +2219,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3507,
         name = "Golden Scale Leggings",
         skill = 170,
         colors = { 170, 195, 207, 220 },
@@ -2176,6 +2237,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3508,
         name = "Green Iron Hauberk",
         skill = 180,
         colors = { 180, 205, 217, 230 },
@@ -2199,6 +2261,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3511,
         name = "Golden Scale Cuirass",
         skill = 195,
         colors = { 195, 220, 232, 245 },
@@ -2217,6 +2280,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3513,
         name = "Polished Steel Boots",
         skill = 185,
         colors = { 185, 210, 222, 235 },
@@ -2272,6 +2336,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3515,
         name = "Golden Scale Boots",
         skill = 200,
         colors = { 200, 225, 237, 250 },
@@ -2290,6 +2355,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3538,
         name = "Blacksmithing",
         skill = 125,
         creates = nil,
@@ -2306,6 +2372,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 6517,
         name = "Pearl-handled Dagger",
         skill = 110,
         colors = { 110, 140, 155, 170 },
@@ -2335,6 +2402,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 6518,
         name = "Iridescent Hammer",
         skill = 140,
         colors = { 140, 170, 185, 200 },
@@ -2391,6 +2459,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 7221,
         name = "Iron Shield Spike",
         skill = 150,
         colors = { 150, 180, 195, 210 },
@@ -2452,6 +2521,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 7222,
         name = "Iron Counterweight",
         skill = 165,
         colors = { 165, 190, 202, 215 },
@@ -2506,6 +2576,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 7223,
         name = "Golden Scale Bracers",
         skill = 185,
         colors = { 185, 210, 222, 235 },
@@ -2526,6 +2597,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 7224,
         name = "Steel Weapon Chain",
         skill = 190,
         colors = { 190, 215, 227, 240 },
@@ -2551,6 +2623,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 7408,
         name = "Heavy Copper Maul",
         skill = 65,
         colors = { 65, 105, 125, 145 },
@@ -2590,6 +2663,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 7817,
         name = "Rough Bronze Boots",
         skill = 95,
         colors = { 95, 125, 140, 155 },
@@ -2617,6 +2691,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 7818,
         name = "Silver Rod",
         skill = 100,
         colors = { 100, 105, 107, 110 },
@@ -2644,6 +2719,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 8367,
         name = "Ironforge Breastplate",
         skill = 100,
         colors = { 100, 140, 160, 180 },
@@ -2663,6 +2739,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 8768,
         name = "Iron Buckle",
         skill = 150,
         colors = { 150, 150, 152, 155 },
@@ -2689,6 +2766,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 8880,
         name = "Copper Dagger",
         skill = 30,
         colors = { 30, 70, 90, 110 },
@@ -2728,6 +2806,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9785,
         name = "Blacksmithing",
         skill = 200,
         creates = nil,
@@ -2742,6 +2821,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9787,
         name = "Weaponsmith",
         skill = 9999,
         creates = nil,
@@ -2753,6 +2833,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 9788,
         name = "Armorsmith",
         skill = 9999,
         creates = nil,
@@ -2764,6 +2845,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 9811,
         name = "Barbaric Iron Shoulders",
         skill = 160,
         colors = { 160, 185, 197, 210 },
@@ -2784,6 +2866,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9813,
         name = "Barbaric Iron Breastplate",
         skill = 160,
         colors = { 160, 185, 197, 210 },
@@ -2802,6 +2885,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9814,
         name = "Barbaric Iron Helm",
         skill = 175,
         colors = { 175, 200, 212, 225 },
@@ -2821,6 +2905,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9818,
         name = "Barbaric Iron Boots",
         skill = 180,
         colors = { 180, 205, 217, 230 },
@@ -2841,6 +2926,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9820,
         name = "Barbaric Iron Gloves",
         skill = 185,
         colors = { 185, 210, 222, 235 },
@@ -2860,6 +2946,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9916,
         name = "Steel Breastplate",
         skill = 200,
         colors = { 200, 225, 237, 250 },
@@ -2880,6 +2967,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9918,
         name = "Solid Sharpening Stone",
         skill = 200,
         colors = { 200, 200, 205, 210 },
@@ -2898,6 +2986,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 9920,
         name = "Solid Grinding Stone",
         skill = 200,
         colors = { 200, 200, 205, 210 },
@@ -2917,6 +3006,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9921,
         name = "Solid Weightstone",
         skill = 200,
         colors = { 200, 200, 205, 210 },
@@ -2936,6 +3026,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 9926,
         name = "Heavy Mithril Shoulder",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -2956,6 +3047,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9928,
         name = "Heavy Mithril Gauntlet",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -2976,6 +3068,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9931,
         name = "Mithril Scale Pants",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -2995,6 +3088,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9933,
         name = "Heavy Mithril Pants",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -3058,6 +3152,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9935,
         name = "Steel Plate Helm",
         skill = 215,
         colors = { 215, 235, 245, 255 },
@@ -3078,6 +3173,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9937,
         name = "Mithril Scale Bracers",
         skill = 215,
         colors = { 215, 235, 245, 255 },
@@ -3097,6 +3193,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9939,
         name = "Mithril Shield Spike",
         skill = 215,
         colors = { 215, 235, 245, 255 },
@@ -3141,6 +3238,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9945,
         name = "Ornate Mithril Pants",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3161,6 +3259,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9950,
         name = "Ornate Mithril Gloves",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3181,6 +3280,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9952,
         name = "Ornate Mithril Shoulders",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3200,6 +3300,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9954,
         name = "Truesilver Gauntlets",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3224,6 +3325,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9957,
         name = "Orcish War Leggings",
         skill = 230,
         colors = { 230, 250, 260, 270 },
@@ -3242,6 +3344,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9959,
         name = "Heavy Mithril Breastplate",
         skill = 230,
         colors = { 230, 250, 260, 270 },
@@ -3259,6 +3362,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9961,
         name = "Mithril Coif",
         skill = 230,
         colors = { 230, 250, 260, 270 },
@@ -3277,6 +3381,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9964,
         name = "Mithril Spurs",
         skill = 235,
         colors = { 235, 255, 265, 275 },
@@ -3356,6 +3461,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9966,
         name = "Mithril Scale Shoulders",
         skill = 235,
         colors = { 235, 255, 265, 275 },
@@ -3391,6 +3497,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9968,
         name = "Heavy Mithril Boots",
         skill = 235,
         colors = { 235, 255, 265, 275 },
@@ -3409,6 +3516,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9970,
         name = "Heavy Mithril Helm",
         skill = 245,
         colors = { 245, 255, 265, 275 },
@@ -3481,6 +3589,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9972,
         name = "Ornate Mithril Breastplate",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -3501,6 +3610,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9974,
         name = "Truesilver Breastplate",
         skill = 245,
         colors = { 245, 265, 275, 285 },
@@ -3524,6 +3634,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9979,
         name = "Ornate Mithril Boots",
         skill = 245,
         colors = { 245, 265, 275, 285 },
@@ -3545,6 +3656,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9980,
         name = "Ornate Mithril Helm",
         skill = 245,
         colors = { 245, 265, 275, 285 },
@@ -3565,6 +3677,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9983,
         name = "Copper Claymore",
         skill = 30,
         colors = { 30, 70, 90, 110 },
@@ -3604,6 +3717,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9985,
         name = "Bronze Warhammer",
         skill = 125,
         colors = { 125, 155, 170, 185 },
@@ -3632,6 +3746,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9986,
         name = "Bronze Greatsword",
         skill = 130,
         colors = { 130, 160, 175, 190 },
@@ -3660,6 +3775,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9987,
         name = "Bronze Battle Axe",
         skill = 135,
         colors = { 135, 165, 180, 195 },
@@ -3688,6 +3804,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9993,
         name = "Heavy Mithril Axe",
         skill = 210,
         colors = { 210, 235, 247, 260 },
@@ -3710,6 +3827,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9995,
         name = "Blue Glittering Axe",
         skill = 220,
         colors = { 220, 245, 257, 270 },
@@ -3762,6 +3880,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9997,
         name = "Wicked Mithril Blade",
         skill = 225,
         colors = { 225, 250, 262, 275 },
@@ -3845,6 +3964,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 10001,
         name = "Big Black Mace",
         skill = 230,
         colors = { 230, 255, 267, 280 },
@@ -3866,6 +3986,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 10003,
         name = "The Shatterer",
         skill = 235,
         colors = { 235, 260, 272, 285 },
@@ -3892,6 +4013,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 10005,
         name = "Dazzling Mithril Rapier",
         skill = 240,
         colors = { 240, 265, 277, 290 },
@@ -3956,6 +4078,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 10007,
         name = "Phantom Blade",
         skill = 245,
         colors = { 245, 270, 282, 295 },
@@ -3981,6 +4104,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 10009,
         name = "Runed Mithril Hammer",
         skill = 245,
         colors = { 245, 270, 282, 295 },
@@ -4013,6 +4137,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 10011,
         name = "Blight",
         skill = 250,
         colors = { 250, 275, 287, 300 },
@@ -4037,6 +4162,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 10013,
         name = "Ebon Shiv",
         skill = 255,
         colors = { 255, 280, 292, 305 },
@@ -4058,6 +4184,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 10015,
         name = "Truesilver Champion",
         skill = 260,
         colors = { 260, 285, 297, 310 },
@@ -4083,6 +4210,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 11454,
         name = "Inlaid Mithril Cylinder",
         skill = 200,
         colors = { 200, 225, 237, 250 },
@@ -4103,6 +4231,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 11643,
         name = "Golden Scale Gauntlets",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -4123,6 +4252,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12259,
         name = "Silvered Bronze Leggings",
         skill = 155,
         colors = { 155, 180, 192, 205 },
@@ -4186,6 +4316,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12260,
         name = "Rough Copper Vest",
         skill = 1,
         colors = { 1, 15, 35, 55 },
@@ -4201,6 +4332,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 14379,
         name = "Golden Rod",
         skill = 150,
         colors = { 150, 155, 157, 160 },
@@ -4228,6 +4360,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 14380,
         name = "Truesilver Rod",
         skill = 200,
         colors = { 200, 205, 207, 210 },
@@ -4248,6 +4381,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 15292,
         name = "Dark Iron Pulverizer",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -4266,6 +4400,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 15293,
         name = "Dark Iron Mail",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4282,6 +4417,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 15294,
         name = "Dark Iron Sunderer",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4301,6 +4437,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 15295,
         name = "Dark Iron Shoulders",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -4319,6 +4456,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 15296,
         name = "Dark Iron Plate",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4337,6 +4475,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 15972,
         name = "Glinting Steel Dagger",
         skill = 180,
         colors = { 180, 205, 217, 230 },
@@ -4360,6 +4499,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 15973,
         name = "Searing Golden Blade",
         skill = 190,
         colors = { 190, 215, 227, 240 },
@@ -4394,6 +4534,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16639,
         name = "Dense Grinding Stone",
         skill = 250,
         colors = { 250, 255, 257, 260 },
@@ -4411,6 +4552,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16640,
         name = "Dense Weightstone",
         skill = 250,
         colors = { 250, 255, 257, 260 },
@@ -4428,6 +4570,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 16641,
         name = "Dense Sharpening Stone",
         skill = 250,
         colors = { 250, 255, 257, 260 },
@@ -4444,6 +4587,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 16642,
         name = "Thorium Armor",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -4518,6 +4662,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16643,
         name = "Thorium Belt",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -4597,6 +4742,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16644,
         name = "Thorium Bracers",
         skill = 255,
         colors = { 255, 275, 285, 295 },
@@ -4666,6 +4812,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16645,
         name = "Radiant Belt",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -4703,6 +4850,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16646,
         name = "Imperial Plate Shoulders",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -4722,6 +4870,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16647,
         name = "Imperial Plate Belt",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -4741,6 +4890,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16648,
         name = "Radiant Breastplate",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4802,6 +4952,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16649,
         name = "Imperial Plate Bracers",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4820,6 +4971,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16650,
         name = "Wildthorn Mail",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4890,6 +5042,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16651,
         name = "Thorium Shield Spike",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4922,6 +5075,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16652,
         name = "Thorium Boots",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -4992,6 +5146,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16653,
         name = "Thorium Helm",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -5054,6 +5209,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16654,
         name = "Radiant Gloves",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -5127,6 +5283,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16655,
         name = "Fiery Plate Gauntlets",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -5147,6 +5304,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16656,
         name = "Radiant Boots",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -5218,6 +5376,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16657,
         name = "Imperial Plate Boots",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5237,6 +5396,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16658,
         name = "Imperial Plate Helm",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5255,6 +5415,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16659,
         name = "Radiant Circlet",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5292,6 +5453,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16660,
         name = "Dawnbringer Shoulders",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -5314,6 +5476,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16661,
         name = "Storm Gauntlets",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5353,6 +5516,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16662,
         name = "Thorium Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5416,6 +5580,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16663,
         name = "Imperial Plate Chest",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5434,6 +5599,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16664,
         name = "Runic Plate Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5453,6 +5619,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16665,
         name = "Runic Plate Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5472,6 +5639,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16667,
         name = "Demon Forged Breastplate",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -5492,6 +5660,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16724,
         name = "Whitesoul Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5530,6 +5699,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16725,
         name = "Radiant Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5617,6 +5787,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16726,
         name = "Runic Plate Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5637,6 +5808,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16728,
         name = "Helm of the Great Chief",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5669,6 +5841,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16729,
         name = "Lionheart Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5703,6 +5876,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16730,
         name = "Imperial Plate Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5721,6 +5895,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16731,
         name = "Runic Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5741,6 +5916,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16732,
         name = "Runic Plate Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5760,6 +5936,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16741,
         name = "Stronghold Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5791,6 +5968,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16742,
         name = "Enchanted Thorium Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5812,6 +5990,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16744,
         name = "Enchanted Thorium Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5833,6 +6012,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16745,
         name = "Enchanted Thorium Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5855,6 +6035,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16746,
         name = "Invulnerable Mail",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5887,6 +6068,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16969,
         name = "Ornate Thorium Handaxe",
         skill = 275,
         colors = { 275, 300, 312, 325 },
@@ -5907,6 +6089,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16970,
         name = "Dawn's Edge",
         skill = 275,
         colors = { 275, 300, 312, 325 },
@@ -5930,6 +6113,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16971,
         name = "Huge Thorium Battleaxe",
         skill = 280,
         colors = { 280, 305, 317, 330 },
@@ -5949,6 +6133,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16973,
         name = "Enchanted Battlehammer",
         skill = 280,
         colors = { 280, 305, 317, 330 },
@@ -5971,6 +6156,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16978,
         name = "Blazing Rapier",
         skill = 280,
         colors = { 280, 305, 317, 330 },
@@ -5993,6 +6179,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16983,
         name = "Serenity",
         skill = 285,
         colors = { 285, 310, 322, 335 },
@@ -6015,6 +6202,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16984,
         name = "Volcanic Hammer",
         skill = 290,
         colors = { 290, 315, 327, 340 },
@@ -6035,6 +6223,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16985,
         name = "Corruption",
         skill = 290,
         colors = { 290, 315, 327, 340 },
@@ -6058,6 +6247,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16988,
         name = "Hammer of the Titans",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6079,6 +6269,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16990,
         name = "Arcanite Champion",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6101,6 +6292,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16991,
         name = "Annihilator",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6123,6 +6315,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16992,
         name = "Frostguard",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6145,6 +6338,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16993,
         name = "Masterwork Stormhammer",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6166,6 +6360,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16994,
         name = "Arcanite Reaper",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6185,6 +6380,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 16995,
         name = "Heartseeker",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6208,6 +6404,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 17039,
         name = "Master Swordsmith",
         skill = 9999,
         creates = nil,
@@ -6219,6 +6416,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 17040,
         name = "Master Hammersmith",
         skill = 9999,
         creates = nil,
@@ -6230,6 +6428,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 17041,
         name = "Master Axesmith",
         skill = 9999,
         creates = nil,
@@ -6241,6 +6440,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
     },
     {
+        spellId = 19666,
         name = "Silver Skeleton Key",
         skill = 100,
         colors = { 100, 100, 110, 120 },
@@ -6268,6 +6468,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19667,
         name = "Golden Skeleton Key",
         skill = 150,
         colors = { 150, 150, 160, 170 },
@@ -6295,6 +6496,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19668,
         name = "Truesilver Skeleton Key",
         skill = 200,
         colors = { 200, 200, 210, 220 },
@@ -6315,6 +6517,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19669,
         name = "Arcanite Skeleton Key",
         skill = 275,
         colors = { 275, 275, 280, 285 },
@@ -6333,6 +6536,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 20201,
         name = "Arcanite Rod",
         skill = 275,
         colors = { 275, 275, 280, 285 },
@@ -6351,6 +6555,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 20872,
         name = "Fiery Chain Girdle",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -6370,6 +6575,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 20873,
         name = "Fiery Chain Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6389,6 +6595,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 20874,
         name = "Dark Iron Bracers",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -6408,6 +6615,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 20876,
         name = "Dark Iron Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6427,6 +6635,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 20890,
         name = "Dark Iron Reaver",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6447,6 +6656,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 20897,
         name = "Dark Iron Destroyer",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6467,6 +6677,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 21161,
         name = "Sulfuron Hammer",
         skill = 300,
         colors = { 300, 325, 337, 350 },
@@ -6488,6 +6699,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 21913,
         name = "Edge of Winter",
         skill = 190,
         colors = { 190, 215, 227, 240 },
@@ -6511,6 +6723,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 22757,
         name = "Elemental Sharpening Stone",
         skill = 300,
         colors = { 300, 300, 310, 320 },
@@ -6543,6 +6756,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23628,
         name = "Heavy Timbermaw Belt",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -6562,6 +6776,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23629,
         name = "Heavy Timbermaw Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6581,6 +6796,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23632,
         name = "Girdle of the Dawn",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -6602,6 +6818,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23633,
         name = "Gloves of the Dawn",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6623,6 +6840,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23636,
         name = "Dark Iron Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6642,6 +6860,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 23637,
         name = "Dark Iron Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6663,6 +6882,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 23638,
         name = "Black Amnesty",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6684,6 +6904,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23639,
         name = "Blackfury",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6704,6 +6925,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 23650,
         name = "Ebon Hand",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6725,6 +6947,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23652,
         name = "Blackguard",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6746,6 +6969,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23653,
         name = "Nightfall",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6767,6 +6991,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 24136,
         name = "Bloodsoul Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6787,6 +7012,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 24137,
         name = "Bloodsoul Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6807,6 +7033,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 24138,
         name = "Bloodsoul Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6827,6 +7054,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 24139,
         name = "Darksoul Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6846,6 +7074,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 24140,
         name = "Darksoul Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6865,6 +7094,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 24141,
         name = "Darksoul Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6884,6 +7114,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 24399,
         name = "Dark Iron Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6904,6 +7135,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 24912,
         name = "Darkrune Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6924,6 +7156,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 24913,
         name = "Darkrune Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6947,6 +7180,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 24914,
         name = "Darkrune Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6966,6 +7200,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 27585,
         name = "Heavy Obsidian Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6985,6 +7220,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 27586,
         name = "Jagged Obsidian Shield",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7005,6 +7241,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 27587,
         name = "Thick Obsidian Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7024,6 +7261,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 27588,
         name = "Light Obsidian Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7040,6 +7278,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 27589,
         name = "Black Grasp of the Destroyer",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7058,6 +7297,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 27590,
         name = "Obsidian Mail Tunic",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7077,6 +7317,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 27829,
         name = "Titanic Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7105,6 +7346,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 27830,
         name = "Persuader",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7134,6 +7376,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 27832,
         name = "Sageblade",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7160,6 +7403,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 28242,
         name = "Icebane Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7180,6 +7424,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 28243,
         name = "Icebane Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7200,6 +7445,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 28244,
         name = "Icebane Bracers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7220,6 +7466,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "icebellow_anvil", zone = "Naxxramas", location = "Military Quarter" },
     },
     {
+        spellId = 28461,
         name = "Ironvine Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7238,6 +7485,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 28462,
         name = "Ironvine Gloves",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7255,6 +7503,7 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 28463,
         name = "Ironvine Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },

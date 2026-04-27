@@ -5,6 +5,7 @@
 ACC_Data = ACC_Data or {}
 ACC_Data["Engineering"] = {
     {
+        spellId = 3918,
         name = "Rough Blasting Powder",
         skill = 1,
         colors = { 1, 20, 30, 40 },
@@ -19,6 +20,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3919,
         name = "Rough Dynamite",
         skill = 1,
         colors = { 1, 30, 45, 60 },
@@ -34,6 +36,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3920,
         name = "Crafted Light Shot",
         skill = 30,
         colors = { 0, 30, 45, 60 },
@@ -49,6 +52,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3922,
         name = "Handful of Copper Bolts",
         skill = 30,
         colors = { 30, 45, 52, 60 },
@@ -82,6 +86,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3923,
         name = "Rough Copper Bomb",
         skill = 30,
         colors = { 30, 60, 75, 90 },
@@ -119,6 +124,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3924,
         name = "Copper Tube",
         skill = 50,
         colors = { 50, 80, 95, 110 },
@@ -154,6 +160,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3925,
         name = "Rough Boomstick",
         skill = 50,
         colors = { 50, 80, 95, 110 },
@@ -190,6 +197,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3926,
         name = "Copper Modulator",
         skill = 65,
         colors = { 65, 95, 110, 125 },
@@ -226,6 +234,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3928,
         name = "Mechanical Squirrel",
         skill = 75,
         colors = { 75, 105, 120, 135 },
@@ -290,6 +299,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3929,
         name = "Coarse Blasting Powder",
         skill = 75,
         colors = { 75, 85, 90, 95 },
@@ -323,6 +333,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3930,
         name = "Crafted Heavy Shot",
         skill = 75,
         colors = { 75, 85, 90, 95 },
@@ -357,6 +368,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3931,
         name = "Coarse Dynamite",
         skill = 75,
         colors = { 75, 90, 97, 105 },
@@ -391,6 +403,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3932,
         name = "Target Dummy",
         skill = 85,
         colors = { 85, 115, 130, 145 },
@@ -418,6 +431,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3933,
         name = "Small Seaforium Charge",
         skill = 100,
         colors = { 100, 130, 145, 160 },
@@ -486,6 +500,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3934,
         name = "Flying Tiger Goggles",
         skill = 100,
         colors = { 100, 130, 145, 160 },
@@ -510,6 +525,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3936,
         name = "Deadly Blunderbuss",
         skill = 105,
         colors = { 105, 130, 142, 155 },
@@ -537,6 +553,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3937,
         name = "Large Copper Bomb",
         skill = 105,
         colors = { 105, 105, 130, 155 },
@@ -563,6 +580,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3938,
         name = "Bronze Tube",
         skill = 105,
         colors = { 105, 105, 130, 155 },
@@ -588,6 +606,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3939,
         name = "Lovingly Crafted Boomstick",
         skill = 120,
         colors = { 120, 145, 157, 170 },
@@ -609,6 +628,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3940,
         name = "Shadow Goggles",
         skill = 120,
         colors = { 120, 145, 157, 170 },
@@ -673,6 +693,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3941,
         name = "Small Bronze Bomb",
         skill = 120,
         colors = { 120, 120, 145, 170 },
@@ -700,6 +721,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3942,
         name = "Whirring Bronze Gizmo",
         skill = 125,
         colors = { 125, 125, 150, 175 },
@@ -725,6 +747,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3944,
         name = "Flame Deflector",
         skill = 125,
         colors = { 125, 125, 150, 175 },
@@ -745,6 +768,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3945,
         name = "Heavy Blasting Powder",
         skill = 125,
         colors = { 125, 125, 135, 145 },
@@ -769,6 +793,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3946,
         name = "Heavy Dynamite",
         skill = 125,
         colors = { 125, 125, 135, 145 },
@@ -793,6 +818,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3947,
         name = "Crafted Solid Shot",
         skill = 125,
         colors = { 125, 125, 135, 145 },
@@ -817,6 +843,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3949,
         name = "Silver-plated Shotgun",
         skill = 130,
         colors = { 130, 155, 167, 180 },
@@ -844,6 +871,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3950,
         name = "Big Bronze Bomb",
         skill = 140,
         colors = { 140, 140, 165, 190 },
@@ -870,6 +898,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3952,
         name = "Minor Recombobulator",
         skill = 140,
         colors = { 140, 165, 177, 190 },
@@ -891,6 +920,7 @@ ACC_Data["Engineering"] = {
         faction = "alliance",
     },
     {
+        spellId = 3953,
         name = "Bronze Framework",
         skill = 145,
         colors = { 145, 145, 170, 195 },
@@ -916,6 +946,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3954,
         name = "Moonsight Rifle",
         skill = 145,
         colors = { 145, 170, 182, 195 },
@@ -974,6 +1005,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3955,
         name = "Explosive Sheep",
         skill = 150,
         colors = { 150, 175, 187, 200 },
@@ -1001,6 +1033,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3956,
         name = "Green Tinted Goggles",
         skill = 150,
         colors = { 150, 175, 187, 200 },
@@ -1026,6 +1059,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3957,
         name = "Ice Deflector",
         skill = 155,
         colors = { 155, 175, 185, 195 },
@@ -1044,6 +1078,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3958,
         name = "Iron Strut",
         skill = 160,
         colors = { 160, 160, 170, 180 },
@@ -1063,6 +1098,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3959,
         name = "Discombobulator Ray",
         skill = 160,
         colors = { 160, 180, 190, 200 },
@@ -1085,6 +1121,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3960,
         name = "Portable Bronze Mortar",
         skill = 165,
         colors = { 165, 185, 195, 205 },
@@ -1143,6 +1180,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3961,
         name = "Gyrochronatom",
         skill = 170,
         colors = { 170, 170, 190, 210 },
@@ -1163,6 +1201,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3962,
         name = "Iron Grenade",
         skill = 175,
         colors = { 175, 175, 195, 215 },
@@ -1184,6 +1223,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3963,
         name = "Compact Harvest Reaper Kit",
         skill = 175,
         colors = { 175, 175, 195, 215 },
@@ -1206,6 +1246,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3965,
         name = "Advanced Target Dummy",
         skill = 185,
         colors = { 185, 185, 205, 225 },
@@ -1228,6 +1269,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3966,
         name = "Craftsman's Monocle",
         skill = 185,
         colors = { 185, 205, 215, 225 },
@@ -1254,6 +1296,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3967,
         name = "Big Iron Bomb",
         skill = 190,
         colors = { 190, 190, 210, 230 },
@@ -1275,6 +1318,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3968,
         name = "Goblin Land Mine",
         skill = 195,
         colors = { 195, 215, 225, 235 },
@@ -1325,6 +1369,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3969,
         name = "Mechanical Dragonling",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -1346,6 +1391,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3971,
         name = "Gnomish Cloaking Device",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -1373,6 +1419,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 3972,
         name = "Large Seaforium Charge",
         skill = 200,
         colors = { 200, 200, 220, 240 },
@@ -1442,6 +1489,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3973,
         name = "Silver Contact",
         skill = 90,
         colors = { 90, 110, 125, 140 },
@@ -1465,6 +1513,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3977,
         name = "Crude Scope",
         skill = 60,
         colors = { 60, 90, 105, 120 },
@@ -1500,6 +1549,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3978,
         name = "Standard Scope",
         skill = 110,
         colors = { 110, 135, 147, 160 },
@@ -1524,6 +1574,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 3979,
         name = "Accurate Scope",
         skill = 180,
         colors = { 180, 200, 210, 220 },
@@ -1543,6 +1594,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 4036,
         name = "Engineering",
         skill = 9999,
         creates = nil,
@@ -1573,6 +1625,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 4037,
         name = "Engineering",
         skill = 50,
         creates = nil,
@@ -1594,6 +1647,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 4038,
         name = "Engineering",
         skill = 125,
         creates = nil,
@@ -1610,6 +1664,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 6458,
         name = "Ornate Spyglass",
         skill = 135,
         colors = { 135, 160, 172, 185 },
@@ -1636,6 +1691,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 7430,
         name = "Arclight Spanner",
         skill = 50,
         colors = { 50, 70, 80, 90 },
@@ -1670,6 +1726,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 8243,
         name = "Flash Bomb",
         skill = 185,
         colors = { 185, 185, 205, 225 },
@@ -1690,6 +1747,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 8334,
         name = "Practice Lock",
         skill = 100,
         colors = { 100, 115, 122, 130 },
@@ -1716,6 +1774,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 8339,
         name = "EZ-Thro Dynamite",
         skill = 100,
         colors = { 100, 115, 122, 130 },
@@ -1785,6 +1844,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 8895,
         name = "Goblin Rocket Boots",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -1807,6 +1867,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9269,
         name = "Gnomish Universal Remote",
         skill = 125,
         colors = { 125, 150, 162, 175 },
@@ -1835,6 +1896,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 9271,
         name = "Aquadynamic Fish Attractor",
         skill = 150,
         colors = { 150, 150, 160, 170 },
@@ -1860,6 +1922,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 9273,
         name = "Goblin Jumper Cables",
         skill = 165,
         colors = { 165, 165, 180, 200 },
@@ -1890,6 +1953,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12584,
         name = "Gold Power Core",
         skill = 150,
         colors = { 150, 150, 170, 190 },
@@ -1914,6 +1978,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12585,
         name = "Solid Blasting Powder",
         skill = 175,
         colors = { 175, 175, 185, 195 },
@@ -1932,6 +1997,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12586,
         name = "Solid Dynamite",
         skill = 175,
         colors = { 175, 175, 185, 195 },
@@ -1951,6 +2017,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12587,
         name = "Bright-Eye Goggles",
         skill = 175,
         colors = { 175, 195, 205, 215 },
@@ -1992,6 +2059,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12589,
         name = "Mithril Tube",
         skill = 195,
         colors = { 195, 195, 215, 235 },
@@ -2011,6 +2079,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12590,
         name = "Gyromatic Micro-Adjustor",
         skill = 175,
         colors = { 175, 175, 195, 215 },
@@ -2030,6 +2099,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12591,
         name = "Unstable Trigger",
         skill = 200,
         colors = { 200, 200, 220, 240 },
@@ -2051,6 +2121,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12594,
         name = "Fire Goggles",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -2072,6 +2143,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12595,
         name = "Mithril Blunderbuss",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -2095,6 +2167,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12596,
         name = "Hi-Impact Mithril Slugs",
         skill = 210,
         colors = { 210, 210, 230, 250 },
@@ -2115,6 +2188,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12597,
         name = "Deadly Scope",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -2135,6 +2209,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12599,
         name = "Mithril Casing",
         skill = 215,
         colors = { 215, 215, 235, 255 },
@@ -2154,6 +2229,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12603,
         name = "Mithril Frag Bomb",
         skill = 215,
         colors = { 215, 215, 235, 255 },
@@ -2175,6 +2251,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12607,
         name = "Catseye Ultra Goggles",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -2213,6 +2290,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12614,
         name = "Mithril Heavy-bore Rifle",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -2273,6 +2351,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12615,
         name = "Spellpower Goggles Xtreme",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -2315,6 +2394,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12616,
         name = "Parachute Cloak",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -2377,6 +2457,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12617,
         name = "Deepdive Helmet",
         skill = 230,
         colors = { 230, 250, 260, 270 },
@@ -2398,6 +2479,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12618,
         name = "Rose Colored Goggles",
         skill = 230,
         colors = { 230, 250, 260, 270 },
@@ -2415,6 +2497,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12619,
         name = "Hi-Explosive Bomb",
         skill = 235,
         colors = { 235, 235, 255, 275 },
@@ -2434,6 +2517,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12620,
         name = "Sniper Scope",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -2468,6 +2552,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12621,
         name = "Mithril Gyro-Shot",
         skill = 245,
         colors = { 245, 245, 265, 285 },
@@ -2486,6 +2571,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12622,
         name = "Green Lens",
         skill = 245,
         colors = { 245, 265, 275, 285 },
@@ -2506,6 +2592,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12624,
         name = "Mithril Mechanical Dragonling",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -2528,6 +2615,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12656,
         name = "Engineering",
         skill = 200,
         creates = nil,
@@ -2542,6 +2630,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12715,
         name = "Goblin Rocket Fuel Recipe",
         skill = 205,
         colors = { 205, 205, 205, 205 },
@@ -2561,6 +2650,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12716,
         name = "Goblin Mortar",
         skill = 225,
         colors = { 0, 225, 235, 245 },
@@ -2582,6 +2672,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12717,
         name = "Goblin Mining Helmet",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -2602,6 +2693,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12718,
         name = "Goblin Construction Helmet",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -2622,6 +2714,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12754,
         name = "The Big One",
         skill = 235,
         colors = { 235, 235, 255, 275 },
@@ -2643,6 +2736,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12755,
         name = "Goblin Bomb Dispenser",
         skill = 230,
         colors = { 230, 230, 250, 270 },
@@ -2665,6 +2759,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12758,
         name = "Goblin Rocket Helmet",
         skill = 245,
         colors = { 245, 265, 275, 285 },
@@ -2686,6 +2781,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12759,
         name = "Gnomish Death Ray",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -2708,6 +2804,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12760,
         name = "Goblin Sapper Charge",
         skill = 205,
         colors = { 205, 205, 225, 245 },
@@ -2727,6 +2824,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12895,
         name = "Inlaid Mithril Cylinder Plans",
         skill = 205,
         colors = { 205, 205, 205, 205 },
@@ -2746,6 +2844,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12897,
         name = "Gnomish Goggles",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -2767,6 +2866,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 12899,
         name = "Gnomish Shrink Ray",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -2789,6 +2889,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12902,
         name = "Gnomish Net-o-Matic Projector",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -2811,6 +2912,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12903,
         name = "Gnomish Harm Prevention Belt",
         skill = 215,
         colors = { 215, 235, 245, 255 },
@@ -2833,6 +2935,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12905,
         name = "Gnomish Rocket Boots",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -2855,6 +2958,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12906,
         name = "Gnomish Battle Chicken",
         skill = 230,
         colors = { 230, 250, 260, 270 },
@@ -2878,6 +2982,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12907,
         name = "Gnomish Mind Control Cap",
         skill = 235,
         colors = { 235, 255, 265, 275 },
@@ -2900,6 +3005,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 12908,
         name = "Goblin Dragon Gun",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -2922,6 +3028,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 13240,
         name = "The Mortar: Reloaded",
         skill = 205,
         creates = { id = 10577, count = 1 },
@@ -2941,6 +3048,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 15255,
         name = "Mechanical Repair Kit",
         skill = 200,
         colors = { 200, 200, 220, 240 },
@@ -2962,6 +3070,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 15628,
         name = "Pet Bombling",
         skill = 205,
         colors = { 205, 205, 205, 205 },
@@ -2982,6 +3091,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 15633,
         name = "Lil' Smoky",
         skill = 205,
         colors = { 205, 205, 205, 205 },
@@ -3003,6 +3113,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19567,
         name = "Salt Shaker",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -3023,6 +3134,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19788,
         name = "Dense Blasting Powder",
         skill = 250,
         colors = { 250, 250, 255, 260 },
@@ -3039,6 +3151,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 19790,
         name = "Thorium Grenade",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3060,6 +3173,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19791,
         name = "Thorium Widget",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3078,6 +3192,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 19792,
         name = "Thorium Rifle",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3152,6 +3267,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19793,
         name = "Lifelike Mechanical Toad",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -3187,6 +3303,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19794,
         name = "Spellpower Goggles Xtreme Plus",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -3206,6 +3323,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 19795,
         name = "Thorium Tube",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -3223,6 +3341,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19796,
         name = "Dark Iron Rifle",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -3245,6 +3364,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
+        spellId = 19799,
         name = "Dark Iron Bomb",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -3265,6 +3385,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19800,
         name = "Thorium Shells",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -3333,6 +3454,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19814,
         name = "Masterwork Target Dummy",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -3355,6 +3477,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19815,
         name = "Delicate Arcanite Converter",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -3373,6 +3496,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19819,
         name = "Voice Amplification Modulator",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -3393,6 +3517,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19825,
         name = "Master Engineer's Goggles",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -3411,6 +3536,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 19830,
         name = "Arcanite Dragonling",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3433,6 +3559,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19831,
         name = "Arcane Bomb",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3465,6 +3592,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 19833,
         name = "Flawless Arcanite Rifle",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3487,6 +3615,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 20219,
         name = "Gnomish Engineer",
         skill = 9999,
         creates = nil,
@@ -3498,6 +3627,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 20222,
         name = "Goblin Engineer",
         skill = 9999,
         creates = nil,
@@ -3509,6 +3639,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 21940,
         name = "SnowMaster 9000",
         skill = 190,
         colors = { 190, 190, 210, 230 },
@@ -3533,6 +3664,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 22704,
         name = "Field Repair Bot 74A",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3552,6 +3684,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 22793,
         name = "Biznicks 247x128 Accurascope",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3587,6 +3720,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 22795,
         name = "Core Marksman Rifle",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3614,6 +3748,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 22797,
         name = "Force Reactive Disk",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3649,6 +3784,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23066,
         name = "Red Firework",
         skill = 150,
         colors = { 150, 150, 162, 175 },
@@ -3666,6 +3802,7 @@ ACC_Data["Engineering"] = {
         faction = "horde",
     },
     {
+        spellId = 23067,
         name = "Blue Firework",
         skill = 150,
         colors = { 150, 150, 162, 175 },
@@ -3684,6 +3821,7 @@ ACC_Data["Engineering"] = {
         faction = "alliance",
     },
     {
+        spellId = 23068,
         name = "Green Firework",
         skill = 150,
         colors = { 150, 150, 162, 175 },
@@ -3702,6 +3840,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 23069,
         name = "EZ-Thro Dynamite II",
         skill = 200,
         colors = { 200, 200, 210, 220 },
@@ -3719,6 +3858,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 23070,
         name = "Dense Dynamite",
         skill = 250,
         colors = { 250, 250, 260, 270 },
@@ -3736,6 +3876,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 23071,
         name = "Truesilver Transformer",
         skill = 260,
         colors = { 260, 270, 275, 280 },
@@ -3755,6 +3896,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23077,
         name = "Gyrofreeze Ice Reflector",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3777,6 +3919,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23078,
         name = "Goblin Jumper Cables XL",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -3797,6 +3940,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 23079,
         name = "Major Recombobulator",
         skill = 275,
         colors = { 275, 285, 290, 295 },
@@ -3815,6 +3959,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 23080,
         name = "Powerful Seaforium Charge",
         skill = 275,
         colors = { 275, 275, 285, 295 },
@@ -3834,6 +3979,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 23081,
         name = "Hyper-Radiant Flame Reflector",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -3855,6 +4001,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23082,
         name = "Ultra-Flash Shadow Reflector",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3877,6 +4024,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23096,
         name = "Alarm-O-Bot",
         skill = 265,
         colors = { 265, 275, 280, 285 },
@@ -3898,6 +4046,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23129,
         name = "World Enlarger",
         skill = 260,
         colors = { 260, 260, 265, 270 },
@@ -3919,6 +4068,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23486,
         name = "Dimensional Ripper - Everlook",
         skill = 285,
         colors = { 0, 285, 295, 305 },
@@ -3940,6 +4090,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23489,
         name = "Ultrasafe Transporter - Gadgetzan",
         skill = 285,
         colors = { 0, 285, 295, 305 },
@@ -3962,6 +4113,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 23507,
         name = "Snake Burst Firework",
         skill = 250,
         colors = { 250, 250, 260, 270 },
@@ -3980,6 +4132,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 24356,
         name = "Bloodvine Goggles",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -4000,6 +4153,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 24357,
         name = "Bloodvine Lens",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -4020,6 +4174,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 26011,
         name = "Tranquil Mechanical Yeti",
         skill = 250,
         colors = { 250, 320, 330, 340 },
@@ -4041,6 +4196,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 26416,
         name = "Small Blue Rocket",
         skill = 125,
         colors = { 125, 125, 137, 150 },
@@ -4057,6 +4213,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 26417,
         name = "Small Green Rocket",
         skill = 125,
         colors = { 125, 125, 137, 150 },
@@ -4073,6 +4230,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 26418,
         name = "Small Red Rocket",
         skill = 125,
         colors = { 125, 125, 137, 150 },
@@ -4091,6 +4249,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 26420,
         name = "Large Blue Rocket",
         skill = 175,
         colors = { 175, 175, 187, 200 },
@@ -4107,6 +4266,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 26421,
         name = "Large Green Rocket",
         skill = 175,
         colors = { 175, 175, 187, 200 },
@@ -4123,6 +4283,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 26422,
         name = "Large Red Rocket",
         skill = 175,
         colors = { 175, 175, 187, 200 },
@@ -4139,6 +4300,7 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        spellId = 26423,
         name = "Blue Rocket Cluster",
         skill = 225,
         colors = { 225, 225, 237, 250 },
@@ -4156,6 +4318,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 26424,
         name = "Green Rocket Cluster",
         skill = 225,
         colors = { 225, 225, 237, 250 },
@@ -4173,6 +4336,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 26425,
         name = "Red Rocket Cluster",
         skill = 225,
         colors = { 225, 225, 237, 250 },
@@ -4188,6 +4352,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 26426,
         name = "Large Blue Rocket Cluster",
         skill = 275,
         colors = { 275, 275, 280, 285 },
@@ -4205,6 +4370,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 26427,
         name = "Large Green Rocket Cluster",
         skill = 275,
         colors = { 275, 275, 280, 285 },
@@ -4222,6 +4388,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 26428,
         name = "Large Red Rocket Cluster",
         skill = 275,
         colors = { 275, 275, 280, 285 },
@@ -4237,6 +4404,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 26442,
         name = "Firework Launcher",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -4254,6 +4422,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 26443,
         name = "Firework Cluster Launcher",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4271,6 +4440,7 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        spellId = 28327,
         name = "Steam Tonk Controller",
         skill = 275,
         colors = { 275, 295, 305, 315 },

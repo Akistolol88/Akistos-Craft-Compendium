@@ -5,6 +5,7 @@
 ACC_Data = ACC_Data or {}
 ACC_Data["Alchemy"] = {
     {
+        spellId = 2259,
         name = "Alchemy",
         skill = 9999,
         creates = nil,
@@ -42,6 +43,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 2329,
         name = "Elixir of Lion's Strength",
         skill = 1,
         colors = { 1, 55, 75, 95 },
@@ -58,6 +60,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 2330,
         name = "Minor Healing Potion",
         skill = 1,
         colors = { 1, 55, 75, 95 },
@@ -74,6 +77,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 2331,
         name = "Minor Mana Potion",
         skill = 25,
         colors = { 25, 65, 85, 105 },
@@ -116,6 +120,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 2332,
         name = "Minor Rejuvenation Potion",
         skill = 40,
         colors = { 40, 70, 90, 110 },
@@ -158,6 +163,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 2333,
         name = "Elixir of Lesser Agility",
         skill = 140,
         colors = { 140, 165, 185, 205 },
@@ -208,6 +214,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 2334,
         name = "Elixir of Minor Fortitude",
         skill = 50,
         colors = { 50, 80, 100, 120 },
@@ -250,6 +257,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 2335,
         name = "Swiftness Potion",
         skill = 60,
         colors = { 60, 90, 110, 130 },
@@ -315,6 +323,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 2337,
         name = "Lesser Healing Potion",
         skill = 55,
         colors = { 55, 85, 105, 125 },
@@ -356,6 +365,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3101,
         name = "Alchemy",
         skill = 50,
         creates = nil,
@@ -383,6 +393,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3170,
         name = "Weak Troll's Blood Potion",
         skill = 15,
         colors = { 15, 60, 80, 100 },
@@ -425,6 +436,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3171,
         name = "Elixir of Wisdom",
         skill = 90,
         colors = { 90, 120, 140, 160 },
@@ -457,6 +469,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3172,
         name = "Minor Magic Resistance Potion",
         skill = 110,
         colors = { 110, 135, 155, 175 },
@@ -517,6 +530,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3173,
         name = "Lesser Mana Potion",
         skill = 120,
         colors = { 120, 145, 165, 185 },
@@ -549,6 +563,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3174,
         name = "Elixir of Poison Resistance",
         skill = 120,
         colors = { 120, 145, 165, 185 },
@@ -606,6 +621,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3175,
         name = "Limited Invulnerability Potion",
         skill = 250,
         colors = { 250, 275, 295, 315 },
@@ -676,6 +692,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3176,
         name = "Strong Troll's Blood Potion",
         skill = 125,
         colors = { 125, 150, 170, 190 },
@@ -708,6 +725,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3177,
         name = "Elixir of Defense",
         skill = 130,
         colors = { 130, 155, 175, 195 },
@@ -740,6 +758,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3188,
         name = "Elixir of Ogre's Strength",
         skill = 150,
         colors = { 150, 175, 195, 215 },
@@ -796,6 +815,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3230,
         name = "Elixir of Minor Agility",
         skill = 50,
         colors = { 50, 80, 100, 120 },
@@ -855,6 +875,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3447,
         name = "Healing Potion",
         skill = 110,
         colors = { 110, 135, 155, 175 },
@@ -887,6 +908,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3448,
         name = "Lesser Invisibility Potion",
         skill = 165,
         colors = { 165, 185, 205, 225 },
@@ -910,6 +932,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3449,
         name = "Shadow Oil",
         skill = 165,
         colors = { 165, 190, 210, 230 },
@@ -930,6 +953,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3450,
         name = "Elixir of Fortitude",
         skill = 175,
         colors = { 175, 195, 215, 235 },
@@ -952,6 +976,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3451,
         name = "Mighty Troll's Blood Potion",
         skill = 180,
         colors = { 180, 200, 220, 240 },
@@ -970,6 +995,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3452,
         name = "Mana Potion",
         skill = 160,
         colors = { 160, 180, 200, 220 },
@@ -992,6 +1018,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3453,
         name = "Elixir of Detect Lesser Invisibility",
         skill = 195,
         colors = { 195, 215, 235, 255 },
@@ -1041,6 +1068,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3454,
         name = "Frost Oil",
         skill = 200,
         colors = { 200, 220, 240, 260 },
@@ -1059,6 +1087,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 3464,
         name = "Alchemy",
         skill = 125,
         creates = nil,
@@ -1077,6 +1106,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 4508,
         name = "Discolored Healing Potion",
         skill = 50,
         colors = { 50, 80, 100, 120 },
@@ -1096,6 +1126,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 4942,
         name = "Lesser Stoneshield Potion",
         skill = 215,
         colors = { 215, 230, 250, 270 },
@@ -1114,6 +1145,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 6617,
         name = "Rage Potion",
         skill = 60,
         colors = { 60, 90, 110, 130 },
@@ -1135,6 +1167,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 6618,
         name = "Great Rage Potion",
         skill = 175,
         colors = { 175, 195, 215, 235 },
@@ -1155,6 +1188,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 6624,
         name = "Free Action Potion",
         skill = 150,
         colors = { 150, 175, 195, 215 },
@@ -1176,6 +1210,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7179,
         name = "Elixir of Water Breathing",
         skill = 90,
         colors = { 90, 120, 140, 160 },
@@ -1208,6 +1243,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7181,
         name = "Greater Healing Potion",
         skill = 155,
         colors = { 155, 175, 195, 215 },
@@ -1231,6 +1267,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7183,
         name = "Elixir of Minor Defense",
         skill = 1,
         colors = { 1, 55, 75, 95 },
@@ -1246,6 +1283,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7255,
         name = "Holy Protection Potion",
         skill = 100,
         colors = { 100, 130, 150, 170 },
@@ -1266,6 +1304,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7256,
         name = "Shadow Protection Potion",
         skill = 135,
         colors = { 135, 160, 180, 200 },
@@ -1285,6 +1324,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7257,
         name = "Fire Protection Potion",
         skill = 165,
         colors = { 165, 210, 230, 250 },
@@ -1304,6 +1344,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7258,
         name = "Frost Protection Potion",
         skill = 190,
         colors = { 190, 205, 225, 245 },
@@ -1323,6 +1364,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7259,
         name = "Nature Protection Potion",
         skill = 190,
         colors = { 190, 210, 230, 250 },
@@ -1344,6 +1386,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7836,
         name = "Blackmouth Oil",
         skill = 80,
         colors = { 80, 80, 90, 100 },
@@ -1375,6 +1418,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7837,
         name = "Fire Oil",
         skill = 130,
         colors = { 130, 150, 160, 170 },
@@ -1406,6 +1450,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7841,
         name = "Swim Speed Potion",
         skill = 100,
         colors = { 100, 130, 150, 170 },
@@ -1438,6 +1483,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 7845,
         name = "Elixir of Firepower",
         skill = 140,
         colors = { 140, 165, 185, 205 },
@@ -1470,6 +1516,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 8240,
         name = "Elixir of Giant Growth",
         skill = 90,
         colors = { 90, 120, 140, 160 },
@@ -1500,6 +1547,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11448,
         name = "Greater Mana Potion",
         skill = 205,
         colors = { 205, 220, 240, 260 },
@@ -1523,6 +1571,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11449,
         name = "Elixir of Agility",
         skill = 185,
         colors = { 185, 205, 225, 245 },
@@ -1545,6 +1594,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11450,
         name = "Elixir of Greater Defense",
         skill = 195,
         colors = { 195, 215, 235, 255 },
@@ -1567,6 +1617,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11451,
         name = "Oil of Immolation",
         skill = 205,
         colors = { 205, 220, 240, 260 },
@@ -1590,6 +1641,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11452,
         name = "Restorative Potion",
         skill = 215,
         colors = { 215, 225, 245, 265 },
@@ -1608,6 +1660,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11453,
         name = "Magic Resistance Potion",
         skill = 210,
         colors = { 210, 225, 245, 265 },
@@ -1668,6 +1721,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11456,
         name = "Goblin Rocket Fuel",
         skill = 210,
         colors = { 210, 225, 245, 265 },
@@ -1686,6 +1740,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11457,
         name = "Superior Healing Potion",
         skill = 215,
         colors = { 215, 230, 250, 270 },
@@ -1709,6 +1764,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11458,
         name = "Wildvine Potion",
         skill = 225,
         colors = { 225, 240, 260, 280 },
@@ -1774,6 +1830,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11459,
         name = "Philosophers' Stone",
         skill = 225,
         colors = { 225, 240, 260, 280 },
@@ -1793,6 +1850,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11460,
         name = "Elixir of Detect Undead",
         skill = 230,
         colors = { 230, 245, 265, 285 },
@@ -1811,6 +1869,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11461,
         name = "Arcane Elixir",
         skill = 235,
         colors = { 235, 250, 270, 290 },
@@ -1830,6 +1889,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11464,
         name = "Invisibility Potion",
         skill = 235,
         colors = { 235, 250, 270, 290 },
@@ -1908,6 +1968,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11465,
         name = "Elixir of Greater Intellect",
         skill = 235,
         colors = { 235, 250, 270, 290 },
@@ -1927,6 +1988,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11466,
         name = "Gift of Arthas",
         skill = 240,
         colors = { 240, 255, 275, 295 },
@@ -1946,6 +2008,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11467,
         name = "Elixir of Greater Agility",
         skill = 240,
         colors = { 240, 255, 275, 295 },
@@ -1965,6 +2028,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11468,
         name = "Elixir of Dream Vision",
         skill = 240,
         colors = { 240, 255, 275, 295 },
@@ -1996,6 +2060,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11472,
         name = "Elixir of Giants",
         skill = 245,
         colors = { 245, 260, 280, 300 },
@@ -2069,6 +2134,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11473,
         name = "Ghost Dye",
         skill = 245,
         colors = { 245, 260, 280, 300 },
@@ -2088,6 +2154,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11476,
         name = "Elixir of Shadow Power",
         skill = 250,
         colors = { 250, 265, 285, 305 },
@@ -2106,6 +2173,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11477,
         name = "Elixir of Demonslaying",
         skill = 250,
         colors = { 250, 265, 285, 305 },
@@ -2125,6 +2193,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11478,
         name = "Elixir of Detect Demon",
         skill = 250,
         colors = { 250, 265, 285, 305 },
@@ -2143,6 +2212,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11479,
         name = "Transmute: Iron to Gold",
         skill = 225,
         colors = { 225, 240, 260, 280 },
@@ -2171,6 +2241,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11480,
         name = "Transmute: Mithril to Truesilver",
         skill = 225,
         colors = { 225, 240, 260, 280 },
@@ -2199,6 +2270,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 11611,
         name = "Alchemy",
         skill = 200,
         creates = nil,
@@ -2213,6 +2285,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 12609,
         name = "Catseye Elixir",
         skill = 200,
         colors = { 200, 220, 240, 260 },
@@ -2235,6 +2308,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 15833,
         name = "Dreamless Sleep Potion",
         skill = 230,
         colors = { 230, 245, 265, 285 },
@@ -2253,6 +2327,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17187,
         name = "Transmute: Arcanite",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2270,6 +2345,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17551,
         name = "Stonescale Oil",
         skill = 250,
         colors = { 250, 250, 255, 260 },
@@ -2288,6 +2364,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17552,
         name = "Mighty Rage Potion",
         skill = 255,
         colors = { 255, 270, 290, 310 },
@@ -2305,6 +2382,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17553,
         name = "Superior Mana Potion",
         skill = 260,
         colors = { 260, 275, 295, 315 },
@@ -2324,6 +2402,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17554,
         name = "Elixir of Superior Defense",
         skill = 265,
         colors = { 265, 280, 300, 320 },
@@ -2343,6 +2422,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17555,
         name = "Elixir of the Sages",
         skill = 270,
         colors = { 270, 285, 305, 325 },
@@ -2364,6 +2444,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17556,
         name = "Major Healing Potion",
         skill = 275,
         colors = { 275, 290, 310, 330 },
@@ -2382,6 +2463,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17557,
         name = "Elixir of Brute Force",
         skill = 275,
         colors = { 275, 290, 310, 330 },
@@ -2400,6 +2482,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17559,
         name = "Transmute: Air to Fire",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2418,6 +2501,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17560,
         name = "Transmute: Fire to Earth",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2434,6 +2518,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17561,
         name = "Transmute: Earth to Water",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2450,6 +2535,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17562,
         name = "Transmute: Water to Air",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2466,6 +2552,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17563,
         name = "Transmute: Undeath to Water",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2496,6 +2583,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17564,
         name = "Transmute: Water to Undeath",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2527,6 +2615,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17565,
         name = "Transmute: Life to Earth",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2562,6 +2651,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17566,
         name = "Transmute: Earth to Life",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2591,6 +2681,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17570,
         name = "Greater Stoneshield Potion",
         skill = 280,
         colors = { 280, 295, 315, 335 },
@@ -2632,6 +2723,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17571,
         name = "Elixir of the Mongoose",
         skill = 280,
         colors = { 280, 295, 315, 335 },
@@ -2651,6 +2743,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17572,
         name = "Purification Potion",
         skill = 285,
         colors = { 285, 300, 320, 340 },
@@ -2723,6 +2816,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17573,
         name = "Greater Arcane Elixir",
         skill = 285,
         colors = { 285, 300, 320, 340 },
@@ -2754,6 +2848,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17574,
         name = "Greater Fire Protection Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -2773,6 +2868,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17575,
         name = "Greater Frost Protection Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -2791,6 +2887,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17576,
         name = "Greater Nature Protection Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -2810,6 +2907,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17577,
         name = "Greater Arcane Protection Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -2828,6 +2926,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17578,
         name = "Greater Shadow Protection Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -2847,6 +2946,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17580,
         name = "Major Mana Potion",
         skill = 295,
         colors = { 295, 310, 330, 350 },
@@ -2870,6 +2970,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17634,
         name = "Flask of Petrification",
         skill = 300,
         colors = { 300, 315, 322, 330 },
@@ -2909,6 +3010,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17635,
         name = "Flask of the Titans",
         skill = 300,
         colors = { 300, 315, 322, 330 },
@@ -2933,6 +3035,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17636,
         name = "Flask of Distilled Wisdom",
         skill = 300,
         colors = { 300, 315, 322, 330 },
@@ -2958,6 +3061,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17637,
         name = "Flask of Supreme Power",
         skill = 300,
         colors = { 300, 315, 322, 330 },
@@ -2982,6 +3086,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 17638,
         name = "Flask of Chromatic Resistance",
         skill = 300,
         colors = { 300, 315, 322, 330 },
@@ -3006,6 +3111,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 21923,
         name = "Elixir of Frost Power",
         skill = 190,
         colors = { 190, 210, 230, 250 },
@@ -3026,6 +3132,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 22732,
         name = "Major Rejuvenation Potion",
         skill = 300,
         colors = { 300, 310, 320, 330 },
@@ -3059,6 +3166,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 22808,
         name = "Elixir of Greater Water Breathing",
         skill = 215,
         colors = { 215, 230, 250, 270 },
@@ -3081,6 +3189,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 24266,
         name = "Gurubashi Mojo Madness",
         skill = 315,
         colors = { 0, 315, 322, 330 },
@@ -3098,6 +3207,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 24365,
         name = "Mageblood Potion",
         skill = 275,
         colors = { 275, 290, 310, 330 },
@@ -3116,6 +3226,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 24366,
         name = "Greater Dreamless Sleep Potion",
         skill = 275,
         colors = { 275, 290, 310, 330 },
@@ -3134,6 +3245,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 24367,
         name = "Living Action Potion",
         skill = 285,
         colors = { 285, 300, 320, 340 },
@@ -3153,6 +3265,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 24368,
         name = "Major Troll's Blood Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -3171,6 +3284,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 25146,
         name = "Transmute: Elemental Fire",
         skill = 300,
         colors = { 300, 301, 305, 310 },
@@ -3187,6 +3301,7 @@ ACC_Data["Alchemy"] = {
         faction = nil,
     },
     {
+        spellId = 26277,
         name = "Elixir of Greater Firepower",
         skill = 250,
         colors = { 250, 265, 285, 305 },

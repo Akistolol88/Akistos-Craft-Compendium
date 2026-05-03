@@ -1,10 +1,13 @@
--- Register "/acc" as the slash command that opens the browser.
--- SLASH_ACC1 is the variable WoW reads to know what text triggers SlashCmdList["ACC"].
+-- SLASH_ACC1 is the global variable WoW reads to register the "/acc" slash command.
+-- The "1" suffix allows multiple aliases (SLASH_ACC2 = "/compendium" etc.) if needed later.
 SLASH_ACC1 = "/acc"
 
--- browserInit() builds all the frames at load time so they're ready when the player types /acc.
+-- browserInit() builds all frames at load time so they exist before the player ever types /acc.
+-- Doing it here (rather than inside the slash handler) means the first /acc has no setup delay.
 browserInit()
 
+-- SlashCmdList["ACC"] is the function WoW calls when the player types /acc.
+-- showBrowser() simply unhides the already-built main frame.
 SlashCmdList["ACC"] = function()
     showBrowser()
 end

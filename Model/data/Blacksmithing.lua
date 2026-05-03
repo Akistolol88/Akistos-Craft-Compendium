@@ -4414,6 +4414,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -4453,6 +4454,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -4472,6 +4474,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -6612,6 +6615,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -6632,6 +6636,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -6857,6 +6862,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -6879,6 +6885,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -7132,6 +7139,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -7153,6 +7161,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Shadow Resistance",
         crafting_location = { type = "anvil" },
     },
     {
@@ -7177,6 +7186,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Shadow Resistance",
         crafting_location = { type = "anvil" },
     },
     {
@@ -7197,6 +7207,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Shadow Resistance",
         crafting_location = { type = "anvil" },
     },
     {
@@ -7421,6 +7432,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Frost Resistance",
         crafting_location = { type = "anvil" },
     },
     {
@@ -7442,6 +7454,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Frost Resistance",
         crafting_location = { type = "anvil" },
     },
     {
@@ -7463,6 +7476,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Frost Resistance",
         crafting_location = { type = "icebellow_anvil", zone = "Naxxramas", location = "Military Quarter" },
     },
     {
@@ -7482,6 +7496,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Nature Resistance",
         crafting_location = { type = "anvil" },
     },
     {
@@ -7500,6 +7515,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Nature Resistance",
         crafting_location = { type = "anvil" },
     },
     {
@@ -7517,6 +7533,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Nature Resistance",
         crafting_location = { type = "anvil" },
     },
 }

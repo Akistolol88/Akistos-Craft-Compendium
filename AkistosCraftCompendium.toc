@@ -1,4 +1,4 @@
-## Interface: 11200
+## Interface: 11508
 ## Title: Akistos Craft Compendium
 ## Notes: Filestructure
 ## Author: Otsika

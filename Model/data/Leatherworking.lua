@@ -4969,6 +4969,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "dragonscale",
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 19086,
@@ -5219,6 +5220,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "dragonscale",
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 19095,
@@ -5407,6 +5409,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "dragonscale",
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 20648,
@@ -5507,6 +5510,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "tribal",
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 20854,
@@ -5548,6 +5552,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "dragonscale",
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 21943,
@@ -5980,6 +5985,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "tribal",
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 23710,
@@ -6001,6 +6007,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "tribal",
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 24121,
@@ -6242,6 +6249,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "elemental",
         faction = nil,
+        category = "Nature Resistance",
     },
     {
         spellId = 24850,
@@ -6260,6 +6268,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "elemental",
         faction = nil,
+        category = "Nature Resistance",
     },
     {
         spellId = 24851,
@@ -6280,6 +6289,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "elemental",
         faction = nil,
+        category = "Nature Resistance",
     },
     {
         spellId = 24940,
@@ -6343,6 +6353,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "elemental",
         faction = nil,
+        category = "Frost Resistance",
     },
     {
         spellId = 28220,
@@ -6364,6 +6375,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "elemental",
         faction = nil,
+        category = "Frost Resistance",
     },
     {
         spellId = 28221,
@@ -6385,6 +6397,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "elemental",
         faction = nil,
+        category = "Frost Resistance",
     },
     {
         spellId = 28222,
@@ -6406,6 +6419,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "dragonscale",
         faction = nil,
+        category = "Frost Resistance",
     },
     {
         spellId = 28223,
@@ -6427,6 +6441,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "dragonscale",
         faction = nil,
+        category = "Frost Resistance",
     },
     {
         spellId = 28224,
@@ -6448,6 +6463,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "dragonscale",
         faction = nil,
+        category = "Frost Resistance",
     },
     {
         spellId = 28472,
@@ -6466,6 +6482,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Nature Resistance",
     },
     {
         spellId = 28473,
@@ -6484,6 +6501,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Nature Resistance",
     },
     {
         spellId = 28474,
@@ -6503,5 +6521,6 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Nature Resistance",
     },
 }

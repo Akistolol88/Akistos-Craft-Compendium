@@ -6565,6 +6565,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 20849,
@@ -6586,6 +6587,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 21945,
@@ -6644,6 +6646,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 22813,
@@ -6893,6 +6896,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 23667,
@@ -6914,6 +6918,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Fire Resistance",
     },
     {
         spellId = 24091,
@@ -6997,6 +7002,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Shadow Resistance",
     },
     {
         spellId = 24902,
@@ -7018,6 +7024,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Shadow Resistance",
     },
     {
         spellId = 24903,
@@ -7039,6 +7046,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Shadow Resistance",
     },
     {
         spellId = 26085,
@@ -7276,6 +7284,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Frost Resistance",
     },
     {
         spellId = 28207,
@@ -7296,6 +7305,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Frost Resistance",
     },
     {
         spellId = 28208,
@@ -7316,6 +7326,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Frost Resistance",
     },
     {
         spellId = 28209,
@@ -7336,6 +7347,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Frost Resistance",
     },
     {
         spellId = 28210,
@@ -7356,6 +7368,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Nature Resistance",
     },
     {
         spellId = 28480,
@@ -7376,6 +7389,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Nature Resistance",
     },
     {
         spellId = 28481,
@@ -7394,6 +7408,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Nature Resistance",
     },
     {
         spellId = 28482,
@@ -7411,5 +7426,6 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Nature Resistance",
     },
 }

@@ -112,6 +112,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 2542,
+        recipeItemId = 2697,
+        recipeItemName = "Recipe: Goretusk Liver Pie",
         name = "Goretusk Liver Pie",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -135,6 +137,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 2543,
+        recipeItemId = 728,
+        recipeItemName = "Recipe: Westfall Stew",
         name = "Westfall Stew",
         skill = 75,
         colors = { 75, 115, 135, 155 },
@@ -190,6 +194,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 2545,
+        recipeItemId = 2698,
+        recipeItemName = "Recipe: Cooked Crab Claw",
         name = "Cooked Crab Claw",
         skill = 85,
         colors = { 85, 125, 145, 165 },
@@ -256,6 +262,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 2547,
+        recipeItemId = 2699,
+        recipeItemName = "Recipe: Redridge Goulash",
         name = "Redridge Goulash",
         skill = 100,
         colors = { 100, 135, 155, 175 },
@@ -279,6 +287,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 2548,
+        recipeItemId = 2700,
+        recipeItemName = "Recipe: Succulent Pork Ribs",
         name = "Succulent Pork Ribs",
         skill = 110,
         colors = { 110, 130, 150, 170 },
@@ -313,6 +323,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 2549,
+        recipeItemId = 2701,
+        recipeItemName = "Recipe: Seasoned Wolf Kabob",
         name = "Seasoned Wolf Kabob",
         skill = 100,
         colors = { 100, 140, 160, 180 },
@@ -363,6 +375,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 2795,
+        recipeItemId = 2889,
+        recipeItemName = "Recipe: Beer Basted Boar Ribs",
         name = "Beer Basted Boar Ribs",
         skill = 25,
         colors = { 25, 60, 80, 100 },
@@ -413,6 +427,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 3370,
+        recipeItemId = 3678,
+        recipeItemName = "Recipe: Crocolisk Steak",
         name = "Crocolisk Steak",
         skill = 80,
         colors = { 80, 120, 140, 160 },
@@ -436,6 +452,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 3371,
+        recipeItemId = 3679,
+        recipeItemName = "Recipe: Blood Sausage",
         name = "Blood Sausage",
         skill = 60,
         colors = { 60, 100, 120, 140 },
@@ -460,6 +478,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 3372,
+        recipeItemId = 3680,
+        recipeItemName = "Recipe: Murloc Fin Soup",
         name = "Murloc Fin Soup",
         skill = 90,
         colors = { 90, 130, 150, 170 },
@@ -483,6 +503,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 3373,
+        recipeItemId = 3681,
+        recipeItemName = "Recipe: Crocolisk Gumbo",
         name = "Crocolisk Gumbo",
         skill = 120,
         colors = { 120, 160, 180, 200 },
@@ -506,6 +528,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 3376,
+        recipeItemId = 3682,
+        recipeItemName = "Recipe: Curiously Tasty Omelet",
         name = "Curiously Tasty Omelet",
         skill = 130,
         colors = { 130, 170, 190, 210 },
@@ -531,6 +555,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 3377,
+        recipeItemId = 3683,
+        recipeItemName = "Recipe: Gooey Spider Cake",
         name = "Gooey Spider Cake",
         skill = 110,
         colors = { 110, 150, 170, 190 },
@@ -554,6 +580,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 3397,
+        recipeItemId = 3734,
+        recipeItemName = "Recipe: Big Bear Steak",
         name = "Big Bear Steak",
         skill = 110,
         colors = { 110, 150, 170, 190 },
@@ -578,6 +606,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 3398,
+        recipeItemId = 3735,
+        recipeItemName = "Recipe: Hot Lion Chops",
         name = "Hot Lion Chops",
         skill = 125,
         colors = { 125, 175, 195, 215 },
@@ -602,6 +632,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 3399,
+        recipeItemId = 3736,
+        recipeItemName = "Recipe: Tasty Lion Steak",
         name = "Tasty Lion Steak",
         skill = 150,
         colors = { 150, 190, 210, 230 },
@@ -620,6 +652,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 3400,
+        recipeItemId = 3737,
+        recipeItemName = "Recipe: Soothing Turtle Bisque",
         name = "Soothing Turtle Bisque",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -651,6 +685,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 4094,
+        recipeItemId = 4609,
+        recipeItemName = "Recipe: Barbecued Buzzard Wing",
         name = "Barbecued Buzzard Wing",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -669,6 +705,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 6412,
+        recipeItemId = 5482,
+        recipeItemName = "Recipe: Kaldorei Spider Kabob",
         name = "Kaldorei Spider Kabob",
         skill = 10,
         colors = { 10, 50, 70, 90 },
@@ -686,6 +724,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 6413,
+        recipeItemId = 5483,
+        recipeItemName = "Recipe: Scorpid Surprise",
         name = "Scorpid Surprise",
         skill = 20,
         colors = { 20, 60, 80, 100 },
@@ -703,6 +743,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 6414,
+        recipeItemId = 5484,
+        recipeItemName = "Recipe: Roasted Kodo Meat",
         name = "Roasted Kodo Meat",
         skill = 35,
         colors = { 35, 75, 95, 115 },
@@ -721,6 +763,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 6415,
+        recipeItemId = 5485,
+        recipeItemName = "Recipe: Fillet of Frenzy",
         name = "Fillet of Frenzy",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -739,6 +783,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 6416,
+        recipeItemId = 5486,
+        recipeItemName = "Recipe: Strider Stew",
         name = "Strider Stew",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -762,6 +808,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 6417,
+        recipeItemId = 5487,
+        recipeItemName = "Recipe: Dig Rat Stew",
         name = "Dig Rat Stew",
         skill = 90,
         colors = { 90, 130, 150, 170 },
@@ -779,6 +827,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 6418,
+        recipeItemId = 5488,
+        recipeItemName = "Recipe: Crispy Lizard Tail",
         name = "Crispy Lizard Tail",
         skill = 100,
         colors = { 100, 140, 160, 180 },
@@ -797,6 +847,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 6419,
+        recipeItemId = 5489,
+        recipeItemName = "Recipe: Lean Venison",
         name = "Lean Venison",
         skill = 110,
         colors = { 110, 150, 170, 190 },
@@ -878,6 +930,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 6501,
+        recipeItemId = 5528,
+        recipeItemName = "Recipe: Clam Chowder",
         name = "Clam Chowder",
         skill = 90,
         colors = { 90, 130, 150, 170 },
@@ -898,6 +952,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 7213,
+        recipeItemId = 6039,
+        recipeItemName = "Recipe: Giant Clam Scorcho",
         name = "Giant Clam Scorcho",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -916,6 +972,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 7751,
+        recipeItemId = 6325,
+        recipeItemName = "Recipe: Brilliant Smallfish",
         name = "Brilliant Smallfish",
         skill = 1,
         colors = { 1, 45, 65, 85 },
@@ -941,6 +999,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 7752,
+        recipeItemId = 6326,
+        recipeItemName = "Recipe: Slitherskin Mackerel",
         name = "Slitherskin Mackerel",
         skill = 1,
         colors = { 1, 45, 65, 85 },
@@ -962,6 +1022,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 7753,
+        recipeItemId = 6328,
+        recipeItemName = "Recipe: Longjaw Mud Snapper",
         name = "Longjaw Mud Snapper",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -986,6 +1048,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 7754,
+        recipeItemId = 6329,
+        recipeItemName = "Recipe: Loch Frenzy Delight",
         name = "Loch Frenzy Delight",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -1004,6 +1068,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 7755,
+        recipeItemId = 6330,
+        recipeItemName = "Recipe: Bristle Whisker Catfish",
         name = "Bristle Whisker Catfish",
         skill = 100,
         colors = { 100, 140, 160, 180 },
@@ -1027,6 +1093,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 7827,
+        recipeItemId = 6368,
+        recipeItemName = "Recipe: Rainbow Fin Albacore",
         name = "Rainbow Fin Albacore",
         skill = 50,
         colors = { 50, 90, 110, 130 },
@@ -1053,6 +1121,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 7828,
+        recipeItemId = 6369,
+        recipeItemName = "Recipe: Rockscale Cod",
         name = "Rockscale Cod",
         skill = 175,
         colors = { 175, 190, 210, 230 },
@@ -1078,6 +1148,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 8238,
+        recipeItemId = 6661,
+        recipeItemName = "Recipe: Savory Deviate Delight",
         name = "Savory Deviate Delight",
         skill = 85,
         colors = { 85, 125, 145, 165 },
@@ -1127,6 +1199,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 8607,
+        recipeItemId = 6892,
+        recipeItemName = "Recipe: Smoked Bear Meat",
         name = "Smoked Bear Meat",
         skill = 40,
         colors = { 40, 80, 100, 120 },
@@ -1145,6 +1219,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 9513,
+        recipeItemId = 18160,
+        recipeItemName = "Recipe: Thistle Tea",
         name = "Thistle Tea",
         skill = 60,
         colors = { 60, 100, 120, 140 },
@@ -1187,6 +1263,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 15853,
+        recipeItemId = 12227,
+        recipeItemName = "Recipe: Lean Wolf Steak",
         name = "Lean Wolf Steak",
         skill = 125,
         colors = { 125, 165, 185, 205 },
@@ -1205,6 +1283,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 15855,
+        recipeItemId = 12228,
+        recipeItemName = "Recipe: Roast Raptor",
         name = "Roast Raptor",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1229,6 +1309,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 15856,
+        recipeItemId = 12229,
+        recipeItemName = "Recipe: Hot Wolf Ribs",
         name = "Hot Wolf Ribs",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1249,6 +1331,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 15861,
+        recipeItemId = 12231,
+        recipeItemName = "Recipe: Jungle Stew",
         name = "Jungle Stew",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1270,6 +1354,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 15863,
+        recipeItemId = 12232,
+        recipeItemName = "Recipe: Carrion Surprise",
         name = "Carrion Surprise",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1291,6 +1377,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 15865,
+        recipeItemId = 12233,
+        recipeItemName = "Recipe: Mystery Stew",
         name = "Mystery Stew",
         skill = 175,
         colors = { 175, 215, 235, 255 },
@@ -1311,6 +1399,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 15906,
+        recipeItemId = 12239,
+        recipeItemName = "Recipe: Dragonbreath Chili",
         name = "Dragonbreath Chili",
         skill = 200,
         colors = { 200, 240, 260, 280 },
@@ -1332,6 +1422,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 15910,
+        recipeItemId = 12240,
+        recipeItemName = "Recipe: Heavy Kodo Stew",
         name = "Heavy Kodo Stew",
         skill = 200,
         colors = { 200, 240, 260, 280 },
@@ -1353,6 +1445,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 15915,
+        recipeItemId = 16111,
+        recipeItemName = "Recipe: Spiced Chili Crab",
         name = "Spiced Chili Crab",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1373,6 +1467,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 15933,
+        recipeItemId = 16110,
+        recipeItemName = "Recipe: Monster Omelet",
         name = "Monster Omelet",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1393,6 +1489,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 15935,
+        recipeItemId = 12226,
+        recipeItemName = "Recipe: Crispy Bat Wing",
         name = "Crispy Bat Wing",
         skill = 1,
         colors = { 1, 45, 65, 85 },
@@ -1411,6 +1509,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 18238,
+        recipeItemId = 13939,
+        recipeItemName = "Recipe: Spotted Yellowtail",
         name = "Spotted Yellowtail",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1428,6 +1528,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 18239,
+        recipeItemId = 13940,
+        recipeItemName = "Recipe: Cooked Glossy Mightfish",
         name = "Cooked Glossy Mightfish",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1446,6 +1548,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 18240,
+        recipeItemId = 13942,
+        recipeItemName = "Recipe: Grilled Squid",
         name = "Grilled Squid",
         skill = 240,
         colors = { 240, 280, 300, 320 },
@@ -1464,6 +1568,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 18241,
+        recipeItemId = 13941,
+        recipeItemName = "Recipe: Filet of Redgill",
         name = "Filet of Redgill",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1481,6 +1587,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 18242,
+        recipeItemId = 13943,
+        recipeItemName = "Recipe: Hot Smoked Bass",
         name = "Hot Smoked Bass",
         skill = 240,
         colors = { 240, 280, 300, 320 },
@@ -1499,6 +1607,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 18243,
+        recipeItemId = 13945,
+        recipeItemName = "Recipe: Nightfin Soup",
         name = "Nightfin Soup",
         skill = 250,
         colors = { 250, 290, 310, 330 },
@@ -1517,6 +1627,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 18244,
+        recipeItemId = 13946,
+        recipeItemName = "Recipe: Poached Sunscale Salmon",
         name = "Poached Sunscale Salmon",
         skill = 250,
         colors = { 250, 290, 310, 330 },
@@ -1534,6 +1646,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 18245,
+        recipeItemId = 13947,
+        recipeItemName = "Recipe: Lobster Stew",
         name = "Lobster Stew",
         skill = 275,
         colors = { 275, 315, 335, 355 },
@@ -1553,6 +1667,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 18246,
+        recipeItemId = 13948,
+        recipeItemName = "Recipe: Mightfish Steak",
         name = "Mightfish Steak",
         skill = 275,
         colors = { 275, 315, 335, 355 },
@@ -1573,6 +1689,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 18247,
+        recipeItemId = 13949,
+        recipeItemName = "Recipe: Baked Salmon",
         name = "Baked Salmon",
         skill = 275,
         colors = { 275, 315, 335, 355 },
@@ -1604,6 +1722,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 20626,
+        recipeItemId = 16767,
+        recipeItemName = "Recipe: Undermine Clam Chowder",
         name = "Undermine Clam Chowder",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1638,6 +1758,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 21143,
+        recipeItemId = 17200,
+        recipeItemName = "Recipe: Gingerbread Cookie",
         name = "Gingerbread Cookie",
         skill = 1,
         colors = { 1, 45, 65, 85 },
@@ -1661,6 +1783,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 21144,
+        recipeItemId = 17201,
+        recipeItemName = "Recipe: Egg Nog",
         name = "Egg Nog",
         skill = 35,
         colors = { 35, 75, 95, 115 },
@@ -1716,6 +1840,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 22480,
+        recipeItemId = 18046,
+        recipeItemName = "Recipe: Tender Wolf Steak",
         name = "Tender Wolf Steak",
         skill = 225,
         colors = { 225, 265, 285, 305 },
@@ -1736,6 +1862,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 22761,
+        recipeItemId = 18267,
+        recipeItemName = "Recipe: Runn Tum Tuber Surprise",
         name = "Runn Tum Tuber Surprise",
         skill = 275,
         colors = { 275, 315, 335, 355 },
@@ -1754,6 +1882,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 24418,
+        recipeItemId = 20075,
+        recipeItemName = "Recipe: Heavy Crocolisk Stew",
         name = "Heavy Crocolisk Stew",
         skill = 150,
         colors = { 150, 160, 180, 200 },
@@ -1790,6 +1920,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 25659,
+        recipeItemId = 21025,
+        recipeItemName = "Recipe: Dirge's Kickin' Chimaerok Chops",
         name = "Dirge's Kickin' Chimaerok Chops",
         skill = 300,
         colors = { 300, 325, 345, 365 },
@@ -1810,6 +1942,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 25704,
+        recipeItemId = 21099,
+        recipeItemName = "Recipe: Smoked Sagefish",
         name = "Smoked Sagefish",
         skill = 80,
         colors = { 80, 120, 140, 160 },
@@ -1842,6 +1976,8 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 25954,
+        recipeItemId = 21219,
+        recipeItemName = "Recipe: Sagefish Delight",
         name = "Sagefish Delight",
         skill = 175,
         colors = { 175, 215, 235, 255 },

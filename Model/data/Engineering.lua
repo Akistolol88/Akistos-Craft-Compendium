@@ -235,6 +235,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3928,
+        recipeItemId = 4408,
+        recipeItemName = "Schematic: Mechanical Squirrel",
         name = "Mechanical Squirrel",
         skill = 75,
         colors = { 75, 105, 120, 135 },
@@ -432,6 +434,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3933,
+        recipeItemId = 4409,
+        recipeItemName = "Schematic: Small Seaforium Charge",
         name = "Small Seaforium Charge",
         skill = 100,
         colors = { 100, 130, 145, 160 },
@@ -607,6 +611,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3939,
+        recipeItemId = 13309,
+        recipeItemName = "Schematic: Lovingly Crafted Boomstick",
         name = "Lovingly Crafted Boomstick",
         skill = 120,
         colors = { 120, 145, 157, 170 },
@@ -629,6 +635,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3940,
+        recipeItemId = 4410,
+        recipeItemName = "Schematic: Shadow Goggles",
         name = "Shadow Goggles",
         skill = 120,
         colors = { 120, 145, 157, 170 },
@@ -748,6 +756,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3944,
+        recipeItemId = 4411,
+        recipeItemName = "Schematic: Flame Deflector",
         name = "Flame Deflector",
         skill = 125,
         colors = { 125, 125, 150, 175 },
@@ -899,6 +909,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3952,
+        recipeItemId = 14639,
+        recipeItemName = "Schematic: Minor Recombobulator",
         name = "Minor Recombobulator",
         skill = 140,
         colors = { 140, 165, 177, 190 },
@@ -947,6 +959,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3954,
+        recipeItemId = 4412,
+        recipeItemName = "Schematic: Moonsight Rifle",
         name = "Moonsight Rifle",
         skill = 145,
         colors = { 145, 170, 182, 195 },
@@ -1060,6 +1074,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3957,
+        recipeItemId = 13308,
+        recipeItemName = "Schematic: Ice Deflector",
         name = "Ice Deflector",
         skill = 155,
         colors = { 155, 175, 185, 195 },
@@ -1099,6 +1115,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3959,
+        recipeItemId = 4413,
+        recipeItemName = "Schematic: Discombobulator Ray",
         name = "Discombobulator Ray",
         skill = 160,
         colors = { 160, 180, 190, 200 },
@@ -1122,6 +1140,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3960,
+        recipeItemId = 4414,
+        recipeItemName = "Schematic: Portable Bronze Mortar",
         name = "Portable Bronze Mortar",
         skill = 165,
         colors = { 165, 185, 195, 205 },
@@ -1270,6 +1290,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3966,
+        recipeItemId = 4415,
+        recipeItemName = "Schematic: Craftsman's Monocle",
         name = "Craftsman's Monocle",
         skill = 185,
         colors = { 185, 205, 215, 225 },
@@ -1319,6 +1341,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3968,
+        recipeItemId = 4416,
+        recipeItemName = "Schematic: Goblin Land Mine",
         name = "Goblin Land Mine",
         skill = 195,
         colors = { 195, 215, 225, 235 },
@@ -1370,6 +1394,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3969,
+        recipeItemId = 13311,
+        recipeItemName = "Schematic: Mechanical Dragonling",
         name = "Mechanical Dragonling",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -1392,6 +1418,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3971,
+        recipeItemId = 7742,
+        recipeItemName = "Schematic: Gnomish Cloaking Device",
         name = "Gnomish Cloaking Device",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -1420,6 +1448,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3972,
+        recipeItemId = 4417,
+        recipeItemName = "Schematic: Large Seaforium Charge",
         name = "Large Seaforium Charge",
         skill = 200,
         colors = { 200, 200, 220, 240 },
@@ -1575,6 +1605,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 3979,
+        recipeItemId = 13310,
+        recipeItemName = "Schematic: Accurate Scope",
         name = "Accurate Scope",
         skill = 180,
         colors = { 180, 200, 210, 220 },
@@ -1727,6 +1759,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 8243,
+        recipeItemId = 6672,
+        recipeItemName = "Schematic: Flash Bomb",
         name = "Flash Bomb",
         skill = 185,
         colors = { 185, 185, 205, 225 },
@@ -1775,6 +1809,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 8339,
+        recipeItemId = 6716,
+        recipeItemName = "Schematic: EZ-Thro Dynamite",
         name = "EZ-Thro Dynamite",
         skill = 100,
         colors = { 100, 115, 122, 130 },
@@ -1845,6 +1881,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 8895,
+        recipeItemId = 221339,
+        recipeItemName = "Schematic: Goblin Rocket Boots",
         name = "Goblin Rocket Boots",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -1868,6 +1906,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 9269,
+        recipeItemId = 7560,
+        recipeItemName = "Schematic: Gnomish Universal Remote",
         name = "Gnomish Universal Remote",
         skill = 125,
         colors = { 125, 150, 162, 175 },
@@ -1923,6 +1963,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 9273,
+        recipeItemId = 7561,
+        recipeItemName = "Schematic: Goblin Jumper Cables",
         name = "Goblin Jumper Cables",
         skill = 165,
         colors = { 165, 165, 180, 200 },
@@ -2018,6 +2060,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12587,
+        recipeItemId = 10601,
+        recipeItemName = "Schematic: Bright-Eye Goggles",
         name = "Bright-Eye Goggles",
         skill = 175,
         colors = { 175, 195, 205, 215 },
@@ -2189,6 +2233,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12597,
+        recipeItemId = 10602,
+        recipeItemName = "Schematic: Deadly Scope",
         name = "Deadly Scope",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -2252,6 +2298,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12607,
+        recipeItemId = 10603,
+        recipeItemName = "Schematic: Catseye Ultra Goggles",
         name = "Catseye Ultra Goggles",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -2291,6 +2339,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12614,
+        recipeItemId = 10604,
+        recipeItemName = "Schematic: Mithril Heavy-bore Rifle",
         name = "Mithril Heavy-bore Rifle",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -2352,6 +2402,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12615,
+        recipeItemId = 10605,
+        recipeItemName = "Schematic: Spellpower Goggles Xtreme",
         name = "Spellpower Goggles Xtreme",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -2395,6 +2447,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12616,
+        recipeItemId = 10606,
+        recipeItemName = "Schematic: Parachute Cloak",
         name = "Parachute Cloak",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -2455,9 +2509,12 @@ ACC_Data["Engineering"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 12617,
+        recipeItemId = 10607,
+        recipeItemName = "Schematic: Deepdive Helmet",
         name = "Deepdive Helmet",
         skill = 230,
         colors = { 230, 250, 260, 270 },
@@ -2518,6 +2575,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12620,
+        recipeItemId = 10608,
+        recipeItemName = "Schematic: Sniper Scope",
         name = "Sniper Scope",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -2593,6 +2652,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12624,
+        recipeItemId = 10609,
+        recipeItemName = "Schematic: Mithril Mechanical Dragonling",
         name = "Mithril Mechanical Dragonling",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -2651,6 +2712,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12716,
+        recipeItemId = 221337,
+        recipeItemName = "Schematic: Goblin Mortar",
         name = "Goblin Mortar",
         skill = 225,
         colors = { 0, 225, 235, 245 },
@@ -2673,6 +2736,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12717,
+        recipeItemId = 221336,
+        recipeItemName = "Schematic: Goblin Mining Helmet",
         name = "Goblin Mining Helmet",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -2737,6 +2802,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12755,
+        recipeItemId = 221340,
+        recipeItemName = "Schematic: Goblin Bomb Dispenser",
         name = "Goblin Bomb Dispenser",
         skill = 230,
         colors = { 230, 230, 250, 270 },
@@ -2760,6 +2827,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12758,
+        recipeItemId = 221343,
+        recipeItemName = "Schematic: Goblin Rocket Helmet",
         name = "Goblin Rocket Helmet",
         skill = 245,
         colors = { 245, 265, 275, 285 },
@@ -2782,6 +2851,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12759,
+        recipeItemId = 221334,
+        recipeItemName = "Schematic: Gnomish Death Ray",
         name = "Gnomish Death Ray",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -2805,6 +2876,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12760,
+        recipeItemId = 221338,
+        recipeItemName = "Schematic: Goblin Sapper Charge",
         name = "Goblin Sapper Charge",
         skill = 205,
         colors = { 205, 205, 225, 245 },
@@ -2845,6 +2918,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12897,
+        recipeItemId = 221328,
+        recipeItemName = "Schematic: Gnomish Goggles",
         name = "Gnomish Goggles",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -2936,6 +3011,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12905,
+        recipeItemId = 221331,
+        recipeItemName = "Schematic: Gnomish Rocket Boots",
         name = "Gnomish Rocket Boots",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -2959,6 +3036,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12906,
+        recipeItemId = 221332,
+        recipeItemName = "Schematic: Gnomish Battle Chicken",
         name = "Gnomish Battle Chicken",
         skill = 230,
         colors = { 230, 250, 260, 270 },
@@ -2983,6 +3062,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 12907,
+        recipeItemId = 221333,
+        recipeItemName = "Schematic: Gnomish Mind Control Cap",
         name = "Gnomish Mind Control Cap",
         skill = 235,
         colors = { 235, 255, 265, 275 },
@@ -3071,6 +3152,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 15628,
+        recipeItemId = 11828,
+        recipeItemName = "Schematic: Pet Bombling",
         name = "Pet Bombling",
         skill = 205,
         colors = { 205, 205, 205, 205 },
@@ -3092,6 +3175,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 15633,
+        recipeItemId = 11827,
+        recipeItemName = "Schematic: Lil' Smoky",
         name = "Lil' Smoky",
         skill = 205,
         colors = { 205, 205, 205, 205 },
@@ -3152,6 +3237,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19790,
+        recipeItemId = 16041,
+        recipeItemName = "Schematic: Thorium Grenade",
         name = "Thorium Grenade",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3174,6 +3261,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19791,
+        recipeItemId = 16042,
+        recipeItemName = "Schematic: Thorium Widget",
         name = "Thorium Widget",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3193,6 +3282,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19792,
+        recipeItemId = 16043,
+        recipeItemName = "Schematic: Thorium Rifle",
         name = "Thorium Rifle",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3268,6 +3359,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19793,
+        recipeItemId = 16044,
+        recipeItemName = "Schematic: Lifelike Mechanical Toad",
         name = "Lifelike Mechanical Toad",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -3304,6 +3397,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19794,
+        recipeItemId = 16045,
+        recipeItemName = "Schematic: Spellpower Goggles Xtreme Plus",
         name = "Spellpower Goggles Xtreme Plus",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -3324,6 +3419,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19795,
+        recipeItemId = 16047,
+        recipeItemName = "Schematic: Thorium Tube",
         name = "Thorium Tube",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -3342,6 +3439,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19796,
+        recipeItemId = 16048,
+        recipeItemName = "Schematic: Dark Iron Rifle",
         name = "Dark Iron Rifle",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -3365,6 +3464,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19799,
+        recipeItemId = 16049,
+        recipeItemName = "Schematic: Dark Iron Bomb",
         name = "Dark Iron Bomb",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -3386,6 +3487,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19800,
+        recipeItemId = 16051,
+        recipeItemName = "Schematic: Thorium Shells",
         name = "Thorium Shells",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -3455,6 +3558,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19814,
+        recipeItemId = 16046,
+        recipeItemName = "Schematic: Masterwork Target Dummy",
         name = "Masterwork Target Dummy",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -3478,6 +3583,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19815,
+        recipeItemId = 16050,
+        recipeItemName = "Schematic: Delicate Arcanite Converter",
         name = "Delicate Arcanite Converter",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -3497,6 +3604,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19819,
+        recipeItemId = 16052,
+        recipeItemName = "Schematic: Voice Amplification Modulator",
         name = "Voice Amplification Modulator",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -3518,6 +3627,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19825,
+        recipeItemId = 16053,
+        recipeItemName = "Schematic: Master Engineer's Goggles",
         name = "Master Engineer's Goggles",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -3537,6 +3648,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19830,
+        recipeItemId = 16054,
+        recipeItemName = "Schematic: Arcanite Dragonling",
         name = "Arcanite Dragonling",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3560,6 +3673,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19831,
+        recipeItemId = 16055,
+        recipeItemName = "Schematic: Arcane Bomb",
         name = "Arcane Bomb",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3593,6 +3708,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 19833,
+        recipeItemId = 16056,
+        recipeItemName = "Schematic: Flawless Arcanite Rifle",
         name = "Flawless Arcanite Rifle",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3685,6 +3802,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 22793,
+        recipeItemId = 18290,
+        recipeItemName = "Schematic: Biznicks 247x128 Accurascope",
         name = "Biznicks 247x128 Accurascope",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3721,6 +3840,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 22795,
+        recipeItemId = 18292,
+        recipeItemName = "Schematic: Core Marksman Rifle",
         name = "Core Marksman Rifle",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3749,6 +3870,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 22797,
+        recipeItemId = 18291,
+        recipeItemName = "Schematic: Force Reactive Disk",
         name = "Force Reactive Disk",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -3785,6 +3908,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23066,
+        recipeItemId = 18647,
+        recipeItemName = "Schematic: Red Firework",
         name = "Red Firework",
         skill = 150,
         colors = { 150, 150, 162, 175 },
@@ -3803,6 +3928,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23067,
+        recipeItemId = 18649,
+        recipeItemName = "Schematic: Blue Firework",
         name = "Blue Firework",
         skill = 150,
         colors = { 150, 150, 162, 175 },
@@ -3822,6 +3949,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23068,
+        recipeItemId = 18648,
+        recipeItemName = "Schematic: Green Firework",
         name = "Green Firework",
         skill = 150,
         colors = { 150, 150, 162, 175 },
@@ -3841,6 +3970,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23069,
+        recipeItemId = 18650,
+        recipeItemName = "Schematic: EZ-Thro Dynamite II",
         name = "EZ-Thro Dynamite II",
         skill = 200,
         colors = { 200, 200, 210, 220 },
@@ -3877,6 +4008,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23071,
+        recipeItemId = 18651,
+        recipeItemName = "Schematic: Truesilver Transformer",
         name = "Truesilver Transformer",
         skill = 260,
         colors = { 260, 270, 275, 280 },
@@ -3897,6 +4030,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23077,
+        recipeItemId = 18652,
+        recipeItemName = "Schematic: Gyrofreeze Ice Reflector",
         name = "Gyrofreeze Ice Reflector",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3920,6 +4055,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23078,
+        recipeItemId = 18653,
+        recipeItemName = "Schematic: Goblin Jumper Cables XL",
         name = "Goblin Jumper Cables XL",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -3941,6 +4078,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23079,
+        recipeItemId = 18655,
+        recipeItemName = "Schematic: Major Recombobulator",
         name = "Major Recombobulator",
         skill = 275,
         colors = { 275, 285, 290, 295 },
@@ -3960,6 +4099,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23080,
+        recipeItemId = 18656,
+        recipeItemName = "Schematic: Powerful Seaforium Charge",
         name = "Powerful Seaforium Charge",
         skill = 275,
         colors = { 275, 275, 285, 295 },
@@ -3980,6 +4121,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23081,
+        recipeItemId = 18657,
+        recipeItemName = "Schematic: Hyper-Radiant Flame Reflector",
         name = "Hyper-Radiant Flame Reflector",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4002,6 +4145,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23082,
+        recipeItemId = 18658,
+        recipeItemName = "Schematic: Ultra-Flash Shadow Reflector",
         name = "Ultra-Flash Shadow Reflector",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -4025,6 +4170,7 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23096,
+        recipeItemId = 18654,
         name = "Alarm-O-Bot",
         skill = 265,
         colors = { 265, 275, 280, 285 },
@@ -4047,6 +4193,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23129,
+        recipeItemId = 18661,
+        recipeItemName = "Schematic: World Enlarger",
         name = "World Enlarger",
         skill = 260,
         colors = { 260, 260, 265, 270 },
@@ -4114,6 +4262,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 23507,
+        recipeItemId = 19027,
+        recipeItemName = "Schematic: Snake Burst Firework",
         name = "Snake Burst Firework",
         skill = 250,
         colors = { 250, 250, 260, 270 },
@@ -4133,6 +4283,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 24356,
+        recipeItemId = 20000,
+        recipeItemName = "Schematic: Bloodvine Goggles",
         name = "Bloodvine Goggles",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -4154,6 +4306,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 24357,
+        recipeItemId = 20001,
+        recipeItemName = "Schematic: Bloodvine Lens",
         name = "Bloodvine Lens",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -4197,6 +4351,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26416,
+        recipeItemId = 21724,
+        recipeItemName = "Schematic: Small Blue Rocket",
         name = "Small Blue Rocket",
         skill = 125,
         colors = { 125, 125, 137, 150 },
@@ -4214,6 +4370,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26417,
+        recipeItemId = 21725,
+        recipeItemName = "Schematic: Small Green Rocket",
         name = "Small Green Rocket",
         skill = 125,
         colors = { 125, 125, 137, 150 },
@@ -4231,6 +4389,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26418,
+        recipeItemId = 21726,
+        recipeItemName = "Schematic: Small Red Rocket",
         name = "Small Red Rocket",
         skill = 125,
         colors = { 125, 125, 137, 150 },
@@ -4250,6 +4410,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26420,
+        recipeItemId = 21727,
+        recipeItemName = "Schematic: Large Blue Rocket",
         name = "Large Blue Rocket",
         skill = 175,
         colors = { 175, 175, 187, 200 },
@@ -4267,6 +4429,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26421,
+        recipeItemId = 21728,
+        recipeItemName = "Schematic: Large Green Rocket",
         name = "Large Green Rocket",
         skill = 175,
         colors = { 175, 175, 187, 200 },
@@ -4301,6 +4465,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26423,
+        recipeItemId = 21730,
+        recipeItemName = "Schematic: Blue Rocket Cluster",
         name = "Blue Rocket Cluster",
         skill = 225,
         colors = { 225, 225, 237, 250 },
@@ -4319,6 +4485,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26424,
+        recipeItemId = 21731,
+        recipeItemName = "Schematic: Green Rocket Cluster",
         name = "Green Rocket Cluster",
         skill = 225,
         colors = { 225, 225, 237, 250 },
@@ -4337,6 +4505,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26425,
+        recipeItemId = 21732,
+        recipeItemName = "Schematic: Red Rocket Cluster",
         name = "Red Rocket Cluster",
         skill = 225,
         colors = { 225, 225, 237, 250 },
@@ -4353,6 +4523,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26426,
+        recipeItemId = 21733,
+        recipeItemName = "Schematic: Large Blue Rocket Cluster",
         name = "Large Blue Rocket Cluster",
         skill = 275,
         colors = { 275, 275, 280, 285 },
@@ -4371,6 +4543,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26427,
+        recipeItemId = 21734,
+        recipeItemName = "Schematic: Large Green Rocket Cluster",
         name = "Large Green Rocket Cluster",
         skill = 275,
         colors = { 275, 275, 280, 285 },
@@ -4389,6 +4563,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26428,
+        recipeItemId = 21735,
+        recipeItemName = "Schematic: Large Red Rocket Cluster",
         name = "Large Red Rocket Cluster",
         skill = 275,
         colors = { 275, 275, 280, 285 },
@@ -4405,6 +4581,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 26442,
+        recipeItemId = 21738,
+        recipeItemName = "Schematic: Firework Launcher",
         name = "Firework Launcher",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -4441,6 +4619,8 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 28327,
+        recipeItemId = 22729,
+        recipeItemName = "Schematic: Steam Tonk Controller",
         name = "Steam Tonk Controller",
         skill = 275,
         colors = { 275, 295, 305, 315 },

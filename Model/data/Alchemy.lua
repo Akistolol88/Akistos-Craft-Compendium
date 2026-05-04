@@ -164,6 +164,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 2333,
+        recipeItemId = 3396,
+        recipeItemName = "Recipe: Elixir of Lesser Agility",
         name = "Elixir of Lesser Agility",
         skill = 140,
         colors = { 140, 165, 185, 205 },
@@ -258,6 +260,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 2335,
+        recipeItemId = 2555,
+        recipeItemName = "Recipe: Swiftness Potion",
         name = "Swiftness Potion",
         skill = 60,
         colors = { 60, 90, 110, 130 },
@@ -470,6 +474,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 3172,
+        recipeItemId = 3393,
+        recipeItemName = "Recipe: Minor Magic Resistance Potion",
         name = "Minor Magic Resistance Potion",
         skill = 110,
         colors = { 110, 135, 155, 175 },
@@ -564,6 +570,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 3174,
+        recipeItemId = 3394,
+        recipeItemName = "Recipe: Elixir of Poison Resistance",
         name = "Elixir of Poison Resistance",
         skill = 120,
         colors = { 120, 145, 165, 185 },
@@ -622,6 +630,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 3175,
+        recipeItemId = 3395,
+        recipeItemName = "Recipe: Limited Invulnerability Potion",
         name = "Limited Invulnerability Potion",
         skill = 250,
         colors = { 250, 275, 295, 315 },
@@ -759,6 +769,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 3188,
+        recipeItemId = 6211,
+        recipeItemName = "Recipe: Elixir of Ogre's Strength",
         name = "Elixir of Ogre's Strength",
         skill = 150,
         colors = { 150, 175, 195, 215 },
@@ -816,6 +828,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 3230,
+        recipeItemId = 2553,
+        recipeItemName = "Recipe: Elixir of Minor Agility",
         name = "Elixir of Minor Agility",
         skill = 50,
         colors = { 50, 80, 100, 120 },
@@ -933,6 +947,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 3449,
+        recipeItemId = 6068,
+        recipeItemName = "Recipe: Shadow Oil",
         name = "Shadow Oil",
         skill = 165,
         colors = { 165, 190, 210, 230 },
@@ -954,6 +970,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 3450,
+        recipeItemId = 3830,
+        recipeItemName = "Recipe: Elixir of Fortitude",
         name = "Elixir of Fortitude",
         skill = 175,
         colors = { 175, 195, 215, 235 },
@@ -977,6 +995,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 3451,
+        recipeItemId = 3831,
+        recipeItemName = "Recipe: Mighty Troll's Blood Potion",
         name = "Mighty Troll's Blood Potion",
         skill = 180,
         colors = { 180, 200, 220, 240 },
@@ -1019,6 +1039,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 3453,
+        recipeItemId = 3832,
+        recipeItemName = "Recipe: Elixir of Detect Lesser Invisibility",
         name = "Elixir of Detect Lesser Invisibility",
         skill = 195,
         colors = { 195, 215, 235, 255 },
@@ -1069,6 +1091,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 3454,
+        recipeItemId = 14634,
+        recipeItemName = "Recipe: Frost Oil",
         name = "Frost Oil",
         skill = 200,
         colors = { 200, 220, 240, 260 },
@@ -1107,6 +1131,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 4508,
+        recipeItemId = 4597,
+        recipeItemName = "Recipe: Discolored Healing Potion",
         name = "Discolored Healing Potion",
         skill = 50,
         colors = { 50, 80, 100, 120 },
@@ -1127,6 +1153,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 4942,
+        recipeItemId = 4624,
+        recipeItemName = "Recipe: Lesser Stoneshield Potion",
         name = "Lesser Stoneshield Potion",
         skill = 215,
         colors = { 215, 230, 250, 270 },
@@ -1146,6 +1174,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 6617,
+        recipeItemId = 5640,
+        recipeItemName = "Recipe: Rage Potion",
         name = "Rage Potion",
         skill = 60,
         colors = { 60, 90, 110, 130 },
@@ -1168,6 +1198,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 6618,
+        recipeItemId = 5643,
+        recipeItemName = "Recipe: Great Rage Potion",
         name = "Great Rage Potion",
         skill = 175,
         colors = { 175, 195, 215, 235 },
@@ -1189,6 +1221,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 6624,
+        recipeItemId = 5642,
+        recipeItemName = "Recipe: Free Action Potion",
         name = "Free Action Potion",
         skill = 150,
         colors = { 150, 175, 195, 215 },
@@ -1284,6 +1318,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 7255,
+        recipeItemId = 6053,
+        recipeItemName = "Recipe: Holy Protection Potion",
         name = "Holy Protection Potion",
         skill = 100,
         colors = { 100, 130, 150, 170 },
@@ -1305,6 +1341,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 7256,
+        recipeItemId = 6054,
+        recipeItemName = "Recipe: Shadow Protection Potion",
         name = "Shadow Protection Potion",
         skill = 135,
         colors = { 135, 160, 180, 200 },
@@ -1325,6 +1363,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 7257,
+        recipeItemId = 6055,
+        recipeItemName = "Recipe: Fire Protection Potion",
         name = "Fire Protection Potion",
         skill = 165,
         colors = { 165, 210, 230, 250 },
@@ -1345,6 +1385,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 7258,
+        recipeItemId = 6056,
+        recipeItemName = "Recipe: Frost Protection Potion",
         name = "Frost Protection Potion",
         skill = 190,
         colors = { 190, 205, 225, 245 },
@@ -1365,6 +1407,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 7259,
+        recipeItemId = 6057,
+        recipeItemName = "Recipe: Nature Protection Potion",
         name = "Nature Protection Potion",
         skill = 190,
         colors = { 190, 210, 230, 250 },
@@ -1517,6 +1561,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 8240,
+        recipeItemId = 6663,
+        recipeItemName = "Recipe: Elixir of Giant Growth",
         name = "Elixir of Giant Growth",
         skill = 90,
         colors = { 90, 120, 140, 160 },
@@ -1661,6 +1707,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11453,
+        recipeItemId = 9293,
+        recipeItemName = "Recipe: Magic Resistance Potion",
         name = "Magic Resistance Potion",
         skill = 210,
         colors = { 210, 225, 245, 265 },
@@ -1722,6 +1770,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11456,
+        recipeItemId = 10644,
+        recipeItemName = "Recipe: Goblin Rocket Fuel",
         name = "Goblin Rocket Fuel",
         skill = 210,
         colors = { 210, 225, 245, 265 },
@@ -1765,6 +1815,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11458,
+        recipeItemId = 9294,
+        recipeItemName = "Recipe: Wildvine Potion",
         name = "Wildvine Potion",
         skill = 225,
         colors = { 225, 240, 260, 280 },
@@ -1890,6 +1942,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11464,
+        recipeItemId = 9295,
+        recipeItemName = "Recipe: Invisibility Potion",
         name = "Invisibility Potion",
         skill = 235,
         colors = { 235, 250, 270, 290 },
@@ -1989,6 +2043,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11466,
+        recipeItemId = 9296,
+        recipeItemName = "Recipe: Gift of Arthas",
         name = "Gift of Arthas",
         skill = 240,
         colors = { 240, 255, 275, 295 },
@@ -2029,6 +2085,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11468,
+        recipeItemId = 9297,
+        recipeItemName = "Recipe: Elixir of Dream Vision",
         name = "Elixir of Dream Vision",
         skill = 240,
         colors = { 240, 255, 275, 295 },
@@ -2061,6 +2119,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11472,
+        recipeItemId = 9298,
+        recipeItemName = "Recipe: Elixir of Giants",
         name = "Elixir of Giants",
         skill = 245,
         colors = { 245, 260, 280, 300 },
@@ -2135,6 +2195,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11473,
+        recipeItemId = 9302,
+        recipeItemName = "Recipe: Ghost Dye",
         name = "Ghost Dye",
         skill = 245,
         colors = { 245, 260, 280, 300 },
@@ -2155,6 +2217,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11476,
+        recipeItemId = 9301,
+        recipeItemName = "Recipe: Elixir of Shadow Power",
         name = "Elixir of Shadow Power",
         skill = 250,
         colors = { 250, 265, 285, 305 },
@@ -2174,6 +2238,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11477,
+        recipeItemId = 9300,
+        recipeItemName = "Recipe: Elixir of Demonslaying",
         name = "Elixir of Demonslaying",
         skill = 250,
         colors = { 250, 265, 285, 305 },
@@ -2213,6 +2279,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11479,
+        recipeItemId = 9304,
+        recipeItemName = "Recipe: Transmute Iron to Gold",
         name = "Transmute: Iron to Gold",
         skill = 225,
         colors = { 225, 240, 260, 280 },
@@ -2242,6 +2310,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 11480,
+        recipeItemId = 9305,
+        recipeItemName = "Recipe: Transmute Mithril to Truesilver",
         name = "Transmute: Mithril to Truesilver",
         skill = 225,
         colors = { 225, 240, 260, 280 },
@@ -2328,6 +2398,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17187,
+        recipeItemId = 12958,
+        recipeItemName = "Recipe: Transmute Arcanite",
         name = "Transmute: Arcanite",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2365,6 +2437,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17552,
+        recipeItemId = 13476,
+        recipeItemName = "Recipe: Mighty Rage Potion",
         name = "Mighty Rage Potion",
         skill = 255,
         colors = { 255, 270, 290, 310 },
@@ -2383,6 +2457,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17553,
+        recipeItemId = 13477,
+        recipeItemName = "Recipe: Superior Mana Potion",
         name = "Superior Mana Potion",
         skill = 260,
         colors = { 260, 275, 295, 315 },
@@ -2403,6 +2479,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17554,
+        recipeItemId = 13478,
+        recipeItemName = "Recipe: Elixir of Superior Defense",
         name = "Elixir of Superior Defense",
         skill = 265,
         colors = { 265, 280, 300, 320 },
@@ -2423,6 +2501,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17555,
+        recipeItemId = 13479,
+        recipeItemName = "Recipe: Elixir of the Sages",
         name = "Elixir of the Sages",
         skill = 270,
         colors = { 270, 285, 305, 325 },
@@ -2445,6 +2525,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17556,
+        recipeItemId = 13480,
+        recipeItemName = "Recipe: Major Healing Potion",
         name = "Major Healing Potion",
         skill = 275,
         colors = { 275, 290, 310, 330 },
@@ -2464,6 +2546,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17557,
+        recipeItemId = 13481,
+        recipeItemName = "Recipe: Elixir of Brute Force",
         name = "Elixir of Brute Force",
         skill = 275,
         colors = { 275, 290, 310, 330 },
@@ -2483,6 +2567,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17559,
+        recipeItemId = 13482,
+        recipeItemName = "Recipe: Transmute Air to Fire",
         name = "Transmute: Air to Fire",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2502,6 +2588,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17560,
+        recipeItemId = 13483,
+        recipeItemName = "Recipe: Transmute Fire to Earth",
         name = "Transmute: Fire to Earth",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2519,6 +2607,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17561,
+        recipeItemId = 13484,
+        recipeItemName = "Recipe: Transmute Earth to Water",
         name = "Transmute: Earth to Water",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2536,6 +2626,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17562,
+        recipeItemId = 13485,
+        recipeItemName = "Recipe: Transmute Water to Air",
         name = "Transmute: Water to Air",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2553,6 +2645,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17563,
+        recipeItemId = 13486,
+        recipeItemName = "Recipe: Transmute Undeath to Water",
         name = "Transmute: Undeath to Water",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2584,6 +2678,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17564,
+        recipeItemId = 13487,
+        recipeItemName = "Recipe: Transmute Water to Undeath",
         name = "Transmute: Water to Undeath",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2616,6 +2712,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17565,
+        recipeItemId = 13488,
+        recipeItemName = "Recipe: Transmute Life to Earth",
         name = "Transmute: Life to Earth",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2652,6 +2750,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17566,
+        recipeItemId = 13489,
+        recipeItemName = "Recipe: Transmute Earth to Life",
         name = "Transmute: Earth to Life",
         skill = 275,
         colors = { 275, 275, 282, 290 },
@@ -2682,6 +2782,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17570,
+        recipeItemId = 13490,
+        recipeItemName = "Recipe: Greater Stoneshield Potion",
         name = "Greater Stoneshield Potion",
         skill = 280,
         colors = { 280, 295, 315, 335 },
@@ -2724,6 +2826,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17571,
+        recipeItemId = 13491,
+        recipeItemName = "Recipe: Elixir of the Mongoose",
         name = "Elixir of the Mongoose",
         skill = 280,
         colors = { 280, 295, 315, 335 },
@@ -2744,6 +2848,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17572,
+        recipeItemId = 13492,
+        recipeItemName = "Recipe: Purification Potion",
         name = "Purification Potion",
         skill = 285,
         colors = { 285, 300, 320, 340 },
@@ -2817,6 +2923,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17573,
+        recipeItemId = 13493,
+        recipeItemName = "Recipe: Greater Arcane Elixir",
         name = "Greater Arcane Elixir",
         skill = 285,
         colors = { 285, 300, 320, 340 },
@@ -2849,6 +2957,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17574,
+        recipeItemId = 13494,
+        recipeItemName = "Recipe: Greater Fire Protection Potion",
         name = "Greater Fire Protection Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -2869,6 +2979,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17575,
+        recipeItemId = 13495,
+        recipeItemName = "Recipe: Greater Frost Protection Potion",
         name = "Greater Frost Protection Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -2888,6 +3000,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17576,
+        recipeItemId = 13496,
+        recipeItemName = "Recipe: Greater Nature Protection Potion",
         name = "Greater Nature Protection Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -2908,6 +3022,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17577,
+        recipeItemId = 13497,
+        recipeItemName = "Recipe: Greater Arcane Protection Potion",
         name = "Greater Arcane Protection Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -2927,6 +3043,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17578,
+        recipeItemId = 13499,
+        recipeItemName = "Recipe: Greater Shadow Protection Potion",
         name = "Greater Shadow Protection Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -2947,6 +3065,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17580,
+        recipeItemId = 13501,
+        recipeItemName = "Recipe: Major Mana Potion",
         name = "Major Mana Potion",
         skill = 295,
         colors = { 295, 310, 330, 350 },
@@ -2971,6 +3091,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17634,
+        recipeItemId = 13518,
+        recipeItemName = "Recipe: Flask of Petrification",
         name = "Flask of Petrification",
         skill = 300,
         colors = { 300, 315, 322, 330 },
@@ -3011,6 +3133,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17635,
+        recipeItemId = 13519,
+        recipeItemName = "Recipe: Flask of the Titans",
         name = "Flask of the Titans",
         skill = 300,
         colors = { 300, 315, 322, 330 },
@@ -3036,6 +3160,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17636,
+        recipeItemId = 13520,
+        recipeItemName = "Recipe: Flask of Distilled Wisdom",
         name = "Flask of Distilled Wisdom",
         skill = 300,
         colors = { 300, 315, 322, 330 },
@@ -3062,6 +3188,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17637,
+        recipeItemId = 13521,
+        recipeItemName = "Recipe: Flask of Supreme Power",
         name = "Flask of Supreme Power",
         skill = 300,
         colors = { 300, 315, 322, 330 },
@@ -3087,6 +3215,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 17638,
+        recipeItemId = 13522,
+        recipeItemName = "Recipe: Flask of Chromatic Resistance",
         name = "Flask of Chromatic Resistance",
         skill = 300,
         colors = { 300, 315, 322, 330 },
@@ -3112,6 +3242,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 21923,
+        recipeItemId = 17709,
+        recipeItemName = "Recipe: Elixir of Frost Power",
         name = "Elixir of Frost Power",
         skill = 190,
         colors = { 190, 210, 230, 250 },
@@ -3133,6 +3265,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 22732,
+        recipeItemId = 18257,
+        recipeItemName = "Recipe: Major Rejuvenation Potion",
         name = "Major Rejuvenation Potion",
         skill = 300,
         colors = { 300, 310, 320, 330 },
@@ -3208,6 +3342,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 24365,
+        recipeItemId = 20011,
+        recipeItemName = "Recipe: Mageblood Potion",
         name = "Mageblood Potion",
         skill = 275,
         colors = { 275, 290, 310, 330 },
@@ -3246,6 +3382,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 24367,
+        recipeItemId = 20013,
+        recipeItemName = "Recipe: Living Action Potion",
         name = "Living Action Potion",
         skill = 285,
         colors = { 285, 300, 320, 340 },
@@ -3266,6 +3404,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 24368,
+        recipeItemId = 20014,
+        recipeItemName = "Recipe: Major Troll's Blood Potion",
         name = "Major Troll's Blood Potion",
         skill = 290,
         colors = { 290, 305, 325, 345 },
@@ -3285,6 +3425,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 25146,
+        recipeItemId = 20761,
+        recipeItemName = "Recipe: Transmute Elemental Fire",
         name = "Transmute: Elemental Fire",
         skill = 300,
         colors = { 300, 301, 305, 310 },
@@ -3302,6 +3444,8 @@ ACC_Data["Alchemy"] = {
     },
     {
         spellId = 26277,
+        recipeItemId = 21547,
+        recipeItemName = "Recipe: Elixir of Greater Firepower",
         name = "Elixir of Greater Firepower",
         skill = 250,
         colors = { 250, 265, 285, 305 },

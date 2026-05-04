@@ -250,6 +250,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 2667,
+        recipeItemId = 2881,
+        recipeItemName = "Plans: Runed Copper Breastplate",
         name = "Runed Copper Breastplate",
         skill = 80,
         colors = { 80, 120, 140, 160 },
@@ -400,6 +402,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 2673,
+        recipeItemId = 5578,
+        recipeItemName = "Plans: Silvered Bronze Breastplate",
         name = "Silvered Bronze Breastplate",
         skill = 130,
         colors = { 130, 160, 175, 190 },
@@ -943,6 +947,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3295,
+        recipeItemId = 2883,
+        recipeItemName = "Plans: Deadly Bronze Poniard",
         name = "Deadly Bronze Poniard",
         skill = 125,
         colors = { 125, 155, 170, 185 },
@@ -1046,6 +1052,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3297,
+        recipeItemId = 3608,
+        recipeItemName = "Plans: Mighty Iron Hammer",
         name = "Mighty Iron Hammer",
         skill = 145,
         colors = { 145, 175, 190, 205 },
@@ -1164,6 +1172,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3321,
+        recipeItemId = 3609,
+        recipeItemName = "Plans: Copper Chain Vest",
         name = "Copper Chain Vest",
         skill = 35,
         colors = { 35, 75, 95, 115 },
@@ -1315,6 +1325,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3325,
+        recipeItemId = 3610,
+        recipeItemName = "Plans: Gemmed Copper Gauntlets",
         name = "Gemmed Copper Gauntlets",
         skill = 60,
         colors = { 60, 100, 120, 140 },
@@ -1445,6 +1457,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3330,
+        recipeItemId = 2882,
+        recipeItemName = "Plans: Silvered Bronze Shoulders",
         name = "Silvered Bronze Shoulders",
         skill = 125,
         colors = { 125, 155, 170, 185 },
@@ -1568,6 +1582,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3334,
+        recipeItemId = 3611,
+        recipeItemName = "Plans: Green Iron Boots",
         name = "Green Iron Boots",
         skill = 145,
         colors = { 145, 175, 190, 205 },
@@ -1628,6 +1644,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3336,
+        recipeItemId = 3612,
+        recipeItemName = "Plans: Green Iron Gauntlets",
         name = "Green Iron Gauntlets",
         skill = 150,
         colors = { 150, 180, 195, 210 },
@@ -1748,6 +1766,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3492,
+        recipeItemId = 12162,
+        recipeItemName = "Plans: Hardened Iron Shortsword",
         name = "Hardened Iron Shortsword",
         skill = 160,
         colors = { 160, 185, 197, 210 },
@@ -1772,6 +1792,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3493,
+        recipeItemId = 3866,
+        recipeItemName = "Plans: Jade Serpentblade",
         name = "Jade Serpentblade",
         skill = 175,
         colors = { 175, 200, 212, 225 },
@@ -1826,6 +1848,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3494,
+        recipeItemId = 10858,
+        recipeItemName = "Plans: Solid Iron Maul",
         name = "Solid Iron Maul",
         skill = 155,
         colors = { 155, 180, 192, 205 },
@@ -1850,6 +1874,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3495,
+        recipeItemId = 3867,
+        recipeItemName = "Plans: Golden Iron Destroyer",
         name = "Golden Iron Destroyer",
         skill = 170,
         colors = { 170, 195, 207, 220 },
@@ -1901,6 +1927,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3496,
+        recipeItemId = 217282,
+        recipeItemName = "Plans: Moonsteel Broadsword",
         name = "Moonsteel Broadsword",
         skill = 180,
         colors = { 180, 205, 217, 230 },
@@ -1921,6 +1949,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3497,
+        recipeItemId = 3868,
+        recipeItemName = "Plans: Frost Tiger Blade",
         name = "Frost Tiger Blade",
         skill = 200,
         colors = { 200, 225, 237, 250 },
@@ -1981,6 +2011,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3498,
+        recipeItemId = 12164,
+        recipeItemName = "Plans: Massive Iron Axe",
         name = "Massive Iron Axe",
         skill = 185,
         colors = { 185, 210, 222, 235 },
@@ -2004,6 +2036,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3500,
+        recipeItemId = 3869,
+        recipeItemName = "Plans: Shadow Crescent Axe",
         name = "Shadow Crescent Axe",
         skill = 200,
         colors = { 200, 225, 237, 250 },
@@ -2108,6 +2142,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3503,
+        recipeItemId = 217280,
+        recipeItemName = "Plans: Golden Scale Coif",
         name = "Golden Scale Coif",
         skill = 190,
         colors = { 190, 215, 227, 240 },
@@ -2128,6 +2164,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3504,
+        recipeItemId = 3870,
+        recipeItemName = "Plans: Green Iron Shoulders",
         name = "Green Iron Shoulders",
         skill = 160,
         colors = { 160, 185, 197, 210 },
@@ -2180,6 +2218,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3505,
+        recipeItemId = 217284,
+        recipeItemName = "Plans: Golden Scale Shoulders",
         name = "Golden Scale Shoulders",
         skill = 175,
         colors = { 175, 200, 212, 225 },
@@ -2220,6 +2260,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3507,
+        recipeItemId = 217286,
+        recipeItemName = "Plans: Golden Scale Leggings",
         name = "Golden Scale Leggings",
         skill = 170,
         colors = { 170, 195, 207, 220 },
@@ -2262,6 +2304,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3511,
+        recipeItemId = 217278,
+        recipeItemName = "Plans: Golden Scale Cuirass",
         name = "Golden Scale Cuirass",
         skill = 195,
         colors = { 195, 220, 232, 245 },
@@ -2281,6 +2325,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3513,
+        recipeItemId = 3874,
+        recipeItemName = "Plans: Polished Steel Boots",
         name = "Polished Steel Boots",
         skill = 185,
         colors = { 185, 210, 222, 235 },
@@ -2337,6 +2383,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3515,
+        recipeItemId = 217276,
+        recipeItemName = "Plans: Golden Scale Boots",
         name = "Golden Scale Boots",
         skill = 200,
         colors = { 200, 225, 237, 250 },
@@ -2403,6 +2451,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 6518,
+        recipeItemId = 5543,
+        recipeItemName = "Plans: Iridescent Hammer",
         name = "Iridescent Hammer",
         skill = 140,
         colors = { 140, 170, 185, 200 },
@@ -2460,6 +2510,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 7221,
+        recipeItemId = 6044,
+        recipeItemName = "Plans: Iron Shield Spike",
         name = "Iron Shield Spike",
         skill = 150,
         colors = { 150, 180, 195, 210 },
@@ -2522,6 +2574,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 7222,
+        recipeItemId = 6045,
+        recipeItemName = "Plans: Iron Counterweight",
         name = "Iron Counterweight",
         skill = 165,
         colors = { 165, 190, 202, 215 },
@@ -2598,6 +2652,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 7224,
+        recipeItemId = 6046,
+        recipeItemName = "Plans: Steel Weapon Chain",
         name = "Steel Weapon Chain",
         skill = 190,
         colors = { 190, 215, 227, 240 },
@@ -2720,6 +2776,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 8367,
+        recipeItemId = 6735,
+        recipeItemName = "Plans: Ironforge Breastplate",
         name = "Ironforge Breastplate",
         skill = 100,
         colors = { 100, 140, 160, 180 },
@@ -2846,6 +2904,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9811,
+        recipeItemId = 7978,
+        recipeItemName = "Plans: Barbaric Iron Shoulders",
         name = "Barbaric Iron Shoulders",
         skill = 160,
         colors = { 160, 185, 197, 210 },
@@ -2867,6 +2927,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9813,
+        recipeItemId = 7979,
+        recipeItemName = "Plans: Barbaric Iron Breastplate",
         name = "Barbaric Iron Breastplate",
         skill = 160,
         colors = { 160, 185, 197, 210 },
@@ -2886,6 +2948,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9814,
+        recipeItemId = 7980,
+        recipeItemName = "Plans: Barbaric Iron Helm",
         name = "Barbaric Iron Helm",
         skill = 175,
         colors = { 175, 200, 212, 225 },
@@ -2906,6 +2970,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9818,
+        recipeItemId = 7981,
+        recipeItemName = "Plans: Barbaric Iron Boots",
         name = "Barbaric Iron Boots",
         skill = 180,
         colors = { 180, 205, 217, 230 },
@@ -2927,6 +2993,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9820,
+        recipeItemId = 7982,
+        recipeItemName = "Plans: Barbaric Iron Gloves",
         name = "Barbaric Iron Gloves",
         skill = 185,
         colors = { 185, 210, 222, 235 },
@@ -3089,6 +3157,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9933,
+        recipeItemId = 7975,
+        recipeItemName = "Plans: Heavy Mithril Pants",
         name = "Heavy Mithril Pants",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -3174,6 +3244,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9937,
+        recipeItemId = 7995,
+        recipeItemName = "Plans: Mithril Scale Bracers",
         name = "Mithril Scale Bracers",
         skill = 215,
         colors = { 215, 235, 245, 255 },
@@ -3194,6 +3266,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9939,
+        recipeItemId = 7976,
+        recipeItemName = "Plans: Mithril Shield Spike",
         name = "Mithril Shield Spike",
         skill = 215,
         colors = { 215, 235, 245, 255 },
@@ -3239,6 +3313,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9945,
+        recipeItemId = 7983,
+        recipeItemName = "Plans: Ornate Mithril Pants",
         name = "Ornate Mithril Pants",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3260,6 +3336,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9950,
+        recipeItemId = 7984,
+        recipeItemName = "Plans: Ornate Mithril Gloves",
         name = "Ornate Mithril Gloves",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3382,6 +3460,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9964,
+        recipeItemId = 7989,
+        recipeItemName = "Plans: Mithril Spurs",
         name = "Mithril Spurs",
         skill = 235,
         colors = { 235, 255, 265, 275 },
@@ -3462,6 +3542,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9966,
+        recipeItemId = 7991,
+        recipeItemName = "Plans: Mithril Scale Shoulders",
         name = "Mithril Scale Shoulders",
         skill = 235,
         colors = { 235, 255, 265, 275 },
@@ -3517,6 +3599,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9970,
+        recipeItemId = 7990,
+        recipeItemName = "Plans: Heavy Mithril Helm",
         name = "Heavy Mithril Helm",
         skill = 245,
         colors = { 245, 255, 265, 275 },
@@ -3828,6 +3912,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9995,
+        recipeItemId = 7992,
+        recipeItemName = "Plans: Blue Glittering Axe",
         name = "Blue Glittering Axe",
         skill = 220,
         colors = { 220, 245, 257, 270 },
@@ -3881,6 +3967,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 9997,
+        recipeItemId = 8029,
+        recipeItemName = "Plans: Wicked Mithril Blade",
         name = "Wicked Mithril Blade",
         skill = 225,
         colors = { 225, 250, 262, 275 },
@@ -4014,6 +4102,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 10005,
+        recipeItemId = 7993,
+        recipeItemName = "Plans: Dazzling Mithril Rapier",
         name = "Dazzling Mithril Rapier",
         skill = 240,
         colors = { 240, 265, 277, 290 },
@@ -4105,6 +4195,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 10009,
+        recipeItemId = 8028,
+        recipeItemName = "Plans: Runed Mithril Hammer",
         name = "Runed Mithril Hammer",
         skill = 245,
         colors = { 245, 270, 282, 295 },
@@ -4163,6 +4255,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 10013,
+        recipeItemId = 8030,
+        recipeItemName = "Plans: Ebon Shiv",
         name = "Ebon Shiv",
         skill = 255,
         colors = { 255, 280, 292, 305 },
@@ -4211,6 +4305,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 11454,
+        recipeItemId = 10713,
+        recipeItemName = "Plans: Inlaid Mithril Cylinder",
         name = "Inlaid Mithril Cylinder",
         skill = 200,
         colors = { 200, 225, 237, 250 },
@@ -4232,6 +4328,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 11643,
+        recipeItemId = 9367,
+        recipeItemName = "Plans: Golden Scale Gauntlets",
         name = "Golden Scale Gauntlets",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -4253,6 +4351,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 12259,
+        recipeItemId = 10424,
+        recipeItemName = "Plans: Silvered Bronze Leggings",
         name = "Silvered Bronze Leggings",
         skill = 155,
         colors = { 155, 180, 192, 205 },
@@ -4382,6 +4482,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 15292,
+        recipeItemId = 11610,
+        recipeItemName = "Plans: Dark Iron Pulverizer",
         name = "Dark Iron Pulverizer",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -4401,6 +4503,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 15293,
+        recipeItemId = 11614,
+        recipeItemName = "Plans: Dark Iron Mail",
         name = "Dark Iron Mail",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4419,6 +4523,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 15294,
+        recipeItemId = 11611,
+        recipeItemName = "Plans: Dark Iron Sunderer",
         name = "Dark Iron Sunderer",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4439,6 +4545,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 15295,
+        recipeItemId = 11615,
+        recipeItemName = "Plans: Dark Iron Shoulders",
         name = "Dark Iron Shoulders",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -4459,6 +4567,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 15296,
+        recipeItemId = 11612,
+        recipeItemName = "Plans: Dark Iron Plate",
         name = "Dark Iron Plate",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4503,6 +4613,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 15973,
+        recipeItemId = 12261,
+        recipeItemName = "Plans: Searing Golden Blade",
         name = "Searing Golden Blade",
         skill = 190,
         colors = { 190, 215, 227, 240 },
@@ -4591,6 +4703,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16642,
+        recipeItemId = 12682,
+        recipeItemName = "Plans: Thorium Armor",
         name = "Thorium Armor",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -4666,6 +4780,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16643,
+        recipeItemId = 12683,
+        recipeItemName = "Plans: Thorium Belt",
         name = "Thorium Belt",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -4746,6 +4862,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16644,
+        recipeItemId = 12684,
+        recipeItemName = "Plans: Thorium Bracers",
         name = "Thorium Bracers",
         skill = 255,
         colors = { 255, 275, 285, 295 },
@@ -4816,6 +4934,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16645,
+        recipeItemId = 12685,
+        recipeItemName = "Plans: Radiant Belt",
         name = "Radiant Belt",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -4874,6 +4994,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16647,
+        recipeItemId = 12688,
+        recipeItemName = "Plans: Imperial Plate Belt",
         name = "Imperial Plate Belt",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -4894,6 +5016,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16648,
+        recipeItemId = 12689,
+        recipeItemName = "Plans: Radiant Breastplate",
         name = "Radiant Breastplate",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4956,6 +5080,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16649,
+        recipeItemId = 12690,
+        recipeItemName = "Plans: Imperial Plate Bracers",
         name = "Imperial Plate Bracers",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4975,6 +5101,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16650,
+        recipeItemId = 12691,
+        recipeItemName = "Plans: Wildthorn Mail",
         name = "Wildthorn Mail",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -5046,6 +5174,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16651,
+        recipeItemId = 12692,
+        recipeItemName = "Plans: Thorium Shield Spike",
         name = "Thorium Shield Spike",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -5079,6 +5209,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16652,
+        recipeItemId = 12693,
+        recipeItemName = "Plans: Thorium Boots",
         name = "Thorium Boots",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -5150,6 +5282,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16653,
+        recipeItemId = 12694,
+        recipeItemName = "Plans: Thorium Helm",
         name = "Thorium Helm",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -5213,6 +5347,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16654,
+        recipeItemId = 12695,
+        recipeItemName = "Plans: Radiant Gloves",
         name = "Radiant Gloves",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -5287,6 +5423,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16655,
+        recipeItemId = 12699,
+        recipeItemName = "Plans: Fiery Plate Gauntlets",
         name = "Fiery Plate Gauntlets",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -5308,6 +5446,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16656,
+        recipeItemId = 12697,
+        recipeItemName = "Plans: Radiant Boots",
         name = "Radiant Boots",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -5380,6 +5520,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16657,
+        recipeItemId = 12700,
+        recipeItemName = "Plans: Imperial Plate Boots",
         name = "Imperial Plate Boots",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5400,6 +5542,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16658,
+        recipeItemId = 12701,
+        recipeItemName = "Plans: Imperial Plate Helm",
         name = "Imperial Plate Helm",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5419,6 +5563,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16659,
+        recipeItemId = 12702,
+        recipeItemName = "Plans: Radiant Circlet",
         name = "Radiant Circlet",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5457,6 +5603,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16660,
+        recipeItemId = 12698,
+        recipeItemName = "Plans: Dawnbringer Shoulders",
         name = "Dawnbringer Shoulders",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -5480,6 +5628,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16661,
+        recipeItemId = 12703,
+        recipeItemName = "Plans: Storm Gauntlets",
         name = "Storm Gauntlets",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5520,6 +5670,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16662,
+        recipeItemId = 12704,
+        recipeItemName = "Plans: Thorium Leggings",
         name = "Thorium Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5584,6 +5736,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16663,
+        recipeItemId = 12705,
+        recipeItemName = "Plans: Imperial Plate Chest",
         name = "Imperial Plate Chest",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5603,6 +5757,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16664,
+        recipeItemId = 12706,
+        recipeItemName = "Plans: Runic Plate Shoulders",
         name = "Runic Plate Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5623,6 +5779,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16665,
+        recipeItemId = 12707,
+        recipeItemName = "Plans: Runic Plate Boots",
         name = "Runic Plate Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5643,6 +5801,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16667,
+        recipeItemId = 12696,
+        recipeItemName = "Plans: Demon Forged Breastplate",
         name = "Demon Forged Breastplate",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -5664,6 +5824,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16724,
+        recipeItemId = 12711,
+        recipeItemName = "Plans: Whitesoul Helm",
         name = "Whitesoul Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5703,6 +5865,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16725,
+        recipeItemId = 12713,
+        recipeItemName = "Plans: Radiant Leggings",
         name = "Radiant Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5791,6 +5955,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16726,
+        recipeItemId = 12714,
+        recipeItemName = "Plans: Runic Plate Helm",
         name = "Runic Plate Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5812,6 +5978,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16728,
+        recipeItemId = 12716,
+        recipeItemName = "Plans: Helm of the Great Chief",
         name = "Helm of the Great Chief",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5845,6 +6013,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16729,
+        recipeItemId = 12717,
+        recipeItemName = "Plans: Lionheart Helm",
         name = "Lionheart Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5880,6 +6050,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16730,
+        recipeItemId = 12715,
+        recipeItemName = "Plans: Imperial Plate Leggings",
         name = "Imperial Plate Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5899,6 +6071,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16731,
+        recipeItemId = 12718,
+        recipeItemName = "Plans: Runic Breastplate",
         name = "Runic Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5920,6 +6094,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16732,
+        recipeItemId = 12719,
+        recipeItemName = "Plans: Runic Plate Leggings",
         name = "Runic Plate Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5940,6 +6116,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16741,
+        recipeItemId = 12720,
+        recipeItemName = "Plans: Stronghold Gauntlets",
         name = "Stronghold Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5972,6 +6150,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16742,
+        recipeItemId = 12725,
+        recipeItemName = "Plans: Enchanted Thorium Helm",
         name = "Enchanted Thorium Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5994,6 +6174,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16744,
+        recipeItemId = 12726,
+        recipeItemName = "Plans: Enchanted Thorium Leggings",
         name = "Enchanted Thorium Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6016,6 +6198,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16745,
+        recipeItemId = 12727,
+        recipeItemName = "Plans: Enchanted Thorium Breastplate",
         name = "Enchanted Thorium Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6039,6 +6223,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16746,
+        recipeItemId = 12728,
+        recipeItemName = "Plans: Invulnerable Mail",
         name = "Invulnerable Mail",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6072,6 +6258,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16969,
+        recipeItemId = 12819,
+        recipeItemName = "Plans: Ornate Thorium Handaxe",
         name = "Ornate Thorium Handaxe",
         skill = 275,
         colors = { 275, 300, 312, 325 },
@@ -6093,6 +6281,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16970,
+        recipeItemId = 12821,
+        recipeItemName = "Plans: Dawn's Edge",
         name = "Dawn's Edge",
         skill = 275,
         colors = { 275, 300, 312, 325 },
@@ -6117,6 +6307,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16971,
+        recipeItemId = 12823,
+        recipeItemName = "Plans: Huge Thorium Battleaxe",
         name = "Huge Thorium Battleaxe",
         skill = 280,
         colors = { 280, 305, 317, 330 },
@@ -6137,6 +6329,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16973,
+        recipeItemId = 12824,
+        recipeItemName = "Plans: Enchanted Battlehammer",
         name = "Enchanted Battlehammer",
         skill = 280,
         colors = { 280, 305, 317, 330 },
@@ -6160,6 +6354,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16978,
+        recipeItemId = 12825,
+        recipeItemName = "Plans: Blazing Rapier",
         name = "Blazing Rapier",
         skill = 280,
         colors = { 280, 305, 317, 330 },
@@ -6183,6 +6379,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16983,
+        recipeItemId = 12827,
+        recipeItemName = "Plans: Serenity",
         name = "Serenity",
         skill = 285,
         colors = { 285, 310, 322, 335 },
@@ -6206,6 +6404,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16984,
+        recipeItemId = 12828,
+        recipeItemName = "Plans: Volcanic Hammer",
         name = "Volcanic Hammer",
         skill = 290,
         colors = { 290, 315, 327, 340 },
@@ -6227,6 +6427,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16985,
+        recipeItemId = 12830,
+        recipeItemName = "Plans: Corruption",
         name = "Corruption",
         skill = 290,
         colors = { 290, 315, 327, 340 },
@@ -6251,6 +6453,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16988,
+        recipeItemId = 12833,
+        recipeItemName = "Plans: Hammer of the Titans",
         name = "Hammer of the Titans",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6273,6 +6477,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16990,
+        recipeItemId = 12834,
+        recipeItemName = "Plans: Arcanite Champion",
         name = "Arcanite Champion",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6296,6 +6502,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16991,
+        recipeItemId = 12835,
+        recipeItemName = "Plans: Annihilator",
         name = "Annihilator",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6319,6 +6527,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16992,
+        recipeItemId = 12836,
+        recipeItemName = "Plans: Frostguard",
         name = "Frostguard",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6342,6 +6552,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16993,
+        recipeItemId = 12837,
+        recipeItemName = "Plans: Masterwork Stormhammer",
         name = "Masterwork Stormhammer",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6364,6 +6576,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16994,
+        recipeItemId = 12838,
+        recipeItemName = "Plans: Arcanite Reaper",
         name = "Arcanite Reaper",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6384,6 +6598,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 16995,
+        recipeItemId = 12839,
+        recipeItemName = "Plans: Heartseeker",
         name = "Heartseeker",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6559,6 +6775,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 20872,
+        recipeItemId = 17049,
+        recipeItemName = "Plans: Fiery Chain Girdle",
         name = "Fiery Chain Girdle",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -6579,6 +6797,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 20873,
+        recipeItemId = 17053,
+        recipeItemName = "Plans: Fiery Chain Shoulders",
         name = "Fiery Chain Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6599,6 +6819,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 20874,
+        recipeItemId = 17051,
+        recipeItemName = "Plans: Dark Iron Bracers",
         name = "Dark Iron Bracers",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -6620,6 +6842,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 20876,
+        recipeItemId = 17052,
+        recipeItemName = "Plans: Dark Iron Leggings",
         name = "Dark Iron Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6641,6 +6865,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 20890,
+        recipeItemId = 17059,
+        recipeItemName = "Plans: Dark Iron Reaver",
         name = "Dark Iron Reaver",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6662,6 +6888,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 20897,
+        recipeItemId = 17060,
+        recipeItemName = "Plans: Dark Iron Destroyer",
         name = "Dark Iron Destroyer",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6683,6 +6911,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 21161,
+        recipeItemId = 227727,
+        recipeItemName = "Plans: Sulfuron Hammer",
         name = "Sulfuron Hammer",
         skill = 300,
         colors = { 300, 325, 337, 350 },
@@ -6705,6 +6935,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 21913,
+        recipeItemId = 17706,
+        recipeItemName = "Plans: Edge of Winter",
         name = "Edge of Winter",
         skill = 190,
         colors = { 190, 215, 227, 240 },
@@ -6729,6 +6961,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 22757,
+        recipeItemId = 18264,
+        recipeItemName = "Plans: Elemental Sharpening Stone",
         name = "Elemental Sharpening Stone",
         skill = 300,
         colors = { 300, 300, 310, 320 },
@@ -6762,6 +6996,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 23628,
+        recipeItemId = 19202,
+        recipeItemName = "Plans: Heavy Timbermaw Belt",
         name = "Heavy Timbermaw Belt",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -6782,6 +7018,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 23629,
+        recipeItemId = 19204,
+        recipeItemName = "Plans: Heavy Timbermaw Boots",
         name = "Heavy Timbermaw Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6802,6 +7040,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 23632,
+        recipeItemId = 19203,
+        recipeItemName = "Plans: Girdle of the Dawn",
         name = "Girdle of the Dawn",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -6824,6 +7064,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 23633,
+        recipeItemId = 19205,
+        recipeItemName = "Plans: Gloves of the Dawn",
         name = "Gloves of the Dawn",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6846,6 +7088,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 23636,
+        recipeItemId = 19206,
+        recipeItemName = "Plans: Dark Iron Helm",
         name = "Dark Iron Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6867,6 +7111,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 23637,
+        recipeItemId = 19207,
+        recipeItemName = "Plans: Dark Iron Gauntlets",
         name = "Dark Iron Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6890,6 +7136,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 23638,
+        recipeItemId = 19208,
+        recipeItemName = "Plans: Black Amnesty",
         name = "Black Amnesty",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6912,6 +7160,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 23639,
+        recipeItemId = 19209,
+        recipeItemName = "Plans: Blackfury",
         name = "Blackfury",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6933,6 +7183,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 23650,
+        recipeItemId = 19210,
+        recipeItemName = "Plans: Ebon Hand",
         name = "Ebon Hand",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6955,6 +7207,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 23652,
+        recipeItemId = 19211,
+        recipeItemName = "Plans: Blackguard",
         name = "Blackguard",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6977,6 +7231,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 23653,
+        recipeItemId = 19212,
+        recipeItemName = "Plans: Nightfall",
         name = "Nightfall",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6999,6 +7255,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 24136,
+        recipeItemId = 19776,
+        recipeItemName = "Plans: Bloodsoul Breastplate",
         name = "Bloodsoul Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7062,6 +7320,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 24139,
+        recipeItemId = 19779,
+        recipeItemName = "Plans: Darksoul Breastplate",
         name = "Darksoul Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7082,6 +7342,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 24140,
+        recipeItemId = 19780,
+        recipeItemName = "Plans: Darksoul Leggings",
         name = "Darksoul Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7102,6 +7364,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 24141,
+        recipeItemId = 19781,
+        recipeItemName = "Plans: Darksoul Shoulders",
         name = "Darksoul Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7122,6 +7386,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 24399,
+        recipeItemId = 20040,
+        recipeItemName = "Plans: Dark Iron Boots",
         name = "Dark Iron Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7144,6 +7410,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 24912,
+        recipeItemId = 20553,
+        recipeItemName = "Plans: Darkrune Gauntlets",
         name = "Darkrune Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7166,6 +7434,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 24913,
+        recipeItemId = 20555,
+        recipeItemName = "Plans: Darkrune Helm",
         name = "Darkrune Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7191,6 +7461,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 24914,
+        recipeItemId = 20554,
+        recipeItemName = "Plans: Darkrune Breastplate",
         name = "Darkrune Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7212,6 +7484,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 27585,
+        recipeItemId = 22209,
+        recipeItemName = "Plans: Heavy Obsidian Belt",
         name = "Heavy Obsidian Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7232,6 +7506,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 27586,
+        recipeItemId = 234458,
+        recipeItemName = "Plans: Jagged Obsidian Shield",
         name = "Jagged Obsidian Shield",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7253,6 +7529,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 27587,
+        recipeItemId = 22222,
+        recipeItemName = "Plans: Thick Obsidian Breastplate",
         name = "Thick Obsidian Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7273,6 +7551,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 27588,
+        recipeItemId = 22214,
+        recipeItemName = "Plans: Light Obsidian Belt",
         name = "Light Obsidian Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7290,6 +7570,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 27589,
+        recipeItemId = 234085,
+        recipeItemName = "Plans: Black Grasp of the Destroyer",
         name = "Black Grasp of the Destroyer",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7309,6 +7591,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 27590,
+        recipeItemId = 234461,
+        recipeItemName = "Plans: Obsidian Mail Tunic",
         name = "Obsidian Mail Tunic",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7329,6 +7613,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 27829,
+        recipeItemId = 22388,
+        recipeItemName = "Plans: Titanic Leggings",
         name = "Titanic Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7358,6 +7644,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 27830,
+        recipeItemId = 22390,
+        recipeItemName = "Plans: Persuader",
         name = "Persuader",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7388,6 +7676,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 27832,
+        recipeItemId = 22389,
+        recipeItemName = "Plans: Sageblade",
         name = "Sageblade",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7481,6 +7771,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 28461,
+        recipeItemId = 234293,
+        recipeItemName = "Plans: Ironvine Breastplate",
         name = "Ironvine Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7501,6 +7793,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 28462,
+        recipeItemId = 22767,
+        recipeItemName = "Plans: Ironvine Gloves",
         name = "Ironvine Gloves",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -7520,6 +7814,8 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 28463,
+        recipeItemId = 22768,
+        recipeItemName = "Plans: Ironvine Belt",
         name = "Ironvine Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },

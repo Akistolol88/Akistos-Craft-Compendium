@@ -1,45 +1,58 @@
+-- ── Locals ───────────────────────────────────────────────────────────────────
+
 local mainFrame
 local categoryFrame
 
-local recipeList = {}
-local pageIndex = 1
+local recipeList = {}   -- full list for the current profession, excluding header entries
+local pageIndex  = 1
 
 local rowsPerPage = 20
-local rowButtons = {}
+local rowButtons  = {}  -- pre-built row buttons reused across pages
 
 local prevButton
 local nextButton
 local pageLabel
 
-local activeCategory = nil
-local categoryButtons = {}
+local activeCategory  = nil
+local categoryButtons = {}  -- rebuilt each time a profession is selected
 
-local slotCategory = {                                               
-      INVTYPE_HEAD          = "Helm",                               
-      INVTYPE_SHOULDER      = "Shoulders",
-      INVTYPE_BODY          = "Shirt",
-      INVTYPE_CHEST         = "Chest",
-      INVTYPE_ROBE          = "Chest",
-      INVTYPE_WAIST         = "Belt",
-      INVTYPE_LEGS          = "Legs",
-      INVTYPE_FEET          = "Boots",
-      INVTYPE_WRIST         = "Bracers",
-      INVTYPE_HAND          = "Gloves",
-      INVTYPE_TRINKET       = "Trinket",
-      INVTYPE_BACK          = "Cloak",
-      INVTYPE_WEAPON        = "One-Hand",
-      INVTYPE_SHIELD        = "Shield",
-      INVTYPE_2HWEAPON      = "Two-Hand",
-      INVTYPE_WEAPONMAINHAND = "Mainhand",
-      INVTYPE_WEAPONOFFHAND  = "Offhand(Weapon)",
-      INVTYPE_HOLDABLE      = "Offhand",
-      INVTYPE_RANGED        = "Ranged",
-      INVTYPE_RANGEDRIGHT   = "Wand",
-      INVTYPE_THROWN        = "Thrown",
-      INVTYPE_BAG           = "Bags",
-      INVTYPE_QUIVER        = "Quiver",
-      INVTYPE_TABARD        = "Tabard",
-  }
+-- Maps WoW INVTYPE_* constants to the display category shown in the panel.
+-- INVTYPE_ROBE is a chest-slot robe, so it shares the "Chest" category with INVTYPE_CHEST.
+local slotCategory = {
+    INVTYPE_HEAD           = "Helm",
+    INVTYPE_SHOULDER       = "Shoulders",
+    INVTYPE_BODY           = "Shirt",
+    INVTYPE_CHEST          = "Chest",
+    INVTYPE_ROBE           = "Chest",
+    INVTYPE_WAIST          = "Belt",
+    INVTYPE_LEGS           = "Legs",
+    INVTYPE_FEET           = "Boots",
+    INVTYPE_WRIST          = "Bracers",
+    INVTYPE_HAND           = "Gloves",
+    INVTYPE_TRINKET        = "Trinket",
+    INVTYPE_BACK           = "Cloak",
+    INVTYPE_WEAPON         = "One-Hand",
+    INVTYPE_SHIELD         = "Shield",
+    INVTYPE_2HWEAPON       = "Two-Hand",
+    INVTYPE_WEAPONMAINHAND = "Mainhand",
+    INVTYPE_WEAPONOFFHAND  = "Offhand(Weapon)",
+    INVTYPE_HOLDABLE       = "Offhand",
+    INVTYPE_RANGED         = "Ranged",
+    INVTYPE_RANGEDRIGHT    = "Wand",
+    INVTYPE_THROWN         = "Thrown",
+    INVTYPE_BAG            = "Bags",
+    INVTYPE_QUIVER         = "Quiver",
+    INVTYPE_TABARD         = "Tabard",
+}
+
+-- ── Helpers ───────────────────────────────────────────────────────────────────
+
+-- Builds a clickable spell hyperlink string for use in tooltips and chat.
+function makeSpellLink(recipe)
+    return "|cff71d5ff|Hspell:" .. recipe.spellId .. "|h[" .. recipe.name .. "]|h|r"
+end
+
+-- ── Frame construction ────────────────────────────────────────────────────────
 
 local function createMainFrame()
     mainFrame = CreateFrame("Frame", "AccMainFrame", UIParent, "BasicFrameTemplate")
@@ -51,15 +64,20 @@ local function createMainFrame()
     mainFrame:RegisterForDrag("LeftButton")
     mainFrame:SetScript("OnDragStart", mainFrame.StartMoving)
     mainFrame:SetScript("OnDragStop", mainFrame.StopMovingOrSizing)
+    -- Close all sub-windows when the browser is hidden (including via the template's close button)
+    mainFrame:SetScript("OnHide", function() closeAllBrowserWindows() end)
     mainFrame:Hide()
 end
 
+-- Creates the right-side panel that lists filterable categories for the active profession.
 local function createCategoryPanel()
     categoryFrame = CreateFrame("Frame", "AccCategoryPanel", mainFrame, "InsetFrameTemplate")
     categoryFrame:SetWidth(160)
     categoryFrame:SetHeight(325)
     categoryFrame:SetPoint("TOPRIGHT", mainFrame, "TOPRIGHT", -20, -60)
 end
+
+-- Creates the profession selector dropdown in the top-left of the browser.
 local function createDropdown()
     local dropDownProffessions = CreateFrame("Frame", "AccProfessionDropdown", mainFrame, "UIDropDownMenuTemplate")
     dropDownProffessions:SetPoint("TOPLEFT", mainFrame, "TOPLEFT", 10, -30)
@@ -88,7 +106,7 @@ local function createRowButtons()
         local button = CreateFrame("Button", "AccRecipeRow" .. i, mainFrame)
         rowButtons[i] = button
         button:SetHeight(16)
-        button:SetPoint("TOPLEFT", mainFrame, "TOPLEFT", 12, -65 - (i - 1) * 16)
+        button:SetPoint("TOPLEFT", mainFrame, "TOPLEFT", 12,   -65 - (i - 1) * 16)
         button:SetPoint("TOPRIGHT", mainFrame, "TOPRIGHT", -195, -65 - (i - 1) * 16)
 
         local recipeName = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
@@ -99,10 +117,24 @@ local function createRowButtons()
         skillText:SetPoint("RIGHT", button, "RIGHT", -4, 0)
         button.skillText = skillText
 
+        -- button.recipe is set per-render; closures reference it via the button local, not 'this'
+        button:SetScript("OnClick", function() onRecipeClick(button.recipe, button) end)
+        button:SetScript("OnEnter", function()
+            if button.recipe then
+                GameTooltip:SetOwner(button, "ANCHOR_CURSOR")
+                GameTooltip:SetHyperlink(makeSpellLink(button.recipe))
+                GameTooltip:Show()
+            end
+        end)
+        button:SetScript("OnLeave", function()
+            GameTooltip:Hide()
+        end)
+
         button:Hide()
     end
 end
 
+-- Creates the Prev / Next pagination buttons and the centered page label.
 local function createNavButtons()
     prevButton = CreateFrame("Button", "AccPrevButton", mainFrame, "UIPanelButtonTemplate")
     prevButton:SetWidth(80)
@@ -129,51 +161,72 @@ local function createNavButtons()
     pageLabel:SetText("")
 end
 
+-- ── Public API ────────────────────────────────────────────────────────────────
+
+-- Entry point called from Core.lua on addon load; constructs all browser frames.
 function browserInit()
     createMainFrame()
     createCategoryPanel()
     createDropdown()
     createRowButtons()
     createNavButtons()
-
+    initRecipeDetail()
 end
 
+-- Shows the main browser window.
 function showBrowser()
     mainFrame:Show()
 end
 
+-- Hides the browser and all child windows (detail panel, etc.).
+function hideBrowser()
+    mainFrame:Hide()
+    closeAllBrowserWindows()
+end
+
+-- Loads a profession into the browser: filters recipes, resolves slot categories,
+-- builds the ordered category list, and renders the first page.
 function selectProfession(profName)
     local recipeData = ACC_Data[profName] or {}
     recipeList = {}
     for _, recipe in ipairs(recipeData) do
+        -- skill == 9999 is the sentinel used for the profession's own "learn" entry
         if not (recipe.skill and recipe.skill == 9999) then
             recipeList[#recipeList + 1] = recipe
         end
     end
     pageIndex = 1
 
+    -- Attempt runtime slot detection via GetItemInfo.
+    -- Returns nil for uncached items; those fall through to "Misc" for gear professions.
     for _, recipe in ipairs(recipeList) do
         if recipe.creates then
             local equipLoc = select(9, GetItemInfo(recipe.creates.id))
             recipe.resolvedCategory = slotCategory[equipLoc]
         end
-        if profName == "Tailoring" or profName == "Leatherworking" or profName== "Blacksmithing" then
+        if profName == "Tailoring" or profName == "Leatherworking" or profName == "Blacksmithing" then
             if recipe.resolvedCategory == nil then
                 recipe.resolvedCategory = "Misc"
             end
         end
     end
+
+    -- Desired display order for slot-based categories.
+    -- "---" entries become visual separators between armor / weapons / containers.
     local slotOrder = {
-        "Helm", "Shoulders", "Chest", "Gloves", "Belt", "Legs", "Boots", "Bracers",
-        "Cloak", "Neck", "Ring", "Trinket", "Shirt", "Tabard",
+        "Helm", "Shoulders", "Cloak", "Chest", "Gloves", "Belt", "Legs", "Boots", "Bracers",
+        "Neck", "Ring", "Trinket", "Shirt", "Tabard",
         "---",
         "One-Hand", "Mainhand", "Offhand(Weapon)", "Two-Hand", "Shield", "Offhand",
         "Ranged", "Wand", "Thrown", "Ammo", "Quiver",
         "---",
         "Bags", "Misc",
     }
-    local seen = {}
-    local slotSet = {}
+
+    -- Split into slot-detected categories (ordered by slotOrder) and manual pipeline
+    -- tags (recipe.category from manual_categories.json, appended after a separator).
+    local seen      = {}
+    local slotSet   = {}
     local manualList = {}
     for _, recipe in ipairs(recipeList) do
         if recipe.resolvedCategory and not seen[recipe.resolvedCategory] then
@@ -185,6 +238,8 @@ function selectProfession(profName)
             manualList[#manualList + 1] = recipe.category
         end
     end
+
+    -- Build slot list in display order, suppressing leading/trailing/duplicate separators.
     local slotList = {}
     for _, cat in ipairs(slotOrder) do
         if cat == "---" then
@@ -198,6 +253,7 @@ function selectProfession(profName)
     if slotList[#slotList] == "---" then
         slotList[#slotList] = nil
     end
+
     local categoryList = {}
     for _, cat in ipairs(slotList) do
         categoryList[#categoryList + 1] = cat
@@ -208,11 +264,15 @@ function selectProfession(profName)
             categoryList[#categoryList + 1] = cat
         end
     end
+
+    -- Default to "Misc" so gear professions land on the catch-all bucket on first load.
     activeCategory = "Misc"
     renderCategoryPanel(categoryList)
     renderPage()
 end
 
+-- Rebuilds the category panel buttons from the given list.
+-- "---" entries are rendered as blank spacing rather than buttons.
 function renderCategoryPanel(categoryList)
     for _, catButton in ipairs(categoryButtons) do
         catButton:Hide()
@@ -241,9 +301,11 @@ function renderCategoryPanel(categoryList)
     end
 end
 
+-- Renders the current page of the active category into the row buttons.
 function renderPage()
     local filteredList = getFilteredList()
-    local totalPages = math.max(1, math.ceil(#filteredList / rowsPerPage))
+    local totalPages   = math.max(1, math.ceil(#filteredList / rowsPerPage))
+
     if totalPages == 1 then
         prevButton:Hide()
         nextButton:Hide()
@@ -253,32 +315,41 @@ function renderPage()
     end
     pageLabel:SetText("Page " .. pageIndex .. " / " .. totalPages)
 
-    if pageIndex == 1 then prevButton:Disable() else prevButton:Enable() end
+    if pageIndex == 1          then prevButton:Disable() else prevButton:Enable() end
     if pageIndex == totalPages then nextButton:Disable() else nextButton:Enable() end
 
-    
     local startIndex = (pageIndex - 1) * rowsPerPage + 1
-
     for i = 1, rowsPerPage do
         local recipe = filteredList[startIndex + i - 1]
         if recipe then
             rowButtons[i].recipeName:SetText(recipe.name)
             rowButtons[i].skillText:SetText(recipe.skill or "")
+            rowButtons[i].recipe = recipe  -- stored so OnClick/OnEnter closures can read it
             rowButtons[i]:Show()
         else
             rowButtons[i].recipeName:SetText("")
             rowButtons[i].skillText:SetText("")
+            rowButtons[i].recipe = nil
             rowButtons[i]:Hide()
         end
     end
 end
 
+-- Returns recipes in recipeList that belong to the active category.
+-- A recipe matches if either its pipeline tag (category) or its runtime-resolved
+-- slot (resolvedCategory) matches activeCategory.
 function getFilteredList()
-    local filteredresult = {}
-    for _, filteredList in ipairs(recipeList) do
-        if filteredList.category == activeCategory or filteredList.resolvedCategory == activeCategory then
-            filteredresult[#filteredresult + 1] = filteredList
+    local result = {}
+    for _, recipe in ipairs(recipeList) do
+        if recipe.category == activeCategory or recipe.resolvedCategory == activeCategory then
+            result[#result + 1] = recipe
         end
     end
-    return filteredresult
+    return result
+end
+
+-- Opens the detail panel for the clicked recipe, anchored below the row button.
+function onRecipeClick(recipe, btn)
+    if not recipe then return end
+    showRecipeDetail(recipe, btn)
 end

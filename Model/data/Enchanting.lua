@@ -200,6 +200,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 7443,
+        recipeItemId = 6342,
+        recipeItemName = "Formula: Enchant Chest - Minor Mana",
         name = "Enchant Chest - Minor Mana",
         skill = 20,
         colors = { 20, 80, 100, 120 },
@@ -402,6 +404,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 7766,
+        recipeItemId = 6344,
+        recipeItemName = "Formula: Enchant Bracer - Minor Spirit",
         name = "Enchant Bracer - Minor Spirit",
         skill = 60,
         colors = { 60, 105, 125, 145 },
@@ -504,6 +508,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 7776,
+        recipeItemId = 6346,
+        recipeItemName = "Formula: Enchant Chest - Lesser Mana",
         name = "Enchant Chest - Lesser Mana",
         skill = 80,
         colors = { 80, 115, 135, 155 },
@@ -552,6 +558,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 7782,
+        recipeItemId = 6347,
+        recipeItemName = "Formula: Enchant Bracer - Minor Strength",
         name = "Enchant Bracer - Minor Strength",
         skill = 80,
         colors = { 80, 115, 135, 155 },
@@ -616,6 +624,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 7786,
+        recipeItemId = 6348,
+        recipeItemName = "Formula: Enchant Weapon - Minor Beastslayer",
         name = "Enchant Weapon - Minor Beastslayer",
         skill = 90,
         colors = { 90, 120, 140, 160 },
@@ -719,6 +729,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 7793,
+        recipeItemId = 6349,
+        recipeItemName = "Formula: Enchant 2H Weapon - Lesser Intellect",
         name = "Enchant 2H Weapon - Lesser Intellect",
         skill = 100,
         colors = { 100, 130, 150, 170 },
@@ -798,6 +810,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 7859,
+        recipeItemId = 6375,
+        recipeItemName = "Formula: Enchant Bracer - Lesser Spirit",
         name = "Enchant Bracer - Lesser Spirit",
         skill = 120,
         colors = { 120, 145, 165, 185 },
@@ -904,6 +918,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 7867,
+        recipeItemId = 6377,
+        recipeItemName = "Formula: Enchant Boots - Minor Agility",
         name = "Enchant Boots - Minor Agility",
         skill = 125,
         colors = { 125, 150, 170, 190 },
@@ -966,6 +982,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13380,
+        recipeItemId = 11038,
+        recipeItemName = "Formula: Enchant 2H Weapon - Lesser Spirit",
         name = "Enchant 2H Weapon - Lesser Spirit",
         skill = 110,
         colors = { 110, 135, 155, 175 },
@@ -1025,6 +1043,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13419,
+        recipeItemId = 11039,
+        recipeItemName = "Formula: Enchant Cloak - Minor Agility",
         name = "Enchant Cloak - Minor Agility",
         skill = 110,
         colors = { 110, 135, 155, 175 },
@@ -1126,6 +1146,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13464,
+        recipeItemId = 11081,
+        recipeItemName = "Formula: Enchant Shield - Lesser Protection",
         name = "Enchant Shield - Lesser Protection",
         skill = 115,
         colors = { 115, 140, 160, 180 },
@@ -1268,6 +1290,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13522,
+        recipeItemId = 11098,
+        recipeItemName = "Formula: Enchant Cloak - Lesser Shadow Resistance",
         name = "Enchant Cloak - Lesser Shadow Resistance",
         skill = 135,
         colors = { 135, 160, 180, 200 },
@@ -1353,6 +1377,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13536,
+        recipeItemId = 11101,
+        recipeItemName = "Formula: Enchant Bracer - Lesser Strength",
         name = "Enchant Bracer - Lesser Strength",
         skill = 140,
         colors = { 140, 165, 185, 205 },
@@ -1429,6 +1455,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13612,
+        recipeItemId = 11150,
+        recipeItemName = "Formula: Enchant Gloves - Mining",
         name = "Enchant Gloves - Mining",
         skill = 145,
         colors = { 145, 170, 190, 210 },
@@ -1452,6 +1480,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13617,
+        recipeItemId = 11151,
+        recipeItemName = "Formula: Enchant Gloves - Herbalism",
         name = "Enchant Gloves - Herbalism",
         skill = 145,
         colors = { 145, 170, 190, 210 },
@@ -1475,6 +1505,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13620,
+        recipeItemId = 11152,
+        recipeItemName = "Formula: Enchant Gloves - Fishing",
         name = "Enchant Gloves - Fishing",
         skill = 145,
         colors = { 145, 170, 190, 210 },
@@ -1707,6 +1739,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13646,
+        recipeItemId = 11163,
+        recipeItemName = "Formula: Enchant Bracer - Lesser Deflection",
         name = "Enchant Bracer - Lesser Deflection",
         skill = 170,
         colors = { 170, 190, 210, 230 },
@@ -1747,6 +1781,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13653,
+        recipeItemId = 11164,
+        recipeItemName = "Formula: Enchant Weapon - Lesser Beastslayer",
         name = "Enchant Weapon - Lesser Beastslayer",
         skill = 175,
         colors = { 175, 195, 215, 235 },
@@ -1805,6 +1841,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13655,
+        recipeItemId = 11165,
+        recipeItemName = "Formula: Enchant Weapon - Lesser Elemental Slayer",
         name = "Enchant Weapon - Lesser Elemental Slayer",
         skill = 175,
         colors = { 175, 195, 215, 235 },
@@ -1938,6 +1976,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13687,
+        recipeItemId = 11167,
+        recipeItemName = "Formula: Enchant Boots - Lesser Spirit",
         name = "Enchant Boots - Lesser Spirit",
         skill = 190,
         colors = { 190, 210, 230, 250 },
@@ -1988,6 +2028,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13689,
+        recipeItemId = 11168,
+        recipeItemName = "Formula: Enchant Shield - Lesser Block",
         name = "Enchant Shield - Lesser Block",
         skill = 195,
         colors = { 195, 215, 235, 255 },
@@ -2053,6 +2095,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13698,
+        recipeItemId = 11166,
+        recipeItemName = "Formula: Enchant Gloves - Skinning",
         name = "Enchant Gloves - Skinning",
         skill = 200,
         colors = { 200, 220, 240, 260 },
@@ -2182,6 +2226,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13817,
+        recipeItemId = 11202,
+        recipeItemName = "Formula: Enchant Shield - Stamina",
         name = "Enchant Shield - Stamina",
         skill = 210,
         colors = { 210, 230, 250, 270 },
@@ -2272,6 +2318,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13841,
+        recipeItemId = 11203,
+        recipeItemName = "Formula: Enchant Gloves - Advanced Mining",
         name = "Enchant Gloves - Advanced Mining",
         skill = 215,
         colors = { 215, 235, 255, 275 },
@@ -2291,6 +2339,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13846,
+        recipeItemId = 11204,
+        recipeItemName = "Formula: Enchant Bracer - Greater Spirit",
         name = "Enchant Bracer - Greater Spirit",
         skill = 220,
         colors = { 220, 240, 260, 280 },
@@ -2362,6 +2412,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13868,
+        recipeItemId = 11205,
+        recipeItemName = "Formula: Enchant Gloves - Advanced Herbalism",
         name = "Enchant Gloves - Advanced Herbalism",
         skill = 225,
         colors = { 225, 245, 265, 285 },
@@ -2385,6 +2437,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13882,
+        recipeItemId = 11206,
+        recipeItemName = "Formula: Enchant Cloak - Lesser Agility",
         name = "Enchant Cloak - Lesser Agility",
         skill = 225,
         colors = { 225, 245, 265, 285 },
@@ -2448,6 +2502,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13898,
+        recipeItemId = 11207,
+        recipeItemName = "Formula: Enchant Weapon - Fiery Weapon",
         name = "Enchant Weapon - Fiery Weapon",
         skill = 265,
         colors = { 265, 285, 305, 325 },
@@ -2486,6 +2542,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13915,
+        recipeItemId = 11208,
+        recipeItemName = "Formula: Enchant Weapon - Demonslaying",
         name = "Enchant Weapon - Demonslaying",
         skill = 230,
         colors = { 230, 250, 270, 290 },
@@ -2583,6 +2641,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13931,
+        recipeItemId = 11223,
+        recipeItemName = "Formula: Enchant Bracer - Deflection",
         name = "Enchant Bracer - Deflection",
         skill = 235,
         colors = { 235, 255, 275, 295 },
@@ -2603,6 +2663,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13933,
+        recipeItemId = 11224,
+        recipeItemName = "Formula: Enchant Shield - Frost Resistance",
         name = "Enchant Shield - Frost Resistance",
         skill = 235,
         colors = { 235, 255, 275, 295 },
@@ -2733,6 +2795,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13945,
+        recipeItemId = 11225,
+        recipeItemName = "Formula: Enchant Bracer - Greater Stamina",
         name = "Enchant Bracer - Greater Stamina",
         skill = 245,
         colors = { 245, 265, 285, 305 },
@@ -2805,6 +2869,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 13947,
+        recipeItemId = 11226,
+        recipeItemName = "Formula: Enchant Gloves - Riding Skill",
         name = "Enchant Gloves - Riding Skill",
         skill = 250,
         colors = { 250, 270, 290, 310 },
@@ -2981,6 +3047,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 15596,
+        recipeItemId = 11813,
+        recipeItemName = "Formula: Smoking Heart of the Mountain",
         name = "Smoking Heart of the Mountain",
         skill = 265,
         colors = { 265, 285, 305, 325 },
@@ -3039,6 +3107,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20008,
+        recipeItemId = 16214,
+        recipeItemName = "Formula: Enchant Bracer - Greater Intellect",
         name = "Enchant Bracer - Greater Intellect",
         skill = 255,
         colors = { 255, 275, 295, 315 },
@@ -3057,6 +3127,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20009,
+        recipeItemId = 16218,
+        recipeItemName = "Formula: Enchant Bracer - Superior Spirit",
         name = "Enchant Bracer - Superior Spirit",
         skill = 270,
         colors = { 270, 290, 310, 330 },
@@ -3130,6 +3202,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20010,
+        recipeItemId = 16246,
+        recipeItemName = "Formula: Enchant Bracer - Superior Strength",
         name = "Enchant Bracer - Superior Strength",
         skill = 295,
         colors = { 295, 315, 335, 355 },
@@ -3149,6 +3223,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20011,
+        recipeItemId = 16251,
+        recipeItemName = "Formula: Enchant Bracer - Superior Stamina",
         name = "Enchant Bracer - Superior Stamina",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -3237,6 +3313,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20012,
+        recipeItemId = 16219,
+        recipeItemName = "Formula: Enchant Gloves - Greater Agility",
         name = "Enchant Gloves - Greater Agility",
         skill = 270,
         colors = { 270, 290, 310, 330 },
@@ -3256,6 +3334,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20013,
+        recipeItemId = 16244,
+        recipeItemName = "Formula: Enchant Gloves - Greater Strength",
         name = "Enchant Gloves - Greater Strength",
         skill = 295,
         colors = { 295, 315, 335, 355 },
@@ -3275,6 +3355,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20014,
+        recipeItemId = 16216,
+        recipeItemName = "Formula: Enchant Cloak - Greater Resistance",
         name = "Enchant Cloak - Greater Resistance",
         skill = 265,
         colors = { 265, 285, 305, 325 },
@@ -3298,6 +3380,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20015,
+        recipeItemId = 16224,
+        recipeItemName = "Formula: Enchant Cloak - Superior Defense",
         name = "Enchant Cloak - Superior Defense",
         skill = 285,
         colors = { 285, 305, 325, 345 },
@@ -3316,6 +3400,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20016,
+        recipeItemId = 16222,
+        recipeItemName = "Formula: Enchant Shield - Superior Spirit",
         name = "Enchant Shield - Superior Spirit",
         skill = 280,
         colors = { 280, 300, 320, 340 },
@@ -3335,6 +3421,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20017,
+        recipeItemId = 16217,
+        recipeItemName = "Formula: Enchant Shield - Greater Stamina",
         name = "Enchant Shield - Greater Stamina",
         skill = 265,
         colors = { 265, 285, 305, 325 },
@@ -3354,6 +3442,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20020,
+        recipeItemId = 16215,
+        recipeItemName = "Formula: Enchant Boots - Greater Stamina",
         name = "Enchant Boots - Greater Stamina",
         skill = 260,
         colors = { 260, 280, 300, 320 },
@@ -3424,6 +3514,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20023,
+        recipeItemId = 16245,
+        recipeItemName = "Formula: Enchant Boots - Greater Agility",
         name = "Enchant Boots - Greater Agility",
         skill = 295,
         colors = { 295, 315, 335, 355 },
@@ -3491,6 +3583,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20024,
+        recipeItemId = 16220,
+        recipeItemName = "Formula: Enchant Boots - Spirit",
         name = "Enchant Boots - Spirit",
         skill = 275,
         colors = { 275, 295, 315, 335 },
@@ -3568,6 +3662,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20025,
+        recipeItemId = 16253,
+        recipeItemName = "Formula: Enchant Chest - Greater Stats",
         name = "Enchant Chest - Greater Stats",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -3598,6 +3694,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20026,
+        recipeItemId = 16221,
+        recipeItemName = "Formula: Enchant Chest - Major Health",
         name = "Enchant Chest - Major Health",
         skill = 275,
         colors = { 275, 295, 315, 335 },
@@ -3617,6 +3715,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20028,
+        recipeItemId = 16242,
+        recipeItemName = "Formula: Enchant Chest - Major Mana",
         name = "Enchant Chest - Major Mana",
         skill = 290,
         colors = { 290, 310, 330, 350 },
@@ -3636,6 +3736,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20029,
+        recipeItemId = 16223,
+        recipeItemName = "Formula: Enchant Weapon - Icy Chill",
         name = "Enchant Weapon - Icy Chill",
         skill = 285,
         colors = { 285, 305, 325, 345 },
@@ -3657,6 +3759,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20030,
+        recipeItemId = 16247,
+        recipeItemName = "Formula: Enchant 2H Weapon - Superior Impact",
         name = "Enchant 2H Weapon - Superior Impact",
         skill = 295,
         colors = { 295, 315, 335, 355 },
@@ -3676,6 +3780,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20031,
+        recipeItemId = 16250,
+        recipeItemName = "Formula: Enchant Weapon - Superior Striking",
         name = "Enchant Weapon - Superior Striking",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -3695,6 +3801,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20032,
+        recipeItemId = 16254,
+        recipeItemName = "Formula: Enchant Weapon - Lifestealing",
         name = "Enchant Weapon - Lifestealing",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -3734,6 +3842,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20034,
+        recipeItemId = 16252,
+        recipeItemName = "Formula: Enchant Weapon - Crusader",
         name = "Enchant Weapon - Crusader",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -3753,6 +3863,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20035,
+        recipeItemId = 16255,
+        recipeItemName = "Formula: Enchant 2H Weapon - Major Spirit",
         name = "Enchant 2H Weapon - Major Spirit",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -3772,6 +3884,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20036,
+        recipeItemId = 16249,
+        recipeItemName = "Formula: Enchant 2H Weapon - Major Intellect",
         name = "Enchant 2H Weapon - Major Intellect",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -3791,6 +3905,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20051,
+        recipeItemId = 16243,
+        recipeItemName = "Formula: Runed Arcanite Rod",
         name = "Runed Arcanite Rod",
         skill = 290,
         colors = { 290, 310, 330, 350 },
@@ -3814,6 +3930,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 21931,
+        recipeItemId = 17725,
+        recipeItemName = "Formula: Enchant Weapon - Winter's Might",
         name = "Enchant Weapon - Winter's Might",
         skill = 190,
         colors = { 190, 210, 230, 250 },
@@ -3837,6 +3955,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 22749,
+        recipeItemId = 18259,
+        recipeItemName = "Formula: Enchant Weapon - Spell Power",
         name = "Enchant Weapon - Spell Power",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -3874,6 +3994,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 22750,
+        recipeItemId = 18260,
+        recipeItemName = "Formula: Enchant Weapon - Healing Power",
         name = "Enchant Weapon - Healing Power",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -3910,6 +4032,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 23799,
+        recipeItemId = 19444,
+        recipeItemName = "Formula: Enchant Weapon - Strength",
         name = "Enchant Weapon - Strength",
         skill = 290,
         colors = { 290, 310, 330, 350 },
@@ -3931,6 +4055,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 23800,
+        recipeItemId = 19445,
+        recipeItemName = "Formula: Enchant Weapon - Agility",
         name = "Enchant Weapon - Agility",
         skill = 290,
         colors = { 290, 310, 330, 350 },
@@ -3952,6 +4078,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 23801,
+        recipeItemId = 19446,
+        recipeItemName = "Formula: Enchant Bracer - Mana Regeneration",
         name = "Enchant Bracer - Mana Regeneration",
         skill = 290,
         colors = { 290, 310, 330, 350 },
@@ -3997,6 +4125,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 23803,
+        recipeItemId = 19448,
+        recipeItemName = "Formula: Enchant Weapon - Mighty Spirit",
         name = "Enchant Weapon - Mighty Spirit",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4017,6 +4147,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 23804,
+        recipeItemId = 19449,
+        recipeItemName = "Formula: Enchant Weapon - Mighty Intellect",
         name = "Enchant Weapon - Mighty Intellect",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4037,6 +4169,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25072,
+        recipeItemId = 20726,
+        recipeItemName = "Formula: Enchant Gloves - Threat",
         name = "Enchant Gloves - Threat",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4057,6 +4191,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25073,
+        recipeItemId = 20727,
+        recipeItemName = "Formula: Enchant Gloves - Shadow Power",
         name = "Enchant Gloves - Shadow Power",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4091,6 +4227,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25074,
+        recipeItemId = 20728,
+        recipeItemName = "Formula: Enchant Gloves - Frost Power",
         name = "Enchant Gloves - Frost Power",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4125,6 +4263,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25078,
+        recipeItemId = 20729,
+        recipeItemName = "Formula: Enchant Gloves - Fire Power",
         name = "Enchant Gloves - Fire Power",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4159,6 +4299,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25079,
+        recipeItemId = 20730,
+        recipeItemName = "Formula: Enchant Gloves - Healing Power",
         name = "Enchant Gloves - Healing Power",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4193,6 +4335,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25080,
+        recipeItemId = 20731,
+        recipeItemName = "Formula: Enchant Gloves - Superior Agility",
         name = "Enchant Gloves - Superior Agility",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4227,6 +4371,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25081,
+        recipeItemId = 229008,
+        recipeItemName = "Formula: Enchant Cloak - Greater Fire Resistance",
         name = "Enchant Cloak - Greater Fire Resistance",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4247,6 +4393,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25082,
+        recipeItemId = 229009,
+        recipeItemName = "Formula: Enchant Cloak - Greater Nature Resistance",
         name = "Enchant Cloak - Greater Nature Resistance",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4267,6 +4415,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25083,
+        recipeItemId = 20734,
+        recipeItemName = "Formula: Enchant Cloak - Stealth",
         name = "Enchant Cloak - Stealth",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4301,6 +4451,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25084,
+        recipeItemId = 20735,
+        recipeItemName = "Formula: Enchant Cloak - Subtlety",
         name = "Enchant Cloak - Subtlety",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4321,6 +4473,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25086,
+        recipeItemId = 20736,
+        recipeItemName = "Formula: Enchant Cloak - Dodge",
         name = "Enchant Cloak - Dodge",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -4355,6 +4509,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25124,
+        recipeItemId = 20758,
+        recipeItemName = "Formula: Minor Wizard Oil",
         name = "Minor Wizard Oil",
         skill = 45,
         colors = { 45, 55, 65, 75 },
@@ -4383,6 +4539,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25125,
+        recipeItemId = 20752,
+        recipeItemName = "Formula: Minor Mana Oil",
         name = "Minor Mana Oil",
         skill = 150,
         colors = { 150, 160, 170, 180 },
@@ -4411,6 +4569,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25126,
+        recipeItemId = 20753,
+        recipeItemName = "Formula: Lesser Wizard Oil",
         name = "Lesser Wizard Oil",
         skill = 200,
         colors = { 200, 210, 220, 230 },
@@ -4439,6 +4599,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25127,
+        recipeItemId = 20754,
+        recipeItemName = "Formula: Lesser Mana Oil",
         name = "Lesser Mana Oil",
         skill = 250,
         colors = { 250, 260, 270, 280 },
@@ -4460,6 +4622,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25128,
+        recipeItemId = 20755,
+        recipeItemName = "Formula: Wizard Oil",
         name = "Wizard Oil",
         skill = 275,
         colors = { 275, 285, 295, 305 },
@@ -4481,6 +4645,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25129,
+        recipeItemId = 20756,
+        recipeItemName = "Formula: Brilliant Wizard Oil",
         name = "Brilliant Wizard Oil",
         skill = 300,
         colors = { 300, 310, 320, 330 },
@@ -4501,6 +4667,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 25130,
+        recipeItemId = 20757,
+        recipeItemName = "Formula: Brilliant Mana Oil",
         name = "Brilliant Mana Oil",
         skill = 300,
         colors = { 300, 310, 320, 330 },
@@ -4521,6 +4689,8 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 27837,
+        recipeItemId = 22392,
+        recipeItemName = "Formula: Enchant 2H Weapon - Agility",
         name = "Enchant 2H Weapon - Agility",
         skill = 290,
         colors = { 290, 310, 330, 350 },

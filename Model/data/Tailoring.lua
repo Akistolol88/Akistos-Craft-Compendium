@@ -100,9 +100,12 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 2389,
+        recipeItemId = 2598,
+        recipeItemName = "Pattern: Red Linen Robe",
         name = "Red Linen Robe",
         skill = 40,
         colors = { 40, 65, 82, 100 },
@@ -398,6 +401,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 2399,
@@ -504,9 +508,12 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 2403,
+        recipeItemId = 2601,
+        recipeItemName = "Pattern: Gray Woolen Robe",
         name = "Gray Woolen Robe",
         skill = 105,
         colors = { 105, 130, 147, 165 },
@@ -730,6 +737,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3758,
+        recipeItemId = 4292,
+        recipeItemName = "Pattern: Green Woolen Bag",
         name = "Green Woolen Bag",
         skill = 95,
         colors = { 95, 120, 137, 155 },
@@ -1006,6 +1015,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3844,
+        recipeItemId = 4346,
+        recipeItemName = "Pattern: Heavy Woolen Cloak",
         name = "Heavy Woolen Cloak",
         skill = 100,
         colors = { 100, 125, 142, 160 },
@@ -1065,6 +1076,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 3845,
@@ -1101,6 +1113,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3847,
+        recipeItemId = 4345,
+        recipeItemName = "Pattern: Red Woolen Boots",
         name = "Red Woolen Boots",
         skill = 95,
         colors = { 95, 120, 137, 155 },
@@ -1208,6 +1222,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3849,
+        recipeItemId = 4347,
+        recipeItemName = "Pattern: Reinforced Woolen Shoulders",
         name = "Reinforced Woolen Shoulders",
         skill = 120,
         colors = { 120, 145, 162, 180 },
@@ -1300,6 +1316,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3851,
+        recipeItemId = 4349,
+        recipeItemName = "Pattern: Phoenix Pants",
         name = "Phoenix Pants",
         skill = 125,
         colors = { 125, 150, 167, 185 },
@@ -1392,6 +1410,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3854,
+        recipeItemId = 7114,
+        recipeItemName = "Pattern: Azure Silk Gloves",
         name = "Azure Silk Gloves",
         skill = 145,
         colors = { 145, 165, 180, 195 },
@@ -1447,6 +1467,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3856,
+        recipeItemId = 4350,
+        recipeItemName = "Pattern: Spider Silk Slippers",
         name = "Spider Silk Slippers",
         skill = 140,
         colors = { 140, 160, 175, 190 },
@@ -1491,6 +1513,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3857,
+        recipeItemId = 217258,
+        recipeItemName = "Pattern: Enchanter's Cowl",
         name = "Enchanter's Cowl",
         skill = 165,
         colors = { 165, 185, 200, 215 },
@@ -1508,6 +1532,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3858,
+        recipeItemId = 4351,
+        recipeItemName = "Pattern: Shadow Hood",
         name = "Shadow Hood",
         skill = 170,
         colors = { 170, 190, 205, 220 },
@@ -1564,6 +1590,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3860,
+        recipeItemId = 217254,
+        recipeItemName = "Pattern: Boots of the Enchanter",
         name = "Boots of the Enchanter",
         skill = 175,
         colors = { 175, 195, 210, 225 },
@@ -1602,9 +1630,12 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 3862,
+        recipeItemId = 4355,
+        recipeItemName = "Pattern: Icy Cloak",
         name = "Icy Cloak",
         skill = 200,
         colors = { 200, 220, 235, 250 },
@@ -1623,9 +1654,12 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 3863,
+        recipeItemId = 4353,
+        recipeItemName = "Pattern: Spider Belt",
         name = "Spider Belt",
         skill = 180,
         colors = { 180, 200, 215, 230 },
@@ -1676,6 +1710,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3864,
+        recipeItemId = 4356,
+        recipeItemName = "Pattern: Star Belt",
         name = "Star Belt",
         skill = 200,
         colors = { 200, 220, 235, 250 },
@@ -1756,6 +1792,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3868,
+        recipeItemId = 4348,
+        recipeItemName = "Pattern: Phoenix Gloves",
         name = "Phoenix Gloves",
         skill = 125,
         colors = { 125, 150, 167, 185 },
@@ -1826,6 +1864,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3869,
+        recipeItemId = 14627,
+        recipeItemName = "Pattern: Bright Yellow Shirt",
         name = "Bright Yellow Shirt",
         skill = 135,
         colors = { 135, 145, 150, 155 },
@@ -1845,6 +1885,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3870,
+        recipeItemId = 6401,
+        recipeItemName = "Pattern: Dark Silk Shirt",
         name = "Dark Silk Shirt",
         skill = 155,
         colors = { 155, 165, 170, 175 },
@@ -1890,6 +1932,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3872,
+        recipeItemId = 4354,
+        recipeItemName = "Pattern: Rich Purple Silk Shirt",
         name = "Rich Purple Silk Shirt",
         skill = 185,
         colors = { 185, 195, 200, 205 },
@@ -1913,6 +1957,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3873,
+        recipeItemId = 10728,
+        recipeItemName = "Pattern: Black Swashbuckler's Shirt",
         name = "Black Swashbuckler's Shirt",
         skill = 200,
         colors = { 200, 210, 215, 220 },
@@ -2101,9 +2147,12 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 6686,
+        recipeItemId = 5771,
+        recipeItemName = "Pattern: Red Linen Bag",
         name = "Red Linen Bag",
         skill = 70,
         colors = { 70, 95, 112, 130 },
@@ -2133,6 +2182,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 6688,
+        recipeItemId = 5772,
+        recipeItemName = "Pattern: Red Woolen Bag",
         name = "Red Woolen Bag",
         skill = 115,
         colors = { 115, 140, 157, 175 },
@@ -2201,6 +2252,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 6692,
+        recipeItemId = 5773,
+        recipeItemName = "Pattern: Robes of Arcana",
         name = "Robes of Arcana",
         skill = 150,
         colors = { 150, 170, 185, 200 },
@@ -2221,6 +2274,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 6693,
+        recipeItemId = 5774,
+        recipeItemName = "Pattern: Green Silk Pack",
         name = "Green Silk Pack",
         skill = 175,
         colors = { 175, 195, 210, 225 },
@@ -2272,6 +2327,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 6695,
+        recipeItemId = 5775,
+        recipeItemName = "Pattern: Black Silk Pack",
         name = "Black Silk Pack",
         skill = 185,
         colors = { 185, 205, 220, 235 },
@@ -2374,6 +2431,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 7629,
+        recipeItemId = 6271,
+        recipeItemName = "Pattern: Red Linen Vest",
         name = "Red Linen Vest",
         skill = 55,
         colors = { 55, 80, 97, 115 },
@@ -2427,6 +2486,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 7630,
+        recipeItemId = 6270,
+        recipeItemName = "Pattern: Blue Linen Vest",
         name = "Blue Linen Vest",
         skill = 55,
         colors = { 55, 80, 97, 115 },
@@ -2450,6 +2511,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 7633,
+        recipeItemId = 6272,
+        recipeItemName = "Pattern: Blue Linen Robe",
         name = "Blue Linen Robe",
         skill = 70,
         colors = { 70, 95, 112, 130 },
@@ -2473,6 +2536,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 7639,
+        recipeItemId = 6274,
+        recipeItemName = "Pattern: Blue Overalls",
         name = "Blue Overalls",
         skill = 100,
         colors = { 100, 125, 142, 160 },
@@ -2496,6 +2561,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 7643,
+        recipeItemId = 6275,
+        recipeItemName = "Pattern: Greater Adept's Robe",
         name = "Greater Adept's Robe",
         skill = 115,
         colors = { 115, 140, 157, 175 },
@@ -2520,6 +2587,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 7892,
+        recipeItemId = 6390,
+        recipeItemName = "Pattern: Stylish Blue Shirt",
         name = "Stylish Blue Shirt",
         skill = 120,
         colors = { 120, 145, 162, 180 },
@@ -2582,6 +2651,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 7893,
+        recipeItemId = 6391,
+        recipeItemName = "Pattern: Stylish Green Shirt",
         name = "Stylish Green Shirt",
         skill = 120,
         colors = { 120, 145, 162, 180 },
@@ -3028,6 +3099,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 8780,
+        recipeItemId = 7092,
+        recipeItemName = "Pattern: Hands of Darkness",
         name = "Hands of Darkness",
         skill = 145,
         colors = { 145, 165, 180, 195 },
@@ -3075,6 +3148,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 8782,
+        recipeItemId = 7091,
+        recipeItemName = "Pattern: Truefaith Gloves",
         name = "Truefaith Gloves",
         skill = 150,
         colors = { 150, 170, 185, 200 },
@@ -3149,6 +3224,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 8784,
+        recipeItemId = 7090,
+        recipeItemName = "Pattern: Green Silk Armor",
         name = "Green Silk Armor",
         skill = 165,
         colors = { 165, 185, 200, 215 },
@@ -3201,6 +3278,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 8786,
+        recipeItemId = 7089,
+        recipeItemName = "Pattern: Azure Silk Cloak",
         name = "Azure Silk Cloak",
         skill = 175,
         colors = { 175, 195, 210, 225 },
@@ -3218,9 +3297,12 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 8789,
+        recipeItemId = 7087,
+        recipeItemName = "Pattern: Crimson Silk Cloak",
         name = "Crimson Silk Cloak",
         skill = 180,
         colors = { 180, 200, 215, 230 },
@@ -3239,6 +3321,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 8791,
@@ -3266,6 +3349,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 8793,
+        recipeItemId = 217251,
+        recipeItemName = "Pattern: Crimson Silk Shoulders",
         name = "Crimson Silk Shoulders",
         skill = 190,
         colors = { 190, 210, 225, 240 },
@@ -3284,6 +3369,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 8795,
+        recipeItemId = 7085,
+        recipeItemName = "Pattern: Azure Shoulders",
         name = "Azure Shoulders",
         skill = 190,
         colors = { 190, 210, 225, 240 },
@@ -3338,6 +3425,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 8797,
+        recipeItemId = 217249,
+        recipeItemName = "Pattern: Earthen Silk Belt",
         name = "Earthen Silk Belt",
         skill = 195,
         colors = { 195, 215, 230, 245 },
@@ -3381,6 +3470,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 8802,
+        recipeItemId = 7088,
+        recipeItemName = "Pattern: Crimson Silk Robe",
         name = "Crimson Silk Robe",
         skill = 205,
         colors = { 205, 220, 235, 250 },
@@ -3524,6 +3615,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12047,
+        recipeItemId = 10316,
+        recipeItemName = "Pattern: Colorful Kilt",
         name = "Colorful Kilt",
         skill = 120,
         colors = { 120, 145, 162, 180 },
@@ -3730,6 +3823,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12059,
+        recipeItemId = 10301,
+        recipeItemName = "Pattern: White Bandit Mask",
         name = "White Bandit Mask",
         skill = 215,
         colors = { 215, 220, 225, 230 },
@@ -3785,6 +3880,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12060,
+        recipeItemId = 10302,
+        recipeItemName = "Pattern: Red Mageweave Pants",
         name = "Red Mageweave Pants",
         skill = 215,
         colors = { 215, 230, 245, 260 },
@@ -3872,6 +3969,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12064,
+        recipeItemId = 10311,
+        recipeItemName = "Pattern: Orange Martial Shirt",
         name = "Orange Martial Shirt",
         skill = 220,
         colors = { 220, 225, 230, 235 },
@@ -3915,6 +4014,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12066,
+        recipeItemId = 10312,
+        recipeItemName = "Pattern: Red Mageweave Gloves",
         name = "Red Mageweave Gloves",
         skill = 225,
         colors = { 225, 240, 255, 270 },
@@ -4139,6 +4240,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12075,
+        recipeItemId = 10314,
+        recipeItemName = "Pattern: Lavender Mageweave Shirt",
         name = "Lavender Mageweave Shirt",
         skill = 230,
         colors = { 230, 235, 240, 245 },
@@ -4201,6 +4304,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12078,
+        recipeItemId = 10315,
+        recipeItemName = "Pattern: Red Mageweave Shoulders",
         name = "Red Mageweave Shoulders",
         skill = 235,
         colors = { 235, 250, 265, 280 },
@@ -4280,6 +4385,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12080,
+        recipeItemId = 10317,
+        recipeItemName = "Pattern: Pink Mageweave Shirt",
         name = "Pink Mageweave Shirt",
         skill = 235,
         colors = { 235, 240, 245, 250 },
@@ -4300,6 +4407,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12081,
+        recipeItemId = 10318,
+        recipeItemName = "Pattern: Admiral's Hat",
         name = "Admiral's Hat",
         skill = 240,
         colors = { 240, 255, 270, 285 },
@@ -4340,6 +4449,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12084,
+        recipeItemId = 10320,
+        recipeItemName = "Pattern: Red Mageweave Headband",
         name = "Red Mageweave Headband",
         skill = 240,
         colors = { 240, 255, 270, 285 },
@@ -4407,6 +4518,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12085,
+        recipeItemId = 10321,
+        recipeItemName = "Pattern: Tuxedo Shirt",
         name = "Tuxedo Shirt",
         skill = 240,
         colors = { 240, 245, 250, 255 },
@@ -4426,6 +4539,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12086,
+        recipeItemId = 10463,
+        recipeItemName = "Pattern: Shadoweave Mask",
         name = "Shadoweave Mask",
         skill = 245,
         colors = { 245, 260, 275, 290 },
@@ -4467,6 +4582,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12089,
+        recipeItemId = 10323,
+        recipeItemName = "Pattern: Tuxedo Pants",
         name = "Tuxedo Pants",
         skill = 245,
         colors = { 245, 250, 255, 260 },
@@ -4486,6 +4603,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12091,
+        recipeItemId = 10325,
+        recipeItemName = "Pattern: White Wedding Dress",
         name = "White Wedding Dress",
         skill = 250,
         colors = { 250, 255, 260, 265 },
@@ -4530,6 +4649,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12093,
+        recipeItemId = 10326,
+        recipeItemName = "Pattern: Tuxedo Jacket",
         name = "Tuxedo Jacket",
         skill = 250,
         colors = { 250, 265, 280, 295 },
@@ -4604,6 +4725,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18403,
+        recipeItemId = 14466,
+        recipeItemName = "Pattern: Frostweave Tunic",
         name = "Frostweave Tunic",
         skill = 255,
         colors = { 255, 270, 285, 300 },
@@ -4645,6 +4768,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18404,
+        recipeItemId = 14467,
+        recipeItemName = "Pattern: Frostweave Robe",
         name = "Frostweave Robe",
         skill = 255,
         colors = { 255, 270, 285, 300 },
@@ -4710,6 +4835,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18405,
+        recipeItemId = 14468,
+        recipeItemName = "Pattern: Runecloth Bag",
         name = "Runecloth Bag",
         skill = 260,
         colors = { 260, 275, 290, 305 },
@@ -4729,6 +4856,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18406,
+        recipeItemId = 14469,
+        recipeItemName = "Pattern: Runecloth Robe",
         name = "Runecloth Robe",
         skill = 260,
         colors = { 260, 275, 290, 305 },
@@ -4748,6 +4877,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18407,
+        recipeItemId = 14470,
+        recipeItemName = "Pattern: Runecloth Tunic",
         name = "Runecloth Tunic",
         skill = 260,
         colors = { 260, 275, 290, 305 },
@@ -4822,6 +4953,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18408,
+        recipeItemId = 14471,
+        recipeItemName = "Pattern: Cindercloth Vest",
         name = "Cindercloth Vest",
         skill = 260,
         colors = { 260, 275, 290, 305 },
@@ -4841,6 +4974,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18409,
+        recipeItemId = 14472,
+        recipeItemName = "Pattern: Runecloth Cloak",
         name = "Runecloth Cloak",
         skill = 265,
         colors = { 265, 280, 295, 310 },
@@ -4857,9 +4992,12 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 18410,
+        recipeItemId = 14473,
+        recipeItemName = "Pattern: Ghostweave Belt",
         name = "Ghostweave Belt",
         skill = 265,
         colors = { 265, 280, 295, 310 },
@@ -4880,6 +5018,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18411,
+        recipeItemId = 14474,
+        recipeItemName = "Pattern: Frostweave Gloves",
         name = "Frostweave Gloves",
         skill = 265,
         colors = { 265, 280, 295, 310 },
@@ -4944,6 +5084,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18412,
+        recipeItemId = 14476,
+        recipeItemName = "Pattern: Cindercloth Gloves",
         name = "Cindercloth Gloves",
         skill = 270,
         colors = { 270, 285, 300, 315 },
@@ -4963,6 +5105,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18413,
+        recipeItemId = 14477,
+        recipeItemName = "Pattern: Ghostweave Gloves",
         name = "Ghostweave Gloves",
         skill = 270,
         colors = { 270, 285, 300, 315 },
@@ -4984,6 +5128,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18414,
+        recipeItemId = 14478,
+        recipeItemName = "Pattern: Brightcloth Robe",
         name = "Brightcloth Robe",
         skill = 270,
         colors = { 270, 285, 300, 315 },
@@ -5070,6 +5216,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18415,
+        recipeItemId = 14479,
+        recipeItemName = "Pattern: Brightcloth Gloves",
         name = "Brightcloth Gloves",
         skill = 270,
         colors = { 270, 285, 300, 315 },
@@ -5157,6 +5305,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18416,
+        recipeItemId = 14480,
+        recipeItemName = "Pattern: Ghostweave Vest",
         name = "Ghostweave Vest",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5177,6 +5327,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18417,
+        recipeItemId = 14481,
+        recipeItemName = "Pattern: Runecloth Gloves",
         name = "Runecloth Gloves",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5196,6 +5348,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18418,
+        recipeItemId = 14482,
+        recipeItemName = "Pattern: Cindercloth Cloak",
         name = "Cindercloth Cloak",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5212,9 +5366,12 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 18419,
+        recipeItemId = 14483,
+        recipeItemName = "Pattern: Felcloth Pants",
         name = "Felcloth Pants",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5234,6 +5391,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18420,
+        recipeItemId = 14484,
+        recipeItemName = "Pattern: Brightcloth Cloak",
         name = "Brightcloth Cloak",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5309,9 +5468,12 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 18421,
+        recipeItemId = 14485,
+        recipeItemName = "Pattern: Wizardweave Leggings",
         name = "Wizardweave Leggings",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5331,6 +5493,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18422,
+        recipeItemId = 14486,
+        recipeItemName = "Pattern: Cloak of Fire",
         name = "Cloak of Fire",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -5349,9 +5513,12 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 18423,
+        recipeItemId = 14488,
+        recipeItemName = "Pattern: Runecloth Boots",
         name = "Runecloth Boots",
         skill = 280,
         colors = { 280, 295, 310, 325 },
@@ -5372,6 +5539,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18424,
+        recipeItemId = 14489,
+        recipeItemName = "Pattern: Frostweave Pants",
         name = "Frostweave Pants",
         skill = 280,
         colors = { 280, 295, 310, 325 },
@@ -5442,6 +5611,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18434,
+        recipeItemId = 14490,
+        recipeItemName = "Pattern: Cindercloth Pants",
         name = "Cindercloth Pants",
         skill = 280,
         colors = { 280, 295, 310, 325 },
@@ -5461,6 +5632,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18436,
+        recipeItemId = 14493,
+        recipeItemName = "Pattern: Robe of Winter Night",
         name = "Robe of Winter Night",
         skill = 285,
         colors = { 285, 300, 315, 330 },
@@ -5482,6 +5655,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18437,
+        recipeItemId = 14492,
+        recipeItemName = "Pattern: Felcloth Boots",
         name = "Felcloth Boots",
         skill = 285,
         colors = { 285, 300, 315, 330 },
@@ -5542,6 +5717,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18438,
+        recipeItemId = 14491,
+        recipeItemName = "Pattern: Runecloth Pants",
         name = "Runecloth Pants",
         skill = 285,
         colors = { 285, 300, 315, 330 },
@@ -5618,6 +5795,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18439,
+        recipeItemId = 14494,
+        recipeItemName = "Pattern: Brightcloth Pants",
         name = "Brightcloth Pants",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -5688,6 +5867,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18440,
+        recipeItemId = 14497,
+        recipeItemName = "Pattern: Mooncloth Leggings",
         name = "Mooncloth Leggings",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -5723,6 +5904,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18441,
+        recipeItemId = 14495,
+        recipeItemName = "Pattern: Ghostweave Pants",
         name = "Ghostweave Pants",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -5742,6 +5925,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18442,
+        recipeItemId = 14496,
+        recipeItemName = "Pattern: Felcloth Hood",
         name = "Felcloth Hood",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -5813,6 +5998,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18444,
+        recipeItemId = 14498,
+        recipeItemName = "Pattern: Runecloth Headband",
         name = "Runecloth Headband",
         skill = 295,
         colors = { 295, 310, 325, 340 },
@@ -5880,6 +6067,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18445,
+        recipeItemId = 14499,
+        recipeItemName = "Pattern: Mooncloth Bag",
         name = "Mooncloth Bag",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -5945,6 +6134,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18446,
+        recipeItemId = 14500,
+        recipeItemName = "Pattern: Wizardweave Robe",
         name = "Wizardweave Robe",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -5964,6 +6155,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18447,
+        recipeItemId = 14501,
+        recipeItemName = "Pattern: Mooncloth Vest",
         name = "Mooncloth Vest",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6000,6 +6193,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18448,
+        recipeItemId = 14507,
+        recipeItemName = "Pattern: Mooncloth Shoulders",
         name = "Mooncloth Shoulders",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6037,6 +6232,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18449,
+        recipeItemId = 14504,
+        recipeItemName = "Pattern: Runecloth Shoulders",
         name = "Runecloth Shoulders",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6132,6 +6329,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18450,
+        recipeItemId = 14505,
+        recipeItemName = "Pattern: Wizardweave Turban",
         name = "Wizardweave Turban",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6152,6 +6351,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18451,
+        recipeItemId = 14506,
+        recipeItemName = "Pattern: Felcloth Robe",
         name = "Felcloth Robe",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6247,6 +6448,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18452,
+        recipeItemId = 14509,
+        recipeItemName = "Pattern: Mooncloth Circlet",
         name = "Mooncloth Circlet",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6279,6 +6482,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18453,
+        recipeItemId = 14508,
+        recipeItemName = "Pattern: Felcloth Shoulders",
         name = "Felcloth Shoulders",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6372,6 +6577,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18454,
+        recipeItemId = 14511,
+        recipeItemName = "Pattern: Gloves of Spell Mastery",
         name = "Gloves of Spell Mastery",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6404,6 +6611,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18455,
+        recipeItemId = 228993,
+        recipeItemName = "Pattern: Bottomless Bag",
         name = "Bottomless Bag",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6423,6 +6632,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18456,
+        recipeItemId = 14512,
+        recipeItemName = "Pattern: Truefaith Vestments",
         name = "Truefaith Vestments",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6448,6 +6659,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18457,
+        recipeItemId = 14513,
+        recipeItemName = "Pattern: Robe of the Archmage",
         name = "Robe of the Archmage",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6470,6 +6683,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18458,
+        recipeItemId = 14514,
+        recipeItemName = "Pattern: Robe of the Void",
         name = "Robe of the Void",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6492,6 +6707,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18560,
+        recipeItemId = 14526,
+        recipeItemName = "Pattern: Mooncloth",
         name = "Mooncloth",
         skill = 250,
         colors = { 250, 290, 305, 320 },
@@ -6547,6 +6764,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 20848,
+        recipeItemId = 17017,
+        recipeItemName = "Pattern: Flarecore Mantle",
         name = "Flarecore Mantle",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6569,6 +6788,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 20849,
+        recipeItemId = 17018,
+        recipeItemName = "Pattern: Flarecore Gloves",
         name = "Flarecore Gloves",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6591,6 +6812,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 21945,
+        recipeItemId = 17724,
+        recipeItemName = "Pattern: Green Holiday Shirt",
         name = "Green Holiday Shirt",
         skill = 190,
         colors = { 190, 200, 205, 210 },
@@ -6614,6 +6837,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 22759,
+        recipeItemId = 18265,
+        recipeItemName = "Pattern: Flarecore Wraps",
         name = "Flarecore Wraps",
         skill = 300,
         colors = { 300, 320, 335, 350 },
@@ -6670,6 +6895,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 22866,
+        recipeItemId = 18414,
+        recipeItemName = "Pattern: Belt of the Archmage",
         name = "Belt of the Archmage",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6693,6 +6920,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 22867,
+        recipeItemId = 18415,
+        recipeItemName = "Pattern: Felcloth Gloves",
         name = "Felcloth Gloves",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6714,6 +6943,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 22868,
+        recipeItemId = 18416,
+        recipeItemName = "Pattern: Inferno Gloves",
         name = "Inferno Gloves",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6734,6 +6965,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 22869,
+        recipeItemId = 18417,
+        recipeItemName = "Pattern: Mooncloth Gloves",
         name = "Mooncloth Gloves",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6754,6 +6987,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 22870,
+        recipeItemId = 18418,
+        recipeItemName = "Pattern: Cloak of Warding",
         name = "Cloak of Warding",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6771,9 +7006,12 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 22902,
+        recipeItemId = 18487,
+        recipeItemName = "Pattern: Mooncloth Robe",
         name = "Mooncloth Robe",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6794,6 +7032,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 23662,
+        recipeItemId = 19215,
+        recipeItemName = "Pattern: Wisdom of the Timbermaw",
         name = "Wisdom of the Timbermaw",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -6814,6 +7054,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 23663,
+        recipeItemId = 19218,
+        recipeItemName = "Pattern: Mantle of the Timbermaw",
         name = "Mantle of the Timbermaw",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6834,6 +7076,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 23664,
+        recipeItemId = 19216,
+        recipeItemName = "Pattern: Argent Boots",
         name = "Argent Boots",
         skill = 290,
         colors = { 290, 305, 320, 335 },
@@ -6857,6 +7101,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 23665,
+        recipeItemId = 19217,
+        recipeItemName = "Pattern: Argent Shoulders",
         name = "Argent Shoulders",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6878,6 +7124,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 23666,
+        recipeItemId = 19219,
+        recipeItemName = "Pattern: Flarecore Robe",
         name = "Flarecore Robe",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6900,6 +7148,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 23667,
+        recipeItemId = 19220,
+        recipeItemName = "Pattern: Flarecore Leggings",
         name = "Flarecore Leggings",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6922,6 +7172,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 24091,
+        recipeItemId = 19764,
+        recipeItemName = "Pattern: Bloodvine Vest",
         name = "Bloodvine Vest",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6943,6 +7195,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 24092,
+        recipeItemId = 19765,
+        recipeItemName = "Pattern: Bloodvine Leggings",
         name = "Bloodvine Leggings",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6964,6 +7218,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 24093,
+        recipeItemId = 19766,
+        recipeItemName = "Pattern: Bloodvine Boots",
         name = "Bloodvine Boots",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -6985,6 +7241,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 24901,
+        recipeItemId = 20546,
+        recipeItemName = "Pattern: Runed Stygian Leggings",
         name = "Runed Stygian Leggings",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7006,6 +7264,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 24902,
+        recipeItemId = 20548,
+        recipeItemName = "Pattern: Runed Stygian Belt",
         name = "Runed Stygian Belt",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7028,6 +7288,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 24903,
+        recipeItemId = 20547,
+        recipeItemName = "Pattern: Runed Stygian Boots",
         name = "Runed Stygian Boots",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7050,6 +7312,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 26085,
+        recipeItemId = 21358,
+        recipeItemName = "Pattern: Soul Pouch",
         name = "Soul Pouch",
         skill = 260,
         colors = { 260, 275, 290, 305 },
@@ -7088,6 +7352,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 26087,
+        recipeItemId = 21371,
+        recipeItemName = "Pattern: Core Felcloth Bag",
         name = "Core Felcloth Bag",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7160,6 +7426,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 27658,
+        recipeItemId = 22307,
+        recipeItemName = "Pattern: Enchanted Mageweave Pouch",
         name = "Enchanted Mageweave Pouch",
         skill = 225,
         colors = { 225, 240, 255, 270 },
@@ -7187,6 +7455,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 27659,
+        recipeItemId = 22308,
+        recipeItemName = "Pattern: Enchanted Runecloth Bag",
         name = "Enchanted Runecloth Bag",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -7207,6 +7477,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 27660,
+        recipeItemId = 22309,
+        recipeItemName = "Pattern: Big Bag of Enchantment",
         name = "Big Bag of Enchantment",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7227,6 +7499,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 27724,
+        recipeItemId = 22310,
+        recipeItemName = "Pattern: Cenarion Herb Bag",
         name = "Cenarion Herb Bag",
         skill = 275,
         colors = { 275, 290, 305, 320 },
@@ -7247,6 +7521,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 27725,
+        recipeItemId = 22312,
+        recipeItemName = "Pattern: Satchel of Cenarius",
         name = "Satchel of Cenarius",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7351,6 +7627,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 28210,
+        recipeItemId = 22683,
+        recipeItemName = "Pattern: Gaea's Embrace",
         name = "Gaea's Embrace",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7372,6 +7650,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 28480,
+        recipeItemId = 22774,
+        recipeItemName = "Pattern: Sylvan Vest",
         name = "Sylvan Vest",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7393,6 +7673,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 28481,
+        recipeItemId = 22773,
+        recipeItemName = "Pattern: Sylvan Crown",
         name = "Sylvan Crown",
         skill = 300,
         colors = { 300, 315, 330, 345 },
@@ -7412,6 +7694,8 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 28482,
+        recipeItemId = 234314,
+        recipeItemName = "Pattern: Sylvan Shoulders",
         name = "Sylvan Shoulders",
         skill = 300,
         colors = { 300, 315, 330, 345 },

@@ -118,6 +118,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 2158,
+        recipeItemId = 2406,
+        recipeItemName = "Pattern: Fine Leather Boots",
         name = "Fine Leather Boots",
         skill = 90,
         colors = { 90, 120, 135, 150 },
@@ -213,6 +215,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 2160,
@@ -339,9 +342,12 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 2163,
+        recipeItemId = 2407,
+        recipeItemName = "Pattern: White Leather Jerkin",
         name = "White Leather Jerkin",
         skill = 60,
         colors = { 60, 90, 105, 120 },
@@ -404,6 +410,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 2164,
+        recipeItemId = 2408,
+        recipeItemName = "Pattern: Fine Leather Gloves",
         name = "Fine Leather Gloves",
         skill = 75,
         colors = { 75, 105, 120, 135 },
@@ -593,9 +601,12 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 2169,
+        recipeItemId = 2409,
+        recipeItemName = "Pattern: Dark Leather Tunic",
         name = "Dark Leather Tunic",
         skill = 100,
         colors = { 100, 125, 137, 150 },
@@ -858,6 +869,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 3761,
@@ -893,6 +905,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3762,
+        recipeItemId = 4293,
+        recipeItemName = "Pattern: Hillman's Leather Vest",
         name = "Hillman's Leather Vest",
         skill = 100,
         colors = { 100, 125, 137, 150 },
@@ -1038,6 +1052,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3765,
+        recipeItemId = 7360,
+        recipeItemName = "Pattern: Dark Leather Gloves",
         name = "Dark Leather Gloves",
         skill = 120,
         colors = { 120, 155, 167, 180 },
@@ -1129,6 +1145,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3767,
+        recipeItemId = 4294,
+        recipeItemName = "Pattern: Hillman's Belt",
         name = "Hillman's Belt",
         skill = 120,
         colors = { 120, 145, 157, 170 },
@@ -1216,6 +1234,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3769,
+        recipeItemId = 4296,
+        recipeItemName = "Pattern: Dark Leather Shoulders",
         name = "Dark Leather Shoulders",
         skill = 140,
         colors = { 140, 165, 177, 190 },
@@ -1294,6 +1314,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3771,
+        recipeItemId = 4297,
+        recipeItemName = "Pattern: Barbaric Gloves",
         name = "Barbaric Gloves",
         skill = 150,
         colors = { 150, 170, 180, 190 },
@@ -1353,6 +1375,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3772,
+        recipeItemId = 7613,
+        recipeItemName = "Pattern: Green Leather Armor",
         name = "Green Leather Armor",
         skill = 155,
         colors = { 155, 175, 185, 195 },
@@ -1374,6 +1398,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3773,
+        recipeItemId = 4299,
+        recipeItemName = "Pattern: Guardian Armor",
         name = "Guardian Armor",
         skill = 175,
         colors = { 175, 195, 205, 215 },
@@ -1448,6 +1474,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3775,
+        recipeItemId = 217266,
+        recipeItemName = "Pattern: Guardian Belt",
         name = "Guardian Belt",
         skill = 170,
         colors = { 170, 190, 200, 210 },
@@ -1489,6 +1517,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3777,
+        recipeItemId = 4300,
+        recipeItemName = "Pattern: Guardian Leather Bracers",
         name = "Guardian Leather Bracers",
         skill = 195,
         colors = { 195, 215, 225, 235 },
@@ -1506,6 +1536,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3778,
+        recipeItemId = 14635,
+        recipeItemName = "Pattern: Gem-studded Leather Belt",
         name = "Gem-studded Leather Belt",
         skill = 185,
         colors = { 185, 205, 215, 225 },
@@ -1528,6 +1560,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3779,
+        recipeItemId = 4301,
+        recipeItemName = "Pattern: Barbaric Belt",
         name = "Barbaric Belt",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -1705,6 +1739,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 4096,
+        recipeItemId = 13287,
+        recipeItemName = "Pattern: Raptor Hide Harness",
         name = "Raptor Hide Harness",
         skill = 165,
         colors = { 165, 185, 195, 205 },
@@ -1724,6 +1760,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 4097,
+        recipeItemId = 13288,
+        recipeItemName = "Pattern: Raptor Hide Belt",
         name = "Raptor Hide Belt",
         skill = 165,
         colors = { 165, 185, 195, 205 },
@@ -1743,6 +1781,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 5244,
+        recipeItemId = 5083,
+        recipeItemName = "Pattern: Kodo Hide Bag",
         name = "Kodo Hide Bag",
         skill = 40,
         colors = { 40, 70, 85, 100 },
@@ -1784,6 +1824,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 6702,
+        recipeItemId = 5786,
+        recipeItemName = "Pattern: Murloc Scale Belt",
         name = "Murloc Scale Belt",
         skill = 90,
         colors = { 90, 120, 135, 150 },
@@ -1811,6 +1853,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 6703,
+        recipeItemId = 5787,
+        recipeItemName = "Pattern: Murloc Scale Breastplate",
         name = "Murloc Scale Breastplate",
         skill = 95,
         colors = { 95, 125, 140, 155 },
@@ -1839,6 +1883,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 6704,
+        recipeItemId = 5788,
+        recipeItemName = "Pattern: Thick Murloc Armor",
         name = "Thick Murloc Armor",
         skill = 170,
         colors = { 170, 190, 200, 210 },
@@ -1867,6 +1913,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 6705,
+        recipeItemId = 5789,
+        recipeItemName = "Pattern: Murloc Scale Bracers",
         name = "Murloc Scale Bracers",
         skill = 190,
         colors = { 190, 210, 220, 230 },
@@ -1910,6 +1958,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 7133,
+        recipeItemId = 5972,
+        recipeItemName = "Pattern: Fine Leather Pants",
         name = "Fine Leather Pants",
         skill = 105,
         colors = { 105, 130, 142, 155 },
@@ -2028,6 +2078,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 7149,
+        recipeItemId = 5973,
+        recipeItemName = "Pattern: Barbaric Leggings",
         name = "Barbaric Leggings",
         skill = 170,
         colors = { 170, 190, 200, 210 },
@@ -2073,6 +2125,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 7153,
+        recipeItemId = 5974,
+        recipeItemName = "Pattern: Guardian Cloak",
         name = "Guardian Cloak",
         skill = 185,
         colors = { 185, 205, 215, 225 },
@@ -2087,6 +2141,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 7156,
@@ -2112,6 +2167,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 7953,
+        recipeItemId = 6474,
+        recipeItemName = "Pattern: Deviate Scale Cloak",
         name = "Deviate Scale Cloak",
         skill = 90,
         colors = { 90, 120, 135, 150 },
@@ -2128,9 +2185,12 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 7954,
+        recipeItemId = 6475,
+        recipeItemName = "Pattern: Deviate Scale Gloves",
         name = "Deviate Scale Gloves",
         skill = 105,
         colors = { 105, 130, 142, 155 },
@@ -2150,6 +2210,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 7955,
+        recipeItemId = 6476,
+        recipeItemName = "Pattern: Deviate Scale Belt",
         name = "Deviate Scale Belt",
         skill = 115,
         colors = { 115, 140, 152, 165 },
@@ -2169,6 +2231,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 8322,
+        recipeItemId = 6710,
+        recipeItemName = "Pattern: Moonglow Vest",
         name = "Moonglow Vest",
         skill = 90,
         colors = { 90, 115, 130, 145 },
@@ -2202,6 +2266,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 9059,
@@ -2305,6 +2370,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 9064,
+        recipeItemId = 7288,
+        recipeItemName = "Pattern: Rugged Leather Pants",
         name = "Rugged Leather Pants",
         skill = 35,
         colors = { 35, 65, 80, 95 },
@@ -2441,6 +2508,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 9070,
+        recipeItemId = 7289,
+        recipeItemName = "Pattern: Black Whelp Cloak",
         name = "Black Whelp Cloak",
         skill = 100,
         colors = { 100, 125, 137, 150 },
@@ -2457,9 +2526,12 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Cloak",
     },
     {
         spellId = 9072,
+        recipeItemId = 7290,
+        recipeItemName = "Pattern: Red Whelp Gloves",
         name = "Red Whelp Gloves",
         skill = 120,
         colors = { 120, 145, 157, 170 },
@@ -2543,6 +2615,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 9146,
+        recipeItemId = 7361,
+        recipeItemName = "Pattern: Herbalist's Gloves",
         name = "Herbalist's Gloves",
         skill = 135,
         colors = { 135, 160, 172, 185 },
@@ -2562,6 +2636,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 9147,
+        recipeItemId = 7362,
+        recipeItemName = "Pattern: Earthen Leather Shoulders",
         name = "Earthen Leather Shoulders",
         skill = 135,
         colors = { 135, 160, 172, 185 },
@@ -2581,6 +2657,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 9148,
+        recipeItemId = 7363,
+        recipeItemName = "Pattern: Pilferer's Gloves",
         name = "Pilferer's Gloves",
         skill = 140,
         colors = { 140, 165, 177, 190 },
@@ -2643,6 +2721,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 9149,
+        recipeItemId = 7364,
+        recipeItemName = "Pattern: Heavy Earthen Gloves",
         name = "Heavy Earthen Gloves",
         skill = 145,
         colors = { 145, 170, 182, 195 },
@@ -2723,6 +2803,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 9195,
+        recipeItemId = 7449,
+        recipeItemName = "Pattern: Dusky Leather Leggings",
         name = "Dusky Leather Leggings",
         skill = 165,
         colors = { 165, 185, 195, 205 },
@@ -2790,6 +2872,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 9197,
+        recipeItemId = 7450,
+        recipeItemName = "Pattern: Green Whelp Armor",
         name = "Green Whelp Armor",
         skill = 175,
         colors = { 175, 195, 205, 215 },
@@ -2861,6 +2945,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 9201,
@@ -2886,6 +2971,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 9202,
+        recipeItemId = 7451,
+        recipeItemName = "Pattern: Green Whelp Bracers",
         name = "Green Whelp Bracers",
         skill = 190,
         colors = { 190, 210, 220, 230 },
@@ -2932,6 +3019,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 9207,
+        recipeItemId = 7452,
+        recipeItemName = "Pattern: Dusky Boots",
         name = "Dusky Boots",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -2961,6 +3050,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 9208,
+        recipeItemId = 7453,
+        recipeItemName = "Pattern: Swift Boots",
         name = "Swift Boots",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -3053,6 +3144,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10490,
+        recipeItemId = 8384,
+        recipeItemName = "Pattern: Comfortable Leather Hat",
         name = "Comfortable Leather Hat",
         skill = 200,
         colors = { 200, 220, 230, 240 },
@@ -3122,6 +3215,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10509,
+        recipeItemId = 217271,
+        recipeItemName = "Pattern: Turtle Scale Gloves",
         name = "Turtle Scale Gloves",
         skill = 205,
         colors = { 205, 225, 235, 245 },
@@ -3161,6 +3256,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10516,
+        recipeItemId = 8409,
+        recipeItemName = "Pattern: Nightscape Shoulders",
         name = "Nightscape Shoulders",
         skill = 210,
         colors = { 210, 230, 240, 250 },
@@ -3203,6 +3300,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10525,
+        recipeItemId = 8395,
+        recipeItemName = "Pattern: Tough Scorpid Breastplate",
         name = "Tough Scorpid Breastplate",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3222,6 +3321,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10529,
+        recipeItemId = 8403,
+        recipeItemName = "Pattern: Wild Leather Shoulders",
         name = "Wild Leather Shoulders",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3242,6 +3343,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10531,
+        recipeItemId = 8387,
+        recipeItemName = "Pattern: Big Voodoo Mask",
         name = "Big Voodoo Mask",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3259,6 +3362,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10533,
+        recipeItemId = 8397,
+        recipeItemName = "Pattern: Tough Scorpid Bracers",
         name = "Tough Scorpid Bracers",
         skill = 220,
         colors = { 220, 240, 250, 260 },
@@ -3278,6 +3383,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10542,
+        recipeItemId = 8398,
+        recipeItemName = "Pattern: Tough Scorpid Gloves",
         name = "Tough Scorpid Gloves",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3297,6 +3404,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10544,
+        recipeItemId = 8404,
+        recipeItemName = "Pattern: Wild Leather Vest",
         name = "Wild Leather Vest",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3319,6 +3428,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10546,
+        recipeItemId = 8405,
+        recipeItemName = "Pattern: Wild Leather Helmet",
         name = "Wild Leather Helmet",
         skill = 225,
         colors = { 225, 245, 255, 265 },
@@ -3378,6 +3489,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10554,
+        recipeItemId = 8399,
+        recipeItemName = "Pattern: Tough Scorpid Boots",
         name = "Tough Scorpid Boots",
         skill = 235,
         colors = { 235, 255, 265, 275 },
@@ -3436,6 +3549,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10560,
+        recipeItemId = 8389,
+        recipeItemName = "Pattern: Big Voodoo Pants",
         name = "Big Voodoo Pants",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -3508,6 +3623,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10562,
+        recipeItemId = 8390,
+        recipeItemName = "Pattern: Big Voodoo Cloak",
         name = "Big Voodoo Cloak",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -3566,9 +3683,12 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 10564,
+        recipeItemId = 8400,
+        recipeItemName = "Pattern: Tough Scorpid Shoulders",
         name = "Tough Scorpid Shoulders",
         skill = 240,
         colors = { 240, 260, 270, 280 },
@@ -3590,6 +3710,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10566,
+        recipeItemId = 8406,
+        recipeItemName = "Pattern: Wild Leather Boots",
         name = "Wild Leather Boots",
         skill = 245,
         colors = { 245, 265, 275, 285 },
@@ -3610,6 +3732,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10568,
+        recipeItemId = 8401,
+        recipeItemName = "Pattern: Tough Scorpid Leggings",
         name = "Tough Scorpid Leggings",
         skill = 245,
         colors = { 245, 265, 275, 285 },
@@ -3629,6 +3753,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10570,
+        recipeItemId = 8402,
+        recipeItemName = "Pattern: Tough Scorpid Helm",
         name = "Tough Scorpid Helm",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -3650,6 +3776,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10572,
+        recipeItemId = 8407,
+        recipeItemName = "Pattern: Wild Leather Leggings",
         name = "Wild Leather Leggings",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -3670,6 +3798,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10574,
+        recipeItemId = 8408,
+        recipeItemName = "Pattern: Wild Leather Cloak",
         name = "Wild Leather Cloak",
         skill = 250,
         colors = { 250, 270, 280, 290 },
@@ -3687,6 +3817,7 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 10619,
@@ -3936,6 +4067,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19048,
+        recipeItemId = 15724,
+        recipeItemName = "Pattern: Heavy Scorpid Bracers",
         name = "Heavy Scorpid Bracers",
         skill = 255,
         colors = { 255, 275, 285, 295 },
@@ -3955,6 +4088,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19049,
+        recipeItemId = 15725,
+        recipeItemName = "Pattern: Wicked Leather Gauntlets",
         name = "Wicked Leather Gauntlets",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3975,6 +4110,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19050,
+        recipeItemId = 15726,
+        recipeItemName = "Pattern: Green Dragonscale Breastplate",
         name = "Green Dragonscale Breastplate",
         skill = 260,
         colors = { 260, 280, 290, 300 },
@@ -3994,6 +4131,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19051,
+        recipeItemId = 15727,
+        recipeItemName = "Pattern: Heavy Scorpid Vest",
         name = "Heavy Scorpid Vest",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -4013,6 +4152,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19052,
+        recipeItemId = 15728,
+        recipeItemName = "Pattern: Wicked Leather Bracers",
         name = "Wicked Leather Bracers",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -4032,6 +4173,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19053,
+        recipeItemId = 15729,
+        recipeItemName = "Pattern: Chimeric Gloves",
         name = "Chimeric Gloves",
         skill = 265,
         colors = { 265, 285, 295, 305 },
@@ -4051,6 +4194,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19054,
+        recipeItemId = 15730,
+        recipeItemName = "Pattern: Red Dragonscale Breastplate",
         name = "Red Dragonscale Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -4070,6 +4215,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19055,
+        recipeItemId = 15731,
+        recipeItemName = "Pattern: Runic Leather Gauntlets",
         name = "Runic Leather Gauntlets",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4158,6 +4305,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19059,
+        recipeItemId = 15732,
+        recipeItemName = "Pattern: Volcanic Leggings",
         name = "Volcanic Leggings",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4178,6 +4327,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19060,
+        recipeItemId = 15733,
+        recipeItemName = "Pattern: Green Dragonscale Leggings",
         name = "Green Dragonscale Leggings",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4197,6 +4348,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19061,
+        recipeItemId = 15734,
+        recipeItemName = "Pattern: Living Shoulders",
         name = "Living Shoulders",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4217,6 +4370,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19062,
+        recipeItemId = 15735,
+        recipeItemName = "Pattern: Ironfeather Shoulders",
         name = "Ironfeather Shoulders",
         skill = 270,
         colors = { 270, 290, 300, 310 },
@@ -4237,6 +4392,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19063,
+        recipeItemId = 15737,
+        recipeItemName = "Pattern: Chimeric Boots",
         name = "Chimeric Boots",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4310,6 +4467,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19064,
+        recipeItemId = 15738,
+        recipeItemName = "Pattern: Heavy Scorpid Gauntlets",
         name = "Heavy Scorpid Gauntlets",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4329,6 +4488,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19065,
+        recipeItemId = 15739,
+        recipeItemName = "Pattern: Runic Leather Bracers",
         name = "Runic Leather Bracers",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4349,6 +4510,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19066,
+        recipeItemId = 15740,
+        recipeItemName = "Pattern: Frostsaber Boots",
         name = "Frostsaber Boots",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4368,6 +4531,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19067,
+        recipeItemId = 15741,
+        recipeItemName = "Pattern: Stormshroud Pants",
         name = "Stormshroud Pants",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4389,6 +4554,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19068,
+        recipeItemId = 20253,
+        recipeItemName = "Pattern: Warbear Harness",
         name = "Warbear Harness",
         skill = 275,
         colors = { 275, 295, 305, 315 },
@@ -4414,6 +4581,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19070,
+        recipeItemId = 15743,
+        recipeItemName = "Pattern: Heavy Scorpid Belt",
         name = "Heavy Scorpid Belt",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -4480,6 +4649,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19071,
+        recipeItemId = 15744,
+        recipeItemName = "Pattern: Wicked Leather Headband",
         name = "Wicked Leather Headband",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -4499,6 +4670,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19072,
+        recipeItemId = 15745,
+        recipeItemName = "Pattern: Runic Leather Belt",
         name = "Runic Leather Belt",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -4572,6 +4745,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19073,
+        recipeItemId = 15746,
+        recipeItemName = "Pattern: Chimeric Leggings",
         name = "Chimeric Leggings",
         skill = 280,
         colors = { 280, 300, 310, 320 },
@@ -4638,6 +4813,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19074,
+        recipeItemId = 15747,
+        recipeItemName = "Pattern: Frostsaber Leggings",
         name = "Frostsaber Leggings",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4657,6 +4834,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19075,
+        recipeItemId = 15748,
+        recipeItemName = "Pattern: Heavy Scorpid Leggings",
         name = "Heavy Scorpid Leggings",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4676,6 +4855,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19076,
+        recipeItemId = 15749,
+        recipeItemName = "Pattern: Volcanic Breastplate",
         name = "Volcanic Breastplate",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4696,6 +4877,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19077,
+        recipeItemId = 15751,
+        recipeItemName = "Pattern: Blue Dragonscale Breastplate",
         name = "Blue Dragonscale Breastplate",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4716,6 +4899,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19078,
+        recipeItemId = 15752,
+        recipeItemName = "Pattern: Living Leggings",
         name = "Living Leggings",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4736,6 +4921,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19079,
+        recipeItemId = 15753,
+        recipeItemName = "Pattern: Stormshroud Armor",
         name = "Stormshroud Armor",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4757,6 +4944,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19080,
+        recipeItemId = 20254,
+        recipeItemName = "Pattern: Warbear Woolies",
         name = "Warbear Woolies",
         skill = 285,
         colors = { 285, 305, 315, 325 },
@@ -4776,6 +4965,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19081,
+        recipeItemId = 15755,
+        recipeItemName = "Pattern: Chimeric Vest",
         name = "Chimeric Vest",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4846,6 +5037,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19082,
+        recipeItemId = 15756,
+        recipeItemName = "Pattern: Runic Leather Headband",
         name = "Runic Leather Headband",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4865,6 +5058,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19083,
+        recipeItemId = 15757,
+        recipeItemName = "Pattern: Wicked Leather Pants",
         name = "Wicked Leather Pants",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4933,6 +5128,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19084,
+        recipeItemId = 15758,
+        recipeItemName = "Pattern: Devilsaur Gauntlets",
         name = "Devilsaur Gauntlets",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4952,6 +5149,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19085,
+        recipeItemId = 15759,
+        recipeItemName = "Pattern: Black Dragonscale Breastplate",
         name = "Black Dragonscale Breastplate",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4973,6 +5172,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19086,
+        recipeItemId = 15760,
+        recipeItemName = "Pattern: Ironfeather Breastplate",
         name = "Ironfeather Breastplate",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -4994,6 +5195,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19087,
+        recipeItemId = 15761,
+        recipeItemName = "Pattern: Frostsaber Gloves",
         name = "Frostsaber Gloves",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5013,6 +5216,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19088,
+        recipeItemId = 15762,
+        recipeItemName = "Pattern: Heavy Scorpid Helm",
         name = "Heavy Scorpid Helm",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5033,6 +5238,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19089,
+        recipeItemId = 15763,
+        recipeItemName = "Pattern: Blue Dragonscale Shoulders",
         name = "Blue Dragonscale Shoulders",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5054,6 +5261,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19090,
+        recipeItemId = 15764,
+        recipeItemName = "Pattern: Stormshroud Shoulders",
         name = "Stormshroud Shoulders",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5075,6 +5284,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19091,
+        recipeItemId = 15765,
+        recipeItemName = "Pattern: Runic Leather Pants",
         name = "Runic Leather Pants",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5166,6 +5377,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19092,
+        recipeItemId = 15768,
+        recipeItemName = "Pattern: Wicked Leather Belt",
         name = "Wicked Leather Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5199,9 +5412,12 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 19094,
+        recipeItemId = 15770,
+        recipeItemName = "Pattern: Black Dragonscale Shoulders",
         name = "Black Dragonscale Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5224,6 +5440,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19095,
+        recipeItemId = 15771,
+        recipeItemName = "Pattern: Living Breastplate",
         name = "Living Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5245,6 +5463,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19097,
+        recipeItemId = 15772,
+        recipeItemName = "Pattern: Devilsaur Leggings",
         name = "Devilsaur Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5268,6 +5488,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19098,
+        recipeItemId = 15773,
+        recipeItemName = "Pattern: Wicked Leather Armor",
         name = "Wicked Leather Armor",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5289,6 +5511,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19100,
+        recipeItemId = 15774,
+        recipeItemName = "Pattern: Heavy Scorpid Shoulders",
         name = "Heavy Scorpid Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5309,6 +5533,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19101,
+        recipeItemId = 15775,
+        recipeItemName = "Pattern: Volcanic Shoulders",
         name = "Volcanic Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5350,6 +5576,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19103,
+        recipeItemId = 15777,
+        recipeItemName = "Pattern: Runic Leather Shoulders",
         name = "Runic Leather Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5371,6 +5599,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19104,
+        recipeItemId = 15779,
+        recipeItemName = "Pattern: Frostsaber Tunic",
         name = "Frostsaber Tunic",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5391,6 +5621,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 19107,
+        recipeItemId = 15781,
+        recipeItemName = "Pattern: Black Dragonscale Leggings",
         name = "Black Dragonscale Leggings",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5493,6 +5725,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 20853,
+        recipeItemId = 17022,
+        recipeItemName = "Pattern: Corehound Boots",
         name = "Corehound Boots",
         skill = 295,
         colors = { 295, 315, 325, 335 },
@@ -5514,6 +5748,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 20854,
+        recipeItemId = 17023,
+        recipeItemName = "Pattern: Molten Helm",
         name = "Molten Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5534,6 +5770,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 20855,
+        recipeItemId = 17025,
+        recipeItemName = "Pattern: Black Dragonscale Boots",
         name = "Black Dragonscale Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5556,6 +5794,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 21943,
+        recipeItemId = 17722,
+        recipeItemName = "Pattern: Gloves of the Greatfather",
         name = "Gloves of the Greatfather",
         skill = 190,
         colors = { 190, 210, 220, 230 },
@@ -5595,6 +5835,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 22711,
+        recipeItemId = 18239,
+        recipeItemName = "Pattern: Shadowskin Gloves",
         name = "Shadowskin Gloves",
         skill = 200,
         colors = { 200, 210, 220, 230 },
@@ -5617,6 +5859,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 22727,
+        recipeItemId = 18252,
+        recipeItemName = "Pattern: Core Armor Kit",
         name = "Core Armor Kit",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5689,6 +5933,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 22922,
+        recipeItemId = 18515,
+        recipeItemName = "Pattern: Mongoose Boots",
         name = "Mongoose Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5710,6 +5956,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 22923,
+        recipeItemId = 18516,
+        recipeItemName = "Pattern: Swift Flight Bracers",
         name = "Swift Flight Bracers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5731,6 +5979,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 22926,
+        recipeItemId = 18517,
+        recipeItemName = "Pattern: Chromatic Cloak",
         name = "Chromatic Cloak",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5750,9 +6000,12 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "dragonscale",
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 22927,
+        recipeItemId = 18518,
+        recipeItemName = "Pattern: Hide of the Wild",
         name = "Hide of the Wild",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5775,6 +6028,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 22928,
+        recipeItemId = 18519,
+        recipeItemName = "Pattern: Shifting Cloak",
         name = "Shifting Cloak",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5794,9 +6049,12 @@ ACC_Data["Leatherworking"] = {
         cooldown = nil,
         specialization = "elemental",
         faction = nil,
+        category = "Cloak",
     },
     {
         spellId = 23190,
+        recipeItemId = 18731,
+        recipeItemName = "Pattern: Heavy Leather Ball",
         name = "Heavy Leather Ball",
         skill = 150,
         colors = { 150, 150, 155, 160 },
@@ -5816,6 +6074,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 23399,
+        recipeItemId = 18949,
+        recipeItemName = "Pattern: Barbaric Bracers",
         name = "Barbaric Bracers",
         skill = 155,
         colors = { 155, 175, 185, 195 },
@@ -5838,6 +6098,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 23703,
+        recipeItemId = 19326,
+        recipeItemName = "Pattern: Might of the Timbermaw",
         name = "Might of the Timbermaw",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -5859,6 +6121,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 23704,
+        recipeItemId = 19327,
+        recipeItemName = "Pattern: Timbermaw Brawlers",
         name = "Timbermaw Brawlers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5880,6 +6144,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 23705,
+        recipeItemId = 19328,
+        recipeItemName = "Pattern: Dawn Treaders",
         name = "Dawn Treaders",
         skill = 290,
         colors = { 290, 310, 320, 330 },
@@ -5903,6 +6169,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 23706,
+        recipeItemId = 19329,
+        recipeItemName = "Pattern: Golden Mantle of the Dawn",
         name = "Golden Mantle of the Dawn",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5926,6 +6194,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 23707,
+        recipeItemId = 19330,
+        recipeItemName = "Pattern: Lava Belt",
         name = "Lava Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5945,6 +6215,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 23708,
+        recipeItemId = 19331,
+        recipeItemName = "Pattern: Chromatic Gauntlets",
         name = "Chromatic Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5967,6 +6239,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 23709,
+        recipeItemId = 19332,
+        recipeItemName = "Pattern: Corehound Belt",
         name = "Corehound Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -5989,6 +6263,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 23710,
+        recipeItemId = 19333,
+        recipeItemName = "Pattern: Molten Belt",
         name = "Molten Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6011,6 +6287,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24121,
+        recipeItemId = 19769,
+        recipeItemName = "Pattern: Primal Batskin Jerkin",
         name = "Primal Batskin Jerkin",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6031,6 +6309,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24122,
+        recipeItemId = 19770,
+        recipeItemName = "Pattern: Primal Batskin Gloves",
         name = "Primal Batskin Gloves",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6051,6 +6331,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24123,
+        recipeItemId = 19771,
+        recipeItemName = "Pattern: Primal Batskin Bracers",
         name = "Primal Batskin Bracers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6071,6 +6353,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24124,
+        recipeItemId = 19772,
+        recipeItemName = "Pattern: Blood Tiger Breastplate",
         name = "Blood Tiger Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6091,6 +6375,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24125,
+        recipeItemId = 19773,
+        recipeItemName = "Pattern: Blood Tiger Shoulders",
         name = "Blood Tiger Shoulders",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6153,6 +6439,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24703,
+        recipeItemId = 234325,
+        recipeItemName = "Pattern: Dreamscale Breastplate",
         name = "Dreamscale Breastplate",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6174,6 +6462,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24846,
+        recipeItemId = 234301,
+        recipeItemName = "Pattern: Spitfire Bracers",
         name = "Spitfire Bracers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6193,6 +6483,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24847,
+        recipeItemId = 20507,
+        recipeItemName = "Pattern: Spitfire Gauntlets",
         name = "Spitfire Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6233,6 +6525,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24849,
+        recipeItemId = 234295,
+        recipeItemName = "Pattern: Sandstalker Bracers",
         name = "Sandstalker Bracers",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6253,6 +6547,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24850,
+        recipeItemId = 234297,
+        recipeItemName = "Pattern: Sandstalker Gauntlets",
         name = "Sandstalker Gauntlets",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6293,6 +6589,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24940,
+        recipeItemId = 20576,
+        recipeItemName = "Pattern: Black Whelp Tunic",
         name = "Black Whelp Tunic",
         skill = 100,
         colors = { 100, 125, 137, 150 },
@@ -6313,6 +6611,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 26279,
+        recipeItemId = 21548,
+        recipeItemName = "Pattern: Stormshroud Gloves",
         name = "Stormshroud Gloves",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6467,6 +6767,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 28472,
+        recipeItemId = 234311,
+        recipeItemName = "Pattern: Bramblewood Helm",
         name = "Bramblewood Helm",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6486,6 +6788,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 28473,
+        recipeItemId = 22770,
+        recipeItemName = "Pattern: Bramblewood Boots",
         name = "Bramblewood Boots",
         skill = 300,
         colors = { 300, 320, 330, 340 },
@@ -6505,6 +6809,8 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 28474,
+        recipeItemId = 234307,
+        recipeItemName = "Pattern: Bramblewood Belt",
         name = "Bramblewood Belt",
         skill = 300,
         colors = { 300, 320, 330, 340 },

@@ -324,6 +324,8 @@ ACC_Data["First Aid"] = {
     },
     {
         spellId = 23787,
+        recipeItemId = 19442,
+        recipeItemName = "Formula: Powerful Anti-Venom",
         name = "Powerful Anti-Venom",
         skill = 300,
         colors = { 300, 300, 330, 360 },

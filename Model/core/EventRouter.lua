@@ -1,0 +1,2 @@
+-- EventRouter: placeholder for future WoW event registration and dispatch logic.
+-- Register addon events here (e.g. SKILL_LINES_CHANGED, TRADE_SKILL_UPDATE) as needed.

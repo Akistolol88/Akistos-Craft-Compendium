@@ -1,1 +1,3 @@
- -- Tracker: per-character learned/unlearned recipe tracking (not yet implemented)
+-- Tracker: per-character learned/unlearned recipe tracking (not yet implemented).
+-- Will store known spell IDs in ACC_CharacterData (SavedVariables) so the UI can
+-- highlight or filter recipes the player already knows.

@@ -6,8 +6,9 @@ local categoryFrame
 local recipeList = {}   -- full list for the current profession, excluding header entries
 local pageIndex  = 1
 
-local rowsPerPage = 20
-local rowButtons  = {}  -- pre-built row buttons reused across pages
+local rowsPerPage   = 40
+local rowsPerColumn = 20  -- buttons 1–20 are column 1; 21–40 are column 2
+local rowButtons    = {}  -- pre-built row buttons reused across pages
 
 local prevButton
 local nextButton
@@ -15,6 +16,52 @@ local pageLabel
 
 local activeCategory  = nil
 local categoryButtons = {}  -- rebuilt each time a profession is selected
+local currentProfName    = nil
+local pendingByItemId    = {}  -- itemId → recipe; populated when GetItemInfo returns nil on first load
+local buildCategoryList      -- forward-declared; defined before selectProfession below
+
+
+-- Fixed category display order for specific professions.
+-- Only categories that actually have at least one recipe are shown.
+local professionCategoryOrder = {
+    Engineering = {
+        "Helm", "Armor", "Trinket", "Guns",
+        "---",
+        "Door Explosive", "Dummies", "Explosives",
+        "---",
+        "Bullets", "Scopes",
+        "---",
+        "Parts", "Fireworks", "Pets", "Misc",
+    },
+    Enchanting = {
+        "Chest", "Cloak", "Gloves", "Boots", "Bracer",
+        "Weapon", "2H Weapon", "Shield",
+        "---",
+        "Oils", "Wands", "Rods", "Misc",
+    },
+    Alchemy = {
+        "Flasks",
+        "Offensive Elixirs", "Defensive Elixirs",
+        "Healing/Mana Potions", "Protection Potions",
+        "Utility Elixirs",
+        "Transmute",
+        "---",
+        "Oils", "Misc",
+    },
+    Leatherworking = {
+        "Helm", "Shoulders", "Cloak", "Chest", "Gloves", "Belt", "Legs", "Boots", "Bracers",
+        "---",
+        "Quivers & Pouches", "Armorkits", "Skins", "Misc",
+        "---",
+        "Fire Resistance", "Nature Resistance", "Frost Resistance",
+    },
+}
+
+-- Fallback icon used when a recipe has no formula item and creates nothing with an icon.
+-- Enchanting enchants are the main case: they apply directly to gear with no scroll icon.
+local profFallbackIcon = {
+    Enchanting = "Interface\\Icons\\trade_engraving",
+}
 
 -- Maps WoW INVTYPE_* constants to the display category shown in the panel.
 -- INVTYPE_ROBE is a chest-slot robe, so it shares the "Chest" category with INVTYPE_CHEST.
@@ -56,8 +103,8 @@ end
 
 local function createMainFrame()
     mainFrame = CreateFrame("Frame", "AccMainFrame", UIParent, "BasicFrameTemplate")
-    mainFrame:SetWidth(580)
-    mainFrame:SetHeight(425)
+    mainFrame:SetWidth(800)
+    mainFrame:SetHeight(540)
     mainFrame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
     mainFrame:SetMovable(true)
     mainFrame:EnableMouse(true)
@@ -66,6 +113,29 @@ local function createMainFrame()
     mainFrame:SetScript("OnDragStop", mainFrame.StopMovingOrSizing)
     -- Close all sub-windows when the browser is hidden (including via the template's close button)
     mainFrame:SetScript("OnHide", function() closeAllBrowserWindows() end)
+    mainFrame:SetScript("OnEvent", function(_, event, arg1)
+        if event == "PLAYER_LOGIN" then
+            -- SavedVariables are guaranteed populated by PLAYER_LOGIN; auto-select last profession.
+            mainFrame:UnregisterEvent("PLAYER_LOGIN")
+            local last = ACC_CharacterData and ACC_CharacterData.lastProfession
+            selectProfession(last or "Alchemy")
+        elseif event == "GET_ITEM_INFO_RECEIVED" then
+            -- Resolves slot categories for items that weren't in the cache when the profession was selected.
+            local recipe = pendingByItemId[arg1]
+            if recipe then
+                local _, _, _, _, _, _, _, _, equipLoc = GetItemInfo(arg1)
+                recipe.resolvedCategory = slotCategory[equipLoc] or "Misc"
+                pendingByItemId[arg1] = nil
+                renderCategoryPanel(buildCategoryList())
+                renderPage()
+            end
+            if not next(pendingByItemId) then
+                mainFrame:UnregisterEvent("GET_ITEM_INFO_RECEIVED")
+            end
+        end
+    end)
+    -- On login, auto-select the last-used profession (or Alchemy for first-time characters).
+    mainFrame:RegisterEvent("PLAYER_LOGIN")
     mainFrame:Hide()
 end
 
@@ -73,7 +143,7 @@ end
 local function createCategoryPanel()
     categoryFrame = CreateFrame("Frame", "AccCategoryPanel", mainFrame, "InsetFrameTemplate")
     categoryFrame:SetWidth(160)
-    categoryFrame:SetHeight(325)
+    categoryFrame:SetHeight(425)
     categoryFrame:SetPoint("TOPRIGHT", mainFrame, "TOPRIGHT", -20, -60)
 end
 
@@ -101,28 +171,57 @@ local function createDropdown()
     end)
 end
 
+-- Two columns of rowsPerColumn rows each, side by side within the recipe area.
+-- Col 1: buttons 1–rowsPerColumn | Col 2: buttons rowsPerColumn+1–rowsPerPage
+local COL_W  = 280   -- pixel width of each column
+local COL1_X = 12    -- left edge of column 1
+local COL2_X = 300   -- left edge of column 2  (COL1_X + COL_W + 8 px gap)
+
 local function createRowButtons()
     for i = 1, rowsPerPage do
+        local col  = i <= rowsPerColumn and 1 or 2
+        local row  = (i - 1) % rowsPerColumn
+        local xOff = col == 1 and COL1_X or COL2_X
+
         local button = CreateFrame("Button", "AccRecipeRow" .. i, mainFrame)
         rowButtons[i] = button
-        button:SetHeight(16)
-        button:SetPoint("TOPLEFT", mainFrame, "TOPLEFT", 12,   -65 - (i - 1) * 16)
-        button:SetPoint("TOPRIGHT", mainFrame, "TOPRIGHT", -195, -65 - (i - 1) * 16)
+        button:SetHeight(22)
+        button:SetWidth(COL_W)
+        button:SetPoint("TOPLEFT", mainFrame, "TOPLEFT", xOff, -65 - row * 22)
+
+        -- Layout: [skill req] [6px gap] [icon 16px] [6px gap] [name …]
+        -- Skill at x=0, icon at x=28, name at x=50. Fixed positions avoid all overlap.
+        local skillText = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        skillText:SetPoint("LEFT", button, "LEFT", 0, 0)
+        button.skillText = skillText
+
+        local icon = button:CreateTexture(nil, "OVERLAY")
+        icon:SetWidth(16)
+        icon:SetHeight(16)
+        icon:SetPoint("LEFT", button, "LEFT", 28, 0)
+        button.icon = icon
 
         local recipeName = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        recipeName:SetPoint("LEFT", button, "LEFT", 4, 0)
+        recipeName:SetPoint("LEFT",  button, "LEFT",  50, 0)
+        recipeName:SetPoint("RIGHT", button, "RIGHT",  0, 0)
+        recipeName:SetJustifyH("LEFT")
         button.recipeName = recipeName
-
-        local skillText = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        skillText:SetPoint("RIGHT", button, "RIGHT", -4, 0)
-        button.skillText = skillText
 
         -- button.recipe is set per-render; closures reference it via the button local, not 'this'
         button:SetScript("OnClick", function() onRecipeClick(button.recipe, button) end)
         button:SetScript("OnEnter", function()
             if button.recipe then
-                GameTooltip:SetOwner(button, "ANCHOR_CURSOR")
+                GameTooltip:SetOwner(button, "ANCHOR_NONE")
+                GameTooltip:SetPoint("BOTTOMLEFT", button, "TOPLEFT", 0, 2)
                 GameTooltip:SetHyperlink(makeSpellLink(button.recipe))
+                local reagents = button.recipe.reagents or {}
+                if #reagents > 0 then
+                    GameTooltip:AddLine("Materials:", 1, 1, 0)
+                    for _, r in ipairs(reagents) do
+                        local name = GetItemInfo(r.id) or ("|cffffff00[" .. r.id .. "]|r")
+                        GameTooltip:AddLine("  " .. name .. " x" .. r.count, 1, 1, 1)
+                    end
+                end
                 GameTooltip:Show()
             end
         end)
@@ -161,6 +260,83 @@ local function createNavButtons()
     pageLabel:SetText("")
 end
 
+-- Derives the ordered category list from the current recipeList + currentProfName.
+-- Extracted so both selectProfession and the GET_ITEM_INFO_RECEIVED handler can call it.
+buildCategoryList = function()
+    -- If this profession has a fixed display order, use it filtered to present categories only.
+    local fixedOrder = professionCategoryOrder[currentProfName]
+    if fixedOrder then
+        local present = {}
+        for _, recipe in ipairs(recipeList) do
+            if recipe.resolvedCategory then present[recipe.resolvedCategory] = true end
+            if recipe.category        then present[recipe.category]         = true end
+        end
+        local result = {}
+        for _, cat in ipairs(fixedOrder) do
+            if cat == "---" then
+                if #result > 0 and result[#result] ~= "---" then
+                    result[#result + 1] = "---"
+                end
+            elseif present[cat] then
+                result[#result + 1] = cat
+            end
+        end
+        if result[#result] == "---" then result[#result] = nil end
+        return result
+    end
+
+    local slotOrder = {
+        "Helm", "Shoulders", "Cloak", "Chest", "Gloves", "Belt", "Legs", "Boots", "Bracers",
+        "Neck", "Ring", "Trinket", "Shirt", "Tabard",
+        "---",
+        "One-Hand", "Mainhand", "Offhand(Weapon)", "Two-Hand", "Shield", "Offhand",
+        "Ranged", "Wand", "Thrown", "Ammo", "Quiver",
+        "---",
+        "Bags", "Misc",
+    }
+
+    local slotOrderSet = {}
+    for _, cat in ipairs(slotOrder) do slotOrderSet[cat] = true end
+
+    local seen, slotSet, manualList = {}, {}, {}
+    for _, recipe in ipairs(recipeList) do
+        if recipe.resolvedCategory and not seen[recipe.resolvedCategory] then
+            seen[recipe.resolvedCategory] = true
+            slotSet[recipe.resolvedCategory] = true
+        end
+        if recipe.category and not seen[recipe.category] then
+            seen[recipe.category] = true
+            -- Manual categories that match a known slot name join the slot-ordered section
+            -- so e.g. category = "Cloak" appears with other armor slots, not at the bottom.
+            if slotOrderSet[recipe.category] then
+                slotSet[recipe.category] = true
+            else
+                manualList[#manualList + 1] = recipe.category
+            end
+        end
+    end
+
+    local slotList = {}
+    for _, cat in ipairs(slotOrder) do
+        if cat == "---" then
+            if #slotList > 0 and slotList[#slotList] ~= "---" then
+                slotList[#slotList + 1] = cat
+            end
+        elseif slotSet[cat] then
+            slotList[#slotList + 1] = cat
+        end
+    end
+    if slotList[#slotList] == "---" then slotList[#slotList] = nil end
+
+    local categoryList = {}
+    for _, cat in ipairs(slotList) do categoryList[#categoryList + 1] = cat end
+    if #manualList > 0 then
+        categoryList[#categoryList + 1] = "---"
+        for _, cat in ipairs(manualList) do categoryList[#categoryList + 1] = cat end
+    end
+    return categoryList
+end
+
 -- ── Public API ────────────────────────────────────────────────────────────────
 
 -- Entry point called from Core.lua on addon load; constructs all browser frames.
@@ -187,6 +363,18 @@ end
 -- Loads a profession into the browser: filters recipes, resolves slot categories,
 -- builds the ordered category list, and renders the first page.
 function selectProfession(profName)
+    -- Cancel any pending resolution from a previous profession selection.
+    mainFrame:UnregisterEvent("GET_ITEM_INFO_RECEIVED")
+    pendingByItemId = {}
+    currentProfName = profName
+
+    -- Persist the choice so the next login auto-selects this profession.
+    if not ACC_CharacterData then ACC_CharacterData = {} end
+    ACC_CharacterData.lastProfession = profName
+    -- Keep the dropdown label in sync when the profession is set programmatically (e.g. on login).
+    local dropdown = _G["AccProfessionDropdown"]
+    if dropdown then UIDropDownMenu_SetText(dropdown, profName) end
+
     local recipeData = ACC_Data[profName] or {}
     recipeList = {}
     for _, recipe in ipairs(recipeData) do
@@ -195,78 +383,53 @@ function selectProfession(profName)
             recipeList[#recipeList + 1] = recipe
         end
     end
+    table.sort(recipeList, function(a, b)
+        local sa, sb = a.skill or 0, b.skill or 0
+        if sa ~= sb then return sa < sb end
+        return (a.name or "") < (b.name or "")
+    end)
     pageIndex = 1
 
-    -- Attempt runtime slot detection via GetItemInfo.
-    -- Returns nil for uncached items; those fall through to "Misc" for gear professions.
+    local isGear = profName == "Tailoring" or profName == "Leatherworking"
+               or profName == "Blacksmithing" or profName == "Engineering"
+
+    -- Resolve slot categories via GetItemInfo.  When an item is not yet in the client
+    -- cache, GetItemInfo returns nil for ALL return values — including the item name.
+    -- We use the name as a "is cached?" signal: nil name means pending, not truly Misc.
     for _, recipe in ipairs(recipeList) do
+        recipe.resolvedCategory = nil
         if recipe.creates then
-            local equipLoc = select(9, GetItemInfo(recipe.creates.id))
-            recipe.resolvedCategory = slotCategory[equipLoc]
-        end
-        if profName == "Tailoring" or profName == "Leatherworking" or profName == "Blacksmithing" then
-            if recipe.resolvedCategory == nil then
+            local itemName, _, _, _, _, _, _, _, equipLoc = GetItemInfo(recipe.creates.id)
+            if itemName then
+                -- Only derive a slot category when no manual category is set.
+                -- If category is already set (e.g. "1-Hand Swords"), skip resolvedCategory entirely
+                -- so the recipe doesn't also appear under the coarser slot bucket ("One-Hand").
+                if not recipe.category then
+                    recipe.resolvedCategory = slotCategory[equipLoc]
+                    if isGear and recipe.resolvedCategory == nil then
+                        recipe.resolvedCategory = "Misc"
+                    end
+                end
+            elseif isGear and not recipe.category then
+                -- Item not cached yet and no manual category; hold in "Misc" and track for later.
                 recipe.resolvedCategory = "Misc"
+                pendingByItemId[recipe.creates.id] = recipe
             end
         end
     end
 
-    -- Desired display order for slot-based categories.
-    -- "---" entries become visual separators between armor / weapons / containers.
-    local slotOrder = {
-        "Helm", "Shoulders", "Cloak", "Chest", "Gloves", "Belt", "Legs", "Boots", "Bracers",
-        "Neck", "Ring", "Trinket", "Shirt", "Tabard",
-        "---",
-        "One-Hand", "Mainhand", "Offhand(Weapon)", "Two-Hand", "Shield", "Offhand",
-        "Ranged", "Wand", "Thrown", "Ammo", "Quiver",
-        "---",
-        "Bags", "Misc",
-    }
-
-    -- Split into slot-detected categories (ordered by slotOrder) and manual pipeline
-    -- tags (recipe.category from manual_categories.json, appended after a separator).
-    local seen      = {}
-    local slotSet   = {}
-    local manualList = {}
-    for _, recipe in ipairs(recipeList) do
-        if recipe.resolvedCategory and not seen[recipe.resolvedCategory] then
-            seen[recipe.resolvedCategory] = true
-            slotSet[recipe.resolvedCategory] = true
-        end
-        if recipe.category and not seen[recipe.category] then
-            seen[recipe.category] = true
-            manualList[#manualList + 1] = recipe.category
-        end
+    -- If any items were uncached, listen for GET_ITEM_INFO_RECEIVED so the OnEvent
+    -- handler (set up in createMainFrame) can promote them out of "Misc" when they arrive.
+    if next(pendingByItemId) then
+        mainFrame:RegisterEvent("GET_ITEM_INFO_RECEIVED")
     end
 
-    -- Build slot list in display order, suppressing leading/trailing/duplicate separators.
-    local slotList = {}
-    for _, cat in ipairs(slotOrder) do
-        if cat == "---" then
-            if #slotList > 0 and slotList[#slotList] ~= "---" then
-                slotList[#slotList + 1] = cat
-            end
-        elseif slotSet[cat] then
-            slotList[#slotList + 1] = cat
-        end
-    end
-    if slotList[#slotList] == "---" then
-        slotList[#slotList] = nil
-    end
-
-    local categoryList = {}
-    for _, cat in ipairs(slotList) do
-        categoryList[#categoryList + 1] = cat
-    end
-    if #manualList > 0 then
-        categoryList[#categoryList + 1] = "---"
-        for _, cat in ipairs(manualList) do
-            categoryList[#categoryList + 1] = cat
-        end
-    end
-
-    -- Default to "Misc" so gear professions land on the catch-all bucket on first load.
+    local categoryList = buildCategoryList()
+    -- Default to the first real category so something is always visible on load.
     activeCategory = "Misc"
+    for _, cat in ipairs(categoryList) do
+        if cat ~= "---" then activeCategory = cat break end
+    end
     renderCategoryPanel(categoryList)
     renderPage()
 end
@@ -281,22 +444,22 @@ function renderCategoryPanel(categoryList)
     local yOffset = 8
     for _, category in ipairs(categoryList) do
         if category == "---" then
-            yOffset = yOffset + 6
+            yOffset = yOffset + 25
         else
             local button = CreateFrame("Button", nil, categoryFrame)
             button:SetPoint("TOPLEFT", categoryFrame, "TOPLEFT", 8, -yOffset)
-            button:SetHeight(16)
-            button:SetWidth(140)
+            button:SetHeight(20)
+            button:SetWidth(148)
             button:SetScript("OnClick", function()
                 activeCategory = category
                 pageIndex = 1
                 renderPage()
             end)
-            local label = button:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+            local label = button:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
             label:SetPoint("LEFT", button, "LEFT", 0, 0)
             label:SetText(category)
             categoryButtons[#categoryButtons + 1] = button
-            yOffset = yOffset + 16
+            yOffset = yOffset + 20
         end
     end
 end
@@ -319,14 +482,33 @@ function renderPage()
     if pageIndex == totalPages then nextButton:Disable() else nextButton:Enable() end
 
     local startIndex = (pageIndex - 1) * rowsPerPage + 1
+
     for i = 1, rowsPerPage do
         local recipe = filteredList[startIndex + i - 1]
         if recipe then
-            rowButtons[i].recipeName:SetText(recipe.name)
-            rowButtons[i].skillText:SetText(recipe.skill or "")
-            rowButtons[i].recipe = recipe  -- stored so OnClick/OnEnter closures can read it
-            rowButtons[i]:Show()
+            if recipe._separator then
+                rowButtons[i].icon:SetTexture(nil)
+                rowButtons[i].recipeName:SetText("")
+                rowButtons[i].skillText:SetText("")
+                rowButtons[i].recipe = nil
+                rowButtons[i]:Show()
+            else
+                local iconName = (recipe.creates and recipe.creates.icon) or recipe.recipeItemIcon
+                local iconTex  = iconName and ("Interface\\Icons\\" .. iconName)
+                if not iconTex then
+                    local id = (recipe.creates and recipe.creates.id) or recipe.recipeItemId
+                    iconTex = id and select(10, GetItemInfo(id))
+                        or profFallbackIcon[currentProfName]
+                        or "Interface\\Icons\\INV_Misc_QuestionMark"
+                end
+                rowButtons[i].icon:SetTexture(iconTex)
+                rowButtons[i].recipeName:SetText(makeSpellLink(recipe))
+                rowButtons[i].skillText:SetText(recipe.skill or "")
+                rowButtons[i].recipe = recipe
+                rowButtons[i]:Show()
+            end
         else
+            rowButtons[i].icon:SetTexture(nil)
             rowButtons[i].recipeName:SetText("")
             rowButtons[i].skillText:SetText("")
             rowButtons[i].recipe = nil
@@ -345,7 +527,26 @@ function getFilteredList()
             result[#result + 1] = recipe
         end
     end
-    return result
+    table.sort(result, function(a, b)
+        local ga = a.displayGroup or 99
+        local gb = b.displayGroup or 99
+        if ga ~= gb then return ga < gb end
+        local sa, sb = a.skill or 0, b.skill or 0
+        if sa ~= sb then return sa < sb end
+        return (a.name or "") < (b.name or "")
+    end)
+    -- Insert a blank separator entry between consecutive display groups.
+    local withSeps = {}
+    local lastGroup = nil
+    for _, recipe in ipairs(result) do
+        local g = recipe.displayGroup or 99
+        if lastGroup ~= nil and g ~= lastGroup then
+            withSeps[#withSeps + 1] = { _separator = true }
+        end
+        withSeps[#withSeps + 1] = recipe
+        lastGroup = g
+    end
+    return withSeps
 end
 
 -- Opens the detail panel for the clicked recipe, anchored below the row button.

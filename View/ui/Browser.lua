@@ -55,6 +55,36 @@ local professionCategoryOrder = {
         "---",
         "Fire Resistance", "Nature Resistance", "Frost Resistance",
     },
+    Blacksmithing = {
+        "Helm", "Shoulders", "Chest", "Gloves", "Belt", "Legs", "Boots", "Bracers",
+        "Shield",
+        "One-Hand",
+        "Mainhand",
+        "Two-Hand",
+        "Rods",
+        "Enhancements",
+        "Sharpening Stones",
+        "Keys",
+        "Misc",
+        "Fire Resistance", "Shadow Resistance", "Frost Resistance", "Nature Resistance",
+    },
+}
+
+-- Sort order for subCategory within a category (lower = first).
+-- Items without a subCategory sort last (order 99).
+local subCategoryOrder = {
+    -- Weapon types
+    Swords              = 1,
+    Maces               = 2,
+    Axes                = 3,
+    Daggers             = 4,
+    Polearms            = 5,
+    -- Stone types
+    ["Sharpening Stones"] = 1,
+    Weightstones          = 2,
+    ["Grinding Stones"]   = 3,
+    -- Enhancement types
+    ["Shield Spikes"]     = 1,
 }
 
 -- Fallback icon used when a recipe has no formula item and creates nothing with an icon.
@@ -402,7 +432,7 @@ function selectProfession(profName)
             local itemName, _, _, _, _, _, _, _, equipLoc = GetItemInfo(recipe.creates.id)
             if itemName then
                 -- Only derive a slot category when no manual category is set.
-                -- If category is already set (e.g. "1-Hand Swords"), skip resolvedCategory entirely
+                -- If category is already set (e.g. "One-Hand Weapon"), skip resolvedCategory entirely
                 -- so the recipe doesn't also appear under the coarser slot bucket ("One-Hand").
                 if not recipe.category then
                     recipe.resolvedCategory = slotCategory[equipLoc]
@@ -528,6 +558,9 @@ function getFilteredList()
         end
     end
     table.sort(result, function(a, b)
+        local oa = subCategoryOrder[a.subCategory] or 99
+        local ob = subCategoryOrder[b.subCategory] or 99
+        if oa ~= ob then return oa < ob end
         local ga = a.displayGroup or 99
         local gb = b.displayGroup or 99
         if ga ~= gb then return ga < gb end
@@ -535,16 +568,19 @@ function getFilteredList()
         if sa ~= sb then return sa < sb end
         return (a.name or "") < (b.name or "")
     end)
-    -- Insert a blank separator entry between consecutive display groups.
+    -- Insert a blank separator between subCategory or displayGroup changes.
     local withSeps = {}
     local lastGroup = nil
+    local lastSub   = nil
     for _, recipe in ipairs(result) do
         local g = recipe.displayGroup or 99
-        if lastGroup ~= nil and g ~= lastGroup then
+        local s = recipe.subCategory  or ""
+        if lastGroup ~= nil and (g ~= lastGroup or s ~= lastSub) then
             withSeps[#withSeps + 1] = { _separator = true }
         end
         withSeps[#withSeps + 1] = recipe
         lastGroup = g
+        lastSub   = s
     end
     return withSeps
 end

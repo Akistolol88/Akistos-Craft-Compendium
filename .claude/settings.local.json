@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(powershell -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\DarkE\\\\OneDrive\\\\Desktop\\\\Akistos Craft Compendium\\\\scripts\\\\fix_bs_categories.ps1\")"
+    ]
+  }
+}

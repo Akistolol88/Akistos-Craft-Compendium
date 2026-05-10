@@ -568,7 +568,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Maces",
         crafting_location = { type = "anvil" },
     },
@@ -609,7 +609,7 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Axes",
         crafting_location = { type = "anvil" },
     },
@@ -652,7 +652,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Swords",
     },
     {
@@ -683,7 +683,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Maces",
     },
     {
@@ -714,7 +714,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Axes",
     },
     {
@@ -745,7 +745,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Swords",
     },
     {
@@ -888,7 +888,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Two-Hand",
         subCategory = "Swords",
     },
     {
@@ -1087,7 +1087,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Maces",
     },
     {
@@ -1135,7 +1135,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "Two-Hand",
+        category = "Mainhand",
         subCategory = "Maces",
     },
     {
@@ -1853,7 +1853,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Swords",
     },
     {
@@ -2026,7 +2026,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Two-Hand",
         subCategory = "Swords",
     },
     {
@@ -2188,7 +2188,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Two-Hand",
         subCategory = "Axes",
     },
     {
@@ -4084,7 +4084,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Axes",
     },
     {
@@ -4233,7 +4233,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Swords",
     },
     {
@@ -4257,7 +4257,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "Two-Hand",
+        category = "Mainhand",
         subCategory = "Maces",
     },
     {
@@ -4286,7 +4286,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = "weaponsmith",
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "Two-Hand",
+        category = "Mainhand",
         subCategory = "Maces",
     },
     {
@@ -4357,7 +4357,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Swords",
     },
     {
@@ -4385,7 +4385,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = "weaponsmith",
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "One-Hand",
+        category = "Mainhand",
         subCategory = "Swords",
     },
     {
@@ -4424,7 +4424,7 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
-        category = "Two-Hand",
+        category = "Mainhand",
         subCategory = "Maces",
     },
     {
@@ -4767,7 +4767,7 @@ ACC_Data["Blacksmithing"] = {
         faction = nil,
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
         category = "Two-Hand",
-        subCategory = "Polearms",
+        subCategory = "Axes",
     },
     {
         spellId = 15295,
@@ -6598,6 +6598,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "axesmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Mainhand",
+        subCategory = "Axes",
     },
     {
         spellId = 16970,
@@ -6626,6 +6628,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "One-Hand",
+        subCategory = "Axes",
     },
     {
         spellId = 16971,
@@ -6650,6 +6654,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "axesmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Two-Hand",
+        subCategory = "Axes",
     },
     {
         spellId = 16973,
@@ -6677,6 +6683,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "hammersmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Two-Hand",
+        subCategory = "Maces",
     },
     {
         spellId = 16978,
@@ -6704,6 +6712,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "swordsmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "One-Hand",
+        subCategory = "Swords",
     },
     {
         spellId = 16983,
@@ -6731,6 +6741,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "hammersmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Mainhand",
+        subCategory = "Maces",
     },
     {
         spellId = 16984,
@@ -6756,6 +6768,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "hammersmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Mainhand",
+        subCategory = "Maces",
     },
     {
         spellId = 16985,
@@ -6784,6 +6798,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "swordsmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Two-Hand",
+        subCategory = "Swords",
     },
     {
         spellId = 16988,
@@ -6810,6 +6826,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "hammersmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Two-Hand",
+        subCategory = "Maces",
     },
     {
         spellId = 16990,
@@ -6837,6 +6855,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "swordsmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Two-Hand",
+        subCategory = "Swords",
     },
     {
         spellId = 16991,
@@ -6864,6 +6884,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "axesmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Mainhand",
+        subCategory = "Axes",
     },
     {
         spellId = 16992,
@@ -6891,6 +6913,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "swordsmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Mainhand",
+        subCategory = "Swords",
     },
     {
         spellId = 16993,
@@ -6917,6 +6941,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "hammersmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Mainhand",
+        subCategory = "Maces",
     },
     {
         spellId = 16994,
@@ -6941,6 +6967,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "axesmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Two-Hand",
+        subCategory = "Axes",
     },
     {
         spellId = 16995,
@@ -6969,6 +6997,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "weaponsmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "One-Hand",
+        subCategory = "Daggers",
     },
     {
         spellId = 17039,
@@ -7247,6 +7277,8 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = "swordsmith",
         faction = nil,
+        category = "Mainhand",
+        subCategory = "Swords",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -7272,6 +7304,8 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = "axesmith",
         faction = nil,
+        category = "Mainhand",
+        subCategory = "Axes",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -7298,6 +7332,8 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Two-Hand",
+        subCategory = "Maces",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -7327,6 +7363,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = nil,
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Mainhand",
+        subCategory = "Axes",
     },
     {
         spellId = 22757,
@@ -7544,6 +7582,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "weaponsmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "One-Hand",
+        subCategory = "Daggers",
     },
     {
         spellId = 23639,
@@ -7568,6 +7608,8 @@ ACC_Data["Blacksmithing"] = {
         cooldown = nil,
         specialization = "weaponsmith",
         faction = nil,
+        category = "Two-Hand",
+        subCategory = "Polearms",
         crafting_location = { type = "black_anvil", zone = "Blackrock Depths", location = "Shadowforge City", note = "Guarded by Lord Incendius — he circles the anvil every few seconds, allowing crafts to be timed without killing him." },
     },
     {
@@ -7595,6 +7637,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "hammersmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "One-Hand",
+        subCategory = "Maces",
     },
     {
         spellId = 23652,
@@ -7621,6 +7665,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "swordsmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "One-Hand",
+        subCategory = "Swords",
     },
     {
         spellId = 23653,
@@ -7647,6 +7693,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "axesmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Two-Hand",
+        subCategory = "Axes",
     },
     {
         spellId = 24136,
@@ -8100,6 +8148,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "hammersmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Mainhand",
+        subCategory = "Maces",
     },
     {
         spellId = 27832,
@@ -8131,6 +8181,8 @@ ACC_Data["Blacksmithing"] = {
         specialization = "swordsmith",
         faction = nil,
         crafting_location = { type = "anvil" },
+        category = "Mainhand",
+        subCategory = "Swords",
     },
     {
         spellId = 28242,

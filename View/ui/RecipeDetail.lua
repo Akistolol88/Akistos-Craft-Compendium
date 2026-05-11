@@ -6,6 +6,7 @@
 local recipeDetailFrame
 local recipeDetailSpellButton
 local recipeDetailKnownLabel
+local recipeDetailSpecLabel
 local recipeDetailCharLabels  = {}
 local recipeDetailCreatesButton
 local recipeDetailMaterialsHeader
@@ -95,6 +96,10 @@ local function createDetailFrame()
     spellText:SetPoint("LEFT", recipeDetailSpellButton, "LEFT", ROW_HEIGHT + 2, 0)
     spellText:SetJustifyH("LEFT")
     recipeDetailSpellButton.text = spellText
+
+    -- Specialization label (Gnomish / Goblin) — position set dynamically, hidden by default
+    recipeDetailSpecLabel = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    recipeDetailSpecLabel:Hide()
 
     -- Known / Not Known label — position set dynamically
     recipeDetailKnownLabel = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
@@ -186,6 +191,24 @@ function showRecipeDetail(recipe, btn)
 
     -- Dynamic layout — y tracks the top of the next row
     local y = -40 - ROW_HEIGHT - ROW_GAP
+
+    -- Specialization badge — shown only for spec-exclusive recipes.
+    -- 4dc8ed = gnomish cyan-blue; ff6600 = goblin orange.
+    if recipe.specialization == "gnomish" then
+        recipeDetailSpecLabel:ClearAllPoints()
+        recipeDetailSpecLabel:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
+        recipeDetailSpecLabel:SetText("|cff4dc8ed[Gnomish Engineering]|r")
+        recipeDetailSpecLabel:Show()
+        y = y - ROW_HEIGHT - 2
+    elseif recipe.specialization == "goblin" then
+        recipeDetailSpecLabel:ClearAllPoints()
+        recipeDetailSpecLabel:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
+        recipeDetailSpecLabel:SetText("|cffff6600[Goblin Engineering]|r")
+        recipeDetailSpecLabel:Show()
+        y = y - ROW_HEIGHT - 2
+    else
+        recipeDetailSpecLabel:Hide()
+    end
 
     -- Known / Not Known + character list
     if recipe.spellId then
@@ -305,6 +328,7 @@ function showRecipeDetail(recipe, btn)
         if w > maxTextW then maxTextW = w end
     end
     measureText(recipeDetailSpellButton.text)
+    if recipeDetailSpecLabel:IsShown() then measureText(recipeDetailSpecLabel) end  -- badge can be the widest row
     if recipe.spellId then measureText(recipeDetailKnownLabel) end
     for i = 1, MAX_CHARS do
         if recipeDetailCharLabels[i]:IsShown() then measureText(recipeDetailCharLabels[i]) end

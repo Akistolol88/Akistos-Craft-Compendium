@@ -1,17 +1,16 @@
--- ── Locals ───────────────────────────────────────────────────────────────────
-
 local recipeDetailFrame
 local recipeDetailSpellButton
-local recipeDetailRecipeItemButton
+local recipeDetailKnownLabel
+local recipeDetailCharLabels  = {}
 local recipeDetailCreatesButton
 local recipeDetailMaterialsHeader
-local recipeDetailReagentButtons = {}  -- up to 8 rows; vanilla recipes never exceed this
+local recipeDetailReagentButtons = {}
 
-
-local PADDING    = 8
-local TITLE_BAR  = 22  -- BasicFrameTemplate title bar height; content starts below this
 local ROW_HEIGHT = 16
 local ROW_GAP    = 4
+local PADDING    = 8
+local INDENT     = 20
+local MAX_CHARS  = 10
 
 local QUALITY_COLOR = {
     [0] = "ff9d9d9d",
@@ -27,10 +26,19 @@ local function makeItemLink(id, name, quality)
     return "|c" .. color .. "|Hitem:" .. id .. ":0:0:0:0:0:0:0|h[" .. name .. "]|h|r"
 end
 
--- ── Helpers ───────────────────────────────────────────────────────────────────
+local function resolveItemLink(id, pipelineName, pipelineQuality)
+    local _, link = GetItemInfo(id)
+    if link then return link end
+    if pipelineName then return makeItemLink(id, pipelineName, pipelineQuality) end
+    return "|cffffff00[" .. id .. "]|r"
+end
 
--- Inserts a hyperlink into the open chat edit box.
--- LeftButtonDown fires on press before WoW removes focus from the edit box.
+local function resolveItemIcon(id, pipelineIcon)
+    if pipelineIcon then return "Interface\\Icons\\" .. pipelineIcon end
+    local _, _, _, _, _, _, _, _, _, tex = GetItemInfo(id)
+    return tex or "Interface\\Icons\\INV_Misc_QuestionMark"
+end
+
 local function insertLink(link)
     for i = 1, NUM_CHAT_WINDOWS do
         local box = _G["ChatFrame" .. i .. "EditBox"]
@@ -42,86 +50,67 @@ local function insertLink(link)
     DEFAULT_CHAT_FRAME:AddMessage(link)
 end
 
--- Returns a proper WoW item hyperlink for inserting into chat.
--- GetItemInfo always produces the correct server-side format (includes player level etc.).
--- Our custom makeItemLink is only a display fallback for uncached items.
-local function resolveItemLink(id, pipelineName, pipelineQuality)
-    local _, link = GetItemInfo(id)
-    if link then return link end
-    if pipelineName then return makeItemLink(id, pipelineName, pipelineQuality) end
-    return "|cffffff00[" .. id .. "]|r"
+local function addIcon(parent)
+    local icon = parent:CreateTexture(nil, "OVERLAY")
+    icon:SetWidth(ROW_HEIGHT)
+    icon:SetHeight(ROW_HEIGHT)
+    icon:SetPoint("LEFT", parent, "LEFT", 0, 0)
+    return icon
 end
-
--- Returns an icon texture path: pipeline icon first, GetItemInfo fallback, then question mark.
-local function resolveItemIcon(id, pipelineIcon)
-    if pipelineIcon then return "Interface\\Icons\\" .. pipelineIcon end
-    local _, _, _, _, _, _, _, _, _, tex = GetItemInfo(id)
-    return tex or "Interface\\Icons\\INV_Misc_QuestionMark"
-end
-
--- ── Frame construction ────────────────────────────────────────────────────────
 
 local function createDetailFrame()
-    -- BasicFrameTemplate provides the standard WoW window chrome (background, border, close button)
     recipeDetailFrame = CreateFrame("Frame", "AccRecipeDetailFrame", UIParent, "BasicFrameTemplate")
-    recipeDetailFrame:SetWidth(280)
-    recipeDetailFrame:SetHeight(100)  -- resized dynamically in showRecipeDetail
+    recipeDetailFrame:SetWidth(260)
+    recipeDetailFrame:SetHeight(100)
     recipeDetailFrame:SetPoint("CENTER", UIParent, "CENTER", 320, 0)
     recipeDetailFrame:SetFrameStrata("DIALOG")
     recipeDetailFrame:EnableMouse(true)
     recipeDetailFrame:Hide()
 
-    local function addIcon(parent)
-        local icon = parent:CreateTexture(nil, "OVERLAY")
-        icon:SetWidth(ROW_HEIGHT)
-        icon:SetHeight(ROW_HEIGHT)
-        icon:SetPoint("LEFT", parent, "LEFT", 0, 0)
-        return icon
-    end
-
-    -- Spell row: hover shows spell tooltip, click inserts link
-    recipeDetailSpellButton = CreateFrame("Button", "AccRecipeDetailSpellBtn", recipeDetailFrame)
+    -- Spell / recipe item row — always the first row, fixed position
+    recipeDetailSpellButton = CreateFrame("Button", "AccRecipeButton", recipeDetailFrame)
     recipeDetailSpellButton:SetHeight(ROW_HEIGHT)
+    recipeDetailSpellButton:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING, -40)
+    recipeDetailSpellButton:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), -40)
     recipeDetailSpellButton:EnableMouse(true)
-    recipeDetailSpellButton:RegisterForClicks("LeftButtonDown")
+    recipeDetailSpellButton:RegisterForClicks("LeftButtonUp")
     recipeDetailSpellButton.icon = addIcon(recipeDetailSpellButton)
     local spellText = recipeDetailSpellButton:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     spellText:SetPoint("LEFT", recipeDetailSpellButton, "LEFT", ROW_HEIGHT + 2, 0)
     spellText:SetJustifyH("LEFT")
     recipeDetailSpellButton.text = spellText
 
-    -- Recipe item row: shows the physical Pattern/Plans/etc. if one exists
-    recipeDetailRecipeItemButton = CreateFrame("Button", nil, recipeDetailFrame)
-    recipeDetailRecipeItemButton:SetHeight(ROW_HEIGHT)
-    recipeDetailRecipeItemButton:EnableMouse(true)
-    recipeDetailRecipeItemButton:RegisterForClicks("LeftButtonDown")
-    recipeDetailRecipeItemButton.icon = addIcon(recipeDetailRecipeItemButton)
-    local recipeItemText = recipeDetailRecipeItemButton:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    recipeItemText:SetPoint("LEFT", recipeDetailRecipeItemButton, "LEFT", ROW_HEIGHT + 2, 0)
-    recipeItemText:SetJustifyH("LEFT")
-    recipeDetailRecipeItemButton.text = recipeItemText
+    -- Known / Not Known label — position set dynamically
+    recipeDetailKnownLabel = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
 
-    -- Creates row: hidden for spells that produce no item (e.g. some enchants)
+    -- Character name labels — position set dynamically, hidden by default
+    for i = 1, MAX_CHARS do
+        local lbl = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        lbl:Hide()
+        recipeDetailCharLabels[i] = lbl
+    end
+
+    -- Creates row — position set dynamically
     recipeDetailCreatesButton = CreateFrame("Button", nil, recipeDetailFrame)
     recipeDetailCreatesButton:SetHeight(ROW_HEIGHT)
     recipeDetailCreatesButton:EnableMouse(true)
-    recipeDetailCreatesButton:RegisterForClicks("LeftButtonDown")
+    recipeDetailCreatesButton:RegisterForClicks("LeftButtonUp")
     recipeDetailCreatesButton.icon = addIcon(recipeDetailCreatesButton)
     local createsText = recipeDetailCreatesButton:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     createsText:SetPoint("LEFT", recipeDetailCreatesButton, "LEFT", ROW_HEIGHT + 2, 0)
     createsText:SetJustifyH("LEFT")
     recipeDetailCreatesButton.text = createsText
 
-    -- Static "Materials:" section header
-    recipeDetailMaterialsHeader = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    recipeDetailMaterialsHeader:SetText("|cffffff99Materials:|r")
+    -- Materials header — position set dynamically
+    recipeDetailMaterialsHeader = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    recipeDetailMaterialsHeader:SetText("Materials:")
 
-    -- Pre-build all reagent rows; unused rows are hidden per recipe
+    -- Reagent rows — position set dynamically, hidden by default
     for i = 1, 8 do
         local btn = CreateFrame("Button", nil, recipeDetailFrame)
         btn:SetHeight(ROW_HEIGHT)
         btn:EnableMouse(true)
-        btn:RegisterForClicks("LeftButtonDown")
+        btn:RegisterForClicks("LeftButtonUp")
         btn.icon = addIcon(btn)
         local itemText = btn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
         itemText:SetPoint("LEFT", btn, "LEFT", ROW_HEIGHT + 2, 0)
@@ -132,24 +121,7 @@ local function createDetailFrame()
     end
 end
 
--- ── Public API ────────────────────────────────────────────────────────────────
-
--- Entry point called from browserInit; builds all detail frame widgets once at load time.
-function initRecipeDetail()
-    createDetailFrame()
-end
-
--- Called when the browser closes; hides all sub-windows.
-function closeAllBrowserWindows()
-    if recipeDetailFrame then recipeDetailFrame:Hide() end
-end
-
--- Populates and shows the detail panel for the given recipe.
--- Repositions all rows dynamically so the frame fits its content exactly.
 function showRecipeDetail(recipe, btn)
-    if not recipe then return end
-
-    -- Anchor below the clicked row button; clear any previous position first
     recipeDetailFrame:ClearAllPoints()
     if btn then
         recipeDetailFrame:SetPoint("TOPLEFT", btn, "BOTTOMLEFT", 0, -2)
@@ -157,14 +129,12 @@ function showRecipeDetail(recipe, btn)
         recipeDetailFrame:SetPoint("CENTER", UIParent, "CENTER", 320, 0)
     end
 
-    local y = -(TITLE_BAR + PADDING)  -- start below the BasicFrameTemplate title bar
-
-    -- Recipe link row: pattern/plans item if available, spell link as fallback
     local spellLink = makeSpellLink(recipe)
+
+    -- Row 1: recipe item if available, else spell link (fixed at y = -40)
     if recipe.recipeItemId then
-        local pipelineLink = recipe.recipeItemName and makeItemLink(recipe.recipeItemId, recipe.recipeItemName, recipe.recipeItemQuality)
-        local _, cachedLink = GetItemInfo(recipe.recipeItemId)
-        recipeDetailSpellButton.text:SetText(cachedLink or pipelineLink or spellLink)
+        local link = resolveItemLink(recipe.recipeItemId, recipe.recipeItemName, recipe.recipeItemQuality)
+        recipeDetailSpellButton.text:SetText(link)
         recipeDetailSpellButton.icon:SetTexture(resolveItemIcon(recipe.recipeItemId, recipe.recipeItemIcon))
         recipeDetailSpellButton:SetScript("OnEnter", function()
             GameTooltip:SetOwner(recipeDetailSpellButton, "ANCHOR_NONE")
@@ -177,15 +147,13 @@ function showRecipeDetail(recipe, btn)
         end)
         recipeDetailSpellButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
         recipeDetailSpellButton:SetScript("OnClick", function()
-            -- GetItemInfo returns the correct server-side link format (hover loads it into cache).
             local _, freshLink = GetItemInfo(recipe.recipeItemId)
             insertLink(freshLink or spellLink)
         end)
     else
         recipeDetailSpellButton.text:SetText(spellLink)
         recipeDetailSpellButton.icon:SetTexture(
-            recipe.creates and recipe.creates.icon and ("Interface\\Icons\\" .. recipe.creates.icon)
-            or nil)
+            recipe.creates and recipe.creates.icon and ("Interface\\Icons\\" .. recipe.creates.icon) or nil)
         recipeDetailSpellButton:SetScript("OnEnter", function()
             GameTooltip:SetOwner(recipeDetailSpellButton, "ANCHOR_NONE")
             GameTooltip:SetPoint("BOTTOMLEFT", recipeDetailSpellButton, "TOPLEFT", 0, 2)
@@ -195,26 +163,51 @@ function showRecipeDetail(recipe, btn)
         recipeDetailSpellButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
         recipeDetailSpellButton:SetScript("OnClick", function() insertLink(spellLink) end)
     end
-    recipeDetailSpellButton:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING,      y)
-    recipeDetailSpellButton:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), y)
-    y = y - ROW_HEIGHT - ROW_GAP
 
-    recipeDetailRecipeItemButton:SetScript("OnEnter", nil)
-    recipeDetailRecipeItemButton:SetScript("OnLeave", nil)
-    recipeDetailRecipeItemButton:SetScript("OnClick", nil)
-    recipeDetailRecipeItemButton:Hide()
+    -- Dynamic layout — y tracks the top of the next row
+    local y = -40 - ROW_HEIGHT - ROW_GAP
 
-    -- Creates row (shown only when the recipe produces an item)
+    -- Known / Not Known + character list
+    if recipe.spellId then
+        local known    = ACC_Tracker.IsKnown(recipe.spellId)
+        local whoKnows = ACC_Tracker.WhoKnows(recipe.spellId)
+
+        recipeDetailKnownLabel:ClearAllPoints()
+        recipeDetailKnownLabel:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
+        recipeDetailKnownLabel:SetText(known and "|cff00ff00Known|r" or "|cffaaaaaa Not Known|r")
+        recipeDetailKnownLabel:Show()
+        y = y - ROW_HEIGHT - 2
+
+        for i = 1, MAX_CHARS do
+            local name = whoKnows[i]
+            if name then
+                recipeDetailCharLabels[i]:ClearAllPoints()
+                recipeDetailCharLabels[i]:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", INDENT, y)
+                recipeDetailCharLabels[i]:SetText("|cff00ff00Known on:|r |cffffff00" .. name .. "|r")
+                recipeDetailCharLabels[i]:Show()
+                y = y - ROW_HEIGHT
+            else
+                recipeDetailCharLabels[i]:Hide()
+            end
+        end
+        y = y - ROW_GAP
+    else
+        recipeDetailKnownLabel:Hide()
+        for i = 1, MAX_CHARS do recipeDetailCharLabels[i]:Hide() end
+    end
+
+    -- Creates row
     if recipe.creates then
-        local itemLink = resolveItemLink(recipe.creates.id, recipe.creates.name, recipe.creates.quality)
-        local displayText = "Creates: " .. itemLink
+        local link = resolveItemLink(recipe.creates.id, recipe.creates.name, recipe.creates.quality)
+        local displayText = "Creates: " .. link
         if recipe.creates.count and recipe.creates.count > 1 then
             displayText = displayText .. " x" .. recipe.creates.count
         end
+        recipeDetailCreatesButton:ClearAllPoints()
+        recipeDetailCreatesButton:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING, y)
+        recipeDetailCreatesButton:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), y)
         recipeDetailCreatesButton.icon:SetTexture(resolveItemIcon(recipe.creates.id, recipe.creates.icon))
         recipeDetailCreatesButton.text:SetText(displayText)
-        recipeDetailCreatesButton:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING,      y)
-        recipeDetailCreatesButton:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), y)
         recipeDetailCreatesButton:SetScript("OnEnter", function()
             GameTooltip:SetOwner(recipeDetailCreatesButton, "ANCHOR_NONE")
             GameTooltip:SetPoint("BOTTOMLEFT", recipeDetailCreatesButton, "TOPLEFT", 0, 2)
@@ -222,65 +215,93 @@ function showRecipeDetail(recipe, btn)
             GameTooltip:Show()
         end)
         recipeDetailCreatesButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
-        recipeDetailCreatesButton:SetScript("OnClick", function() insertLink(itemLink) end)
+        recipeDetailCreatesButton:SetScript("OnClick", function()
+            local _, freshLink = GetItemInfo(recipe.creates.id)
+            insertLink(freshLink or spellLink)
+        end)
         recipeDetailCreatesButton:Show()
         y = y - ROW_HEIGHT - ROW_GAP
     else
         recipeDetailCreatesButton:Hide()
     end
 
-    -- Materials header
-    y = y - 4
-    recipeDetailMaterialsHeader:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
-    y = y - ROW_HEIGHT - 2
-
-    -- Reagent rows
+    -- Materials header + reagent rows
     local reagents = recipe.reagents or {}
-    for i = 1, 8 do
-        local btn     = recipeDetailReagentButtons[i]
-        local reagent = reagents[i]
-        if reagent then
-            local link = resolveItemLink(reagent.id, reagent.name, reagent.quality)
-            btn.icon:SetTexture(resolveItemIcon(reagent.id, reagent.icon))
-            btn.text:SetText(link .. " x" .. reagent.count)
-            btn:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING, y)
-            btn:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -PADDING, y)
-            btn:SetScript("OnEnter", function()
-                GameTooltip:SetOwner(btn, "ANCHOR_NONE")
-                GameTooltip:SetPoint("BOTTOMLEFT", btn, "TOPLEFT", 0, 2)
-                GameTooltip:SetHyperlink("item:" .. reagent.id)
-                GameTooltip:Show()
-            end)
-            btn:SetScript("OnLeave", function() GameTooltip:Hide() end)
-            btn:SetScript("OnClick", function() insertLink(link) end)
-            btn:Show()
-            y = y - ROW_HEIGHT
-        else
-            btn:SetScript("OnEnter", nil)
-            btn:SetScript("OnLeave", nil)
-            btn:SetScript("OnClick", nil)
-            btn.icon:SetTexture(nil)
-            btn:Hide()
+    if #reagents > 0 then
+        recipeDetailMaterialsHeader:ClearAllPoints()
+        recipeDetailMaterialsHeader:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
+        recipeDetailMaterialsHeader:Show()
+        y = y - ROW_HEIGHT - 2
+
+        for i = 1, 8 do
+            local reagent = reagents[i]
+            local rbtn    = recipeDetailReagentButtons[i]
+            if reagent then
+                local link = resolveItemLink(reagent.id, reagent.name, reagent.quality)
+                rbtn:ClearAllPoints()
+                rbtn:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING + 4, y)
+                rbtn:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), y)
+                rbtn.icon:SetTexture(resolveItemIcon(reagent.id, reagent.icon))
+                rbtn.text:SetText(link .. " x" .. reagent.count)
+                local r = reagent
+                rbtn:SetScript("OnEnter", function()
+                    GameTooltip:SetOwner(rbtn, "ANCHOR_NONE")
+                    GameTooltip:SetPoint("BOTTOMLEFT", rbtn, "TOPLEFT", 0, 2)
+                    GameTooltip:SetHyperlink("item:" .. r.id)
+                    GameTooltip:Show()
+                end)
+                rbtn:SetScript("OnLeave", function() GameTooltip:Hide() end)
+                rbtn:SetScript("OnClick", function()
+                    local _, freshLink = GetItemInfo(r.id)
+                    if freshLink then insertLink(freshLink) end
+                end)
+                rbtn:Show()
+                y = y - ROW_HEIGHT
+            else
+                rbtn:SetScript("OnEnter", nil)
+                rbtn:SetScript("OnLeave", nil)
+                rbtn:SetScript("OnClick", nil)
+                rbtn.icon:SetTexture(nil)
+                rbtn:Hide()
+            end
+        end
+    else
+        recipeDetailMaterialsHeader:Hide()
+        for i = 1, 8 do
+            recipeDetailReagentButtons[i]:SetScript("OnEnter", nil)
+            recipeDetailReagentButtons[i]:SetScript("OnLeave", nil)
+            recipeDetailReagentButtons[i]:SetScript("OnClick", nil)
+            recipeDetailReagentButtons[i].icon:SetTexture(nil)
+            recipeDetailReagentButtons[i]:Hide()
         end
     end
 
-    recipeDetailFrame:SetHeight(math.abs(y) + PADDING + TITLE_BAR)
+    -- Auto-size height and width
+    recipeDetailFrame:SetHeight(math.abs(y) + PADDING)
 
-    -- Auto-size width to fit the longest line so nothing gets clipped.
-    -- GetStringWidth() returns the natural rendered width of the text.
     local maxTextW = 0
     local function measureText(fs)
         local w = fs:GetStringWidth()
         if w > maxTextW then maxTextW = w end
     end
     measureText(recipeDetailSpellButton.text)
-    if recipe.creates then measureText(recipeDetailCreatesButton.text) end
-    for i = 1, #(recipe.reagents or {}) do
-        measureText(recipeDetailReagentButtons[i].text)
+    if recipe.spellId then measureText(recipeDetailKnownLabel) end
+    for i = 1, MAX_CHARS do
+        if recipeDetailCharLabels[i]:IsShown() then measureText(recipeDetailCharLabels[i]) end
     end
-    -- icon (ROW_HEIGHT) + gap (2) + text + padding both sides + close button margin (20)
-    local neededW = ROW_HEIGHT + 2 + maxTextW + PADDING * 2 + 20
-    recipeDetailFrame:SetWidth(math.max(200, neededW))
+    if recipe.creates then measureText(recipeDetailCreatesButton.text) end
+    for i = 1, #reagents do measureText(recipeDetailReagentButtons[i].text) end
+    recipeDetailFrame:SetWidth(math.max(200, ROW_HEIGHT + 2 + maxTextW + PADDING * 2 + 20))
 
     recipeDetailFrame:Show()
+end
+
+function initRecipeDetail()
+    createDetailFrame()
+end
+
+function closeAllBrowserWindows()
+    if recipeDetailFrame then
+        recipeDetailFrame:Hide()
+    end
 end

@@ -1,8 +1,16 @@
+-- Tracker.lua — tracks which recipes each character knows across sessions.
+-- Scans the spellbook and trade-skill window at login/open, then persists the result
+-- in ACC_AccountData (SavedVariables) so WhoKnows queries work for all alts.
+
 ACC_Tracker = {}
 
+-- Keyed by recipe name (string), not spellId, because GetTradeSkillInfo only returns names.
 local knownNames  = {}   -- { [recipeName] = true } for the current character
+-- Set at PLAYER_LOGIN; used as the SavedVariables key and for sorting WhoKnows results.
 local currentChar = nil
 
+-- Scans every spellbook tab for known spells.  Profession recipes appear here
+-- even before the player opens the trade-skill window, making this safe to run at login.
 local function scanSpellbook()
     for tab = 1, GetNumSpellTabs() do
         local _, _, offset, numSpells = GetSpellTabInfo(tab)
@@ -16,6 +24,8 @@ local function scanSpellbook()
     end
 end
 
+-- Supplements the spellbook scan with the open trade-skill window.
+-- Catches newly-learned recipes that may not have propagated to the spellbook yet.
 local function scanTradeSkill()
     for i = 1, GetNumTradeSkills() do
         local name, skillType = GetTradeSkillInfo(i)
@@ -25,6 +35,8 @@ local function scanTradeSkill()
     end
 end
 
+-- Writes knownNames into ACC_AccountData so it survives across sessions and is
+-- visible to WhoKnows queries from other characters on the same account.
 local function persist()
     if not ACC_AccountData then ACC_AccountData = {} end
     if not ACC_AccountData.characters then ACC_AccountData.characters = {} end
@@ -54,6 +66,8 @@ trackerFrame:SetScript("OnEvent", function(self, event)
     end
 end)
 
+-- Returns true if the current character knows the recipe for the given spellId.
+-- Looks up by name (not spellId) because that is what the spellbook/trade-skill scans store.
 function ACC_Tracker.IsKnown(spellId)
     if not spellId then return false end
     local recipe = ACC_DataManager.recipeById[spellId]
@@ -61,6 +75,8 @@ function ACC_Tracker.IsKnown(spellId)
     return knownNames[recipe.name] == true
 end
 
+-- Returns a sorted list of character names that know the given recipe.
+-- The current character is always placed first; remaining names are alphabetical.
 function ACC_Tracker.WhoKnows(spellId)
     if not spellId then return {} end
     local recipe = ACC_DataManager.recipeById[spellId]

@@ -1,3 +1,9 @@
+-- Browser.lua — main recipe browser panel.
+-- Owns the primary window, profession dropdown, two-column recipe list,
+-- category side-panel, and Prev/Next pagination controls.
+-- Public API: browserInit(), showBrowser(), hideBrowser(), selectProfession(),
+--             renderCategoryPanel(), renderPage(), getFilteredList(), onRecipeClick()
+
 -- ── Locals ───────────────────────────────────────────────────────────────────
 
 local mainFrame

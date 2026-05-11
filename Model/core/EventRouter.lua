@@ -1,2 +1,3 @@
--- EventRouter: placeholder for future WoW event registration and dispatch logic.
--- Register addon events here (e.g. SKILL_LINES_CHANGED, TRADE_SKILL_UPDATE) as needed.
+-- EventRouter.lua — central hub for addon-wide WoW event registration.
+-- Currently a placeholder; add RegisterEvent / dispatch logic here when multiple
+-- modules need to react to the same event without each creating their own frame.

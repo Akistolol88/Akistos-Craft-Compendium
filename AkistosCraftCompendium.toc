@@ -6,6 +6,12 @@
 ## SavedVariables: ACC_AccountData
 ## SavedVariablesPerCharacter: ACC_CharacterData
 
+# Load order matters:
+#   1. data files    — populate ACC_Data tables
+#   2. DataManager   — indexes ACC_Data for O(1) lookups
+#   3. Tracker       — reads SavedVariables (available after data is indexed)
+#   4. UI files      — Browser/RecipeDetail reference DataManager and Tracker
+#   5. Main          — registers /acc after all frames exist
 
 Model\data\CraftingLocations.lua
 Model\data\Alchemy.lua

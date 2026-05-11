@@ -1,3 +1,8 @@
+-- RecipeDetail.lua — floating detail popup shown when a recipe row is clicked.
+-- Displays: recipe/item link, Known status + alt list, Creates row, and reagent list.
+-- Layout is calculated dynamically in showRecipeDetail(); the frame height and width
+-- auto-size to fit however many rows the selected recipe requires.
+
 local recipeDetailFrame
 local recipeDetailSpellButton
 local recipeDetailKnownLabel
@@ -12,6 +17,8 @@ local PADDING    = 8
 local INDENT     = 20
 local MAX_CHARS  = 10
 
+-- Maps item quality (0–5) to WoW's standard color hex codes (AARRGGBB).
+-- 0=Poor(grey), 1=Common(white), 2=Uncommon(green), 3=Rare(blue), 4=Epic(purple), 5=Legendary(orange)
 local QUALITY_COLOR = {
     [0] = "ff9d9d9d",
     [1] = "ffffffff",
@@ -21,11 +28,14 @@ local QUALITY_COLOR = {
     [5] = "ffff8000",
 }
 
+-- Constructs a clickable item hyperlink from pipeline data when the client cache lacks the item.
 local function makeItemLink(id, name, quality)
     local color = QUALITY_COLOR[quality] or QUALITY_COLOR[1]
     return "|c" .. color .. "|Hitem:" .. id .. ":0:0:0:0:0:0:0|h[" .. name .. "]|h|r"
 end
 
+-- Priority: live GetItemInfo link (always correct) → pipeline name fallback → bare item ID.
+-- Pipeline data is used when the item is not yet in the client cache at detail-open time.
 local function resolveItemLink(id, pipelineName, pipelineQuality)
     local _, link = GetItemInfo(id)
     if link then return link end
@@ -33,12 +43,16 @@ local function resolveItemLink(id, pipelineName, pipelineQuality)
     return "|cffffff00[" .. id .. "]|r"
 end
 
+-- Priority: pipeline icon (already fetched by the data pipeline) → live GetItemInfo texture → question mark.
 local function resolveItemIcon(id, pipelineIcon)
     if pipelineIcon then return "Interface\\Icons\\" .. pipelineIcon end
     local _, _, _, _, _, _, _, _, _, tex = GetItemInfo(id)
     return tex or "Interface\\Icons\\INV_Misc_QuestionMark"
 end
 
+-- Inserts a link into whichever chat edit box is currently open.
+-- Falls back to printing to the default chat frame when no edit box is visible,
+-- so the link is never silently dropped.
 local function insertLink(link)
     for i = 1, NUM_CHAT_WINDOWS do
         local box = _G["ChatFrame" .. i .. "EditBox"]
@@ -58,6 +72,8 @@ local function addIcon(parent)
     return icon
 end
 
+-- Builds all child widgets once at load time.  Positions are set to placeholder values
+-- here; showRecipeDetail() repositions everything dynamically each time it's called.
 local function createDetailFrame()
     recipeDetailFrame = CreateFrame("Frame", "AccRecipeDetailFrame", UIParent, "BasicFrameTemplate")
     recipeDetailFrame:SetWidth(260)
@@ -121,6 +137,10 @@ local function createDetailFrame()
     end
 end
 
+-- Populates and shows the detail frame for the given recipe.
+-- Layout flows top-to-bottom using a 'y' cursor (negative = downward in WoW anchor space).
+-- Rows shown depend on the recipe: spell/item link is always first, then Known status,
+-- then Creates, then reagents.  Frame height and width auto-fit at the end.
 function showRecipeDetail(recipe, btn)
     recipeDetailFrame:ClearAllPoints()
     if btn then
@@ -296,10 +316,13 @@ function showRecipeDetail(recipe, btn)
     recipeDetailFrame:Show()
 end
 
+-- Called from browserInit() so the detail frame is created alongside the main browser.
 function initRecipeDetail()
     createDetailFrame()
 end
 
+-- Called by Browser.lua whenever the user switches category or profession,
+-- so the stale detail panel doesn't stay open showing a different recipe's info.
 function closeAllBrowserWindows()
     if recipeDetailFrame then
         recipeDetailFrame:Hide()

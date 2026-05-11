@@ -68,6 +68,28 @@ local professionCategoryOrder = {
         "Misc",
         "Fire Resistance", "Shadow Resistance", "Frost Resistance", "Nature Resistance",
     },
+    Mining = {
+        "Veins",
+        "---",
+        "Smelting",
+        "---",
+        "Misc",
+    },
+    Herbalism = {
+        "Herbs",
+        "---",
+        "Misc",
+    },
+    ["First Aid"] = {
+        "Bandages",
+        "---",
+        "Misc",
+    },
+    Cooking = {
+        "Food",
+        "---",
+        "Misc",
+    },
 }
 
 -- Sort order for subCategory within a category (lower = first).
@@ -87,10 +109,19 @@ local subCategoryOrder = {
     ["Shield Spikes"]     = 1,
 }
 
+-- Default category assigned when a profession's crafted items have no equipment slot
+-- (e.g. First Aid bandages return INVTYPE_NON_EQUIP / "").
+local professionDefaultCategory = {
+    ["Cooking"]   = "Food",
+    ["First Aid"] = "Bandages",
+}
+
 -- Fallback icon used when a recipe has no formula item and creates nothing with an icon.
 -- Enchanting enchants are the main case: they apply directly to gear with no scroll icon.
 local profFallbackIcon = {
     Enchanting = "Interface\\Icons\\trade_engraving",
+    Mining     = "Interface\\Icons\\trade_mining",
+    Herbalism  = "Interface\\Icons\\trade_herbalism",
 }
 
 -- Maps WoW INVTYPE_* constants to the display category shown in the panel.
@@ -126,7 +157,74 @@ local slotCategory = {
 
 -- Builds a clickable spell hyperlink string for use in tooltips and chat.
 function makeSpellLink(recipe)
+    if not recipe.spellId then
+        return "|cffffd700[" .. (recipe.name or "???") .. "]|r"
+    end
     return "|cff71d5ff|Hspell:" .. recipe.spellId .. "|h[" .. recipe.name .. "]|h|r"
+end
+
+-- Populates an already-owned GameTooltip with gathering node info (vein, herb, or smelt).
+local function showGatheringTooltip(recipe)
+    local vein  = recipe._vein
+    local herb  = recipe._herb
+    local smelt = recipe._smelt
+    local c     = recipe.colors
+
+    local function addColorLine()
+        if not c then return end
+        GameTooltip:AddLine(
+            "|cffff8000" .. (c[1] or "?") .. "|r  " ..
+            "|cffffff00" .. (c[2] or "?") .. "|r  " ..
+            "|cff40ff40" .. (c[3] or "?") .. "|r  " ..
+            "|cff808080" .. (c[4] or "?") .. "|r",
+            1, 1, 1
+        )
+    end
+
+    if vein then
+        GameTooltip:SetText(vein.name, 1, 1, 1)
+        addColorLine()
+        if vein.note then GameTooltip:AddLine(vein.note, 1, 0.82, 0, true) end
+        GameTooltip:AddLine("Taps per node: " .. (vein.taps or "2-4"), 0.9, 0.9, 0.9)
+        if vein.ore and #vein.ore > 0 then
+            GameTooltip:AddLine("Drops:", 1, 1, 0)
+            for _, drop in ipairs(vein.ore) do
+                GameTooltip:AddLine("  " .. drop.name, 1, 1, 1)
+            end
+        end
+        if vein.gems and #vein.gems > 0 then
+            GameTooltip:AddLine("Possible Gems:", 1, 1, 0)
+            for _, gem in ipairs(vein.gems) do
+                GameTooltip:AddLine("  " .. gem.name .. " (" .. gem.rate .. "%)", 0.8, 0.8, 0.8)
+            end
+        end
+        if vein.zones and #vein.zones > 0 then
+            GameTooltip:AddLine("Found in:", 1, 1, 0)
+            GameTooltip:AddLine(table.concat(vein.zones, ", "), 0.7, 0.7, 0.7, true)
+        end
+    elseif herb then
+        GameTooltip:SetText(herb.name, 1, 1, 1)
+        addColorLine()
+        if herb.terrain then GameTooltip:AddLine(herb.terrain, 0.9, 0.9, 0.9, true) end
+        if herb.note    then GameTooltip:AddLine(herb.note,    1,   0.82, 0,   true) end
+        if herb.zones and #herb.zones > 0 then
+            GameTooltip:AddLine("Found in:", 1, 1, 0)
+            GameTooltip:AddLine(table.concat(herb.zones, ", "), 0.7, 0.7, 0.7, true)
+        end
+    elseif smelt then
+        GameTooltip:SetText(smelt.name, 1, 1, 1)
+        addColorLine()
+        if smelt.creates then
+            GameTooltip:AddLine("Creates: " .. smelt.creates.name .. " x" .. smelt.creates.count, 0.9, 0.9, 0.9)
+        end
+        if smelt.reagents and #smelt.reagents > 0 then
+            GameTooltip:AddLine("Requires:", 1, 1, 0)
+            for _, r in ipairs(smelt.reagents) do
+                GameTooltip:AddLine("  " .. r.name .. " x" .. r.count, 1, 1, 1)
+            end
+        end
+    end
+    GameTooltip:Show()
 end
 
 -- ── Frame construction ────────────────────────────────────────────────────────
@@ -154,7 +252,9 @@ local function createMainFrame()
             local recipe = pendingByItemId[arg1]
             if recipe then
                 local _, _, _, _, _, _, _, _, equipLoc = GetItemInfo(arg1)
-                recipe.resolvedCategory = slotCategory[equipLoc] or "Misc"
+                recipe.resolvedCategory = slotCategory[equipLoc]
+                    or professionDefaultCategory[currentProfName]
+                    or "Misc"
                 pendingByItemId[arg1] = nil
                 renderCategoryPanel(buildCategoryList())
                 renderPage()
@@ -243,16 +343,53 @@ local function createRowButtons()
             if button.recipe then
                 GameTooltip:SetOwner(button, "ANCHOR_NONE")
                 GameTooltip:SetPoint("BOTTOMLEFT", button, "TOPLEFT", 0, 2)
-                GameTooltip:SetHyperlink(makeSpellLink(button.recipe))
-                local reagents = button.recipe.reagents or {}
-                if #reagents > 0 then
-                    GameTooltip:AddLine("Materials:", 1, 1, 0)
-                    for _, r in ipairs(reagents) do
-                        local name = GetItemInfo(r.id) or ("|cffffff00[" .. r.id .. "]|r")
-                        GameTooltip:AddLine("  " .. name .. " x" .. r.count, 1, 1, 1)
+                if button.recipe._vein or button.recipe._herb then
+                    showGatheringTooltip(button.recipe)
+                elseif button.recipe._smelt then
+                    GameTooltip:SetHyperlink(makeSpellLink(button.recipe))
+                    local c = button.recipe.colors
+                    if c then
+                        GameTooltip:AddLine(
+                            "|cffff8000" .. (c[1] or "?") .. "|r  " ..
+                            "|cffffff00" .. (c[2] or "?") .. "|r  " ..
+                            "|cff40ff40" .. (c[3] or "?") .. "|r  " ..
+                            "|cff808080" .. (c[4] or "?") .. "|r",
+                            1, 1, 1
+                        )
                     end
+                    local smelt = button.recipe._smelt
+                    if smelt.creates then
+                        GameTooltip:AddLine("Creates: " .. smelt.creates.name .. " x" .. smelt.creates.count, 0.9, 0.9, 0.9)
+                    end
+                    if smelt.reagents and #smelt.reagents > 0 then
+                        GameTooltip:AddLine("Requires:", 1, 1, 0)
+                        for _, r in ipairs(smelt.reagents) do
+                            GameTooltip:AddLine("  " .. r.name .. " x" .. r.count, 1, 1, 1)
+                        end
+                    end
+                    GameTooltip:Show()
+                else
+                    GameTooltip:SetHyperlink(makeSpellLink(button.recipe))
+                    local reagents = button.recipe.reagents or {}
+                    if #reagents > 0 then
+                        GameTooltip:AddLine("Materials:", 1, 1, 0)
+                        for _, r in ipairs(reagents) do
+                            local name = GetItemInfo(r.id) or ("|cffffff00[" .. r.id .. "]|r")
+                            GameTooltip:AddLine("  " .. name .. " x" .. r.count, 1, 1, 1)
+                        end
+                    end
+                    local trainers = button.recipe._train and button.recipe.trainers
+                    if trainers and #trainers > 0 then
+                        GameTooltip:AddLine("Trainers:", 1, 1, 0)
+                        for _, t in ipairs(trainers) do
+                            local r, g, b = 1, 1, 1
+                            if     t.faction == "alliance" then r, g, b = 0.41, 0.80, 0.94
+                            elseif t.faction == "horde"    then r, g, b = 0.94, 0.41, 0.41 end
+                            GameTooltip:AddLine("  " .. t.name .. "  —  " .. (t.zone or ""), r, g, b)
+                        end
+                    end
+                    GameTooltip:Show()
                 end
-                GameTooltip:Show()
             end
         end)
         button:SetScript("OnLeave", function()
@@ -405,54 +542,126 @@ function selectProfession(profName)
     local dropdown = _G["AccProfessionDropdown"]
     if dropdown then UIDropDownMenu_SetText(dropdown, profName) end
 
-    local recipeData = ACC_Data[profName] or {}
     recipeList = {}
-    for _, recipe in ipairs(recipeData) do
-        -- skill == 9999 is the sentinel used for the profession's own "learn" entry
-        if not (recipe.skill and recipe.skill == 9999) then
-            recipeList[#recipeList + 1] = recipe
+    pageIndex  = 1
+
+    if profName == "Mining" then
+        for _, vein in ipairs(ACC_Data.Mining or {}) do
+            recipeList[#recipeList + 1] = {
+                name          = vein.name,
+                skill         = vein.colors[1],
+                colors        = vein.colors,
+                category      = "Veins",
+                recipeItemIcon = vein.icon,
+                _vein         = vein,
+            }
+        end
+        for _, smelt in ipairs(ACC_Data.MiningSmelt or {}) do
+            recipeList[#recipeList + 1] = {
+                name           = smelt.name,
+                spellId        = smelt.spellId,
+                skill          = smelt.skill,
+                colors         = smelt.colors,
+                category       = "Smelting",
+                recipeItemId   = smelt.creates and smelt.creates.id,
+                recipeItemIcon = smelt.creates and smelt.creates.icon,
+                _smelt         = smelt,
+            }
+        end
+        for _, train in ipairs(ACC_Data.MiningTraining or {}) do
+            recipeList[#recipeList + 1] = {
+                name     = train.name,
+                spellId  = train.spellId,
+                skill    = train.skill,
+                category = "Misc",
+                _train   = true,
+                trainers = train.trainers or {},
+            }
+        end
+    elseif profName == "Herbalism" then
+        for _, herb in ipairs(ACC_Data.Herbalism or {}) do
+            recipeList[#recipeList + 1] = {
+                name           = herb.name,
+                skill          = herb.colors[1],
+                colors         = herb.colors,
+                category       = "Herbs",
+                recipeItemId   = herb.item,
+                recipeItemIcon = herb.icon,
+                _herb          = herb,
+            }
+        end
+        for _, train in ipairs(ACC_Data.HerbalismTraining or {}) do
+            recipeList[#recipeList + 1] = {
+                name     = train.name,
+                spellId  = train.spellId,
+                skill    = train.skill,
+                category = "Misc",
+                _train   = true,
+                trainers = train.trainers or {},
+            }
+        end
+    else
+        local recipeData = ACC_Data[profName] or {}
+        for _, recipe in ipairs(recipeData) do
+            if recipe.skill == 9999 then
+                -- skip the "Learn Profession" entry
+            elseif recipe.creates == nil and (not recipe.reagents or #recipe.reagents == 0) then
+                -- rank-up training entry (Journeyman/Expert/Artisan) — wrap with Misc category
+                local src = recipe.sources and recipe.sources[1]
+                recipeList[#recipeList + 1] = {
+                    name     = recipe.name,
+                    spellId  = recipe.spellId,
+                    skill    = recipe.skill,
+                    category = "Misc",
+                    _train   = true,
+                    trainers = (src and src.trainers) or {},
+                }
+            else
+                recipeList[#recipeList + 1] = recipe
+            end
+        end
+
+        local isGear = profName == "Tailoring" or profName == "Leatherworking"
+                   or profName == "Blacksmithing" or profName == "Engineering"
+
+        -- Resolve slot categories via GetItemInfo.  When an item is not yet in the client
+        -- cache, GetItemInfo returns nil for ALL return values — including the item name.
+        -- We use the name as a "is cached?" signal: nil name means pending, not truly Misc.
+        local defaultCat = professionDefaultCategory[profName]
+        for _, recipe in ipairs(recipeList) do
+            recipe.resolvedCategory = nil
+            if recipe.creates then
+                local itemName, _, _, _, _, _, _, _, equipLoc = GetItemInfo(recipe.creates.id)
+                if itemName then
+                    -- Only derive a slot category when no manual category is set.
+                    if not recipe.category then
+                        recipe.resolvedCategory = slotCategory[equipLoc]
+                            or defaultCat
+                            or (isGear and "Misc" or nil)
+                    end
+                elseif not recipe.category and (isGear or defaultCat) then
+                    -- Item not cached yet and no manual category; hold and track for later.
+                    recipe.resolvedCategory = defaultCat or "Misc"
+                    pendingByItemId[recipe.creates.id] = recipe
+                end
+            elseif not recipe.category and defaultCat then
+                -- Recipe creates nothing (e.g. Basic Campfire) — assign the profession default.
+                recipe.resolvedCategory = defaultCat
+            end
+        end
+
+        -- If any items were uncached, listen for GET_ITEM_INFO_RECEIVED so the OnEvent
+        -- handler (set up in createMainFrame) can promote them out of "Misc" when they arrive.
+        if next(pendingByItemId) then
+            mainFrame:RegisterEvent("GET_ITEM_INFO_RECEIVED")
         end
     end
+
     table.sort(recipeList, function(a, b)
         local sa, sb = a.skill or 0, b.skill or 0
         if sa ~= sb then return sa < sb end
         return (a.name or "") < (b.name or "")
     end)
-    pageIndex = 1
-
-    local isGear = profName == "Tailoring" or profName == "Leatherworking"
-               or profName == "Blacksmithing" or profName == "Engineering"
-
-    -- Resolve slot categories via GetItemInfo.  When an item is not yet in the client
-    -- cache, GetItemInfo returns nil for ALL return values — including the item name.
-    -- We use the name as a "is cached?" signal: nil name means pending, not truly Misc.
-    for _, recipe in ipairs(recipeList) do
-        recipe.resolvedCategory = nil
-        if recipe.creates then
-            local itemName, _, _, _, _, _, _, _, equipLoc = GetItemInfo(recipe.creates.id)
-            if itemName then
-                -- Only derive a slot category when no manual category is set.
-                -- If category is already set (e.g. "One-Hand Weapon"), skip resolvedCategory entirely
-                -- so the recipe doesn't also appear under the coarser slot bucket ("One-Hand").
-                if not recipe.category then
-                    recipe.resolvedCategory = slotCategory[equipLoc]
-                    if isGear and recipe.resolvedCategory == nil then
-                        recipe.resolvedCategory = "Misc"
-                    end
-                end
-            elseif isGear and not recipe.category then
-                -- Item not cached yet and no manual category; hold in "Misc" and track for later.
-                recipe.resolvedCategory = "Misc"
-                pendingByItemId[recipe.creates.id] = recipe
-            end
-        end
-    end
-
-    -- If any items were uncached, listen for GET_ITEM_INFO_RECEIVED so the OnEvent
-    -- handler (set up in createMainFrame) can promote them out of "Misc" when they arrive.
-    if next(pendingByItemId) then
-        mainFrame:RegisterEvent("GET_ITEM_INFO_RECEIVED")
-    end
 
     local categoryList = buildCategoryList()
     -- Default to the first real category so something is always visible on load.
@@ -588,5 +797,19 @@ end
 -- Opens the detail panel for the clicked recipe, anchored below the row button.
 function onRecipeClick(recipe, btn)
     if not recipe then return end
+    if recipe._vein then return end
+    if recipe._herb then
+        if IsShiftKeyDown() and recipe._herb.item then
+            local link = select(2, GetItemInfo(recipe._herb.item))
+            if link then ChatEdit_InsertLink(link) end
+        end
+        return
+    end
+    if recipe._smelt or recipe._train then
+        if IsShiftKeyDown() and recipe.spellId then
+            ChatEdit_InsertLink(makeSpellLink(recipe))
+        end
+        return
+    end
     showRecipeDetail(recipe, btn)
 end

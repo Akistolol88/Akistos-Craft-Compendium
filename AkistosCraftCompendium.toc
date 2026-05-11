@@ -2,7 +2,7 @@
 ## Title: Akistos Craft Compendium
 ## Notes: Crafting reference for all WoW Classic professions — recipes, sources, materials, and skill thresholds
 ## Author: Otsika
-## Version: 0.3.0
+## Version: 0.4.0
 ## SavedVariables: ACC_AccountData
 ## SavedVariablesPerCharacter: ACC_CharacterData
 

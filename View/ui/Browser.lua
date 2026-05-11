@@ -690,6 +690,7 @@ function renderCategoryPanel(categoryList)
             button:SetHeight(20)
             button:SetWidth(148)
             button:SetScript("OnClick", function()
+                closeAllBrowserWindows()
                 activeCategory = category
                 pageIndex = 1
                 renderPage()
@@ -809,6 +810,10 @@ function onRecipeClick(recipe, btn)
         if IsShiftKeyDown() and recipe.spellId then
             ChatEdit_InsertLink(makeSpellLink(recipe))
         end
+        return
+    end
+    if IsShiftKeyDown() then
+        ChatEdit_InsertLink(makeSpellLink(recipe))
         return
     end
     showRecipeDetail(recipe, btn)

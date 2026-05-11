@@ -1,3 +1,7 @@
+-- DataManager.lua — read-only data index layer.
+-- Consumes the raw ACC_Data tables written by the data files and exposes clean
+-- accessor functions to the UI. Nothing here writes to SavedVariables.
+--
 -- ACC_DataManager: indexes all recipe data at load time for fast UI lookups.
 -- ACC_Data tables are populated by the data files loaded before this in the .toc.
 
@@ -39,6 +43,7 @@ for profName, recipes in pairs(ACC_Data) do
     end
 end
 
+-- NOTE: proffessions field is currently unset; GetProfessionGroups() is the live accessor.
 function GetProffessions()
     return ACC_DataManager.proffessions
 end
@@ -76,6 +81,8 @@ function PrefetchItemCache()
         end
     end
 
+    -- Process 10 items per frame tick to avoid freezing the client on large queues.
+    -- Once the queue is drained, the OnUpdate script removes itself so no overhead remains.
     local index = 1
     local loader = CreateFrame("Frame")
     loader:SetScript("OnUpdate", function()

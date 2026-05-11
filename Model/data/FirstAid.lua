@@ -63,9 +63,9 @@ ACC_Data["First Aid"] = {
         name = "Linen Bandage",
         skill = 1,
         colors = { 1, 30, 45, 60 },
-        creates = { id = 1251, count = 1 },
+        creates = { id = 1251, count = 1, name = "Linen Bandage", icon = "inv_misc_bandage_15", quality = 1 },
         reagents = {
-            { id = 2589, count = 1 },
+            { id = 2589, count = 1, name = "Linen Cloth", icon = "inv_fabric_linen_01", quality = 1 },
         },
         tool = nil,
         sources = { { type = "unknown" } },
@@ -78,9 +78,9 @@ ACC_Data["First Aid"] = {
         name = "Heavy Linen Bandage",
         skill = 40,
         colors = { 40, 50, 75, 100 },
-        creates = { id = 2581, count = 1 },
+        creates = { id = 2581, count = 1, name = "Heavy Linen Bandage", icon = "inv_misc_bandage_18", quality = 1 },
         reagents = {
-            { id = 2589, count = 2 },
+            { id = 2589, count = 2, name = "Linen Cloth", icon = "inv_fabric_linen_01", quality = 1 },
         },
         tool = nil,
         sources = { { type = "unknown" } },
@@ -93,9 +93,9 @@ ACC_Data["First Aid"] = {
         name = "Wool Bandage",
         skill = 80,
         colors = { 80, 80, 115, 150 },
-        creates = { id = 3530, count = 1 },
+        creates = { id = 3530, count = 1, name = "Wool Bandage", icon = "inv_misc_bandage_14", quality = 1 },
         reagents = {
-            { id = 2592, count = 1 },
+            { id = 2592, count = 1, name = "Wool Cloth", icon = "inv_fabric_wool_01", quality = 1 },
         },
         tool = nil,
         sources = { { type = "trainer", cost = 250, trainers = {
@@ -123,9 +123,9 @@ ACC_Data["First Aid"] = {
         name = "Heavy Wool Bandage",
         skill = 115,
         colors = { 115, 115, 150, 185 },
-        creates = { id = 3531, count = 1 },
+        creates = { id = 3531, count = 1, name = "Heavy Wool Bandage", icon = "inv_misc_bandage_17", quality = 1 },
         reagents = {
-            { id = 2592, count = 2 },
+            { id = 2592, count = 2, name = "Wool Cloth", icon = "inv_fabric_wool_01", quality = 1 },
         },
         tool = nil,
         sources = { { type = "trainer", cost = 1000, trainers = {
@@ -165,9 +165,9 @@ ACC_Data["First Aid"] = {
         name = "Silk Bandage",
         skill = 150,
         colors = { 150, 150, 180, 210 },
-        creates = { id = 6450, count = 1 },
+        creates = { id = 6450, count = 1, name = "Silk Bandage", icon = "inv_misc_bandage_01", quality = 1 },
         reagents = {
-            { id = 4306, count = 1 },
+            { id = 4306, count = 1, name = "Silk Cloth", icon = "inv_fabric_silk_01", quality = 1 },
         },
         tool = nil,
         sources = { { type = "trainer", cost = 5000, trainers = {
@@ -195,9 +195,9 @@ ACC_Data["First Aid"] = {
         name = "Heavy Silk Bandage",
         skill = 180,
         colors = { 180, 180, 210, 240 },
-        creates = { id = 6451, count = 1 },
+        creates = { id = 6451, count = 1, name = "Heavy Silk Bandage", icon = "inv_misc_bandage_02", quality = 1 },
         reagents = {
-            { id = 4306, count = 2 },
+            { id = 4306, count = 2, name = "Silk Cloth", icon = "inv_fabric_silk_01", quality = 1 },
         },
         tool = nil,
         sources = { { type = "unknown" } },
@@ -210,9 +210,9 @@ ACC_Data["First Aid"] = {
         name = "Anti-Venom",
         skill = 80,
         colors = { 80, 80, 115, 150 },
-        creates = { id = 6452, count = 3 },
+        creates = { id = 6452, count = 3, name = "Anti-Venom", icon = "inv_misc_slime_01", quality = 1 },
         reagents = {
-            { id = 1475, count = 1 },
+            { id = 1475, count = 1, name = "Small Venom Sac", icon = "inv_misc_organ_02", quality = 1 },
         },
         tool = nil,
         sources = { { type = "trainer", cost = 250, trainers = {
@@ -240,9 +240,9 @@ ACC_Data["First Aid"] = {
         name = "Strong Anti-Venom",
         skill = 130,
         colors = { 130, 130, 165, 200 },
-        creates = { id = 6453, count = 3 },
+        creates = { id = 6453, count = 3, name = "Strong Anti-Venom", icon = "inv_misc_slime_01", quality = 1 },
         reagents = {
-            { id = 1288, count = 1 },
+            { id = 1288, count = 1, name = "Large Venom Sac", icon = "inv_misc_organ_01", quality = 1 },
         },
         tool = nil,
         sources = { { type = "unknown" } },
@@ -255,9 +255,9 @@ ACC_Data["First Aid"] = {
         name = "Mageweave Bandage",
         skill = 210,
         colors = { 210, 210, 240, 270 },
-        creates = { id = 8544, count = 1 },
+        creates = { id = 8544, count = 1, name = "Mageweave Bandage", icon = "inv_misc_bandage_19", quality = 1 },
         reagents = {
-            { id = 4338, count = 1 },
+            { id = 4338, count = 1, name = "Mageweave Cloth", icon = "inv_fabric_mageweave_01", quality = 1 },
         },
         tool = nil,
         sources = { { type = "unknown" } },
@@ -270,9 +270,9 @@ ACC_Data["First Aid"] = {
         name = "Heavy Mageweave Bandage",
         skill = 240,
         colors = { 240, 240, 270, 300 },
-        creates = { id = 8545, count = 1 },
+        creates = { id = 8545, count = 1, name = "Heavy Mageweave Bandage", icon = "inv_misc_bandage_20", quality = 1 },
         reagents = {
-            { id = 4338, count = 2 },
+            { id = 4338, count = 2, name = "Mageweave Cloth", icon = "inv_fabric_mageweave_01", quality = 1 },
         },
         tool = nil,
         sources = { { type = "unknown" } },
@@ -297,9 +297,9 @@ ACC_Data["First Aid"] = {
         name = "Runecloth Bandage",
         skill = 260,
         colors = { 260, 260, 290, 320 },
-        creates = { id = 14529, count = 1 },
+        creates = { id = 14529, count = 1, name = "Runecloth Bandage", icon = "inv_misc_bandage_11", quality = 1 },
         reagents = {
-            { id = 14047, count = 1 },
+            { id = 14047, count = 1, name = "Runecloth", icon = "inv_fabric_purplefire_01", quality = 1 },
         },
         tool = nil,
         sources = { { type = "unknown" } },
@@ -312,9 +312,9 @@ ACC_Data["First Aid"] = {
         name = "Heavy Runecloth Bandage",
         skill = 290,
         colors = { 290, 290, 320, 350 },
-        creates = { id = 14530, count = 1 },
+        creates = { id = 14530, count = 1, name = "Heavy Runecloth Bandage", icon = "inv_misc_bandage_12", quality = 1 },
         reagents = {
-            { id = 14047, count = 2 },
+            { id = 14047, count = 2, name = "Runecloth", icon = "inv_fabric_purplefire_01", quality = 1 },
         },
         tool = nil,
         sources = { { type = "unknown" } },
@@ -324,12 +324,16 @@ ACC_Data["First Aid"] = {
     },
     {
         spellId = 23787,
+        recipeItemId = 19442,
+        recipeItemName = "Formula: Powerful Anti-Venom",
+        recipeItemIcon = "inv_scroll_03",
+        recipeItemQuality = 1,
         name = "Powerful Anti-Venom",
         skill = 300,
         colors = { 300, 300, 330, 360 },
-        creates = { id = 19440, count = 1 },
+        creates = { id = 19440, count = 1, name = "Powerful Anti-Venom", icon = "inv_drink_14", quality = 1 },
         reagents = {
-            { id = 19441, count = 1 },
+            { id = 19441, count = 1, name = "Huge Venom Sac", icon = "inv_misc_organ_04", quality = 1 },
         },
         tool = nil,
         sources = { { type = "vendor", vendors = {

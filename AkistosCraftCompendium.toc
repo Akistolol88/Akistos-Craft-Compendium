@@ -1,9 +1,10 @@
-## Interface: 11200
+## Interface: 11508
 ## Title: Akistos Craft Compendium
-## Notes: Filestructure
+## Notes: Crafting reference for all WoW Classic professions — recipes, sources, materials, and skill thresholds
 ## Author: Otsika
-## Version: 0.3.0
-## SavedVariables: ACC_CharacterData
+## Version: 0.4.0
+## SavedVariables: ACC_AccountData
+## SavedVariablesPerCharacter: ACC_CharacterData
 
 
 Model\data\CraftingLocations.lua

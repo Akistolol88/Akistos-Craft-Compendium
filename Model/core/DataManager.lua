@@ -51,3 +51,42 @@ end
 function GetRecipeById(spellId)
     return ACC_DataManager.recipeById[spellId]
 end
+
+-- Walks all recipe data and calls GetItemInfo for every unique item ID in batches.
+-- This primes the client cache so icons and names are available without hover delays.
+function PrefetchItemCache()
+    local seen  = {}
+    local queue = {}
+    for _, recipes in pairs(ACC_Data) do
+        for _, recipe in ipairs(recipes) do
+            if recipe.creates and recipe.creates.id and not seen[recipe.creates.id] then
+                seen[recipe.creates.id] = true
+                queue[#queue + 1] = recipe.creates.id
+            end
+            if recipe.recipeItemId and not seen[recipe.recipeItemId] then
+                seen[recipe.recipeItemId] = true
+                queue[#queue + 1] = recipe.recipeItemId
+            end
+            for _, reagent in ipairs(recipe.reagents or {}) do
+                if reagent.id and not seen[reagent.id] then
+                    seen[reagent.id] = true
+                    queue[#queue + 1] = reagent.id
+                end
+            end
+        end
+    end
+
+    local index = 1
+    local loader = CreateFrame("Frame")
+    loader:SetScript("OnUpdate", function()
+        for _ = 1, 10 do
+            if queue[index] then
+                GetItemInfo(queue[index])
+                index = index + 1
+            else
+                loader:SetScript("OnUpdate", nil)
+                return
+            end
+        end
+    end)
+end

@@ -1,4 +1,17 @@
 -- Skinning trainer and rank data for WoW Classic (1.12)
+--
+-- SkinningSkill fields:
+--   rank       display name for the training tier
+--   req_skill  skill points needed to unlock this rank
+--   req_level  character level required
+--   skill_max  skill cap granted by this rank
+--
+-- SkinningTrainers fields:
+--   name       NPC name
+--   zone       zone the NPC is in
+--   area       specific landmark within that zone
+--   faction    "alliance", "horde", or nil (neutral)
+--   max_rank   highest rank this trainer can teach
 
 ACC_Data = ACC_Data or {}
 

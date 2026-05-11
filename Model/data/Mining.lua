@@ -8,6 +8,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Copper Vein",
+        icon   = "inv_ore_copper_01",
         colors = { 1, 25, 50, 100 },
         taps   = "2-4",
         ore    = {
@@ -31,6 +32,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Tin Vein",
+        icon   = "inv_ore_tin_01",
         colors = { 65, 90, 115, 165 },
         taps   = "2-4",
         ore    = {
@@ -55,6 +57,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Incendicite Mineral Vein",
+        icon   = "inv_stone_13",
         colors = { 65, 90, 115, 165 },
         taps   = "2-4",
         note   = "Quest vein — drops Incendicite Ore for 'The Dark Iron War' quest chain",
@@ -70,6 +73,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Silver Vein",
+        icon   = "inv_stone_16",
         colors = { 75, 100, 125, 175 },
         taps   = "2-4",
         ore    = {
@@ -90,6 +94,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Ooze Covered Silver Vein",
+        icon   = "inv_stone_16",
         colors = { 75, 100, 125, 175 },
         taps   = "2-4",
         ore    = {
@@ -106,6 +111,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Lesser Bloodstone Deposit",
+        icon   = "inv_misc_food_wheat_02",
         colors = { 75, 100, 125, 175 },
         taps   = "2-4",
         note   = "Quest vein — drops Lesser Bloodstone Ore for a quest in Arathi Highlands",
@@ -121,6 +127,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Iron Deposit",
+        icon   = "inv_ore_iron_01",
         colors = { 125, 150, 175, 225 },
         taps   = "2-4",
         ore    = {
@@ -159,6 +166,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Gold Vein",
+        icon   = "inv_ore_copper_01",
         colors = { 155, 180, 205, 255 },
         taps   = "2-4",
         ore    = {
@@ -179,6 +187,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Ooze Covered Gold Vein",
+        icon   = "inv_ore_copper_01",
         colors = { 155, 180, 205, 255 },
         taps   = "2-4",
         ore    = {
@@ -196,6 +205,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Mithril Deposit",
+        icon   = "inv_ore_mithril_02",
         colors = { 175, 200, 225, 275 },
         taps   = "2-4",
         ore    = {
@@ -222,6 +232,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Ooze Covered Mithril Deposit",
+        icon   = "inv_ore_mithril_02",
         colors = { 175, 200, 225, 275 },
         taps   = "2-4",
         ore    = {
@@ -243,6 +254,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Truesilver Deposit",
+        icon   = "inv_ore_truesilver_01",
         colors = { 205, 230, 255, 305 },
         taps   = "2-4",
         ore    = {
@@ -264,6 +276,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Ooze Covered Truesilver Deposit",
+        icon   = "inv_ore_truesilver_01",
         colors = { 205, 230, 255, 305 },
         taps   = "2-4",
         ore    = {
@@ -282,6 +295,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Dark Iron Deposit",
+        icon   = "inv_ore_mithril_01",
         colors = { 230, 255, 280, 330 },
         taps   = "2-4",
         ore    = {
@@ -300,6 +314,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Small Thorium Vein",
+        icon   = "inv_ore_thorium_02",
         colors = { 245, 270, 295, 345 },
         taps   = "1-2",
         ore    = {
@@ -326,6 +341,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Ooze Covered Thorium Vein",
+        icon   = "inv_ore_thorium_02",
         colors = { 245, 270, 295, 345 },
         taps   = "2-4",
         ore    = {
@@ -349,6 +365,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Rich Thorium Vein",
+        icon   = "inv_ore_thorium_02",
         colors = { 275, 300, 325, 375 },
         taps   = "2-4",
         ore    = {
@@ -373,6 +390,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Ooze Covered Rich Thorium Vein",
+        icon   = "inv_ore_thorium_02",
         colors = { 275, 300, 325, 375 },
         taps   = "2-4",
         ore    = {
@@ -396,6 +414,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Hakkari Thorium Vein",
+        icon   = "inv_ore_thorium_02",
         colors = { 275, 300, 325, 375 },
         taps   = "2-4",
         note   = "Souldarite only drops if Bloodscythe is in your bags",
@@ -421,6 +440,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Small Obsidian Chunk",
+        icon   = "inv_stone_15",
         colors = { 305, 330, 355, 405 },
         taps   = "1-2",
         note   = "Requires 305 mining — at skill cap (300) you need Enchant Gloves - Mining (+5) or be a Dwarf (+10 racial)",
@@ -442,6 +462,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Large Obsidian Chunk",
+        icon   = "inv_bracer_10",
         colors = { 325, 350, 375, 425 },
         taps   = "2-4",
         ore    = {
@@ -469,10 +490,11 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Copper",
+        spellId  = 2657,
         skill    = 1,
         colors   = { 1, 25, 47, 70 },
         reagents = { { name = "Copper Ore", count = 1 } },
-        creates  = { name = "Copper Bar", count = 1 },
+        creates  = { name = "Copper Bar", id = 2840, count = 1 , icon = "inv_ingot_02"},
         source   = "trainer",
         trainers = {
             { name = "Dank Drizzlecut",     zone = "Dun Morogh",        faction = "alliance" },
@@ -493,10 +515,11 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Tin",
+        spellId  = 3304,
         skill    = 65,
         colors   = { 65, 75, 100, 125 },    -- [est] yellow/green/grey
         reagents = { { name = "Tin Ore", count = 1 } },
-        creates  = { name = "Tin Bar", count = 1 },
+        creates  = { name = "Tin Bar", id = 3576, count = 1 , icon = "inv_ingot_05"},
         source   = "trainer",
         trainers = {
             { name = "Dank Drizzlecut",     zone = "Dun Morogh",        faction = "alliance" },
@@ -517,13 +540,14 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Bronze",
+        spellId  = 2659,
         skill    = 65,
         colors   = { 65, 90, 100, 115 },
         reagents = {
             { name = "Copper Bar", count = 1 },
             { name = "Tin Bar",    count = 1 },
         },
-        creates  = { name = "Bronze Bar", count = 2 },
+        creates  = { name = "Bronze Bar", id = 2841, count = 2 , icon = "inv_ingot_bronze"},
         source   = "trainer",
         trainers = {
             { name = "Dank Drizzlecut",     zone = "Dun Morogh",        faction = "alliance" },
@@ -544,10 +568,11 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Silver",
+        spellId  = 2658,
         skill    = 75,
         colors   = { 75, 100, 112, 125 },
         reagents = { { name = "Silver Ore", count = 1 } },
-        creates  = { name = "Silver Bar", count = 1 },
+        creates  = { name = "Silver Bar", id = 2842, count = 1 , icon = "inv_ingot_01"},
         source   = "trainer",
         trainers = {
             { name = "Dank Drizzlecut",     zone = "Dun Morogh",        faction = "alliance" },
@@ -568,10 +593,11 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Iron",
+        spellId  = 3307,
         skill    = 125,
         colors   = { 125, 130, 135, 140 },
         reagents = { { name = "Iron Ore", count = 1 } },
-        creates  = { name = "Iron Bar", count = 1 },
+        creates  = { name = "Iron Bar", id = 3575, count = 1 , icon = "inv_ingot_iron"},
         source   = "trainer",
         trainers = {
             { name = "Gelman Stonehand",    zone = "Stormwind City",    faction = "alliance" },
@@ -587,10 +613,11 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Gold",
+        spellId  = 3308,
         skill    = 155,
         colors   = { 155, 170, 177, 185 },
         reagents = { { name = "Gold Ore", count = 1 } },
-        creates  = { name = "Gold Bar", count = 1 },
+        creates  = { name = "Gold Bar", id = 3577, count = 1 , icon = "inv_ingot_03"},
         source   = "trainer",
         trainers = {
             { name = "Gelman Stonehand",    zone = "Stormwind City",    faction = "alliance" },
@@ -606,13 +633,14 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Steel",
+        spellId  = 3569,
         skill    = 165,
         colors   = { 165, 175, 185, 215 },   -- [est] yellow/green/grey
         reagents = {
             { name = "Iron Bar", count = 1 },
             { name = "Coal",     count = 1, vendor = true },
         },
-        creates  = { name = "Steel Bar", count = 1 },
+        creates  = { name = "Steel Bar", id = 3859, count = 1 , icon = "inv_ingot_steel"},
         source   = "trainer",
         trainers = {
             { name = "Gelman Stonehand",    zone = "Stormwind City",    faction = "alliance" },
@@ -628,10 +656,11 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Mithril",
+        spellId  = 10097,
         skill    = 175,
         colors   = { 175, 200, 215, 235 },   -- [est] yellow/green/grey
         reagents = { { name = "Mithril Ore", count = 1 } },
-        creates  = { name = "Mithril Bar", count = 1 },
+        creates  = { name = "Mithril Bar", id = 3860, count = 1 , icon = "inv_ingot_06"},
         source   = "trainer",
         trainers = {
             { name = "Geofram Bouldertoe",  zone = "Ironforge",     faction = "alliance" },
@@ -643,10 +672,11 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Truesilver",
+        spellId  = 10098,
         skill    = 205,                       -- [est] some sources say 230; verify in-game
         colors   = { 205, 215, 225, 245 },   -- [est]
         reagents = { { name = "Truesilver Ore", count = 1 } },
-        creates  = { name = "Truesilver Bar", count = 1 },
+        creates  = { name = "Truesilver Bar", id = 6037, count = 1 , icon = "inv_ingot_08"},
         source   = "trainer",
         trainers = {
             { name = "Geofram Bouldertoe",  zone = "Ironforge",     faction = "alliance" },
@@ -658,10 +688,11 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Dark Iron",
+        spellId  = 14891,
         skill    = 230,
         colors   = { 230, 255, 270, 285 },   -- [est]
         reagents = { { name = "Dark Iron Ore", count = 8 } },
-        creates  = { name = "Dark Iron Bar", count = 1 },
+        creates  = { name = "Dark Iron Bar", id = 11371, count = 1 , icon = "inv_ingot_mithril"},
         source   = "quest",
         npc      = { name = "Gloom'rel", zone = "Blackrock Depths" },
         quest    = "The Spectral Chalice",
@@ -675,10 +706,11 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Thorium",
+        spellId  = 16153,
         skill    = 245,
         colors   = { 245, 255, 270, 295 },   -- [est]
         reagents = { { name = "Thorium Ore", count = 1 } },
-        creates  = { name = "Thorium Bar", count = 1 },
+        creates  = { name = "Thorium Bar", id = 12359, count = 1 , icon = "inv_ingot_07"},
         source   = "trainer",
         trainers = {
             { name = "Geofram Bouldertoe",  zone = "Ironforge",     faction = "alliance" },
@@ -690,6 +722,7 @@ ACC_Data.MiningSmelt = {
 
     {
         name     = "Smelt Elementium",
+        spellId  = 22967,
         skill    = 300,
         colors   = { 300, 310, 320, 330 },   -- always orange at max skill (cap is 300)
         reagents = {
@@ -698,10 +731,59 @@ ACC_Data.MiningSmelt = {
             { name = "Fiery Core",     count = 1  },
             { name = "Elemental Flux", count = 3  },
         },
-        creates  = { name = "Elementium Bar", count = 1 },
+        creates  = { name = "Elementium Bar", id = 17771, count = 1 , icon = "inv_ingot_thorium"},
         source   = "mindcontrol",
         npc      = { name = "Master Elemental Shaper Krixix", zone = "Blackwing Lair" },
         note     = "Learned by having a Priest mind control Master Elemental Shaper Krixix, located at the bottom of the ramp just before Ebonroc and Flamegor in Blackwing Lair. While mind-controlled, Krixix can target Miners in the raid to teach them the spell.",
+    },
+
+}
+
+ACC_Data.MiningTraining = {
+
+    {
+        name     = "Journeyman Miner",
+        spellId  = 2582,
+        skill    = 50,
+        trainers = {
+            { name = "Geofram Bouldertoe",  zone = "Ironforge",         faction = "alliance" },
+            { name = "Gelman Stonehand",    zone = "Stormwind City",    faction = "alliance" },
+            { name = "Kurdram Stonehammer", zone = "Darkshore",         faction = "alliance" },
+            { name = "Matt Johnson",        zone = "Duskwood",          faction = "alliance" },
+            { name = "Yarr Hammerstone",    zone = "Dun Morogh",        faction = "alliance" },
+            { name = "Makaru",              zone = "Orgrimmar",         faction = "horde"    },
+            { name = "Brom Killian",        zone = "Undercity",         faction = "horde"    },
+            { name = "Johan Focht",         zone = "Silverpine Forest", faction = "horde"    },
+            { name = "Krunn",               zone = "Durotar",           faction = "horde"    },
+            { name = "Pikkle",              zone = "Tanaris",           faction = "neutral"  },
+        },
+    },
+
+    {
+        name     = "Expert Miner",
+        spellId  = 3568,
+        skill    = 125,
+        trainers = {
+            { name = "Geofram Bouldertoe", zone = "Ironforge",      faction = "alliance" },
+            { name = "Gelman Stonehand",   zone = "Stormwind City", faction = "alliance" },
+            { name = "Makaru",             zone = "Orgrimmar",      faction = "horde"    },
+            { name = "Brom Killian",       zone = "Undercity",      faction = "horde"    },
+            { name = "Pikkle",             zone = "Tanaris",        faction = "neutral"  },
+        },
+    },
+
+    {
+        name     = "Artisan Miner",
+        spellId  = 10249,
+        skill    = 200,
+        trainers = {
+            { name = "Geofram Bouldertoe", zone = "Ironforge",      faction = "alliance" },
+            { name = "Gelman Stonehand",   zone = "Stormwind City", faction = "alliance" },
+            { name = "Makaru",             zone = "Orgrimmar",      faction = "horde"    },
+            { name = "Brom Killian",       zone = "Undercity",      faction = "horde"    },
+            { name = "Brek Stonehoof",     zone = "Thunder Bluff",  faction = "horde"    },
+            { name = "Pikkle",             zone = "Tanaris",        faction = "neutral"  },
+        },
     },
 
 }

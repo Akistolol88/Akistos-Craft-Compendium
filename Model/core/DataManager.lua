@@ -11,6 +11,10 @@ ACC_DataManager = {}
 -- Built once at load so any recipe can be found in O(1) instead of searching the full list each time.
 ACC_DataManager.recipeById = {}
 
+-- itemToSpell[recipeItemId] = spellId
+-- Allows tooltip hooks to go from a recipe item (e.g. Formula: X) to its spellId.
+ACC_DataManager.itemToSpell = {}
+
 -- professionGroups drives the dropdown UI — three groups with titles and separators between them.
 ACC_DataManager.professionGroups = {
     { title = "Professions",  professions = {
@@ -39,6 +43,9 @@ for profName, recipes in pairs(ACC_Data) do
     for i, recipe in ipairs(recipes) do
         if recipe.spellId then
             ACC_DataManager.recipeById[recipe.spellId] = recipe
+        end
+        if recipe.recipeItemId and recipe.spellId then
+            ACC_DataManager.itemToSpell[recipe.recipeItemId] = recipe.spellId
         end
     end
 end

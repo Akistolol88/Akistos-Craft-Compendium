@@ -27,211 +27,13 @@ local pendingByItemId    = {}  -- itemId → recipe; populated when GetItemInfo 
 local buildCategoryList      -- forward-declared; defined before selectProfession below
 
 
--- Fixed category display order for specific professions.
--- Only categories that actually have at least one recipe are shown.
-local professionCategoryOrder = {
-    Engineering = {
-        "Helm", "Armor", "Trinket", "Guns",
-        "---",
-        "Door Explosive", "Dummies", "Explosives",
-        "---",
-        "Bullets", "Scopes",
-        "---",
-        "Parts", "Fireworks", "Pets", "Misc",
-    },
-    Enchanting = {
-        "Chest", "Cloak", "Gloves", "Boots", "Bracer",
-        "Weapon", "2H Weapon", "Shield",
-        "---",
-        "Oils", "Wands", "Rods", "Misc",
-    },
-    Alchemy = {
-        "Flasks",
-        "Offensive Elixirs", "Defensive Elixirs",
-        "Healing/Mana Potions", "Protection Potions",
-        "Utility Elixirs",
-        "Transmute",
-        "---",
-        "Oils", "Misc",
-    },
-    Leatherworking = {
-        "Helm", "Shoulders", "Cloak", "Chest", "Gloves", "Belt", "Legs", "Boots", "Bracers",
-        "---",
-        "Quivers & Pouches", "Armorkits", "Skins", "Misc",
-        "---",
-        "Fire Resistance", "Nature Resistance", "Frost Resistance",
-    },
-    Blacksmithing = {
-        "Helm", "Shoulders", "Chest", "Gloves", "Belt", "Legs", "Boots", "Bracers",
-        "Shield",
-        "One-Hand",
-        "Mainhand",
-        "Two-Hand",
-        "Rods",
-        "Enhancements",
-        "Sharpening Stones",
-        "Keys",
-        "Misc",
-        "Fire Resistance", "Shadow Resistance", "Frost Resistance", "Nature Resistance",
-    },
-    Mining = {
-        "Veins",
-        "---",
-        "Smelting",
-        "---",
-        "Misc",
-    },
-    Herbalism = {
-        "Herbs",
-        "---",
-        "Misc",
-    },
-    ["First Aid"] = {
-        "Bandages",
-        "---",
-        "Misc",
-    },
-    Cooking = {
-        "Food",
-        "---",
-        "Misc",
-    },
-}
-
--- Sort order for subCategory within a category (lower = first).
--- Items without a subCategory sort last (order 99).
-local subCategoryOrder = {
-    -- Weapon types
-    Swords              = 1,
-    Maces               = 2,
-    Axes                = 3,
-    Daggers             = 4,
-    Polearms            = 5,
-    -- Stone types
-    ["Sharpening Stones"] = 1,
-    Weightstones          = 2,
-    ["Grinding Stones"]   = 3,
-    -- Enhancement types
-    ["Shield Spikes"]     = 1,
-}
-
--- Default category assigned when a profession's crafted items have no equipment slot
--- (e.g. First Aid bandages return INVTYPE_NON_EQUIP / "").
-local professionDefaultCategory = {
-    ["Cooking"]   = "Food",
-    ["First Aid"] = "Bandages",
-}
-
--- Fallback icon used when a recipe has no formula item and creates nothing with an icon.
--- Enchanting enchants are the main case: they apply directly to gear with no scroll icon.
-local profFallbackIcon = {
-    Enchanting = "Interface\\Icons\\trade_engraving",
-    Mining     = "Interface\\Icons\\trade_mining",
-    Herbalism  = "Interface\\Icons\\trade_herbalism",
-}
-
--- Maps WoW INVTYPE_* constants to the display category shown in the panel.
--- INVTYPE_ROBE is a chest-slot robe, so it shares the "Chest" category with INVTYPE_CHEST.
-local slotCategory = {
-    INVTYPE_HEAD           = "Helm",
-    INVTYPE_SHOULDER       = "Shoulders",
-    INVTYPE_BODY           = "Shirt",
-    INVTYPE_CHEST          = "Chest",
-    INVTYPE_ROBE           = "Chest",
-    INVTYPE_WAIST          = "Belt",
-    INVTYPE_LEGS           = "Legs",
-    INVTYPE_FEET           = "Boots",
-    INVTYPE_WRIST          = "Bracers",
-    INVTYPE_HAND           = "Gloves",
-    INVTYPE_TRINKET        = "Trinket",
-    INVTYPE_BACK           = "Cloak",
-    INVTYPE_WEAPON         = "One-Hand",
-    INVTYPE_SHIELD         = "Shield",
-    INVTYPE_2HWEAPON       = "Two-Hand",
-    INVTYPE_WEAPONMAINHAND = "Mainhand",
-    INVTYPE_WEAPONOFFHAND  = "Offhand(Weapon)",
-    INVTYPE_HOLDABLE       = "Offhand",
-    INVTYPE_RANGED         = "Ranged",
-    INVTYPE_RANGEDRIGHT    = "Wand",
-    INVTYPE_THROWN         = "Thrown",
-    INVTYPE_BAG            = "Bags",
-    INVTYPE_QUIVER         = "Quiver",
-    INVTYPE_TABARD         = "Tabard",
-}
-
--- ── Helpers ───────────────────────────────────────────────────────────────────
-
--- Builds a clickable spell hyperlink string for use in tooltips and chat.
-function makeSpellLink(recipe)
-    if not recipe.spellId then
-        return "|cffffd700[" .. (recipe.name or "???") .. "]|r"
-    end
-    return "|cff71d5ff|Hspell:" .. recipe.spellId .. "|h[" .. recipe.name .. "]|h|r"
-end
-
--- Populates an already-owned GameTooltip with gathering node info (vein, herb, or smelt).
-local function showGatheringTooltip(recipe)
-    local vein  = recipe._vein
-    local herb  = recipe._herb
-    local smelt = recipe._smelt
-    local c     = recipe.colors
-
-    local function addColorLine()
-        if not c then return end
-        GameTooltip:AddLine(
-            "|cffff8000" .. (c[1] or "?") .. "|r  " ..
-            "|cffffff00" .. (c[2] or "?") .. "|r  " ..
-            "|cff40ff40" .. (c[3] or "?") .. "|r  " ..
-            "|cff808080" .. (c[4] or "?") .. "|r",
-            1, 1, 1
-        )
-    end
-
-    if vein then
-        GameTooltip:SetText(vein.name, 1, 1, 1)
-        addColorLine()
-        if vein.note then GameTooltip:AddLine(vein.note, 1, 0.82, 0, true) end
-        GameTooltip:AddLine("Taps per node: " .. (vein.taps or "2-4"), 0.9, 0.9, 0.9)
-        if vein.ore and #vein.ore > 0 then
-            GameTooltip:AddLine("Drops:", 1, 1, 0)
-            for _, drop in ipairs(vein.ore) do
-                GameTooltip:AddLine("  " .. drop.name, 1, 1, 1)
-            end
-        end
-        if vein.gems and #vein.gems > 0 then
-            GameTooltip:AddLine("Possible Gems:", 1, 1, 0)
-            for _, gem in ipairs(vein.gems) do
-                GameTooltip:AddLine("  " .. gem.name .. " (" .. gem.rate .. "%)", 0.8, 0.8, 0.8)
-            end
-        end
-        if vein.zones and #vein.zones > 0 then
-            GameTooltip:AddLine("Found in:", 1, 1, 0)
-            GameTooltip:AddLine(table.concat(vein.zones, ", "), 0.7, 0.7, 0.7, true)
-        end
-    elseif herb then
-        GameTooltip:SetText(herb.name, 1, 1, 1)
-        addColorLine()
-        if herb.terrain then GameTooltip:AddLine(herb.terrain, 0.9, 0.9, 0.9, true) end
-        if herb.note    then GameTooltip:AddLine(herb.note,    1,   0.82, 0,   true) end
-        if herb.zones and #herb.zones > 0 then
-            GameTooltip:AddLine("Found in:", 1, 1, 0)
-            GameTooltip:AddLine(table.concat(herb.zones, ", "), 0.7, 0.7, 0.7, true)
-        end
-    elseif smelt then
-        GameTooltip:SetText(smelt.name, 1, 1, 1)
-        addColorLine()
-        if smelt.creates then
-            GameTooltip:AddLine("Creates: " .. smelt.creates.name .. " x" .. smelt.creates.count, 0.9, 0.9, 0.9)
-        end
-        if smelt.reagents and #smelt.reagents > 0 then
-            GameTooltip:AddLine("Requires:", 1, 1, 0)
-            for _, r in ipairs(smelt.reagents) do
-                GameTooltip:AddLine("  " .. r.name .. " x" .. r.count, 1, 1, 1)
-            end
-        end
-    end
-    GameTooltip:Show()
-end
+-- ── Config aliases ────────────────────────────────────────────────────────────
+-- Tables live in BrowserConfig.lua; local aliases keep all call sites unchanged.
+local professionCategoryOrder   = ACC_BrowserConfig.professionCategoryOrder
+local subCategoryOrder          = ACC_BrowserConfig.subCategoryOrder
+local professionDefaultCategory = ACC_BrowserConfig.professionDefaultCategory
+local profFallbackIcon          = ACC_BrowserConfig.profFallbackIcon
+local slotCategory              = ACC_BrowserConfig.slotCategory
 
 -- ── Frame construction ────────────────────────────────────────────────────────
 
@@ -576,12 +378,13 @@ function selectProfession(profName)
         end
         for _, train in ipairs(ACC_Data.MiningTraining or {}) do
             recipeList[#recipeList + 1] = {
-                name     = train.name,
-                spellId  = train.spellId,
-                skill    = train.skill,
-                category = "Misc",
-                _train   = true,
-                trainers = train.trainers or {},
+                name         = train.name,
+                spellId      = train.spellId,
+                skill        = train.skill,
+                category     = "Misc",
+                displayGroup = 100,
+                _train       = true,
+                trainers     = train.trainers or {},
             }
         end
     elseif profName == "Herbalism" then
@@ -598,12 +401,13 @@ function selectProfession(profName)
         end
         for _, train in ipairs(ACC_Data.HerbalismTraining or {}) do
             recipeList[#recipeList + 1] = {
-                name     = train.name,
-                spellId  = train.spellId,
-                skill    = train.skill,
-                category = "Misc",
-                _train   = true,
-                trainers = train.trainers or {},
+                name         = train.name,
+                spellId      = train.spellId,
+                skill        = train.skill,
+                category     = "Misc",
+                displayGroup = 100,
+                _train       = true,
+                trainers     = train.trainers or {},
             }
         end
     else
@@ -615,12 +419,13 @@ function selectProfession(profName)
                 -- rank-up training entry (Journeyman/Expert/Artisan) — wrap with Misc category
                 local src = recipe.sources and recipe.sources[1]
                 recipeList[#recipeList + 1] = {
-                    name     = recipe.name,
-                    spellId  = recipe.spellId,
-                    skill    = recipe.skill,
-                    category = "Misc",
-                    _train   = true,
-                    trainers = (src and src.trainers) or {},
+                    name         = recipe.name,
+                    spellId      = recipe.spellId,
+                    skill        = recipe.skill,
+                    category     = "Misc",
+                    displayGroup = 100,
+                    _train       = true,
+                    trainers     = (src and src.trainers) or {},
                 }
             else
                 recipeList[#recipeList + 1] = recipe

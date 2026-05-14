@@ -29,6 +29,8 @@ Model\data\Tailoring.lua
 Model\core\DataManager.lua
 Model\core\Tracker.lua
 
+View\ui\BrowserConfig.lua
+View\ui\BrowserHelpers.lua
 View\ui\Browser.lua
 View\ui\RecipeDetail.lua
 

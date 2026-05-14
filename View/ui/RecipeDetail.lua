@@ -217,7 +217,7 @@ function showRecipeDetail(recipe, btn)
 
         recipeDetailKnownLabel:ClearAllPoints()
         recipeDetailKnownLabel:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
-        recipeDetailKnownLabel:SetText(known and "|cff00ff00Known|r" or "|cffaaaaaa Not Known|r")
+        recipeDetailKnownLabel:SetText(known and "|cff00ff00Known|r" or "|cffff0000Not Known|r")
         recipeDetailKnownLabel:Show()
         y = y - ROW_HEIGHT - 2
 

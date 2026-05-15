@@ -34,7 +34,7 @@ ACC_DataManager.professionGroups = {
         "Fishing" } },
 }
 
-function GetProfessionGroups()
+function ACC.GetProfessionGroups()
     return ACC_DataManager.professionGroups
 end
 
@@ -50,23 +50,23 @@ for profName, recipes in pairs(ACC_Data) do
     end
 end
 
--- NOTE: proffessions field is currently unset; GetProfessionGroups() is the live accessor.
-function GetProffessions()
-    return ACC_DataManager.proffessions
+-- NOTE: professions field is currently unset; GetProfessionGroups() is the live accessor.
+function ACC.GetProfessions()
+    return ACC_DataManager.professions
 end
 
 -- ACC_Data[profName] is the raw table written by each data file (e.g. ACC_Data["Alchemy"]).
-function GetRecipes(profName)
+function ACC.GetRecipes(profName)
     return ACC_Data[profName]
 end
 
-function GetRecipeById(spellId)
+function ACC.GetRecipeById(spellId)
     return ACC_DataManager.recipeById[spellId]
 end
 
 -- Walks all recipe data and calls GetItemInfo for every unique item ID in batches.
 -- This primes the client cache so icons and names are available without hover delays.
-function PrefetchItemCache()
+function ACC.PrefetchItemCache()
     local seen  = {}
     local queue = {}
     for _, recipes in pairs(ACC_Data) do

@@ -1,8 +1,8 @@
 -- Browser.lua — main recipe browser panel.
 -- Owns the primary window, profession dropdown, two-column recipe list,
 -- category side-panel, and Prev/Next pagination controls.
--- Public API: browserInit(), showBrowser(), hideBrowser(), selectProfession(),
---             renderCategoryPanel(), renderPage(), getFilteredList(), onRecipeClick()
+-- Public API: ACC.browserInit(), ACC.showBrowser(), ACC.hideBrowser(), ACC.selectProfession(),
+--             ACC.renderCategoryPanel(), ACC.renderPage(), ACC.getFilteredList(), ACC.onRecipeClick()
 
 -- ── Locals ───────────────────────────────────────────────────────────────────
 
@@ -48,13 +48,13 @@ local function createMainFrame()
     mainFrame:SetScript("OnDragStart", mainFrame.StartMoving)
     mainFrame:SetScript("OnDragStop", mainFrame.StopMovingOrSizing)
     -- Close all sub-windows when the browser is hidden (including via the template's close button)
-    mainFrame:SetScript("OnHide", function() closeAllBrowserWindows() end)
+    mainFrame:SetScript("OnHide", function() ACC.closeAllBrowserWindows() end)
     mainFrame:SetScript("OnEvent", function(_, event, arg1)
         if event == "PLAYER_LOGIN" then
             -- SavedVariables are guaranteed populated by PLAYER_LOGIN; auto-select last profession.
             mainFrame:UnregisterEvent("PLAYER_LOGIN")
             local last = ACC_CharacterData and ACC_CharacterData.lastProfession
-            selectProfession(last or "Alchemy")
+            ACC.selectProfession(last or "Alchemy")
         elseif event == "GET_ITEM_INFO_RECEIVED" then
             -- Resolves slot categories for items that weren't in the cache when the profession was selected.
             local recipe = pendingByItemId[arg1]
@@ -64,8 +64,8 @@ local function createMainFrame()
                     or professionDefaultCategory[currentProfName]
                     or "Misc"
                 pendingByItemId[arg1] = nil
-                renderCategoryPanel(buildCategoryList())
-                renderPage()
+                ACC.renderCategoryPanel(buildCategoryList())
+                ACC.renderPage()
             end
             if not next(pendingByItemId) then
                 mainFrame:UnregisterEvent("GET_ITEM_INFO_RECEIVED")
@@ -87,22 +87,22 @@ end
 
 -- Creates the profession selector dropdown in the top-left of the browser.
 local function createDropdown()
-    local dropDownProffessions = CreateFrame("Frame", "AccProfessionDropdown", mainFrame, "UIDropDownMenuTemplate")
-    dropDownProffessions:SetPoint("TOPLEFT", mainFrame, "TOPLEFT", 10, -30)
-    UIDropDownMenu_Initialize(dropDownProffessions, function()
-        for i, group in ipairs(GetProfessionGroups()) do
+    local dropDownProfessions = CreateFrame("Frame", "AccProfessionDropdown", mainFrame, "UIDropDownMenuTemplate")
+    dropDownProfessions:SetPoint("TOPLEFT", mainFrame, "TOPLEFT", 10, -30)
+    UIDropDownMenu_Initialize(dropDownProfessions, function()
+        for i, group in ipairs(ACC.GetProfessionGroups()) do
             UIDropDownMenu_AddButton({ text = group.title, isTitle = true, notCheckable = true })
             for j, profName in ipairs(group.professions) do
                 UIDropDownMenu_AddButton({
                     text = profName,
                     func = function()
-                        UIDropDownMenu_SetText(dropDownProffessions, profName)
-                        selectProfession(profName)
+                        UIDropDownMenu_SetText(dropDownProfessions, profName)
+                        ACC.selectProfession(profName)
                     end,
                     notCheckable = true
                 })
             end
-            if i < #GetProfessionGroups() then
+            if i < #ACC.GetProfessionGroups() then
                 UIDropDownMenu_AddButton({ isSeparator = true, notCheckable = true })
             end
         end
@@ -146,15 +146,15 @@ local function createRowButtons()
         button.recipeName = recipeName
 
         -- button.recipe is set per-render; closures reference it via the button local, not 'this'
-        button:SetScript("OnClick", function() onRecipeClick(button.recipe, button) end)
+        button:SetScript("OnClick", function() ACC.onRecipeClick(button.recipe, button) end)
         button:SetScript("OnEnter", function()
             if button.recipe then
                 GameTooltip:SetOwner(button, "ANCHOR_NONE")
                 GameTooltip:SetPoint("BOTTOMLEFT", button, "TOPLEFT", 0, 2)
                 if button.recipe._vein or button.recipe._herb then
-                    showGatheringTooltip(button.recipe)
+                    ACC.showGatheringTooltip(button.recipe)
                 elseif button.recipe._smelt then
-                    GameTooltip:SetHyperlink(makeSpellLink(button.recipe))
+                    GameTooltip:SetHyperlink(ACC.makeSpellLink(button.recipe))
                     local c = button.recipe.colors
                     if c then
                         GameTooltip:AddLine(
@@ -175,9 +175,69 @@ local function createRowButtons()
                             GameTooltip:AddLine("  " .. r.name .. " x" .. r.count, 1, 1, 1)
                         end
                     end
+                    if smelt.tribute and #smelt.tribute > 0 then
+                        GameTooltip:AddLine("Tribute:", 1, 1, 0)
+                        for _, t in ipairs(smelt.tribute) do
+                            GameTooltip:AddLine("  " .. t.name .. " x" .. t.count, 1, 1, 1)
+                        end
+                    end
+                    if smelt.quest and smelt.questId then
+                        local level = smelt.questLevel or 60
+                        -- Classic ERA requires lowercase quest link color; uppercase renders but won't send.
+                        local questLink = "|cffffff00|Hquest:" .. smelt.questId .. ":" .. level .. "|h[" .. smelt.quest .. "]|h|r"
+                        GameTooltip:AddLine("Quest: " .. questLink, 1, 1, 1)
+                    end
+                    if smelt.note then
+                        GameTooltip:AddLine(" ", 1, 1, 1)
+                        GameTooltip:AddLine(smelt.note, 0.8, 0.8, 0.8, true)
+                    end
+                    GameTooltip:Show()
+                elseif button.recipe._book then
+                    local r = button.recipe
+                    local bookLabel = r.bookName
+                    if r.bookItemId then
+                        local _, link = GetItemInfo(r.bookItemId)
+                        if link then bookLabel = link end
+                    end
+                    GameTooltip:SetText(r.name, 1, 0.82, 0)
+                    GameTooltip:AddLine("Requires: " .. bookLabel, 1, 1, 1)
+                    if #r.vendors > 0 then
+                        GameTooltip:AddLine("Sold by:", 1, 1, 0)
+                        for _, v in ipairs(r.vendors) do
+                            local vr, vg, vb = 1, 1, 1
+                            if     v.faction == "alliance" then vr, vg, vb = 0.41, 0.80, 0.94
+                            elseif v.faction == "horde"    then vr, vg, vb = 0.94, 0.41, 0.41 end
+                            GameTooltip:AddLine("  " .. v.name .. "  —  " .. (v.zone or ""), vr, vg, vb)
+                        end
+                    end
+                    GameTooltip:AddLine("Shift-click to link in chat", 0, 1, 0)
+                    GameTooltip:Show()
+                elseif button.recipe._quest then
+                    local r = button.recipe
+                    GameTooltip:SetText(r.name, 1, 0.82, 0)
+                    if #r.questGivers > 0 then
+                        GameTooltip:AddLine("Quest giver:", 1, 1, 0)
+                        for _, q in ipairs(r.questGivers) do
+                            local qr, qg, qb = 1, 1, 1
+                            if     q.faction == "alliance" then qr, qg, qb = 0.41, 0.80, 0.94
+                            elseif q.faction == "horde"    then qr, qg, qb = 0.94, 0.41, 0.41 end
+                            local qId = q.questId or r.questId
+                            local level = r.questLevel or 60
+                            local suffix = qId and ("  |cffffff00|Hquest:" .. qId .. ":" .. level .. "|h[" .. (r.questName or "Quest") .. "]|h|r") or ""
+                            GameTooltip:AddLine("  " .. q.name .. "  —  " .. (q.zone or "") .. suffix, qr, qg, qb)
+                        end
+                    else
+                        local qLabel = r.questName or "Quest"
+                        if r.questId then
+                            local level = r.questLevel or 60
+                            qLabel = "|cffffff00|Hquest:" .. r.questId .. ":" .. level .. "|h[" .. qLabel .. "]|h|r"
+                        end
+                        GameTooltip:AddLine("Learned from: " .. qLabel, 1, 1, 1)
+                    end
+                    GameTooltip:AddLine("Shift-click to show quest link in chat", 0, 1, 0)
                     GameTooltip:Show()
                 else
-                    GameTooltip:SetHyperlink(makeSpellLink(button.recipe))
+                    GameTooltip:SetHyperlink(ACC.makeSpellLink(button.recipe))
                     local reagents = button.recipe.reagents or {}
                     if #reagents > 0 then
                         GameTooltip:AddLine("Materials:", 1, 1, 0)
@@ -195,6 +255,88 @@ local function createRowButtons()
                             elseif t.faction == "horde"    then r, g, b = 0.94, 0.41, 0.41 end
                             GameTooltip:AddLine("  " .. t.name .. "  —  " .. (t.zone or ""), r, g, b)
                         end
+                    end
+                    -- Loop all sources and display each type.
+                    local dropCreatures  = {}
+                    local containerItems = {}
+                    local miscLines      = {}
+                    for _, src in ipairs(button.recipe.sources or {}) do
+                        if src.type == "vendor" and src.vendors then
+                            GameTooltip:AddLine("Sold by:", 1, 1, 0)
+                            if src.reputation then
+                                GameTooltip:AddLine("  |cffaaaaaa" .. src.reputation.faction .. " — " .. src.reputation.level .. " required|r", 1, 1, 1)
+                            end
+                            for _, v in ipairs(src.vendors) do
+                                local vr, vg, vb = 1, 1, 1
+                                if     v.faction == "alliance" then vr, vg, vb = 0.41, 0.80, 0.94
+                                elseif v.faction == "horde"    then vr, vg, vb = 0.94, 0.41, 0.41 end
+                                GameTooltip:AddLine("  " .. v.name .. "  —  " .. (v.zone or ""), vr, vg, vb)
+                            end
+                        elseif src.type == "trainer" and src.trainers then
+                            GameTooltip:AddLine("Taught by trainer:", 1, 1, 0)
+                            for _, t in ipairs(src.trainers) do
+                                local vr, vg, vb = 1, 1, 1
+                                if     t.faction == "alliance" then vr, vg, vb = 0.41, 0.80, 0.94
+                                elseif t.faction == "horde"    then vr, vg, vb = 0.94, 0.41, 0.41 end
+                                GameTooltip:AddLine("  " .. t.name .. "  —  " .. (t.zone or ""), vr, vg, vb)
+                            end
+                        elseif src.type == "npc" and src.npcs then
+                            GameTooltip:AddLine("Taught by:", 1, 1, 0)
+                            for _, n in ipairs(src.npcs) do
+                                GameTooltip:AddLine("  " .. n.name .. "  —  " .. (n.zone or ""), 1, 1, 1)
+                            end
+                        elseif src.type == "drop" and src.creatures then
+                            for _, c in ipairs(src.creatures) do dropCreatures[#dropCreatures + 1] = c end
+                        elseif (src.type == "chest" or src.type == "lockbox" or src.type == "other" or src.type == "decoded") and src.containers then
+                            for _, c in ipairs(src.containers) do containerItems[#containerItems + 1] = c end
+                        elseif src.type == "world_drop" then
+                            local line = "World drop"
+                            if src.level_range then
+                                line = line .. "  (level " .. src.level_range[1] .. "–" .. src.level_range[2] .. ")"
+                            end
+                            miscLines[#miscLines + 1] = line
+                        elseif src.type == "holiday" then
+                            miscLines[#miscLines + 1] = "Holiday: " .. (src.event or "")
+                        elseif src.type == "object" then
+                            miscLines[#miscLines + 1] = "Clickable object" .. (src.zone and ("  —  " .. src.zone) or "")
+                        elseif src.type == "quest" and src.quests then
+                            for _, q in ipairs(src.quests) do
+                                local line = "Quest reward: " .. q.name
+                                if q.faction then line = line .. "  |cffaaaaaa(" .. q.faction .. ")|r" end
+                                miscLines[#miscLines + 1] = line
+                            end
+                        end
+                    end
+                    -- Creature drops sorted by rate, capped at 8
+                    table.sort(dropCreatures, function(a, b) return (a.rate or 0) > (b.rate or 0) end)
+                    if #dropCreatures > 0 then
+                        GameTooltip:AddLine("Drops from:", 1, 1, 0)
+                        for i, c in ipairs(dropCreatures) do
+                            if i > 8 then break end
+                            local line = "  " .. c.name
+                            if c.zone then
+                                -- World boss creatures carry multiple spawn zones as an array rather than a string.
+                                local z = type(c.zone) == "table" and table.concat(c.zone, ", ") or c.zone
+                                line = line .. "  —  " .. z
+                            end
+                            if c.rate then line = line .. " (" .. string.format("%.2f", c.rate) .. "%)" end
+                            GameTooltip:AddLine(line, 1, 1, 1)
+                        end
+                    end
+                    -- Container sources (chests, lockboxes, bags, decoded items) sorted by rate, capped at 8
+                    table.sort(containerItems, function(a, b) return (a.rate or 0) > (b.rate or 0) end)
+                    if #containerItems > 0 then
+                        GameTooltip:AddLine("Found in:", 1, 1, 0)
+                        for i, c in ipairs(containerItems) do
+                            if i > 8 then break end
+                            local line = "  " .. c.name
+                            if c.rate then line = line .. " (" .. string.format("%.2f", c.rate) .. "%)" end
+                            GameTooltip:AddLine(line, 1, 1, 1)
+                        end
+                    end
+                    -- Misc: world drop, holiday, clickable object, quest reward
+                    for _, line in ipairs(miscLines) do
+                        GameTooltip:AddLine(line, 1, 0.82, 0)
                     end
                     GameTooltip:Show()
                 end
@@ -217,7 +359,7 @@ local function createNavButtons()
     prevButton:SetText("< Prev")
     prevButton:SetScript("OnClick", function()
         pageIndex = pageIndex - 1
-        renderPage()
+        ACC.renderPage()
     end)
 
     nextButton = CreateFrame("Button", "AccNextButton", mainFrame, "UIPanelButtonTemplate")
@@ -227,7 +369,7 @@ local function createNavButtons()
     nextButton:SetText("Next >")
     nextButton:SetScript("OnClick", function()
         pageIndex = pageIndex + 1
-        renderPage()
+        ACC.renderPage()
     end)
 
     pageLabel = mainFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
@@ -315,29 +457,29 @@ end
 -- ── Public API ────────────────────────────────────────────────────────────────
 
 -- Entry point called from Core.lua on addon load; constructs all browser frames.
-function browserInit()
+function ACC.browserInit()
     createMainFrame()
     createCategoryPanel()
     createDropdown()
     createRowButtons()
     createNavButtons()
-    initRecipeDetail()
+    ACC.initRecipeDetail()
 end
 
 -- Shows the main browser window.
-function showBrowser()
+function ACC.showBrowser()
     mainFrame:Show()
 end
 
 -- Hides the browser and all child windows (detail panel, etc.).
-function hideBrowser()
+function ACC.hideBrowser()
     mainFrame:Hide()
-    closeAllBrowserWindows()
+    ACC.closeAllBrowserWindows()
 end
 
 -- Loads a profession into the browser: filters recipes, resolves slot categories,
 -- builds the ordered category list, and renders the first page.
-function selectProfession(profName)
+function ACC.selectProfession(profName)
     -- Cancel any pending resolution from a previous profession selection.
     mainFrame:UnregisterEvent("GET_ITEM_INFO_RECEIVED")
     pendingByItemId = {}
@@ -371,7 +513,7 @@ function selectProfession(profName)
                 skill          = smelt.skill,
                 colors         = smelt.colors,
                 category       = "Smelting",
-                recipeItemId   = smelt.creates and smelt.creates.id,
+                creates        = smelt.creates,
                 recipeItemIcon = smelt.creates and smelt.creates.icon,
                 _smelt         = smelt,
             }
@@ -415,6 +557,29 @@ function selectProfession(profName)
         for _, recipe in ipairs(recipeData) do
             if recipe.skill == 9999 then
                 -- skip the "Learn Profession" entry
+            elseif recipe._book then
+                recipeList[#recipeList + 1] = {
+                    name         = recipe.name,
+                    skill        = recipe.skill,
+                    category     = "Misc",
+                    displayGroup = 100,
+                    _book        = true,
+                    bookName     = recipe.bookName,
+                    bookItemId   = recipe.bookItemId,
+                    vendors      = recipe.vendors or {},
+                }
+            elseif recipe._quest then
+                recipeList[#recipeList + 1] = {
+                    name        = recipe.name,
+                    skill       = recipe.skill,
+                    category    = "Misc",
+                    displayGroup = 100,
+                    _quest      = true,
+                    questName   = recipe.questName,
+                    questId     = recipe.questId,
+                    questLevel  = recipe.questLevel,
+                    questGivers = recipe.questGivers or {},
+                }
             elseif recipe.creates == nil and (not recipe.reagents or #recipe.reagents == 0) then
                 -- rank-up training entry (Journeyman/Expert/Artisan) — wrap with Misc category
                 local src = recipe.sources and recipe.sources[1]
@@ -480,13 +645,13 @@ function selectProfession(profName)
     for _, cat in ipairs(categoryList) do
         if cat ~= "---" then activeCategory = cat break end
     end
-    renderCategoryPanel(categoryList)
-    renderPage()
+    ACC.renderCategoryPanel(categoryList)
+    ACC.renderPage()
 end
 
 -- Rebuilds the category panel buttons from the given list.
 -- "---" entries are rendered as blank spacing rather than buttons.
-function renderCategoryPanel(categoryList)
+function ACC.renderCategoryPanel(categoryList)
     for _, catButton in ipairs(categoryButtons) do
         catButton:Hide()
     end
@@ -501,10 +666,10 @@ function renderCategoryPanel(categoryList)
             button:SetHeight(20)
             button:SetWidth(148)
             button:SetScript("OnClick", function()
-                closeAllBrowserWindows()
+                ACC.closeAllBrowserWindows()
                 activeCategory = category
                 pageIndex = 1
-                renderPage()
+                ACC.renderPage()
             end)
             local label = button:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
             label:SetPoint("LEFT", button, "LEFT", 0, 0)
@@ -516,8 +681,8 @@ function renderCategoryPanel(categoryList)
 end
 
 -- Renders the current page of the active category into the row buttons.
-function renderPage()
-    local filteredList = getFilteredList()
+function ACC.renderPage()
+    local filteredList = ACC.getFilteredList()
     local totalPages   = math.max(1, math.ceil(#filteredList / rowsPerPage))
 
     if totalPages == 1 then
@@ -553,7 +718,7 @@ function renderPage()
                         or "Interface\\Icons\\INV_Misc_QuestionMark"
                 end
                 rowButtons[i].icon:SetTexture(iconTex)
-                rowButtons[i].recipeName:SetText(makeSpellLink(recipe))
+                rowButtons[i].recipeName:SetText(ACC.makeSpellLink(recipe))
                 rowButtons[i].skillText:SetText(recipe.skill or "")
                 rowButtons[i].recipe = recipe
                 rowButtons[i]:Show()
@@ -571,7 +736,7 @@ end
 -- Returns recipes in recipeList that belong to the active category.
 -- A recipe matches if either its pipeline tag (category) or its runtime-resolved
 -- slot (resolvedCategory) matches activeCategory.
-function getFilteredList()
+function ACC.getFilteredList()
     local result = {}
     for _, recipe in ipairs(recipeList) do
         if recipe.category == activeCategory or recipe.resolvedCategory == activeCategory then
@@ -607,7 +772,7 @@ function getFilteredList()
 end
 
 -- Opens the detail panel for the clicked recipe, anchored below the row button.
-function onRecipeClick(recipe, btn)
+function ACC.onRecipeClick(recipe, btn)
     if not recipe then return end
     if recipe._vein then return end
     if recipe._herb then
@@ -617,15 +782,51 @@ function onRecipeClick(recipe, btn)
         end
         return
     end
+    if recipe._book then
+        if IsShiftKeyDown() and recipe.bookItemId then
+            local _, link = GetItemInfo(recipe.bookItemId)
+            if link then ChatEdit_InsertLink(link) end
+        end
+        return
+    end
+    if recipe._quest then
+        if IsShiftKeyDown() then
+            local faction = UnitFactionGroup("player")
+            local questId = recipe.questId
+            for _, q in ipairs(recipe.questGivers) do
+                if q.questId then
+                    if not q.faction
+                       or (faction == "Alliance" and q.faction == "alliance")
+                       or (faction == "Horde"    and q.faction == "horde") then
+                        questId = q.questId
+                        break
+                    end
+                end
+            end
+            if questId then
+                local level = recipe.questLevel or 60
+                -- Classic ERA requires lowercase quest link color; uppercase renders but won't send.
+                local questLink = "|cffffff00|Hquest:" .. questId .. ":" .. level .. "|h[" .. (recipe.questName or recipe.name) .. "]|h|r"
+                if not ChatEdit_InsertLink(questLink) then
+                    DEFAULT_CHAT_FRAME:AddMessage(questLink)
+                end
+            end
+        end
+        return
+    end
     if recipe._smelt or recipe._train then
-        if IsShiftKeyDown() and recipe.spellId then
-            ChatEdit_InsertLink(makeSpellLink(recipe))
+        if IsShiftKeyDown() then
+            if recipe.spellId then
+                ChatEdit_InsertLink(ACC.makeSpellLink(recipe))
+            end
+        elseif recipe._smelt then
+            ACC.showRecipeDetail(recipe, btn)
         end
         return
     end
     if IsShiftKeyDown() then
-        ChatEdit_InsertLink(makeSpellLink(recipe))
+        ChatEdit_InsertLink(ACC.makeSpellLink(recipe))
         return
     end
-    showRecipeDetail(recipe, btn)
+    ACC.showRecipeDetail(recipe, btn)
 end

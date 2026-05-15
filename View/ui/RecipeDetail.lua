@@ -11,12 +11,17 @@ local recipeDetailCharLabels  = {}
 local recipeDetailCreatesButton
 local recipeDetailMaterialsHeader
 local recipeDetailReagentButtons = {}
+local recipeDetailQuestButton
+local recipeDetailSourceHeaders = {}
+local recipeDetailSourceLabels  = {}
 
 local ROW_HEIGHT = 16
 local ROW_GAP    = 4
 local PADDING    = 8
 local INDENT     = 20
-local MAX_CHARS  = 10
+local MAX_CHARS          = 10
+local MAX_SOURCE_HEADERS = 6
+local MAX_SOURCE_LINES   = 24
 
 -- Maps item quality (0–5) to WoW's standard color hex codes (AARRGGBB).
 -- 0=Poor(grey), 1=Common(white), 2=Uncommon(green), 3=Rare(blue), 4=Epic(purple), 5=Legendary(orange)
@@ -51,19 +56,12 @@ local function resolveItemIcon(id, pipelineIcon)
     return tex or "Interface\\Icons\\INV_Misc_QuestionMark"
 end
 
--- Inserts a link into whichever chat edit box is currently open.
--- Falls back to printing to the default chat frame when no edit box is visible,
--- so the link is never silently dropped.
 local function insertLink(link)
-    for i = 1, NUM_CHAT_WINDOWS do
-        local box = _G["ChatFrame" .. i .. "EditBox"]
-        if box and box:IsVisible() then
-            box:Insert(link)
-            return
-        end
+    if not ChatEdit_InsertLink(link) then
+        DEFAULT_CHAT_FRAME:AddMessage(link)
     end
-    DEFAULT_CHAT_FRAME:AddMessage(link)
 end
+
 
 local function addIcon(parent)
     local icon = parent:CreateTexture(nil, "OVERLAY")
@@ -82,6 +80,10 @@ local function createDetailFrame()
     recipeDetailFrame:SetPoint("CENTER", UIParent, "CENTER", 320, 0)
     recipeDetailFrame:SetFrameStrata("DIALOG")
     recipeDetailFrame:EnableMouse(true)
+    recipeDetailFrame:SetMovable(true)
+    recipeDetailFrame:RegisterForDrag("LeftButton")
+    recipeDetailFrame:SetScript("OnDragStart", function(self) self:StartMoving() end)
+    recipeDetailFrame:SetScript("OnDragStop",  function(self) self:StopMovingOrSizing() end)
     recipeDetailFrame:Hide()
 
     -- Spell / recipe item row — always the first row, fixed position
@@ -140,13 +142,142 @@ local function createDetailFrame()
         btn:Hide()
         recipeDetailReagentButtons[i] = btn
     end
+
+    -- Sources section: up to MAX_SOURCE_HEADERS labeled groups (e.g. "Sold by:", "Drops from:", "Found in:")
+    -- with a shared pool of MAX_SOURCE_LINES content rows used across all groups.
+    for i = 1, MAX_SOURCE_HEADERS do
+        local hdr = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+        hdr:Hide()
+        recipeDetailSourceHeaders[i] = hdr
+    end
+    for i = 1, MAX_SOURCE_LINES do
+        local lbl = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        lbl:SetTextColor(1, 1, 1)
+        lbl:Hide()
+        recipeDetailSourceLabels[i] = lbl
+    end
+
+    -- Quest button — shown only for smelt entries that have a quest requirement.
+    recipeDetailQuestButton = CreateFrame("Button", nil, recipeDetailFrame)
+    recipeDetailQuestButton:SetHeight(ROW_HEIGHT)
+    recipeDetailQuestButton:EnableMouse(true)
+    recipeDetailQuestButton:RegisterForClicks("LeftButtonUp")
+    local questText = recipeDetailQuestButton:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    questText:SetPoint("LEFT", recipeDetailQuestButton, "LEFT", 0, 0)
+    questText:SetJustifyH("LEFT")
+    recipeDetailQuestButton.text = questText
+    recipeDetailQuestButton:Hide()
+end
+
+-- Collects all recipe sources into an ordered list of {header, lines} sections for display.
+-- Each section has a bold header (e.g. "Sold by:") and a list of plain text content lines.
+local function buildSourceSections(recipe)
+    local sections = {}
+    local sources  = recipe.sources or {}
+
+    local function addSection(header, lines)
+        if #lines > 0 then sections[#sections + 1] = { header = header, lines = lines } end
+    end
+
+    -- Vendors (may have reputation requirement)
+    local vendorLines = {}
+    for _, src in ipairs(sources) do
+        if src.type == "vendor" and src.vendors then
+            if src.reputation then
+                vendorLines[#vendorLines + 1] = "|cffaaaaaa" .. src.reputation.faction .. " — " .. src.reputation.level .. " required|r"
+            end
+            for _, v in ipairs(src.vendors) do
+                vendorLines[#vendorLines + 1] = v.name .. "  —  " .. (v.zone or "")
+            end
+        end
+    end
+    addSection("Sold by:", vendorLines)
+
+    -- Trainers and named NPCs that teach the recipe
+    local trainerLines = {}
+    for _, src in ipairs(sources) do
+        if src.type == "trainer" and src.trainers then
+            for _, t in ipairs(src.trainers) do
+                trainerLines[#trainerLines + 1] = t.name .. "  —  " .. (t.zone or "")
+            end
+        elseif src.type == "npc" and src.npcs then
+            for _, n in ipairs(src.npcs) do
+                trainerLines[#trainerLines + 1] = n.name .. "  —  " .. (n.zone or "")
+            end
+        end
+    end
+    addSection("Taught by:", trainerLines)
+
+    -- Creature drops (sorted by rate, capped at 8)
+    local drops = {}
+    for _, src in ipairs(sources) do
+        if src.type == "drop" and src.creatures then
+            for _, c in ipairs(src.creatures) do drops[#drops + 1] = c end
+        end
+    end
+    table.sort(drops, function(a, b) return (a.rate or 0) > (b.rate or 0) end)
+    local dropLines = {}
+    for i = 1, math.min(#drops, 8) do
+        local c    = drops[i]
+        local line = c.name
+        if c.zone then
+            -- World boss creatures carry multiple spawn zones as an array rather than a string.
+            local z = type(c.zone) == "table" and table.concat(c.zone, ", ") or c.zone
+            line = line .. "  —  " .. z
+        end
+        if c.rate then line = line .. "  |cffaaaaaa(" .. string.format("%.2f", c.rate) .. "%)|r" end
+        dropLines[#dropLines + 1] = line
+    end
+    addSection("Drops from:", dropLines)
+
+    -- Containers: chests, lockboxes, bags/prizes ("other"), decoded items
+    local containerLines = {}
+    local CONTAINER = { chest = true, lockbox = true, other = true, decoded = true }
+    for _, src in ipairs(sources) do
+        if CONTAINER[src.type] and src.containers then
+            for _, c in ipairs(src.containers) do
+                local line = c.name
+                if c.rate then line = line .. "  |cffaaaaaa(" .. string.format("%.2f", c.rate) .. "%)|r" end
+                containerLines[#containerLines + 1] = line
+            end
+        end
+    end
+    if #containerLines > 0 then
+        table.sort(containerLines)  -- alphabetical; rate is already embedded in the string
+    end
+    addSection("Found in:", containerLines)
+
+    -- Miscellaneous one-liner sources
+    local miscLines = {}
+    for _, src in ipairs(sources) do
+        if src.type == "world_drop" then
+            local line = "World drop"
+            if src.level_range then
+                line = line .. "  |cffaaaaaa(level " .. src.level_range[1] .. "–" .. src.level_range[2] .. ")|r"
+            end
+            miscLines[#miscLines + 1] = line
+        elseif src.type == "holiday" then
+            miscLines[#miscLines + 1] = "Holiday: " .. (src.event or "")
+        elseif src.type == "object" then
+            miscLines[#miscLines + 1] = "Clickable object" .. (src.zone and ("  —  " .. src.zone) or "")
+        elseif src.type == "quest" and src.quests then
+            for _, q in ipairs(src.quests) do
+                local line = q.name
+                if q.faction then line = line .. "  |cffaaaaaa(" .. q.faction .. ")|r" end
+                miscLines[#miscLines + 1] = line
+            end
+        end
+    end
+    addSection("Also from:", miscLines)
+
+    return sections
 end
 
 -- Populates and shows the detail frame for the given recipe.
 -- Layout flows top-to-bottom using a 'y' cursor (negative = downward in WoW anchor space).
 -- Rows shown depend on the recipe: spell/item link is always first, then Known status,
 -- then Creates, then reagents.  Frame height and width auto-fit at the end.
-function showRecipeDetail(recipe, btn)
+function ACC.showRecipeDetail(recipe, btn)
     recipeDetailFrame:ClearAllPoints()
     if btn then
         recipeDetailFrame:SetPoint("TOPLEFT", btn, "BOTTOMLEFT", 0, -2)
@@ -154,7 +285,7 @@ function showRecipeDetail(recipe, btn)
         recipeDetailFrame:SetPoint("CENTER", UIParent, "CENTER", 320, 0)
     end
 
-    local spellLink = makeSpellLink(recipe)
+    local spellLink = ACC.makeSpellLink(recipe)
 
     -- Row 1: recipe item if available, else spell link (fixed at y = -40)
     if recipe.recipeItemId then
@@ -319,6 +450,69 @@ function showRecipeDetail(recipe, btn)
         end
     end
 
+    -- Sources section: render each group (Sold by, Taught by, Drops from, Found in, etc.)
+    local sections = buildSourceSections(recipe)
+    local hdrIdx   = 0
+    local lblIdx   = 0
+    for _, sec in ipairs(sections) do
+        hdrIdx = hdrIdx + 1
+        if hdrIdx > MAX_SOURCE_HEADERS then break end
+        local hdr = recipeDetailSourceHeaders[hdrIdx]
+        hdr:ClearAllPoints()
+        hdr:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
+        hdr:SetText(sec.header)
+        hdr:Show()
+        y = y - ROW_HEIGHT - 2
+        for _, line in ipairs(sec.lines) do
+            lblIdx = lblIdx + 1
+            if lblIdx > MAX_SOURCE_LINES then break end
+            local lbl = recipeDetailSourceLabels[lblIdx]
+            lbl:ClearAllPoints()
+            lbl:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", INDENT, y)
+            lbl:SetText(line)
+            lbl:Show()
+            y = y - ROW_HEIGHT
+        end
+        y = y - ROW_GAP
+    end
+    for i = hdrIdx + 1, MAX_SOURCE_HEADERS do recipeDetailSourceHeaders[i]:Hide() end
+    for i = lblIdx + 1, MAX_SOURCE_LINES   do recipeDetailSourceLabels[i]:Hide()  end
+
+    -- Quest button (smelt only)
+    local smelt = recipe._smelt
+    if smelt and smelt.questId and smelt.quest then
+        local level = smelt.questLevel or 60
+        -- Classic ERA validates quest hyperlink color byte-exact: uppercase FFFF00 renders yellow
+        -- but is not recognised as a sendable hyperlink; only the lowercase cffffff00 form works.
+        local questLink = "|cffffff00|Hquest:" .. smelt.questId .. ":" .. level .. "|h[" .. smelt.quest .. "]|h|r"
+        recipeDetailQuestButton:ClearAllPoints()
+        recipeDetailQuestButton:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING, y)
+        recipeDetailQuestButton:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), y)
+        recipeDetailQuestButton.text:SetText("Quest: " .. questLink)
+        recipeDetailQuestButton:SetScript("OnEnter", function()
+            GameTooltip:SetOwner(recipeDetailQuestButton, "ANCHOR_NONE")
+            GameTooltip:SetPoint("BOTTOMLEFT", recipeDetailQuestButton, "TOPLEFT", 0, 2)
+            GameTooltip:SetText(smelt.quest, 1, 1, 0)
+            GameTooltip:AddLine("Open chat input, then click to link", 0, 1, 0)
+            GameTooltip:Show()
+        end)
+        recipeDetailQuestButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
+        recipeDetailQuestButton:SetScript("OnClick", nil)
+        -- OnMouseDown fires before the click steals focus from the chat edit box,
+        -- so ChatEdit_InsertLink still sees it as the active input when the handler runs.
+        recipeDetailQuestButton:SetScript("OnMouseDown", function(self, btn)
+            if btn == "LeftButton" then insertLink(questLink) end
+        end)
+        recipeDetailQuestButton:Show()
+        y = y - ROW_HEIGHT - ROW_GAP
+    else
+        recipeDetailQuestButton:SetScript("OnEnter", nil)
+        recipeDetailQuestButton:SetScript("OnLeave", nil)
+        recipeDetailQuestButton:SetScript("OnClick", nil)
+        recipeDetailQuestButton:SetScript("OnMouseDown", nil)
+        recipeDetailQuestButton:Hide()
+    end
+
     -- Auto-size height and width
     recipeDetailFrame:SetHeight(math.abs(y) + PADDING)
 
@@ -335,19 +529,26 @@ function showRecipeDetail(recipe, btn)
     end
     if recipe.creates then measureText(recipeDetailCreatesButton.text) end
     for i = 1, #reagents do measureText(recipeDetailReagentButtons[i].text) end
+    for i = 1, MAX_SOURCE_HEADERS do
+        if recipeDetailSourceHeaders[i]:IsShown() then measureText(recipeDetailSourceHeaders[i]) end
+    end
+    for i = 1, MAX_SOURCE_LINES do
+        if recipeDetailSourceLabels[i]:IsShown() then measureText(recipeDetailSourceLabels[i]) end
+    end
+    if recipeDetailQuestButton:IsShown() then measureText(recipeDetailQuestButton.text) end
     recipeDetailFrame:SetWidth(math.max(200, ROW_HEIGHT + 2 + maxTextW + PADDING * 2 + 20))
 
     recipeDetailFrame:Show()
 end
 
 -- Called from browserInit() so the detail frame is created alongside the main browser.
-function initRecipeDetail()
+function ACC.initRecipeDetail()
     createDetailFrame()
 end
 
 -- Called by Browser.lua whenever the user switches category or profession,
 -- so the stale detail panel doesn't stay open showing a different recipe's info.
-function closeAllBrowserWindows()
+function ACC.closeAllBrowserWindows()
     if recipeDetailFrame then
         recipeDetailFrame:Hide()
     end

@@ -695,13 +695,15 @@ ACC_Data.MiningSmelt = {
         creates  = { name = "Dark Iron Bar", id = 11371, count = 1 , icon = "inv_ingot_mithril"},
         source   = "quest",
         npc      = { name = "Gloom'rel", zone = "Blackrock Depths" },
-        quest    = "The Spectral Chalice",
+        quest      = "The Spectral Chalice",
+        questId    = 4083,
+        questLevel = 55,
         tribute  = {
             { name = "Gold Bar",       count = 20 },
             { name = "Truesilver Bar", count = 10 },
             { name = "Star Ruby",      count = 2  },
         },
-        note     = "Must be smelted at the Black Forge in Blackrock Depths — the only forge capable of smelting Dark Iron. The forge is just outside the Molten Core entrance, near where the MC attunement quest item is picked up. Gloom'rel is in the Summoners' Tomb; talk to him before any other dwarf ghost or Doom'rel will trigger a boss event that requires killing Gloom'rel.",
+        note     = "In the Summoners' Tomb (the Seven Dwarves room), talk to Gloom'rel first to spawn the Eternal Brazier — talking to any other dwarf ghost first triggers Doom'rel and a boss fight. Turn in the tribute at the Brazier to learn the spell. Dark Iron can only be smelted at the Black Forge, just outside the Molten Core entrance.",
     },
 
     {

@@ -7,19 +7,24 @@
 ## SavedVariablesPerCharacter: ACC_CharacterData
 
 # Load order matters:
+#   0. Namespace     — creates the ACC global table used by every other file
 #   1. data files    — populate ACC_Data tables
 #   2. DataManager   — indexes ACC_Data for O(1) lookups
 #   3. Tracker       — reads SavedVariables (available after data is indexed)
 #   4. UI files      — Browser/RecipeDetail reference DataManager and Tracker
 #   5. Main          — registers /acc after all frames exist
 
+Namespace.lua
+
 Model\data\CraftingLocations.lua
 Model\data\Alchemy.lua
 Model\data\Blacksmithing.lua
 Model\data\Cooking.lua
+Model\data\CookingExtras.lua
 Model\data\Enchanting.lua
 Model\data\Engineering.lua
 Model\data\FirstAid.lua
+Model\data\FirstAidExtras.lua
 Model\data\Herbalism.lua
 Model\data\Skinning.lua
 Model\data\Leatherworking.lua

@@ -69,7 +69,9 @@ ACC_BrowserConfig.professionCategoryOrder = {
         "Misc",
     },
     Cooking = {
-        "Food",
+        "Stamina",
+        "Stats",
+        "Health / Mana",
         "---",
         "Misc",
     },
@@ -95,7 +97,7 @@ ACC_BrowserConfig.subCategoryOrder = {
 -- Default category assigned when a profession's crafted items have no equipment slot
 -- (e.g. First Aid bandages return INVTYPE_NON_EQUIP / "").
 ACC_BrowserConfig.professionDefaultCategory = {
-    ["Cooking"]   = "Food",
+    ["Cooking"]   = "Health / Mana",
     ["First Aid"] = "Bandages",
 }
 
@@ -107,7 +109,7 @@ ACC_BrowserConfig.profFallbackIcon = {
     Cooking        = "Interface\\Icons\\inv_misc_food_15",
     Enchanting     = "Interface\\Icons\\trade_engraving",
     Engineering    = "Interface\\Icons\\trade_engineering",
-    ["First Aid"]  = "Interface\\Icons\\inv_misc_bandage_07",
+    ["First Aid"]  = "Interface\\Icons\\spell_holy_sealofsacrifice",
     Herbalism      = "Interface\\Icons\\trade_herbalism",
     Leatherworking = "Interface\\Icons\\trade_leatherworking",
     Mining         = "Interface\\Icons\\trade_mining",

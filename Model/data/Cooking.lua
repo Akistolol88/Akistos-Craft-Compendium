@@ -18,6 +18,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Misc",
     },
     {
         spellId = 2538,
@@ -33,6 +34,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 2539,
@@ -64,6 +66,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 2540,
@@ -79,6 +82,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 2541,
@@ -109,6 +113,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 2542,
@@ -136,6 +141,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Stamina",
     },
     {
         spellId = 2543,
@@ -164,6 +170,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Health / Mana",
     },
     {
         spellId = 2544,
@@ -195,6 +202,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 2545,
@@ -234,6 +242,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Health / Mana",
     },
     {
         spellId = 2546,
@@ -265,6 +274,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 2547,
@@ -292,6 +302,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Stamina",
     },
     {
         spellId = 2548,
@@ -330,6 +341,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Health / Mana",
     },
     {
         spellId = 2549,
@@ -357,6 +369,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Stamina",
     },
     {
         spellId = 2550,
@@ -411,6 +424,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Stamina",
     },
     {
         spellId = 3102,
@@ -465,6 +479,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Stamina",
     },
     {
         spellId = 3371,
@@ -493,6 +508,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Stamina",
     },
     {
         spellId = 3372,
@@ -520,6 +536,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Stamina",
     },
     {
         spellId = 3373,
@@ -547,6 +564,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Stamina",
     },
     {
         spellId = 3376,
@@ -576,6 +594,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 3377,
@@ -603,6 +622,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Stamina",
     },
     {
         spellId = 3397,
@@ -631,6 +651,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 3398,
@@ -659,6 +680,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 3399,
@@ -681,6 +703,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 3400,
@@ -704,6 +727,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 3413,
@@ -738,6 +762,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "horde",
+        category = "Stamina",
     },
     {
         spellId = 6412,
@@ -759,6 +784,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 6413,
@@ -780,6 +806,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "horde",
+        category = "Health / Mana",
     },
     {
         spellId = 6414,
@@ -802,6 +829,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "horde",
+        category = "Stamina",
     },
     {
         spellId = 6415,
@@ -824,6 +852,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Stamina",
     },
     {
         spellId = 6416,
@@ -851,6 +880,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "horde",
+        category = "Stamina",
     },
     {
         spellId = 6417,
@@ -872,6 +902,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 6418,
@@ -894,6 +925,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "horde",
+        category = "Stamina",
     },
     {
         spellId = 6419,
@@ -917,6 +949,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 6499,
@@ -948,6 +981,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 6500,
@@ -979,6 +1013,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 6501,
@@ -1003,6 +1038,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Health / Mana",
     },
     {
         spellId = 7213,
@@ -1025,6 +1061,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 7751,
@@ -1054,6 +1091,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 7752,
@@ -1079,6 +1117,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 7753,
@@ -1107,6 +1146,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 7754,
@@ -1129,6 +1169,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "alliance",
+        category = "Health / Mana",
     },
     {
         spellId = 7755,
@@ -1156,6 +1197,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 7827,
@@ -1186,6 +1228,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 7828,
@@ -1215,6 +1258,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 8238,
@@ -1252,6 +1296,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Misc",
     },
     {
         spellId = 8604,
@@ -1268,6 +1313,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 8607,
@@ -1290,6 +1336,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 9513,
@@ -1318,6 +1365,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Misc",
     },
     {
         spellId = 13028,
@@ -1336,6 +1384,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 15853,
@@ -1358,6 +1407,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 15855,
@@ -1386,6 +1436,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 15856,
@@ -1410,6 +1461,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 15861,
@@ -1435,6 +1487,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 15863,
@@ -1460,6 +1513,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 15865,
@@ -1484,6 +1538,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 15906,
@@ -1509,6 +1564,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Misc",
     },
     {
         spellId = 15910,
@@ -1534,6 +1590,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 15915,
@@ -1558,6 +1615,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 15933,
@@ -1582,6 +1640,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 15935,
@@ -1604,6 +1663,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "horde",
+        category = "Stamina",
     },
     {
         spellId = 18238,
@@ -1625,6 +1685,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 18239,
@@ -1647,6 +1708,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 18240,
@@ -1669,6 +1731,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stats",
     },
     {
         spellId = 18241,
@@ -1690,6 +1753,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 18242,
@@ -1712,6 +1776,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stats",
     },
     {
         spellId = 18243,
@@ -1734,6 +1799,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stats",
     },
     {
         spellId = 18244,
@@ -1755,6 +1821,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stats",
     },
     {
         spellId = 18245,
@@ -1778,6 +1845,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 18246,
@@ -1802,6 +1870,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 18247,
@@ -1825,6 +1894,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 18260,
@@ -1860,6 +1930,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 20916,
@@ -1875,6 +1946,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Health / Mana",
     },
     {
         spellId = 21143,
@@ -1902,6 +1974,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 21144,
@@ -1931,6 +2004,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 21175,
@@ -1961,6 +2035,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 22480,
@@ -1985,6 +2060,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 22761,
@@ -2007,6 +2083,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stats",
     },
     {
         spellId = 24418,
@@ -2029,6 +2106,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = "horde",
+        category = "Stamina",
     },
     {
         spellId = 24801,
@@ -2047,6 +2125,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stats",
     },
     {
         spellId = 25659,
@@ -2071,6 +2150,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stamina",
     },
     {
         spellId = 25704,
@@ -2107,6 +2187,7 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stats",
     },
     {
         spellId = 25954,
@@ -2143,5 +2224,6 @@ ACC_Data["Cooking"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        category = "Stats",
     },
 }

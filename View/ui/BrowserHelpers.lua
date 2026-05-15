@@ -3,7 +3,7 @@
 -- buried inside Browser.lua where it would be harder to find.
 
 -- Builds a clickable spell hyperlink string for use in tooltips and chat.
-function makeSpellLink(recipe)
+function ACC.makeSpellLink(recipe)
     if not recipe.spellId then
         return "|cffffd700[" .. (recipe.name or "???") .. "]|r"
     end
@@ -12,7 +12,7 @@ end
 
 -- Populates an already-owned GameTooltip with gathering-node info.
 -- Handles three node types — vein, herb, and smelt — via the recipe's _vein/_herb/_smelt fields.
-function showGatheringTooltip(recipe)
+function ACC.showGatheringTooltip(recipe)
     local vein  = recipe._vein
     local herb  = recipe._herb
     local smelt = recipe._smelt

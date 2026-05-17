@@ -7,7 +7,7 @@ lint:
   image: ubuntu:22.04
   script:
     - apt-get update -y
-    - apt-get install -y luacheck
+    - apt-get install -y luarocks
     - luarocks install luacheck
     - luacheck .
 package:

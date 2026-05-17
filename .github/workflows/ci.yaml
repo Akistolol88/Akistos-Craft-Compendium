@@ -1,0 +1,24 @@
+name: accCI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-package:
+    runs-on: ubuntu-22.04
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install luacheck
+      run: sudo apt-get install -y luacheck
+    - name: Run luacheck
+      run: luacheck .
+    - name: Package delivery
+      run: zip -r AkistosCraftCompendium.zip AkistosCraftCompendium.toc Namespace.lua Controller/ Model/ View/
+    - name: Upload to GitHub Releases
+      uses: softprops/action-gh-release@v2
+      with:
+        files: AkistosCraftCompendium.zip

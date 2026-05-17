@@ -500,8 +500,8 @@ function ACC.showRecipeDetail(recipe, btn)
         recipeDetailQuestButton:SetScript("OnClick", nil)
         -- OnMouseDown fires before the click steals focus from the chat edit box,
         -- so ChatEdit_InsertLink still sees it as the active input when the handler runs.
-        recipeDetailQuestButton:SetScript("OnMouseDown", function(self, btn)
-            if btn == "LeftButton" then insertLink(questLink) end
+        recipeDetailQuestButton:SetScript("OnMouseDown", function(_, mouseBtn)
+            if mouseBtn == "LeftButton" then insertLink(questLink) end
         end)
         recipeDetailQuestButton:Show()
         y = y - ROW_HEIGHT - ROW_GAP

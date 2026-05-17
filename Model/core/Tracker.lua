@@ -47,7 +47,7 @@ local trackerFrame = CreateFrame("Frame")
 trackerFrame:RegisterEvent("PLAYER_LOGIN")
 trackerFrame:RegisterEvent("TRADE_SKILL_SHOW")
 trackerFrame:RegisterEvent("TRADE_SKILL_UPDATE")
-trackerFrame:SetScript("OnEvent", function(self, event)
+trackerFrame:SetScript("OnEvent", function(_, event)
     if event == "PLAYER_LOGIN" then
         currentChar = UnitName("player")
         -- Load any data saved from previous sessions for this character.

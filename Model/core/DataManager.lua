@@ -39,8 +39,8 @@ function ACC.GetProfessionGroups()
 end
 
 -- Build recipeById in one pass over all professions at load time.
-for profName, recipes in pairs(ACC_Data) do
-    for i, recipe in ipairs(recipes) do
+for _, recipes in pairs(ACC_Data) do
+    for _, recipe in ipairs(recipes) do
         if recipe.spellId then
             ACC_DataManager.recipeById[recipe.spellId] = recipe
         end

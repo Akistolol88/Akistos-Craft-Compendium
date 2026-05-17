@@ -92,7 +92,7 @@ local function createDropdown()
     UIDropDownMenu_Initialize(dropDownProfessions, function()
         for i, group in ipairs(ACC.GetProfessionGroups()) do
             UIDropDownMenu_AddButton({ text = group.title, isTitle = true, notCheckable = true })
-            for j, profName in ipairs(group.professions) do
+            for _, profName in ipairs(group.professions) do
                 UIDropDownMenu_AddButton({
                     text = profName,
                     func = function()
@@ -311,7 +311,7 @@ local function createRowButtons()
                     table.sort(dropCreatures, function(a, b) return (a.rate or 0) > (b.rate or 0) end)
                     if #dropCreatures > 0 then
                         GameTooltip:AddLine("Drops from:", 1, 1, 0)
-                        for i, c in ipairs(dropCreatures) do
+                        for _, c in ipairs(dropCreatures) do
                             if i > 8 then break end
                             local line = "  " .. c.name
                             if c.zone then
@@ -327,7 +327,7 @@ local function createRowButtons()
                     table.sort(containerItems, function(a, b) return (a.rate or 0) > (b.rate or 0) end)
                     if #containerItems > 0 then
                         GameTooltip:AddLine("Found in:", 1, 1, 0)
-                        for i, c in ipairs(containerItems) do
+                        for _, c in ipairs(containerItems) do
                             if i > 8 then break end
                             local line = "  " .. c.name
                             if c.rate then line = line .. " (" .. string.format("%.2f", c.rate) .. "%)" end
@@ -555,45 +555,45 @@ function ACC.selectProfession(profName)
     else
         local recipeData = ACC_Data[profName] or {}
         for _, recipe in ipairs(recipeData) do
-            if recipe.skill == 9999 then
-                -- skip the "Learn Profession" entry
-            elseif recipe._book then
-                recipeList[#recipeList + 1] = {
-                    name         = recipe.name,
-                    skill        = recipe.skill,
-                    category     = "Misc",
-                    displayGroup = 100,
-                    _book        = true,
-                    bookName     = recipe.bookName,
-                    bookItemId   = recipe.bookItemId,
-                    vendors      = recipe.vendors or {},
-                }
-            elseif recipe._quest then
-                recipeList[#recipeList + 1] = {
-                    name        = recipe.name,
-                    skill       = recipe.skill,
-                    category    = "Misc",
-                    displayGroup = 100,
-                    _quest      = true,
-                    questName   = recipe.questName,
-                    questId     = recipe.questId,
-                    questLevel  = recipe.questLevel,
-                    questGivers = recipe.questGivers or {},
-                }
-            elseif recipe.creates == nil and (not recipe.reagents or #recipe.reagents == 0) then
-                -- rank-up training entry (Journeyman/Expert/Artisan) — wrap with Misc category
-                local src = recipe.sources and recipe.sources[1]
-                recipeList[#recipeList + 1] = {
-                    name         = recipe.name,
-                    spellId      = recipe.spellId,
-                    skill        = recipe.skill,
-                    category     = "Misc",
-                    displayGroup = 100,
-                    _train       = true,
-                    trainers     = (src and src.trainers) or {},
-                }
-            else
-                recipeList[#recipeList + 1] = recipe
+            if recipe.skill ~= 9999 then
+                if recipe._book then
+                    recipeList[#recipeList + 1] = {
+                        name         = recipe.name,
+                        skill        = recipe.skill,
+                        category     = "Misc",
+                        displayGroup = 100,
+                        _book        = true,
+                        bookName     = recipe.bookName,
+                        bookItemId   = recipe.bookItemId,
+                        vendors      = recipe.vendors or {},
+                    }
+                elseif recipe._quest then
+                    recipeList[#recipeList + 1] = {
+                        name        = recipe.name,
+                        skill       = recipe.skill,
+                        category    = "Misc",
+                        displayGroup = 100,
+                        _quest      = true,
+                        questName   = recipe.questName,
+                        questId     = recipe.questId,
+                        questLevel  = recipe.questLevel,
+                        questGivers = recipe.questGivers or {},
+                    }
+                elseif recipe.creates == nil and (not recipe.reagents or #recipe.reagents == 0) then
+                    -- rank-up training entry (Journeyman/Expert/Artisan) — wrap with Misc category
+                    local src = recipe.sources and recipe.sources[1]
+                    recipeList[#recipeList + 1] = {
+                        name         = recipe.name,
+                        spellId      = recipe.spellId,
+                        skill        = recipe.skill,
+                        category     = "Misc",
+                        displayGroup = 100,
+                        _train       = true,
+                        trainers     = (src and src.trainers) or {},
+                    }
+                else
+                    recipeList[#recipeList + 1] = recipe
+                end
             end
         end
 

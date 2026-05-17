@@ -1,0 +1,18 @@
+stages:
+  - lint
+  - package
+
+lint: 
+  stage: lint
+  image: ubuntu:22.04
+  script:
+    - apt-get update -y
+    - apt-get install -y luacheck
+    - luacheck .
+package:
+  stage: package
+  script: 
+    - zip -r AkistosCraftCompendium.zip AkistosCraftCompendium.toc Namespace.lua Controller/ Model/ View/
+  artifacts: 
+    paths:
+      - AkistosCraftCompendium.zip

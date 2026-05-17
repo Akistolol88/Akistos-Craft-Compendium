@@ -13,6 +13,8 @@ lint:
 package:
   stage: package
   script: 
+    - apt-get update -y
+    - apt-get install -y zip
     - zip -r AkistosCraftCompendium.zip AkistosCraftCompendium.toc Namespace.lua Controller/ Model/ View/
   artifacts: 
     paths:

@@ -264,7 +264,7 @@ local function createRowButtons()
                         if src.type == "vendor" and src.vendors then
                             GameTooltip:AddLine("Sold by:", 1, 1, 0)
                             if src.reputation then
-                                GameTooltip:AddLine("  |cffaaaaaa" .. src.reputation.faction .. " — " .. src.reputation.level .. " required|r", 1, 1, 1)
+                                GameTooltip:AddLine("  |cffffff00" .. src.reputation.faction .. " — " .. src.reputation.level .. " required|r", 1, 1, 1)
                             end
                             for _, v in ipairs(src.vendors) do
                                 local vr, vg, vb = 1, 1, 1

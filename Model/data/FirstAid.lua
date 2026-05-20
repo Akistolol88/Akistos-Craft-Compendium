@@ -72,6 +72,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 1,
     },
     {
         spellId = 3276,
@@ -87,6 +88,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 1,
     },
     {
         spellId = 3277,
@@ -117,6 +119,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 1,
     },
     {
         spellId = 3278,
@@ -147,6 +150,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 1,
     },
     {
         spellId = 7924,
@@ -189,6 +193,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 1,
     },
     {
         spellId = 7929,
@@ -204,6 +209,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 1,
     },
     {
         spellId = 7934,
@@ -234,6 +240,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 2,
     },
     {
         spellId = 7935,
@@ -249,6 +256,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 2,
     },
     {
         spellId = 10840,
@@ -264,6 +272,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 1,
     },
     {
         spellId = 10841,
@@ -279,6 +288,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 1,
     },
     {
         spellId = 10846,
@@ -306,6 +316,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 1,
     },
     {
         spellId = 18630,
@@ -321,6 +332,7 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 1,
     },
     {
         spellId = 23787,
@@ -344,5 +356,6 @@ ACC_Data["First Aid"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 2,
     },
 }

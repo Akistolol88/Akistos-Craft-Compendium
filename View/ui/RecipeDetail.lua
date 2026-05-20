@@ -11,7 +11,7 @@ local recipeDetailCharLabels  = {}
 local recipeDetailCreatesButton
 local recipeDetailMaterialsHeader
 local recipeDetailReagentButtons = {}
-local recipeDetailQuestButton
+local recipeDetailQuestButtons = {}
 local recipeDetailSourceHeaders = {}
 local recipeDetailSourceLabels  = {}
 
@@ -57,9 +57,8 @@ local function resolveItemIcon(id, pipelineIcon)
 end
 
 local function insertLink(link)
-    if not ChatEdit_InsertLink(link) then
-        DEFAULT_CHAT_FRAME:AddMessage(link)
-    end
+    DEFAULT_CHAT_FRAME:AddMessage(link)
+    ChatEdit_InsertLink(link)
 end
 
 
@@ -157,16 +156,19 @@ local function createDetailFrame()
         recipeDetailSourceLabels[i] = lbl
     end
 
-    -- Quest button — shown only for smelt entries that have a quest requirement.
-    recipeDetailQuestButton = CreateFrame("Button", nil, recipeDetailFrame)
-    recipeDetailQuestButton:SetHeight(ROW_HEIGHT)
-    recipeDetailQuestButton:EnableMouse(true)
-    recipeDetailQuestButton:RegisterForClicks("LeftButtonUp")
-    local questText = recipeDetailQuestButton:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    questText:SetPoint("LEFT", recipeDetailQuestButton, "LEFT", 0, 0)
-    questText:SetJustifyH("LEFT")
-    recipeDetailQuestButton.text = questText
-    recipeDetailQuestButton:Hide()
+    -- Quest buttons — pool of up to 4 clickable quest links (smelt quest + recipe quest sources).
+    for i = 1, 4 do
+        local btn = CreateFrame("Button", nil, recipeDetailFrame)
+        btn:SetHeight(ROW_HEIGHT)
+        btn:EnableMouse(true)
+        btn:RegisterForClicks("LeftButtonUp")
+        local qText = btn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        qText:SetPoint("LEFT", btn, "LEFT", 0, 0)
+        qText:SetJustifyH("LEFT")
+        btn.text = qText
+        btn:Hide()
+        recipeDetailQuestButtons[i] = btn
+    end
 end
 
 -- Collects all recipe sources into an ordered list of {header, lines} sections for display.
@@ -184,7 +186,7 @@ local function buildSourceSections(recipe)
     for _, src in ipairs(sources) do
         if src.type == "vendor" and src.vendors then
             if src.reputation then
-                vendorLines[#vendorLines + 1] = "|cffaaaaaa" .. src.reputation.faction .. " — " .. src.reputation.level .. " required|r"
+                vendorLines[#vendorLines + 1] = "|cffffff00" .. src.reputation.faction .. " — " .. src.reputation.level .. " required|r"
             end
             for _, v in ipairs(src.vendors) do
                 vendorLines[#vendorLines + 1] = v.name .. "  —  " .. (v.zone or "")
@@ -260,12 +262,6 @@ local function buildSourceSections(recipe)
             miscLines[#miscLines + 1] = "Holiday: " .. (src.event or "")
         elseif src.type == "object" then
             miscLines[#miscLines + 1] = "Clickable object" .. (src.zone and ("  —  " .. src.zone) or "")
-        elseif src.type == "quest" and src.quests then
-            for _, q in ipairs(src.quests) do
-                local line = q.name
-                if q.faction then line = line .. "  |cffaaaaaa(" .. q.faction .. ")|r" end
-                miscLines[#miscLines + 1] = line
-            end
         end
     end
     addSection("Also from:", miscLines)
@@ -478,40 +474,58 @@ function ACC.showRecipeDetail(recipe, btn)
     for i = hdrIdx + 1, MAX_SOURCE_HEADERS do recipeDetailSourceHeaders[i]:Hide() end
     for i = lblIdx + 1, MAX_SOURCE_LINES   do recipeDetailSourceLabels[i]:Hide()  end
 
-    -- Quest button (smelt only)
-    local smelt = recipe._smelt
+    -- Quest buttons: pool of up to 4 buttons for smelt quest + recipe quest sources.
+    local quests = {}
+    local smelt  = recipe._smelt
     if smelt and smelt.questId and smelt.quest then
-        local level = smelt.questLevel or 60
-        -- Classic ERA validates quest hyperlink color byte-exact: uppercase FFFF00 renders yellow
-        -- but is not recognised as a sendable hyperlink; only the lowercase cffffff00 form works.
-        local questLink = "|cffffff00|Hquest:" .. smelt.questId .. ":" .. level .. "|h[" .. smelt.quest .. "]|h|r"
-        recipeDetailQuestButton:ClearAllPoints()
-        recipeDetailQuestButton:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING, y)
-        recipeDetailQuestButton:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), y)
-        recipeDetailQuestButton.text:SetText("Quest: " .. questLink)
-        recipeDetailQuestButton:SetScript("OnEnter", function()
-            GameTooltip:SetOwner(recipeDetailQuestButton, "ANCHOR_NONE")
-            GameTooltip:SetPoint("BOTTOMLEFT", recipeDetailQuestButton, "TOPLEFT", 0, 2)
-            GameTooltip:SetText(smelt.quest, 1, 1, 0)
-            GameTooltip:AddLine("Open chat input, then click to link", 0, 1, 0)
-            GameTooltip:Show()
-        end)
-        recipeDetailQuestButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
-        recipeDetailQuestButton:SetScript("OnClick", nil)
-        -- OnMouseDown fires before the click steals focus from the chat edit box,
-        -- so ChatEdit_InsertLink still sees it as the active input when the handler runs.
-        recipeDetailQuestButton:SetScript("OnMouseDown", function(_, mouseBtn)
-            if mouseBtn == "LeftButton" then insertLink(questLink) end
-        end)
-        recipeDetailQuestButton:Show()
-        y = y - ROW_HEIGHT - ROW_GAP
-    else
-        recipeDetailQuestButton:SetScript("OnEnter", nil)
-        recipeDetailQuestButton:SetScript("OnLeave", nil)
-        recipeDetailQuestButton:SetScript("OnClick", nil)
-        recipeDetailQuestButton:SetScript("OnMouseDown", nil)
-        recipeDetailQuestButton:Hide()
+        quests[#quests + 1] = { id = smelt.questId, name = smelt.quest, level = smelt.questLevel or 60 }
     end
+    for _, src in ipairs(recipe.sources or {}) do
+        if src.type == "quest" and src.quests then
+            for _, q in ipairs(src.quests) do
+                quests[#quests + 1] = { id = q.id, name = q.name, level = q.level or 60, faction = q.faction }
+            end
+        end
+    end
+    for i = 1, 4 do
+        local qbtn = recipeDetailQuestButtons[i]
+        local q    = quests[i]
+        if q then
+            -- Display text uses only colour codes — |H...|h hyperlink markup is invisible on regular
+            -- game FontStrings (only chat frames render it) and causes raw pipe chars to appear.
+            local displayText = "|cffffff00Quest: [" .. q.name .. "]|r"
+            if q.faction then displayText = displayText .. "  |cffaaaaaa(" .. q.faction .. ")|r" end
+            -- Full hyperlink format is only used inside the click handler for chat insertion.
+            local questLink = q.id
+                and ("|cffffff00|Hquest:" .. q.id .. ":" .. q.level .. "|h[" .. q.name .. "]|h|r")
+                or  ("|cffffff00[" .. q.name .. "]|r")
+            qbtn:ClearAllPoints()
+            qbtn:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING, y)
+            qbtn:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), y)
+            qbtn.text:SetText(displayText)
+            qbtn:SetScript("OnEnter", function()
+                GameTooltip:SetOwner(qbtn, "ANCHOR_NONE")
+                GameTooltip:SetPoint("BOTTOMLEFT", qbtn, "TOPLEFT", 0, 2)
+                GameTooltip:SetText(q.name, 1, 1, 0)
+                GameTooltip:AddLine("Click to link in chat", 0, 1, 0)
+                GameTooltip:Show()
+            end)
+            qbtn:SetScript("OnLeave", function() GameTooltip:Hide() end)
+            qbtn:SetScript("OnClick", function()
+                if not ChatEdit_InsertLink(questLink) then
+                    DEFAULT_CHAT_FRAME:AddMessage(questLink)
+                end
+            end)
+            qbtn:Show()
+            y = y - ROW_HEIGHT
+        else
+            qbtn:SetScript("OnEnter", nil)
+            qbtn:SetScript("OnLeave", nil)
+            qbtn:SetScript("OnClick", nil)
+            qbtn:Hide()
+        end
+    end
+    if #quests > 0 then y = y - ROW_GAP end
 
     -- Auto-size height and width
     recipeDetailFrame:SetHeight(math.abs(y) + PADDING)
@@ -535,7 +549,9 @@ function ACC.showRecipeDetail(recipe, btn)
     for i = 1, MAX_SOURCE_LINES do
         if recipeDetailSourceLabels[i]:IsShown() then measureText(recipeDetailSourceLabels[i]) end
     end
-    if recipeDetailQuestButton:IsShown() then measureText(recipeDetailQuestButton.text) end
+    for i = 1, 4 do
+        if recipeDetailQuestButtons[i]:IsShown() then measureText(recipeDetailQuestButtons[i].text) end
+    end
     recipeDetailFrame:SetWidth(math.max(200, ROW_HEIGHT + 2 + maxTextW + PADDING * 2 + 20))
 
     recipeDetailFrame:Show()

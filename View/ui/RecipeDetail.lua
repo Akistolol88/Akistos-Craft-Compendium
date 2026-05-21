@@ -34,6 +34,26 @@ local QUALITY_COLOR = {
     [5] = "ffff8000",
 }
 
+-- Holds the URL to display; set immediately before StaticPopup_Show so OnShow can read it.
+-- (WoW Classic 1.12 StaticPopup_Show has no data parameter, so a local is the reliable path.)
+local urlPromptUrl = ""
+
+-- URL prompt shown when a quest entry has a wowheadUrl instead of a linkable quest ID.
+-- Uses an editable text box so the player can copy the URL manually.
+StaticPopupDialogs["ACC_URL"] = {
+    text         = "Copy this URL and open it in your browser:",
+    button1      = "Close",
+    hasEditBox   = 1,
+    editBoxWidth = 320,
+    OnShow = function(self)
+        local eb = _G[self:GetName() .. "EditBox"]
+        if eb then eb:SetText(urlPromptUrl) end
+    end,
+    timeout      = 0,
+    whileDead    = 1,
+    hideOnEscape = 1,
+}
+
 -- Constructs a clickable item hyperlink from pipeline data when the client cache lacks the item.
 local function makeItemLink(id, name, quality)
     local color = QUALITY_COLOR[quality] or QUALITY_COLOR[1]
@@ -56,12 +76,13 @@ local function resolveItemIcon(id, pipelineIcon)
     return tex or "Interface\\Icons\\INV_Misc_QuestionMark"
 end
 
+-- Inserts a hyperlink into the active chat input; falls back to printing in the chat frame.
 local function insertLink(link)
     DEFAULT_CHAT_FRAME:AddMessage(link)
     ChatEdit_InsertLink(link)
 end
 
-
+-- Creates a square icon texture anchored to the left edge of a parent frame.
 local function addIcon(parent)
     local icon = parent:CreateTexture(nil, "OVERLAY")
     icon:SetWidth(ROW_HEIGHT)
@@ -262,6 +283,8 @@ local function buildSourceSections(recipe)
             miscLines[#miscLines + 1] = "Holiday: " .. (src.event or "")
         elseif src.type == "object" then
             miscLines[#miscLines + 1] = "Clickable object" .. (src.zone and ("  —  " .. src.zone) or "")
+        elseif src.type == "note" then
+            miscLines[#miscLines + 1] = src.text or ""
         end
     end
     addSection("Also from:", miscLines)
@@ -483,7 +506,7 @@ function ACC.showRecipeDetail(recipe, btn)
     for _, src in ipairs(recipe.sources or {}) do
         if src.type == "quest" and src.quests then
             for _, q in ipairs(src.quests) do
-                quests[#quests + 1] = { id = q.id, name = q.name, level = q.level or 60, faction = q.faction }
+                quests[#quests + 1] = { id = q.id, name = q.name, level = q.level or 60, faction = q.faction, wowheadUrl = q.wowheadUrl }
             end
         end
     end
@@ -507,12 +530,19 @@ function ACC.showRecipeDetail(recipe, btn)
                 GameTooltip:SetOwner(qbtn, "ANCHOR_NONE")
                 GameTooltip:SetPoint("BOTTOMLEFT", qbtn, "TOPLEFT", 0, 2)
                 GameTooltip:SetText(q.name, 1, 1, 0)
-                GameTooltip:AddLine("Click to link in chat", 0, 1, 0)
+                if q.wowheadUrl then
+                    GameTooltip:AddLine("Click to open Wowhead URL", 0, 1, 0)
+                else
+                    GameTooltip:AddLine("Click to link in chat", 0, 1, 0)
+                end
                 GameTooltip:Show()
             end)
             qbtn:SetScript("OnLeave", function() GameTooltip:Hide() end)
             qbtn:SetScript("OnClick", function()
-                if not ChatEdit_InsertLink(questLink) then
+                if q.wowheadUrl then
+                    urlPromptUrl = q.wowheadUrl
+                    StaticPopup_Show("ACC_URL")
+                elseif not ChatEdit_InsertLink(questLink) then
                     DEFAULT_CHAT_FRAME:AddMessage(questLink)
                 end
             end)

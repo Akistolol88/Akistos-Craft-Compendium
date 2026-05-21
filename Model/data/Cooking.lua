@@ -1356,8 +1356,8 @@ ACC_Data["Cooking"] = {
                 { name = "Smudge Thunderwood", zone = "Deadmines", cost = 210 },
             } },
             { type = "quest", quests = {
-                { id = 2359, name = "Klaven's Tower", faction = "alliance" },
-                { id = 2478, name = "Mission: Possible But Not Probable", faction = "horde" },
+                { id = 2360, name = "Mathias and the Defias", faction = "alliance", level = 20 },
+                { id = 2460, name = "The Shattered Salute", faction = "horde",     level = 20 },
             } },
         },
         cooldown = nil,

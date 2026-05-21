@@ -37,6 +37,9 @@ Model\core\Tracker.lua
 
 View\ui\BrowserConfig.lua
 View\ui\BrowserHelpers.lua
+View\ui\BrowserSelectProfession.lua
+View\ui\BrowserTooltips.lua
+View\ui\BrowserRender.lua
 View\ui\Browser.lua
 View\ui\RecipeDetail.lua
 

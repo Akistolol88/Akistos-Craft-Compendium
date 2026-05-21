@@ -75,3 +75,11 @@ ACC_Data.SkinningTraining = {
     { name = "Expert Skinning",     spellId = 8618,  skill = 125, trainers = _allTrainers },
     { name = "Artisan Skinning",    spellId = 10768, skill = 200, trainers = _allTrainers },
 }
+
+-- Formula reference entries shown in the Formula category.
+-- _skill_calc marks the entry that Browser.lua replaces with the live calculated result.
+ACC_Data.SkinningFormula = {
+    { name = "Skill 1-100:  Max mob level = (Skill / 10) + 10", _formula = true },
+    { name = "Skill 100+:   Max mob level = Skill / 5",          _formula = true },
+    { name = "",                                                  _skill_calc = true },
+}

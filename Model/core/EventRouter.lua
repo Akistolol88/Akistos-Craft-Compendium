@@ -1,3 +1,0 @@
--- EventRouter.lua — central hub for addon-wide WoW event registration.
--- Currently a placeholder; add RegisterEvent / dispatch logic here when multiple
--- modules need to react to the same event without each creating their own frame.

@@ -1,12 +1,20 @@
 stages:
   - lint
+  - test
   - package
 
-lint: 
+lint:
   stage: lint
   image: pipelinecomponents/luacheck:latest
   script:
     - luacheck .
+
+test:
+  stage: test
+  image: pipelinecomponents/luacheck:latest
+  script:
+    - lua tests/test_tracker.lua
+
 package:
   stage: package
   script: 

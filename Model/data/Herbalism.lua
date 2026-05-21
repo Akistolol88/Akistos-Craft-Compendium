@@ -76,6 +76,17 @@ ACC_Data.Herbalism = {
     },
 
     {
+        name         = "Swiftthistle",
+        item         = 2452,
+        icon         = "inv_misc_herb_04",
+        colors       = { 70, 95, 120, 170 },
+        noColors     = true,
+        note         = "Sometimes herbed from Briarthorn and Mageroyal",
+        displayGroup = 100,
+        zones        = {},
+    },
+
+    {
         name    = "Stranglekelp",
         item    = 3820,
         icon    = "inv_misc_herb_11",
@@ -349,6 +360,20 @@ ACC_Data.Herbalism = {
         zones   = {
             "Burning Steppes", "Eastern Plaguelands",
             "Silithus", "Winterspring",
+        },
+    },
+
+    {
+        name         = "Bloodvine",
+        item         = 19726,
+        icon         = "inv_misc_herb_09",
+        colors       = { 300, 325, 350, 400 },
+        noColors     = true,
+        displayGroup = 100,
+        terrain      = "Found in Zul'Gurub only",
+        note    = "Sometimes herbed from herbs inside Zul'Gurub if you have a Bloodscythe in your bags",
+        zones   = {
+            "Zul'Gurub",
         },
     },
 

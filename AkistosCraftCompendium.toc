@@ -25,6 +25,7 @@ Model\data\Enchanting.lua
 Model\data\Engineering.lua
 Model\data\FirstAid.lua
 Model\data\FirstAidExtras.lua
+Model\data\Fishing.lua
 Model\data\Herbalism.lua
 Model\data\Skinning.lua
 Model\data\Leatherworking.lua

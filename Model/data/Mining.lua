@@ -57,7 +57,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Incendicite Mineral Vein",
-        icon   = "inv_stone_13",
+        icon   = "inv_ore_thorium_01",
         colors = { 65, 90, 115, 165 },
         taps   = "2-4",
         note   = "Quest vein — drops Incendicite Ore for 'The Dark Iron War' quest chain",
@@ -111,7 +111,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Lesser Bloodstone Deposit",
-        icon   = "inv_misc_food_wheat_02",
+        icon   = "inv_ore_thorium_01",
         colors = { 75, 100, 125, 175 },
         taps   = "2-4",
         note   = "Quest vein — drops Lesser Bloodstone Ore for a quest in Arathi Highlands",
@@ -151,6 +151,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Indurium Mineral Vein",
+        icon   = "inv_ore_mithril_01",
         colors = { 150, 175, 200, 250 },
         taps   = "2-4",
         note   = "Quest vein — drops Indurium Ore for the Uldaman quest chain",
@@ -365,7 +366,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Rich Thorium Vein",
-        icon   = "inv_ore_thorium_02",
+        icon   = "inv_misc_gem_topaz_01",
         colors = { 275, 300, 325, 375 },
         taps   = "2-4",
         ore    = {
@@ -390,7 +391,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Ooze Covered Rich Thorium Vein",
-        icon   = "inv_ore_thorium_02",
+        icon   = "inv_misc_gem_topaz_01",
         colors = { 275, 300, 325, 375 },
         taps   = "2-4",
         ore    = {
@@ -414,7 +415,7 @@ ACC_Data.Mining = {
 
     {
         name   = "Hakkari Thorium Vein",
-        icon   = "inv_ore_thorium_02",
+        icon   = "inv_misc_gem_01",
         colors = { 275, 300, 325, 375 },
         taps   = "2-4",
         note   = "Souldarite only drops if Bloodscythe is in your bags",
@@ -439,9 +440,10 @@ ACC_Data.Mining = {
     },
 
     {
-        name   = "Small Obsidian Chunk",
-        icon   = "inv_stone_15",
-        colors = { 305, 330, 355, 405 },
+        name         = "Small Obsidian Chunk",
+        icon         = "inv_misc_stonetablet_01",
+        displayGroup = 1,
+        colors       = { 305, 330, 355, 405 },
         taps   = "1-2",
         note   = "Requires 305 mining — at skill cap (300) you need Enchant Gloves - Mining (+5) or be a Dwarf (+10 racial)",
         ore    = {
@@ -461,9 +463,10 @@ ACC_Data.Mining = {
     },
 
     {
-        name   = "Large Obsidian Chunk",
-        icon   = "inv_bracer_10",
-        colors = { 325, 350, 375, 425 },
+        name         = "Large Obsidian Chunk",
+        icon         = "inv_stone_15",
+        displayGroup = 2,
+        colors       = { 305, 330, 355, 405 },
         taps   = "2-4",
         ore    = {
             { name = "Small Obsidian Shard", rate = 49.0 },

@@ -63,6 +63,15 @@ ACC_BrowserConfig.professionCategoryOrder = {
         "---",
         "Misc",
     },
+    Fishing = {
+        "Zones",
+        "---",
+        "Poles",
+        "Lures",
+        "Tournament",
+        "---",
+        "Misc",
+    },
     ["First Aid"] = {
         "Bandages",
         "---",
@@ -110,6 +119,7 @@ ACC_BrowserConfig.profFallbackIcon = {
     Enchanting     = "Interface\\Icons\\trade_engraving",
     Engineering    = "Interface\\Icons\\trade_engineering",
     ["First Aid"]  = "Interface\\Icons\\spell_holy_sealofsacrifice",
+    Fishing        = "Interface\\Icons\\trade_fishing",
     Herbalism      = "Interface\\Icons\\trade_herbalism",
     Leatherworking = "Interface\\Icons\\trade_leatherworking",
     Mining         = "Interface\\Icons\\trade_mining",

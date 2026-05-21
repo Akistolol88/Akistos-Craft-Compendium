@@ -1,4 +1,4 @@
--- Skinning trainer and rank data for WoW Classic (1.12)
+-- Skinning.lua — trainer and rank data for WoW Classic (1.12).
 --
 -- SkinningSkill fields:
 --   rank       display name for the training tier
@@ -9,9 +9,9 @@
 -- SkinningTrainers fields:
 --   name       NPC name
 --   zone       zone the NPC is in
---   area       specific landmark within that zone
---   faction    "alliance", "horde", or nil (neutral)
---   max_rank   highest rank this trainer can teach
+--   faction    "alliance", "horde", or nil (neutral / reacts to both)
+--
+-- All skinning trainers can teach every rank (Journeyman through Artisan).
 
 ACC_Data = ACC_Data or {}
 
@@ -23,14 +23,55 @@ ACC_Data.SkinningSkill = {
 }
 
 ACC_Data.SkinningTrainers = {
-    { name = "Helene Peltskinner",   zone = "Elwynn Forest",  area = "Goldshire",              faction = "alliance", max_rank = "journeyman" },
-    { name = "Radnaal Maneweaver",   zone = "Teldrassil",     area = "Dolanaar",               faction = "alliance", max_rank = "journeyman" },
-    { name = "Saenorion",            zone = "Stormwind City", area = "Trade District",         faction = "alliance", max_rank = "expert"     },
-    { name = "Randal Worth",         zone = "Ironforge",      area = "The Commons",            faction = "alliance", max_rank = "expert"     },
-    { name = "Yonn Deepcut",         zone = "Darnassus",      area = "Craftsmen's Terrace",    faction = "alliance", max_rank = "expert"     },
-    { name = "Kulleg Stonehorn",     zone = "Feralas",        area = "Feathermoon Stronghold", faction = "alliance", max_rank = "artisan"    },
-    { name = "Thuwd",                zone = "Orgrimmar",      area = "The Drag",               faction = "horde",    max_rank = "expert"     },
-    { name = "Dranh",                zone = "Thunder Bluff",  area = "Middle Rise",            faction = "horde",    max_rank = "expert"     },
-    { name = "Killian Hagey",        zone = "Undercity",      area = "Trade Quarter",          faction = "horde",    max_rank = "expert"     },
-    { name = "Una",                  zone = "Thunder Bluff",  area = "Lower Rise",             faction = "horde",    max_rank = "artisan"    },
+    -- Alliance
+    { name = "Balthus Stoneflayer",  zone = "Ironforge",          faction = "alliance" },
+    { name = "Eladriel",             zone = "Darnassus",          faction = "alliance" },
+    { name = "Helene Peltskinner",   zone = "Elwynn Forest",      faction = "alliance" },
+    { name = "Jayla",                zone = "Ashenvale",          faction = "alliance" },
+    { name = "Maris Granger",        zone = "Stormwind City",     faction = "alliance" },
+    { name = "Radnaal Maneweaver",   zone = "Teldrassil",         faction = "alliance" },
+    { name = "Wilma Ranthal",        zone = "Redridge Mountains", faction = "alliance" },
+    -- Horde
+    { name = "Dranh",                zone = "The Barrens",        faction = "horde"    },
+    { name = "Killian Hagey",        zone = "Undercity",          faction = "horde"    },
+    { name = "Kulleg Stonehorn",     zone = "Feralas",            faction = "horde"    },
+    { name = "Malux",                zone = "Desolace",           faction = "horde"    },
+    { name = "Mooranta",             zone = "Thunder Bluff",      faction = "horde"    },
+    { name = "Thuwd",                zone = "Orgrimmar",          faction = "horde"    },
+    { name = "Yonn Deepcut",         zone = "Mulgore",            faction = "horde"    },
+    -- Neutral
+    { name = "Rand Rhobart",         zone = "Tirisfal Glades"                          },
+}
+
+-- SkinningTraining fields:
+--   name     display name shown in the browser
+--   spellId  spell ID for the rank-up cast
+--   skill    skill points required to learn
+--   trainers list of {name, zone, faction} — all trainers for every rank
+
+local _allTrainers = {
+    -- Alliance
+    { name = "Balthus Stoneflayer",  zone = "Ironforge",          faction = "alliance" },
+    { name = "Eladriel",             zone = "Darnassus",          faction = "alliance" },
+    { name = "Helene Peltskinner",   zone = "Elwynn Forest",      faction = "alliance" },
+    { name = "Jayla",                zone = "Ashenvale",          faction = "alliance" },
+    { name = "Maris Granger",        zone = "Stormwind City",     faction = "alliance" },
+    { name = "Radnaal Maneweaver",   zone = "Teldrassil",         faction = "alliance" },
+    { name = "Wilma Ranthal",        zone = "Redridge Mountains", faction = "alliance" },
+    -- Horde
+    { name = "Dranh",                zone = "The Barrens",        faction = "horde"    },
+    { name = "Killian Hagey",        zone = "Undercity",          faction = "horde"    },
+    { name = "Kulleg Stonehorn",     zone = "Feralas",            faction = "horde"    },
+    { name = "Malux",                zone = "Desolace",           faction = "horde"    },
+    { name = "Mooranta",             zone = "Thunder Bluff",      faction = "horde"    },
+    { name = "Thuwd",                zone = "Orgrimmar",          faction = "horde"    },
+    { name = "Yonn Deepcut",         zone = "Mulgore",            faction = "horde"    },
+    -- Neutral
+    { name = "Rand Rhobart",         zone = "Tirisfal Glades"                          },
+}
+
+ACC_Data.SkinningTraining = {
+    { name = "Journeyman Skinning", spellId = 8617,  skill = 50,  trainers = _allTrainers },
+    { name = "Expert Skinning",     spellId = 8618,  skill = 125, trainers = _allTrainers },
+    { name = "Artisan Skinning",    spellId = 10768, skill = 200, trainers = _allTrainers },
 }

@@ -53,7 +53,7 @@ function ACC.showGatheringTooltip(recipe)
         end
     elseif herb then
         GameTooltip:SetText(herb.name, 1, 1, 1)
-        addColorLine()
+        if not herb.noColors then addColorLine() end
         if herb.terrain then GameTooltip:AddLine(herb.terrain, 0.9, 0.9, 0.9, true) end
         if herb.note    then GameTooltip:AddLine(herb.note,    1,   0.82, 0,   true) end
         if herb.zones and #herb.zones > 0 then

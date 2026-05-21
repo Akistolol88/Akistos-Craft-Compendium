@@ -100,6 +100,12 @@ function ACC_Tracker.WhoKnows(spellId)
     return result
 end
 
+-- Test-only hook — injects currentChar and knownNames without needing WoW events.
+function ACC_Tracker._setTestState(char, known)
+    currentChar = char
+    knownNames = known
+end
+
 -- Appends known-status lines to a tooltip frame for the given spellId.
 -- Shows "Known" (green) or "Not Known" (red) for the logged-in character,
 -- then lists any other alts that know the recipe. The logged-in character is

@@ -63,6 +63,11 @@ ACC_BrowserConfig.professionCategoryOrder = {
         "---",
         "Misc",
     },
+    Skinning = {
+        "Formula",
+        "---",
+        "Misc",
+    },
     Fishing = {
         "Zones",
         "---",
@@ -154,4 +159,21 @@ ACC_BrowserConfig.slotCategory = {
     INVTYPE_BAG            = "Bags",
     INVTYPE_QUIVER         = "Quiver",
     INVTYPE_TABARD         = "Tabard",
+}
+
+-- Mutable browser state shared between Browser.lua and BrowserRender.lua.
+-- Initialised here so both files can alias it with `local S = ACC_BrowserState` at load time.
+ACC_BrowserState = {
+    mainFrame       = nil,
+    categoryFrame   = nil,
+    pageLabel       = nil,
+    prevButton      = nil,
+    nextButton      = nil,
+    rowButtons      = {},
+    categoryButtons = {},
+    recipeList      = {},
+    pageIndex       = 1,
+    activeCategory  = nil,
+    currentProfName = nil,
+    pendingByItemId = {},
 }

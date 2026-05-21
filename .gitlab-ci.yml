@@ -11,9 +11,11 @@ lint:
 
 test:
   stage: test
-  image: pipelinecomponents/luacheck:latest
+  image: alpine:3
+  before_script:
+    - apk add --no-cache lua5.4
   script:
-    - lua tests/test_tracker.lua
+    - lua5.4 tests/test_tracker.lua
 
 package:
   stage: package

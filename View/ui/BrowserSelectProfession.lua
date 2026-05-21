@@ -82,10 +82,12 @@ function ACC.buildSkinningList(list)
     for i, entry in ipairs(ACC_Data.SkinningFormula or {}) do
         list[#list + 1] = {
             name         = entry.name,
+            skill        = entry.skill,
             category     = "Formula",
-            displayGroup = i,
-            _formula     = entry._formula or nil,
+            displayGroup = entry.displayGroup or i,
+            _formula     = entry._formula    or nil,
             _skill_calc  = entry._skill_calc or nil,
+            _skill_band  = entry._skill_band or nil,
         }
     end
 end

@@ -106,6 +106,9 @@ ACC_BrowserConfig.subCategoryOrder = {
     ["Grinding Stones"]   = 3,
     -- Enhancement types
     ["Shield Spikes"]     = 1,
+    -- Enchanting oil types
+    ["Spell Damage"]      = 1,
+    ["Mana"]              = 2,
 }
 
 -- Default category assigned when a profession's crafted items have no equipment slot

@@ -77,9 +77,16 @@ ACC_Data.SkinningTraining = {
 }
 
 -- Formula reference entries shown in the Formula category.
--- _skill_calc marks the entry that Browser.lua replaces with the live calculated result.
+-- _skill_calc: live summary line (your skill + max mob level).
+-- _skill_band: one row per difficulty colour, rendered live from current skill.
+-- skill field on band entries controls sort order (1=first … 5=last); not displayed.
 ACC_Data.SkinningFormula = {
-    { name = "Skill 1-100:  Max mob level = (Skill / 10) + 10", _formula = true },
-    { name = "Skill 100+:   Max mob level = Skill / 5",          _formula = true },
-    { name = "",                                                  _skill_calc = true },
+    { name = "Skill 1-100:  Max mob level = (Skill / 10) + 10", _formula = true,    displayGroup = 1 },
+    { name = "Skill 100+:   Max mob level = Skill / 5",          _formula = true,    displayGroup = 1 },
+    { name = "",                                                  _skill_calc = true, displayGroup = 2 },
+    { _skill_band = "red",    skill = 1, displayGroup = 3 },
+    { _skill_band = "orange", skill = 2, displayGroup = 3 },
+    { _skill_band = "yellow", skill = 3, displayGroup = 3 },
+    { _skill_band = "green",  skill = 4, displayGroup = 3 },
+    { _skill_band = "grey",   skill = 5, displayGroup = 3 },
 }

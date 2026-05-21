@@ -4051,6 +4051,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        subCategory = "Spell Damage",
         category = "Oils",
     },
     {
@@ -4083,6 +4084,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        subCategory = "Mana",
         category = "Oils",
     },
     {
@@ -4115,6 +4117,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        subCategory = "Spell Damage",
         category = "Oils",
     },
     {
@@ -4140,6 +4143,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        subCategory = "Mana",
         category = "Oils",
     },
     {
@@ -4165,6 +4169,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        subCategory = "Spell Damage",
         category = "Oils",
     },
     {
@@ -4189,6 +4194,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        subCategory = "Spell Damage",
         category = "Oils",
     },
     {
@@ -4213,6 +4219,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        subCategory = "Mana",
         category = "Oils",
     },
     {

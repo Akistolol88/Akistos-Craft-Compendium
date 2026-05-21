@@ -16,6 +16,27 @@ local function getSkinningSkill()
     return 0
 end
 
+-- Returns mob level ranges for each skinning difficulty colour given current skill.
+-- Thresholds (your skill − required skill): orange 0–9, yellow 10–24, green 25–49, grey 50+.
+local function getSkinningRanges(skill)
+    local maxLevel = skill <= 100 and (math.floor(skill / 10) + 10) or math.floor(skill / 5)
+    local function maxLvlForReq(req)
+        if req < 0    then return 0 end
+        if req <= 100 then return math.floor(req / 10) + 10 end
+        return math.floor(req / 5)
+    end
+    local greyMax   = maxLvlForReq(skill - 50)
+    local greenMax  = maxLvlForReq(skill - 25)
+    local yellowMax = maxLvlForReq(skill - 10)
+    return {
+        maxLevel = maxLevel,
+        grey     = { max = greyMax },
+        green    = { min = greyMax   + 1, max = greenMax  },
+        yellow   = { min = greenMax  + 1, max = yellowMax },
+        orange   = { min = yellowMax + 1, max = maxLevel  },
+    }
+end
+
 function ACC.saveNavState()
     if not ACC_CharacterData then ACC_CharacterData = {} end
     if not ACC_CharacterData.lastState then ACC_CharacterData.lastState = {} end
@@ -180,6 +201,41 @@ function ACC.renderPage()
                 S.rowButtons[i].skillText:SetText("")
                 S.rowButtons[i].recipe = recipe
                 S.rowButtons[i]:Show()
+            elseif recipe._skill_band then
+                -- Live colour-band row: shows which mob level range maps to this difficulty colour.
+                local skill  = getSkinningSkill()
+                local ranges = skill > 0 and getSkinningRanges(skill) or nil
+                local band   = recipe._skill_band
+                local text
+                if not ranges then
+                    local labels = {
+                        red    = "|cffff4040Red (can't skin)|r",
+                        orange = "|cffff8000Orange (guaranteed)|r",
+                        yellow = "|cffffff00Yellow (likely)|r",
+                        green  = "|cff40ff40Green (unlikely)|r",
+                        grey   = "|cff808080Grey (no skillup)|r",
+                    }
+                    text = (labels[band] or "") .. "   —"
+                elseif band == "red" then
+                    text = "|cffff4040Red (can't skin)|r   Lv " .. (ranges.maxLevel + 1) .. "+"
+                elseif band == "orange" then
+                    local r = ranges.orange
+                    text = "|cffff8000Orange (guaranteed)|r   " .. (r.min <= r.max and "Lv " .. r.min .. "–" .. r.max or "—")
+                elseif band == "yellow" then
+                    local r = ranges.yellow
+                    text = "|cffffff00Yellow (likely)|r   " .. (r.min <= r.max and "Lv " .. r.min .. "–" .. r.max or "—")
+                elseif band == "green" then
+                    local r = ranges.green
+                    text = "|cff40ff40Green (unlikely)|r   " .. (r.min <= r.max and "Lv " .. r.min .. "–" .. r.max or "—")
+                elseif band == "grey" then
+                    local r = ranges.grey
+                    text = "|cff808080Grey (no skillup)|r   " .. (r.max >= 1 and "Lv " .. r.max .. " and below" or "—")
+                end
+                S.rowButtons[i].icon:SetTexture(nil)
+                S.rowButtons[i].recipeName:SetText(text or "")
+                S.rowButtons[i].skillText:SetText("")
+                S.rowButtons[i].recipe = recipe
+                S.rowButtons[i]:Show()
             else
                 local iconName = (recipe.creates and recipe.creates.icon) or recipe.recipeItemIcon
                 local iconTex  = iconName and ("Interface\\Icons\\" .. iconName)
@@ -251,6 +307,7 @@ function ACC.onRecipeClick(recipe, btn)
     if not recipe then return end
     if recipe._formula    then return end
     if recipe._skill_calc then return end
+    if recipe._skill_band then return end
     if recipe._vein       then return end
     if recipe._herb then
         if IsShiftKeyDown() and recipe._herb.item then

@@ -31,11 +31,16 @@ local function updateMinimapPosition(angle)
     ACCBtn.angle = angle
 end
 
--- Called by /acc minimap to restore a previously hidden button.
+-- Called by /acc minimap to toggle the button on or off.
 function ACC.showMinimapButton()
-    ACCBtn:Show()
-    if ACC_CharacterData then
-        ACC_CharacterData.minimapHidden = false
+    if ACCBtn:IsShown() then
+        ACCBtn:Hide()
+        if ACC_CharacterData then ACC_CharacterData.minimapHidden = true end
+        DEFAULT_CHAT_FRAME:AddMessage("|cff00ccffACC:|r Minimap button hidden. Type |cffffffff/acc minimap|r to restore it.")
+    else
+        ACCBtn:Show()
+        if ACC_CharacterData then ACC_CharacterData.minimapHidden = false end
+        DEFAULT_CHAT_FRAME:AddMessage("|cff00ccffACC:|r Minimap button restored.")
     end
 end
 
@@ -72,7 +77,7 @@ UIDropDownMenu_Initialize(ACCBtnMenu, function()
 end, "MENU")
 
 ACCBtn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-ACCBtn:SetScript("OnClick", function(self, button)
+ACCBtn:SetScript("OnClick", function(_, button)
     if button == "RightButton" then
         if UIDROPDOWNMENU_OPEN_MENU == ACCBtnMenu then
             CloseDropDownMenus()

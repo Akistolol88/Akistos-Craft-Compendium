@@ -35,6 +35,7 @@ Model\data\Tailoring.lua
 Model\core\DataManager.lua
 Model\core\Tracker.lua
 
+View\ui\MinimapButton.lua
 View\ui\BrowserConfig.lua
 View\ui\BrowserHelpers.lua
 View\ui\BrowserSelectProfession.lua

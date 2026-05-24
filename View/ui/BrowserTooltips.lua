@@ -35,7 +35,7 @@ end
 -- Dispatches tooltip rendering for a recipe row. Caller is responsible for
 -- SetOwner + SetPoint before calling this; this function only fills in the content.
 function ACC.showHoverTooltip(recipe)
-    if recipe._skill_band then GameTooltip:Hide() return end
+    if recipe._skill_band or recipe._skill_calc or recipe._formula then GameTooltip:Hide() return end
     if recipe._vein or recipe._herb then
         ACC.showGatheringTooltip(recipe)
     elseif recipe._smelt then

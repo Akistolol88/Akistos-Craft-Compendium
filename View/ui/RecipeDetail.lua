@@ -1,57 +1,13 @@
--- RecipeDetail.lua — floating detail popup shown when a recipe row is clicked.
--- Displays: recipe/item link, Known status + alt list, Creates row, and reagent list.
--- Layout is calculated dynamically in showRecipeDetail(); the frame height and width
--- auto-size to fit however many rows the selected recipe requires.
+-- RecipeDetail.lua — layout engine for the RecipeDetail panel.
+-- Frame construction and widget pool live in RecipeDetailFrame.lua (ACC_RecipeDetailState).
+-- showRecipeDetail() flows top-to-bottom using a y cursor; each section is a local function.
 
-local recipeDetailFrame
-local recipeDetailSpellButton
-local recipeDetailKnownLabel
-local recipeDetailSpecLabel
-local recipeDetailCharLabels  = {}
-local recipeDetailCreatesButton
-local recipeDetailMaterialsHeader
-local recipeDetailReagentButtons = {}
-local recipeDetailQuestButtons = {}
-local recipeDetailSourceHeaders = {}
-local recipeDetailSourceLabels  = {}
+local RDS = ACC_RecipeDetailState
 
-local ROW_HEIGHT = 16
-local ROW_GAP    = 4
-local PADDING    = 8
-local INDENT     = 20
-local MAX_CHARS          = 10
-local MAX_SOURCE_HEADERS = 6
-local MAX_SOURCE_LINES   = 24
-
--- Maps item quality (0–5) to WoW's standard color hex codes (AARRGGBB).
--- 0=Poor(grey), 1=Common(white), 2=Uncommon(green), 3=Rare(blue), 4=Epic(purple), 5=Legendary(orange)
+-- Maps item quality (0–5) to WoW's standard colour hex codes (AARRGGBB).
 local QUALITY_COLOR = {
-    [0] = "ff9d9d9d",
-    [1] = "ffffffff",
-    [2] = "ff1eff00",
-    [3] = "ff0070dd",
-    [4] = "ffa335ee",
-    [5] = "ffff8000",
-}
-
--- Holds the URL to display; set immediately before StaticPopup_Show so OnShow can read it.
--- (WoW Classic 1.12 StaticPopup_Show has no data parameter, so a local is the reliable path.)
-local urlPromptUrl = ""
-
--- URL prompt shown when a quest entry has a wowheadUrl instead of a linkable quest ID.
--- Uses an editable text box so the player can copy the URL manually.
-StaticPopupDialogs["ACC_URL"] = {
-    text         = "Copy this URL and open it in your browser:",
-    button1      = "Close",
-    hasEditBox   = 1,
-    editBoxWidth = 320,
-    OnShow = function(self)
-        local eb = _G[self:GetName() .. "EditBox"]
-        if eb then eb:SetText(urlPromptUrl) end
-    end,
-    timeout      = 0,
-    whileDead    = 1,
-    hideOnEscape = 1,
+    [0] = "ff9d9d9d", [1] = "ffffffff", [2] = "ff1eff00",
+    [3] = "ff0070dd", [4] = "ffa335ee", [5] = "ffff8000",
 }
 
 -- Constructs a clickable item hyperlink from pipeline data when the client cache lacks the item.
@@ -60,8 +16,7 @@ local function makeItemLink(id, name, quality)
     return "|c" .. color .. "|Hitem:" .. id .. ":0:0:0:0:0:0:0|h[" .. name .. "]|h|r"
 end
 
--- Priority: live GetItemInfo link (always correct) → pipeline name fallback → bare item ID.
--- Pipeline data is used when the item is not yet in the client cache at detail-open time.
+-- Priority: live GetItemInfo link → pipeline name fallback → bare item ID.
 local function resolveItemLink(id, pipelineName, pipelineQuality)
     local _, link = GetItemInfo(id)
     if link then return link end
@@ -69,7 +24,7 @@ local function resolveItemLink(id, pipelineName, pipelineQuality)
     return "|cffffff00[" .. id .. "]|r"
 end
 
--- Priority: pipeline icon (already fetched by the data pipeline) → live GetItemInfo texture → question mark.
+-- Priority: pipeline icon → live GetItemInfo texture → question mark.
 local function resolveItemIcon(id, pipelineIcon)
     if pipelineIcon then return "Interface\\Icons\\" .. pipelineIcon end
     local _, _, _, _, _, _, _, _, _, tex = GetItemInfo(id)
@@ -82,118 +37,7 @@ local function insertLink(link)
     ChatEdit_InsertLink(link)
 end
 
--- Creates a square icon texture anchored to the left edge of a parent frame.
-local function addIcon(parent)
-    local icon = parent:CreateTexture(nil, "OVERLAY")
-    icon:SetWidth(ROW_HEIGHT)
-    icon:SetHeight(ROW_HEIGHT)
-    icon:SetPoint("LEFT", parent, "LEFT", 0, 0)
-    return icon
-end
-
--- Builds all child widgets once at load time.  Positions are set to placeholder values
--- here; showRecipeDetail() repositions everything dynamically each time it's called.
-local function createDetailFrame()
-    recipeDetailFrame = CreateFrame("Frame", "AccRecipeDetailFrame", UIParent, "BasicFrameTemplate")
-    recipeDetailFrame:SetWidth(260)
-    recipeDetailFrame:SetHeight(100)
-    recipeDetailFrame:SetPoint("CENTER", UIParent, "CENTER", 320, 0)
-    recipeDetailFrame:SetFrameStrata("DIALOG")
-    recipeDetailFrame:EnableMouse(true)
-    recipeDetailFrame:SetMovable(true)
-    recipeDetailFrame:RegisterForDrag("LeftButton")
-    recipeDetailFrame:SetScript("OnDragStart", function(self) self:StartMoving() end)
-    recipeDetailFrame:SetScript("OnDragStop",  function(self) self:StopMovingOrSizing() end)
-    recipeDetailFrame:Hide()
-
-    -- Spell / recipe item row — always the first row, fixed position
-    recipeDetailSpellButton = CreateFrame("Button", "AccRecipeButton", recipeDetailFrame)
-    recipeDetailSpellButton:SetHeight(ROW_HEIGHT)
-    recipeDetailSpellButton:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING, -40)
-    recipeDetailSpellButton:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), -40)
-    recipeDetailSpellButton:EnableMouse(true)
-    recipeDetailSpellButton:RegisterForClicks("LeftButtonUp")
-    recipeDetailSpellButton.icon = addIcon(recipeDetailSpellButton)
-    local spellText = recipeDetailSpellButton:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    spellText:SetPoint("LEFT", recipeDetailSpellButton, "LEFT", ROW_HEIGHT + 2, 0)
-    spellText:SetJustifyH("LEFT")
-    recipeDetailSpellButton.text = spellText
-
-    -- Specialization label (Gnomish / Goblin) — position set dynamically, hidden by default
-    recipeDetailSpecLabel = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    recipeDetailSpecLabel:Hide()
-
-    -- Known / Not Known label — position set dynamically
-    recipeDetailKnownLabel = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-
-    -- Character name labels — position set dynamically, hidden by default
-    for i = 1, MAX_CHARS do
-        local lbl = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        lbl:Hide()
-        recipeDetailCharLabels[i] = lbl
-    end
-
-    -- Creates row — position set dynamically
-    recipeDetailCreatesButton = CreateFrame("Button", nil, recipeDetailFrame)
-    recipeDetailCreatesButton:SetHeight(ROW_HEIGHT)
-    recipeDetailCreatesButton:EnableMouse(true)
-    recipeDetailCreatesButton:RegisterForClicks("LeftButtonUp")
-    recipeDetailCreatesButton.icon = addIcon(recipeDetailCreatesButton)
-    local createsText = recipeDetailCreatesButton:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    createsText:SetPoint("LEFT", recipeDetailCreatesButton, "LEFT", ROW_HEIGHT + 2, 0)
-    createsText:SetJustifyH("LEFT")
-    recipeDetailCreatesButton.text = createsText
-
-    -- Materials header — position set dynamically
-    recipeDetailMaterialsHeader = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    recipeDetailMaterialsHeader:SetText("Materials:")
-
-    -- Reagent rows — position set dynamically, hidden by default
-    for i = 1, 8 do
-        local btn = CreateFrame("Button", nil, recipeDetailFrame)
-        btn:SetHeight(ROW_HEIGHT)
-        btn:EnableMouse(true)
-        btn:RegisterForClicks("LeftButtonUp")
-        btn.icon = addIcon(btn)
-        local itemText = btn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        itemText:SetPoint("LEFT", btn, "LEFT", ROW_HEIGHT + 2, 0)
-        itemText:SetJustifyH("LEFT")
-        btn.text = itemText
-        btn:Hide()
-        recipeDetailReagentButtons[i] = btn
-    end
-
-    -- Sources section: up to MAX_SOURCE_HEADERS labeled groups (e.g. "Sold by:", "Drops from:", "Found in:")
-    -- with a shared pool of MAX_SOURCE_LINES content rows used across all groups.
-    for i = 1, MAX_SOURCE_HEADERS do
-        local hdr = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-        hdr:Hide()
-        recipeDetailSourceHeaders[i] = hdr
-    end
-    for i = 1, MAX_SOURCE_LINES do
-        local lbl = recipeDetailFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        lbl:SetTextColor(1, 1, 1)
-        lbl:Hide()
-        recipeDetailSourceLabels[i] = lbl
-    end
-
-    -- Quest buttons — pool of up to 4 clickable quest links (smelt quest + recipe quest sources).
-    for i = 1, 4 do
-        local btn = CreateFrame("Button", nil, recipeDetailFrame)
-        btn:SetHeight(ROW_HEIGHT)
-        btn:EnableMouse(true)
-        btn:RegisterForClicks("LeftButtonUp")
-        local qText = btn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        qText:SetPoint("LEFT", btn, "LEFT", 0, 0)
-        qText:SetJustifyH("LEFT")
-        btn.text = qText
-        btn:Hide()
-        recipeDetailQuestButtons[i] = btn
-    end
-end
-
 -- Collects all recipe sources into an ordered list of {header, lines} sections for display.
--- Each section has a bold header (e.g. "Sold by:") and a list of plain text content lines.
 local function buildSourceSections(recipe)
     local sections = {}
     local sources  = recipe.sources or {}
@@ -202,7 +46,6 @@ local function buildSourceSections(recipe)
         if #lines > 0 then sections[#sections + 1] = { header = header, lines = lines } end
     end
 
-    -- Vendors (may have reputation requirement)
     local vendorLines = {}
     for _, src in ipairs(sources) do
         if src.type == "vendor" and src.vendors then
@@ -216,7 +59,6 @@ local function buildSourceSections(recipe)
     end
     addSection("Sold by:", vendorLines)
 
-    -- Trainers and named NPCs that teach the recipe
     local trainerLines = {}
     for _, src in ipairs(sources) do
         if src.type == "trainer" and src.trainers then
@@ -231,7 +73,6 @@ local function buildSourceSections(recipe)
     end
     addSection("Taught by:", trainerLines)
 
-    -- Creature drops (sorted by rate, capped at 8)
     local drops = {}
     for _, src in ipairs(sources) do
         if src.type == "drop" and src.creatures then
@@ -253,7 +94,6 @@ local function buildSourceSections(recipe)
     end
     addSection("Drops from:", dropLines)
 
-    -- Containers: chests, lockboxes, bags/prizes ("other"), decoded items
     local containerLines = {}
     local CONTAINER = { chest = true, lockbox = true, other = true, decoded = true }
     for _, src in ipairs(sources) do
@@ -265,12 +105,9 @@ local function buildSourceSections(recipe)
             end
         end
     end
-    if #containerLines > 0 then
-        table.sort(containerLines)  -- alphabetical; rate is already embedded in the string
-    end
+    if #containerLines > 0 then table.sort(containerLines) end
     addSection("Found in:", containerLines)
 
-    -- Miscellaneous one-liner sources
     local miscLines = {}
     for _, src in ipairs(sources) do
         if src.type == "world_drop" then
@@ -292,212 +129,206 @@ local function buildSourceSections(recipe)
     return sections
 end
 
--- Populates and shows the detail frame for the given recipe.
--- Layout flows top-to-bottom using a 'y' cursor (negative = downward in WoW anchor space).
--- Rows shown depend on the recipe: spell/item link is always first, then Known status,
--- then Creates, then reagents.  Frame height and width auto-fit at the end.
-function ACC.showRecipeDetail(recipe, btn)
-    recipeDetailFrame:ClearAllPoints()
-    if btn then
-        recipeDetailFrame:SetPoint("TOPLEFT", btn, "BOTTOMLEFT", 0, -2)
-    else
-        recipeDetailFrame:SetPoint("CENTER", UIParent, "CENTER", 320, 0)
-    end
-
-    local spellLink = ACC.makeSpellLink(recipe)
-
-    -- Row 1: recipe item if available, else spell link (fixed at y = -40)
+-- Row 1: recipe item link if available, else spell link. Position is fixed at y = -40.
+local function layoutSpellRow(recipe, spellLink)
     if recipe.recipeItemId then
         local link = resolveItemLink(recipe.recipeItemId, recipe.recipeItemName, recipe.recipeItemQuality)
-        recipeDetailSpellButton.text:SetText(link)
-        recipeDetailSpellButton.icon:SetTexture(resolveItemIcon(recipe.recipeItemId, recipe.recipeItemIcon))
-        recipeDetailSpellButton:SetScript("OnEnter", function()
-            GameTooltip:SetOwner(recipeDetailSpellButton, "ANCHOR_NONE")
-            GameTooltip:SetPoint("BOTTOMLEFT", recipeDetailSpellButton, "TOPLEFT", 0, 2)
+        RDS.spellButton.text:SetText(link)
+        RDS.spellButton.icon:SetTexture(resolveItemIcon(recipe.recipeItemId, recipe.recipeItemIcon))
+        RDS.spellButton:SetScript("OnEnter", function()
+            GameTooltip:SetOwner(RDS.spellButton, "ANCHOR_NONE")
+            GameTooltip:SetPoint("BOTTOMLEFT", RDS.spellButton, "TOPLEFT", 0, 2)
             GameTooltip:SetHyperlink("item:" .. recipe.recipeItemId)
             GameTooltip:Show()
             local _, freshLink, _, _, _, _, _, _, _, freshTex = GetItemInfo(recipe.recipeItemId)
-            if freshLink then recipeDetailSpellButton.text:SetText(freshLink) end
-            if freshTex  then recipeDetailSpellButton.icon:SetTexture(freshTex) end
+            if freshLink then RDS.spellButton.text:SetText(freshLink) end
+            if freshTex  then RDS.spellButton.icon:SetTexture(freshTex) end
         end)
-        recipeDetailSpellButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
-        recipeDetailSpellButton:SetScript("OnClick", function()
+        RDS.spellButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
+        RDS.spellButton:SetScript("OnClick", function()
             local _, freshLink = GetItemInfo(recipe.recipeItemId)
             insertLink(freshLink or spellLink)
         end)
     else
-        recipeDetailSpellButton.text:SetText(spellLink)
-        recipeDetailSpellButton.icon:SetTexture(
+        RDS.spellButton.text:SetText(spellLink)
+        RDS.spellButton.icon:SetTexture(
             recipe.creates and recipe.creates.icon and ("Interface\\Icons\\" .. recipe.creates.icon) or nil)
-        recipeDetailSpellButton:SetScript("OnEnter", function()
-            GameTooltip:SetOwner(recipeDetailSpellButton, "ANCHOR_NONE")
-            GameTooltip:SetPoint("BOTTOMLEFT", recipeDetailSpellButton, "TOPLEFT", 0, 2)
+        RDS.spellButton:SetScript("OnEnter", function()
+            GameTooltip:SetOwner(RDS.spellButton, "ANCHOR_NONE")
+            GameTooltip:SetPoint("BOTTOMLEFT", RDS.spellButton, "TOPLEFT", 0, 2)
             GameTooltip:SetHyperlink(spellLink)
             GameTooltip:Show()
         end)
-        recipeDetailSpellButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
-        recipeDetailSpellButton:SetScript("OnClick", function() insertLink(spellLink) end)
+        RDS.spellButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
+        RDS.spellButton:SetScript("OnClick", function() insertLink(spellLink) end)
     end
+end
 
-    -- Dynamic layout — y tracks the top of the next row
-    local y = -40 - ROW_HEIGHT - ROW_GAP
-
-    -- Specialization badge — shown only for spec-exclusive recipes.
-    -- 4dc8ed = gnomish cyan-blue; ff6600 = goblin orange.
+-- Specialization badge (Gnomish / Goblin Engineering). Returns updated y.
+-- 4dc8ed = gnomish cyan-blue; ff6600 = goblin orange.
+local function layoutSpecialization(recipe, y)
     if recipe.specialization == "gnomish" then
-        recipeDetailSpecLabel:ClearAllPoints()
-        recipeDetailSpecLabel:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
-        recipeDetailSpecLabel:SetText("|cff4dc8ed[Gnomish Engineering]|r")
-        recipeDetailSpecLabel:Show()
-        y = y - ROW_HEIGHT - 2
+        RDS.specLabel:ClearAllPoints()
+        RDS.specLabel:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.PADDING, y)
+        RDS.specLabel:SetText("|cff4dc8ed[Gnomish Engineering]|r")
+        RDS.specLabel:Show()
+        return y - RDS.ROW_HEIGHT - 2
     elseif recipe.specialization == "goblin" then
-        recipeDetailSpecLabel:ClearAllPoints()
-        recipeDetailSpecLabel:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
-        recipeDetailSpecLabel:SetText("|cffff6600[Goblin Engineering]|r")
-        recipeDetailSpecLabel:Show()
-        y = y - ROW_HEIGHT - 2
-    else
-        recipeDetailSpecLabel:Hide()
+        RDS.specLabel:ClearAllPoints()
+        RDS.specLabel:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.PADDING, y)
+        RDS.specLabel:SetText("|cffff6600[Goblin Engineering]|r")
+        RDS.specLabel:Show()
+        return y - RDS.ROW_HEIGHT - 2
     end
+    RDS.specLabel:Hide()
+    return y
+end
 
-    -- Known / Not Known + character list
-    if recipe.spellId then
-        local known    = ACC_Tracker.IsKnown(recipe.spellId)
-        local whoKnows = ACC_Tracker.WhoKnows(recipe.spellId)
-
-        recipeDetailKnownLabel:ClearAllPoints()
-        recipeDetailKnownLabel:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
-        recipeDetailKnownLabel:SetText(known and "|cff00ff00Known|r" or "|cffff0000Not Known|r")
-        recipeDetailKnownLabel:Show()
-        y = y - ROW_HEIGHT - 2
-
-        for i = 1, MAX_CHARS do
-            local name = whoKnows[i]
-            if name then
-                recipeDetailCharLabels[i]:ClearAllPoints()
-                recipeDetailCharLabels[i]:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", INDENT, y)
-                recipeDetailCharLabels[i]:SetText("|cff00ff00Known on:|r |cffffff00" .. name .. "|r")
-                recipeDetailCharLabels[i]:Show()
-                y = y - ROW_HEIGHT
-            else
-                recipeDetailCharLabels[i]:Hide()
-            end
+-- Known / Not Known label + per-character list. Returns updated y.
+local function layoutKnownStatus(recipe, y)
+    if not recipe.spellId then
+        RDS.knownLabel:Hide()
+        for i = 1, RDS.MAX_CHARS do RDS.charLabels[i]:Hide() end
+        return y
+    end
+    local known    = ACC_Tracker.IsKnown(recipe.spellId)
+    local whoKnows = ACC_Tracker.WhoKnows(recipe.spellId)
+    RDS.knownLabel:ClearAllPoints()
+    RDS.knownLabel:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.PADDING, y)
+    RDS.knownLabel:SetText(known and "|cff00ff00Known|r" or "|cffff0000Not Known|r")
+    RDS.knownLabel:Show()
+    y = y - RDS.ROW_HEIGHT - 2
+    for i = 1, RDS.MAX_CHARS do
+        local name = whoKnows[i]
+        if name then
+            RDS.charLabels[i]:ClearAllPoints()
+            RDS.charLabels[i]:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.INDENT, y)
+            RDS.charLabels[i]:SetText("|cff00ff00Known on:|r |cffffff00" .. name .. "|r")
+            RDS.charLabels[i]:Show()
+            y = y - RDS.ROW_HEIGHT
+        else
+            RDS.charLabels[i]:Hide()
         end
-        y = y - ROW_GAP
-    else
-        recipeDetailKnownLabel:Hide()
-        for i = 1, MAX_CHARS do recipeDetailCharLabels[i]:Hide() end
     end
+    return y - RDS.ROW_GAP
+end
 
-    -- Creates row
-    if recipe.creates then
-        local link = resolveItemLink(recipe.creates.id, recipe.creates.name, recipe.creates.quality)
-        local displayText = "Creates: " .. link
-        if recipe.creates.count and recipe.creates.count > 1 then
-            displayText = displayText .. " x" .. recipe.creates.count
-        end
-        recipeDetailCreatesButton:ClearAllPoints()
-        recipeDetailCreatesButton:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING, y)
-        recipeDetailCreatesButton:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), y)
-        recipeDetailCreatesButton.icon:SetTexture(resolveItemIcon(recipe.creates.id, recipe.creates.icon))
-        recipeDetailCreatesButton.text:SetText(displayText)
-        recipeDetailCreatesButton:SetScript("OnEnter", function()
-            GameTooltip:SetOwner(recipeDetailCreatesButton, "ANCHOR_NONE")
-            GameTooltip:SetPoint("BOTTOMLEFT", recipeDetailCreatesButton, "TOPLEFT", 0, 2)
-            GameTooltip:SetHyperlink("item:" .. recipe.creates.id)
-            GameTooltip:Show()
-        end)
-        recipeDetailCreatesButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
-        recipeDetailCreatesButton:SetScript("OnClick", function()
-            local _, freshLink = GetItemInfo(recipe.creates.id)
-            insertLink(freshLink or spellLink)
-        end)
-        recipeDetailCreatesButton:Show()
-        y = y - ROW_HEIGHT - ROW_GAP
-    else
-        recipeDetailCreatesButton:Hide()
+-- Creates row (what the recipe produces). Returns updated y.
+local function layoutCreates(recipe, spellLink, y)
+    if not recipe.creates then
+        RDS.createsButton:Hide()
+        return y
     end
+    local link = resolveItemLink(recipe.creates.id, recipe.creates.name, recipe.creates.quality)
+    local displayText = "Creates: " .. link
+    if recipe.creates.count and recipe.creates.count > 1 then
+        displayText = displayText .. " x" .. recipe.creates.count
+    end
+    RDS.createsButton:ClearAllPoints()
+    RDS.createsButton:SetPoint("TOPLEFT",  RDS.frame, "TOPLEFT",  RDS.PADDING, y)
+    RDS.createsButton:SetPoint("TOPRIGHT", RDS.frame, "TOPRIGHT", -(RDS.PADDING + 20), y)
+    RDS.createsButton.icon:SetTexture(resolveItemIcon(recipe.creates.id, recipe.creates.icon))
+    RDS.createsButton.text:SetText(displayText)
+    RDS.createsButton:SetScript("OnEnter", function()
+        GameTooltip:SetOwner(RDS.createsButton, "ANCHOR_NONE")
+        GameTooltip:SetPoint("BOTTOMLEFT", RDS.createsButton, "TOPLEFT", 0, 2)
+        GameTooltip:SetHyperlink("item:" .. recipe.creates.id)
+        GameTooltip:Show()
+    end)
+    RDS.createsButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
+    RDS.createsButton:SetScript("OnClick", function()
+        local _, freshLink = GetItemInfo(recipe.creates.id)
+        insertLink(freshLink or spellLink)
+    end)
+    RDS.createsButton:Show()
+    return y - RDS.ROW_HEIGHT - RDS.ROW_GAP
+end
 
-    -- Materials header + reagent rows
+-- Materials header + reagent rows. Returns updated y.
+local function layoutMaterials(recipe, y)
     local reagents = recipe.reagents or {}
-    if #reagents > 0 then
-        recipeDetailMaterialsHeader:ClearAllPoints()
-        recipeDetailMaterialsHeader:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
-        recipeDetailMaterialsHeader:Show()
-        y = y - ROW_HEIGHT - 2
-
+    if #reagents == 0 then
+        RDS.materialsHeader:Hide()
         for i = 1, 8 do
-            local reagent = reagents[i]
-            local rbtn    = recipeDetailReagentButtons[i]
-            if reagent then
-                local link = resolveItemLink(reagent.id, reagent.name, reagent.quality)
-                rbtn:ClearAllPoints()
-                rbtn:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING + 4, y)
-                rbtn:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), y)
-                rbtn.icon:SetTexture(resolveItemIcon(reagent.id, reagent.icon))
-                rbtn.text:SetText(link .. " x" .. reagent.count)
-                local r = reagent
-                rbtn:SetScript("OnEnter", function()
-                    GameTooltip:SetOwner(rbtn, "ANCHOR_NONE")
-                    GameTooltip:SetPoint("BOTTOMLEFT", rbtn, "TOPLEFT", 0, 2)
-                    GameTooltip:SetHyperlink("item:" .. r.id)
-                    GameTooltip:Show()
-                end)
-                rbtn:SetScript("OnLeave", function() GameTooltip:Hide() end)
-                rbtn:SetScript("OnClick", function()
-                    local _, freshLink = GetItemInfo(r.id)
-                    if freshLink then insertLink(freshLink) end
-                end)
-                rbtn:Show()
-                y = y - ROW_HEIGHT
-            else
-                rbtn:SetScript("OnEnter", nil)
-                rbtn:SetScript("OnLeave", nil)
-                rbtn:SetScript("OnClick", nil)
-                rbtn.icon:SetTexture(nil)
-                rbtn:Hide()
-            end
+            RDS.reagentButtons[i]:SetScript("OnEnter", nil)
+            RDS.reagentButtons[i]:SetScript("OnLeave", nil)
+            RDS.reagentButtons[i]:SetScript("OnClick", nil)
+            RDS.reagentButtons[i].icon:SetTexture(nil)
+            RDS.reagentButtons[i]:Hide()
         end
-    else
-        recipeDetailMaterialsHeader:Hide()
-        for i = 1, 8 do
-            recipeDetailReagentButtons[i]:SetScript("OnEnter", nil)
-            recipeDetailReagentButtons[i]:SetScript("OnLeave", nil)
-            recipeDetailReagentButtons[i]:SetScript("OnClick", nil)
-            recipeDetailReagentButtons[i].icon:SetTexture(nil)
-            recipeDetailReagentButtons[i]:Hide()
+        return y
+    end
+    RDS.materialsHeader:ClearAllPoints()
+    RDS.materialsHeader:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.PADDING, y)
+    RDS.materialsHeader:Show()
+    y = y - RDS.ROW_HEIGHT - 2
+    for i = 1, 8 do
+        local reagent = reagents[i]
+        local rbtn    = RDS.reagentButtons[i]
+        if reagent then
+            local link = resolveItemLink(reagent.id, reagent.name, reagent.quality)
+            rbtn:ClearAllPoints()
+            rbtn:SetPoint("TOPLEFT",  RDS.frame, "TOPLEFT",  RDS.PADDING + 4, y)
+            rbtn:SetPoint("TOPRIGHT", RDS.frame, "TOPRIGHT", -(RDS.PADDING + 20), y)
+            rbtn.icon:SetTexture(resolveItemIcon(reagent.id, reagent.icon))
+            rbtn.text:SetText(link .. " x" .. reagent.count)
+            local r = reagent
+            rbtn:SetScript("OnEnter", function()
+                GameTooltip:SetOwner(rbtn, "ANCHOR_NONE")
+                GameTooltip:SetPoint("BOTTOMLEFT", rbtn, "TOPLEFT", 0, 2)
+                GameTooltip:SetHyperlink("item:" .. r.id)
+                GameTooltip:Show()
+            end)
+            rbtn:SetScript("OnLeave", function() GameTooltip:Hide() end)
+            rbtn:SetScript("OnClick", function()
+                local _, freshLink = GetItemInfo(r.id)
+                if freshLink then insertLink(freshLink) end
+            end)
+            rbtn:Show()
+            y = y - RDS.ROW_HEIGHT
+        else
+            rbtn:SetScript("OnEnter", nil)
+            rbtn:SetScript("OnLeave", nil)
+            rbtn:SetScript("OnClick", nil)
+            rbtn.icon:SetTexture(nil)
+            rbtn:Hide()
         end
     end
+    return y
+end
 
-    -- Sources section: render each group (Sold by, Taught by, Drops from, Found in, etc.)
-    local sections = buildSourceSections(recipe)
-    local hdrIdx   = 0
-    local lblIdx   = 0
+-- Source sections (Sold by, Taught by, Drops from, etc.). Returns updated y.
+local function layoutSources(recipe, y)
+    local sections       = buildSourceSections(recipe)
+    local hdrIdx, lblIdx = 0, 0
     for _, sec in ipairs(sections) do
         hdrIdx = hdrIdx + 1
-        if hdrIdx > MAX_SOURCE_HEADERS then break end
-        local hdr = recipeDetailSourceHeaders[hdrIdx]
+        if hdrIdx > RDS.MAX_SOURCE_HEADERS then break end
+        local hdr = RDS.sourceHeaders[hdrIdx]
         hdr:ClearAllPoints()
-        hdr:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", PADDING, y)
+        hdr:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.PADDING, y)
         hdr:SetText(sec.header)
         hdr:Show()
-        y = y - ROW_HEIGHT - 2
+        y = y - RDS.ROW_HEIGHT - 2
         for _, line in ipairs(sec.lines) do
             lblIdx = lblIdx + 1
-            if lblIdx > MAX_SOURCE_LINES then break end
-            local lbl = recipeDetailSourceLabels[lblIdx]
+            if lblIdx > RDS.MAX_SOURCE_LINES then break end
+            local lbl = RDS.sourceLabels[lblIdx]
             lbl:ClearAllPoints()
-            lbl:SetPoint("TOPLEFT", recipeDetailFrame, "TOPLEFT", INDENT, y)
+            lbl:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.INDENT, y)
             lbl:SetText(line)
             lbl:Show()
-            y = y - ROW_HEIGHT
+            y = y - RDS.ROW_HEIGHT
         end
-        y = y - ROW_GAP
+        y = y - RDS.ROW_GAP
     end
-    for i = hdrIdx + 1, MAX_SOURCE_HEADERS do recipeDetailSourceHeaders[i]:Hide() end
-    for i = lblIdx + 1, MAX_SOURCE_LINES   do recipeDetailSourceLabels[i]:Hide()  end
+    for i = hdrIdx + 1, RDS.MAX_SOURCE_HEADERS do RDS.sourceHeaders[i]:Hide() end
+    for i = lblIdx + 1, RDS.MAX_SOURCE_LINES   do RDS.sourceLabels[i]:Hide()  end
+    return y
+end
 
-    -- Quest buttons: pool of up to 4 buttons for smelt quest + recipe quest sources.
+-- Quest buttons (smelt quest + recipe quest sources). Returns updated y.
+local function layoutQuests(recipe, y)
     local quests = {}
     local smelt  = recipe._smelt
     if smelt and smelt.questId and smelt.quest then
@@ -511,43 +342,39 @@ function ACC.showRecipeDetail(recipe, btn)
         end
     end
     for i = 1, 4 do
-        local qbtn = recipeDetailQuestButtons[i]
+        local qbtn = RDS.questButtons[i]
         local q    = quests[i]
         if q then
             -- Display text uses only colour codes — |H...|h hyperlink markup is invisible on regular
-            -- game FontStrings (only chat frames render it) and causes raw pipe chars to appear.
+            -- FontStrings and causes raw pipe chars to appear.
             local displayText = "|cffffff00Quest: [" .. q.name .. "]|r"
             if q.faction then displayText = displayText .. "  |cffaaaaaa(" .. q.faction .. ")|r" end
-            -- Full hyperlink format is only used inside the click handler for chat insertion.
+            -- Full hyperlink used only inside the click handler for chat insertion.
             local questLink = q.id
                 and ("|cffffff00|Hquest:" .. q.id .. ":" .. q.level .. "|h[" .. q.name .. "]|h|r")
                 or  ("|cffffff00[" .. q.name .. "]|r")
             qbtn:ClearAllPoints()
-            qbtn:SetPoint("TOPLEFT",  recipeDetailFrame, "TOPLEFT",  PADDING, y)
-            qbtn:SetPoint("TOPRIGHT", recipeDetailFrame, "TOPRIGHT", -(PADDING + 20), y)
+            qbtn:SetPoint("TOPLEFT",  RDS.frame, "TOPLEFT",  RDS.PADDING, y)
+            qbtn:SetPoint("TOPRIGHT", RDS.frame, "TOPRIGHT", -(RDS.PADDING + 20), y)
             qbtn.text:SetText(displayText)
             qbtn:SetScript("OnEnter", function()
                 GameTooltip:SetOwner(qbtn, "ANCHOR_NONE")
                 GameTooltip:SetPoint("BOTTOMLEFT", qbtn, "TOPLEFT", 0, 2)
                 GameTooltip:SetText(q.name, 1, 1, 0)
-                if q.wowheadUrl then
-                    GameTooltip:AddLine("Click to open Wowhead URL", 0, 1, 0)
-                else
-                    GameTooltip:AddLine("Click to link in chat", 0, 1, 0)
-                end
+                GameTooltip:AddLine(q.wowheadUrl and "Click to open Wowhead URL" or "Click to link in chat", 0, 1, 0)
                 GameTooltip:Show()
             end)
             qbtn:SetScript("OnLeave", function() GameTooltip:Hide() end)
             qbtn:SetScript("OnClick", function()
                 if q.wowheadUrl then
-                    urlPromptUrl = q.wowheadUrl
+                    RDS.urlPromptUrl = q.wowheadUrl
                     StaticPopup_Show("ACC_URL")
                 elseif not ChatEdit_InsertLink(questLink) then
                     DEFAULT_CHAT_FRAME:AddMessage(questLink)
                 end
             end)
             qbtn:Show()
-            y = y - ROW_HEIGHT
+            y = y - RDS.ROW_HEIGHT
         else
             qbtn:SetScript("OnEnter", nil)
             qbtn:SetScript("OnLeave", nil)
@@ -555,47 +382,58 @@ function ACC.showRecipeDetail(recipe, btn)
             qbtn:Hide()
         end
     end
-    if #quests > 0 then y = y - ROW_GAP end
+    if #quests > 0 then y = y - RDS.ROW_GAP end
+    return y
+end
 
-    -- Auto-size height and width
-    recipeDetailFrame:SetHeight(math.abs(y) + PADDING)
-
+-- Measures the widest visible text element and resizes the frame to fit.
+local function autoSize(recipe)
     local maxTextW = 0
-    local function measureText(fs)
+    local function measure(fs)
         local w = fs:GetStringWidth()
         if w > maxTextW then maxTextW = w end
     end
-    measureText(recipeDetailSpellButton.text)
-    if recipeDetailSpecLabel:IsShown() then measureText(recipeDetailSpecLabel) end  -- badge can be the widest row
-    if recipe.spellId then measureText(recipeDetailKnownLabel) end
-    for i = 1, MAX_CHARS do
-        if recipeDetailCharLabels[i]:IsShown() then measureText(recipeDetailCharLabels[i]) end
+    measure(RDS.spellButton.text)
+    if RDS.specLabel:IsShown()  then measure(RDS.specLabel)  end
+    if recipe.spellId           then measure(RDS.knownLabel) end
+    for i = 1, RDS.MAX_CHARS do
+        if RDS.charLabels[i]:IsShown() then measure(RDS.charLabels[i]) end
     end
-    if recipe.creates then measureText(recipeDetailCreatesButton.text) end
-    for i = 1, #reagents do measureText(recipeDetailReagentButtons[i].text) end
-    for i = 1, MAX_SOURCE_HEADERS do
-        if recipeDetailSourceHeaders[i]:IsShown() then measureText(recipeDetailSourceHeaders[i]) end
+    if recipe.creates then measure(RDS.createsButton.text) end
+    for i = 1, #(recipe.reagents or {}) do measure(RDS.reagentButtons[i].text) end
+    for i = 1, RDS.MAX_SOURCE_HEADERS do
+        if RDS.sourceHeaders[i]:IsShown() then measure(RDS.sourceHeaders[i]) end
     end
-    for i = 1, MAX_SOURCE_LINES do
-        if recipeDetailSourceLabels[i]:IsShown() then measureText(recipeDetailSourceLabels[i]) end
+    for i = 1, RDS.MAX_SOURCE_LINES do
+        if RDS.sourceLabels[i]:IsShown() then measure(RDS.sourceLabels[i]) end
     end
     for i = 1, 4 do
-        if recipeDetailQuestButtons[i]:IsShown() then measureText(recipeDetailQuestButtons[i].text) end
+        if RDS.questButtons[i]:IsShown() then measure(RDS.questButtons[i].text) end
     end
-    recipeDetailFrame:SetWidth(math.max(200, ROW_HEIGHT + 2 + maxTextW + PADDING * 2 + 20))
-
-    recipeDetailFrame:Show()
+    RDS.frame:SetWidth(math.max(200, RDS.ROW_HEIGHT + 2 + maxTextW + RDS.PADDING * 2 + 20))
 end
 
--- Called from browserInit() so the detail frame is created alongside the main browser.
-function ACC.initRecipeDetail()
-    createDetailFrame()
-end
-
--- Called by Browser.lua whenever the user switches category or profession,
--- so the stale detail panel doesn't stay open showing a different recipe's info.
-function ACC.closeAllBrowserWindows()
-    if recipeDetailFrame then
-        recipeDetailFrame:Hide()
+-- Positions the frame, populates every section in order, then auto-sizes.
+function ACC.showRecipeDetail(recipe, btn)
+    RDS.frame:ClearAllPoints()
+    if btn then
+        RDS.frame:SetPoint("TOPLEFT", btn, "BOTTOMLEFT", 0, -2)
+    else
+        RDS.frame:SetPoint("CENTER", UIParent, "CENTER", 320, 0)
     end
+
+    local spellLink = ACC.makeSpellLink(recipe)
+    layoutSpellRow(recipe, spellLink)
+
+    local y = -40 - RDS.ROW_HEIGHT - RDS.ROW_GAP
+    y = layoutSpecialization(recipe, y)
+    y = layoutKnownStatus(recipe, y)
+    y = layoutCreates(recipe, spellLink, y)
+    y = layoutMaterials(recipe, y)
+    y = layoutSources(recipe, y)
+    y = layoutQuests(recipe, y)
+
+    RDS.frame:SetHeight(math.abs(y) + RDS.PADDING)
+    autoSize(recipe)
+    RDS.frame:Show()
 end

@@ -5,6 +5,7 @@ exclude_files = { "tests/luaunit.lua" }
 globals = {
     "ACC", "AkistosCraftCompendium",
     "ACC_Data", "ACC_BrowserConfig", "ACC_BrowserState", "ACC_DataManager",
+    "ACC_RecipeDetailState",
     "ACC_Tracker", "ACC_AccountData", "ACC_CharacterData",
     "SLASH_ACC1", "SlashCmdList",
     "StaticPopupDialogs",
@@ -20,8 +21,11 @@ read_globals = {
     "UnitName", "UnitFactionGroup",
     "hooksecurefunc",
     "UIDropDownMenu_Initialize", "UIDropDownMenu_AddButton", "UIDropDownMenu_SetText",
+    "UIDropDownMenu_CreateInfo", "UIDROPDOWNMENU_OPEN_MENU",
+    "ToggleDropDownMenu", "CloseDropDownMenus",
     "IsShiftKeyDown", "ChatEdit_InsertLink", "DEFAULT_CHAT_FRAME",
     "StaticPopup_Show",
+    "Minimap", "GetCursorPosition",
 }
 
 files["tests/test_tracker.lua"] = {

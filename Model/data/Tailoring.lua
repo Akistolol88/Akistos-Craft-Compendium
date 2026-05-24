@@ -6627,6 +6627,7 @@ ACC_Data["Tailoring"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
+        displayGroup = 4,
     },
     {
         spellId = 28205,

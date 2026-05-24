@@ -11,7 +11,11 @@ SLASH_ACC1 = "/acc"
 ACC.browserInit()
 
 -- SlashCmdList["ACC"] is the function WoW calls when the player types /acc.
--- showBrowser() simply unhides the already-built main frame.
-SlashCmdList["ACC"] = function()
-    ACC.showBrowser()
+-- Supports "/acc minimap" to restore a hidden minimap button; bare "/acc" opens the browser.
+SlashCmdList["ACC"] = function(msg)
+    if msg == "minimap" then
+        ACC.showMinimapButton()
+    else
+        ACC.showBrowser()
+    end
 end

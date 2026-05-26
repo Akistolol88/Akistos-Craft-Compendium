@@ -5,13 +5,15 @@ stages:
 
 lint:
   stage: lint
-  image: pipelinecomponents/luacheck:latest
+  image: public.ecr.aws/docker/library/alpine:3
+  before_script:
+    - apk add --no-cache luacheck
   script:
     - luacheck .
 
 test:
   stage: test
-  image: alpine:3
+  image: public.ecr.aws/docker/library/alpine:3
   before_script:
     - apk add --no-cache lua5.4
   script:
@@ -19,10 +21,11 @@ test:
 
 package:
   stage: package
-  script: 
-    - apt-get update -y
-    - apt-get install -y zip
+  image: public.ecr.aws/docker/library/alpine:3
+  before_script:
+    - apk add --no-cache zip
+  script:
     - zip -r AkistosCraftCompendium.zip AkistosCraftCompendium.toc Namespace.lua Controller/ Model/ View/
-  artifacts: 
+  artifacts:
     paths:
       - AkistosCraftCompendium.zip

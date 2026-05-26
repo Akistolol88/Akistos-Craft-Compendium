@@ -69,6 +69,8 @@ ACC_BrowserConfig.professionCategoryOrder = {
         "Misc",
     },
     Fishing = {
+        "Fish",
+        "---",
         "Zones",
         "---",
         "Poles",

@@ -40,9 +40,13 @@ View\ui\BrowserConfig.lua
 View\ui\BrowserHelpers.lua
 View\ui\BrowserSelectProfession.lua
 View\ui\BrowserTooltips.lua
+View\ui\BrowserCategory.lua
 View\ui\BrowserRender.lua
 View\ui\Browser.lua
 View\ui\RecipeDetailFrame.lua
+View\ui\RecipeDetailHelpers.lua
+View\ui\RecipeDetailSources.lua
+View\ui\RecipeDetailZone.lua
 View\ui\RecipeDetail.lua
 
 Controller\Main.lua

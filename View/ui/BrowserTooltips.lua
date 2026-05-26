@@ -131,8 +131,57 @@ function ACC.showHoverTooltip(recipe)
         GameTooltip:Show()
     elseif recipe._zone then
         GameTooltip:SetText(recipe.name, 1, 1, 1)
-        GameTooltip:AddLine("Minimum to cast:     " .. (recipe.minCast   or "?"), 1, 1, 1)
-        GameTooltip:AddLine("Guaranteed catch:  " .. (recipe.guaranteed or "?"), 0.4, 1, 0.4)
+        GameTooltip:AddLine("Min to cast:     " .. (recipe.minCast   or "?"), 1, 1, 1)
+        GameTooltip:AddLine("Guaranteed:    " .. (recipe.guaranteed or "?"), 0.4, 1, 0.4)
+        local pools = recipe.pools
+        if pools and #pools > 0 then
+            GameTooltip:AddLine("Pools:", 1, 1, 0)
+            for idx, pool in ipairs(pools) do
+                -- Cap at 3 entries; tooltips grow too tall with many pools and the full
+                -- list is one click away in the detail panel.
+                if idx > 3 then
+                    GameTooltip:AddLine("  |cffaaaaaa… " .. (#pools - 3) .. " more — click for full list|r", 1, 1, 1)
+                    break
+                end
+                local line = "  " .. pool.fish
+                if pool.note then line = line .. "  |cffaaaaaa(" .. pool.note .. ")|r" end
+                GameTooltip:AddLine(line, 1, 1, 1)
+            end
+        end
+        -- Zones have no spell or item ID so shift-click would be a no-op; omit that hint.
+        GameTooltip:AddLine("Click for catch details", 0, 1, 0)
+        GameTooltip:Show()
+    elseif recipe._fish then
+        local catch = recipe._catch
+        if catch.itemId then
+            GameTooltip:SetHyperlink("item:" .. catch.itemId)
+        else
+            GameTooltip:SetText(catch.name, 1, 1, 1)
+        end
+        -- Build zone list sorted by rate descending; dungeons (no rate) sort last.
+        local zoneLines = {}
+        for _, z in ipairs(catch.zones or {}) do
+            zoneLines[#zoneLines + 1] = { zone = z, rate = catch.zoneRates and catch.zoneRates[z] }
+        end
+        table.sort(zoneLines, function(a, b)
+            if a.rate and b.rate then return a.rate > b.rate end
+            if a.rate then return true end
+            if b.rate then return false end
+            return a.zone < b.zone
+        end)
+        if #zoneLines > 0 then
+            GameTooltip:AddLine("Fished in:", 1, 1, 0)
+            for idx, entry in ipairs(zoneLines) do
+                if idx > 8 then
+                    GameTooltip:AddLine("  |cffaaaaaa… " .. (#zoneLines - 8) .. " more|r", 1, 1, 1)
+                    break
+                end
+                local line = "  " .. entry.zone
+                if entry.rate then line = line .. string.format("  |cff40ff40%.1f%%|r", entry.rate) end
+                GameTooltip:AddLine(line, 1, 1, 1)
+            end
+        end
+        GameTooltip:AddLine("Shift-click to link in chat", 0, 1, 0)
         GameTooltip:Show()
     elseif recipe._fishingItem then
         showFishingItemTooltip(recipe)

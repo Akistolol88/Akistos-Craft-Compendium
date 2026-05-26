@@ -111,7 +111,7 @@ local function createDetailFrame()
     RDS.materialsHeader:SetText("Materials:")
 
     -- Reagent rows — position set dynamically, hidden by default.
-    for i = 1, 8 do
+    for i = 1, 16 do
         local btn = CreateFrame("Button", nil, RDS.frame)
         btn:SetHeight(RDS.ROW_HEIGHT)
         btn:EnableMouse(true)

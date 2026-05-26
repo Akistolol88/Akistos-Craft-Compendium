@@ -141,14 +141,64 @@ function ACC.buildFishingList(list)
             sources      = reward.sources or {},
         }
     end
-    for _, zone in ipairs(ACC_Data.FishingZones or {}) do
+    for _, catch in ipairs(ACC_Data.FishingCatches or {}) do
         list[#list + 1] = {
-            name       = zone.name,
-            skill      = zone.minCast,
-            category   = "Zones",
-            _zone      = true,
-            minCast    = zone.minCast,
-            guaranteed = zone.guaranteed,
+            name         = catch.name,
+            recipeItemId = catch.itemId,
+            skill        = catch.minSkill,
+            displayGroup = catch.minSkill,
+            category     = "Fish",
+            _fish        = true,
+            _catch       = catch,
+        }
+    end
+    local ZONE_CONTINENT = {
+        -- 1 = Kalimdor
+        ["Darnassus"]                         = 1, ["Orgrimmar"]               = 1,
+        ["Thunder Bluff"]                     = 1, ["Darkshore"]               = 1,
+        ["Durotar"]                           = 1, ["Mulgore"]                 = 1,
+        ["Teldrassil"]                        = 1, ["The Barrens"]             = 1,
+        ["Ashenvale"]                         = 1, ["Stonetalon Mountains"]    = 1,
+        ["Desolace"]                          = 1, ["Dustwallow Marsh"]        = 1,
+        ["Thousand Needles"]                  = 1, ["Azshara"]                 = 1,
+        ["Felwood"]                           = 1, ["Feralas"]                 = 1,
+        ["Moonglade"]                         = 1, ["Tanaris"]                 = 1,
+        ["Un'Goro Crater"]                    = 1, ["Azshara (Bay of Storms)"] = 1,
+        ["Feralas (Jademir Lake)"]            = 1, ["Silithus"]                = 1,
+        ["Winterspring"]                      = 1,
+        -- 2 = Eastern Kingdoms
+        ["Ironforge"]                         = 2, ["Stormwind City"]          = 2,
+        ["Undercity"]                         = 2, ["Dun Morogh"]              = 2,
+        ["Elwynn Forest"]                     = 2, ["Loch Modan"]              = 2,
+        ["Silverpine Forest"]                 = 2, ["Tirisfal Glades"]         = 2,
+        ["Westfall"]                          = 2, ["Duskwood"]                = 2,
+        ["Hillsbrad Foothills"]               = 2, ["Redridge Mountains"]      = 2,
+        ["Wetlands"]                          = 2, ["Alterac Mountains"]       = 2,
+        ["Arathi Highlands"]                  = 2, ["Stranglethorn Vale"]      = 2,
+        ["Stranglethorn Vale (Jaguero Isle)"] = 2, ["Swamp of Sorrows"]        = 2,
+        ["The Hinterlands"]                   = 2, ["Western Plaguelands"]     = 2,
+        ["Deadwind Pass"]                     = 2, ["Eastern Plaguelands"]     = 2,
+        -- 3 = Instances (all, regardless of continent — grouped together on the EK page)
+        ["Blackfathom Deeps"]                 = 3, ["The Deadmines"]           = 3,
+        ["Wailing Caverns"]                   = 3, ["Scarlet Monastery"]       = 3,
+        ["Maraudon"]                          = 3, ["Sunken Temple"]           = 3,
+        ["Scholomance"]                       = 3, ["Stratholme"]              = 3,
+        ["Zul'Gurub"]                         = 3,
+    }
+    local CONTINENT_LABEL = { [1] = "Kalimdor", [2] = "Eastern Kingdoms", [3] = "Instances" }
+    for _, zone in ipairs(ACC_Data.FishingZones or {}) do
+        local cont = ZONE_CONTINENT[zone.name] or 2
+        list[#list + 1] = {
+            name          = zone.name,
+            skill         = zone.minCast,
+            displayGroup  = cont,
+            zoneGroup     = CONTINENT_LABEL[cont],
+            startsNewPage = cont == 2,  -- Eastern Kingdoms begins on page 2
+            category      = "Zones",
+            _zone         = true,
+            minCast       = zone.minCast,
+            guaranteed    = zone.guaranteed,
+            pools         = zone.pools,  -- passed through so layoutZone can render clickable pool-fish rows
         }
     end
     for _, pole in ipairs(ACC_Data.FishingPoles or {}) do
@@ -173,6 +223,12 @@ function ACC.buildFishingList(list)
             _fishingItem = true,
             sources      = lure.sources or {},
         }
+    end
+    -- Pre-warm the item cache for every catch so icons and links are ready when
+    -- a zone detail panel opens. GetItemInfo queues a server request if the item
+    -- is not already cached; the data arrives before the player can click a zone.
+    for _, catch in ipairs(ACC_Data.FishingCatches or {}) do
+        if catch.itemId then GetItemInfo(catch.itemId) end
     end
 end
 

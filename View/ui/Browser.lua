@@ -1,5 +1,6 @@
 -- Browser.lua — frame construction and profession selection for the recipe browser.
--- Rendering:   BrowserRender.lua   (renderPage, getFilteredList, renderCategoryPanel, onRecipeClick)
+-- Rendering:   BrowserRender.lua   (renderPage, onRecipeClick)
+-- Categories:  BrowserCategory.lua (buildCategoryList, renderCategoryPanel, getFilteredList)
 -- Tooltips:    BrowserTooltips.lua (showHoverTooltip)
 -- Data build:  BrowserSelectProfession.lua (build*List per profession)
 -- Static config: BrowserConfig.lua (ACC_BrowserConfig, ACC_BrowserState)

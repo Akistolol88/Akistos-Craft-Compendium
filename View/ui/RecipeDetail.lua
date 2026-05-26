@@ -1,140 +1,16 @@
 -- RecipeDetail.lua — layout engine for the RecipeDetail panel.
 -- Frame construction and widget pool live in RecipeDetailFrame.lua (ACC_RecipeDetailState).
+-- Utilities: RecipeDetailHelpers.lua  |  Sources: RecipeDetailSources.lua  |  Zone: RecipeDetailZone.lua
 -- showRecipeDetail() flows top-to-bottom using a y cursor; each section is a local function.
 
 local RDS = ACC_RecipeDetailState
 
--- Maps item quality (0–5) to WoW's standard colour hex codes (AARRGGBB).
-local QUALITY_COLOR = {
-    [0] = "ff9d9d9d", [1] = "ffffffff", [2] = "ff1eff00",
-    [3] = "ff0070dd", [4] = "ffa335ee", [5] = "ffff8000",
-}
-
--- Constructs a clickable item hyperlink from pipeline data when the client cache lacks the item.
-local function makeItemLink(id, name, quality)
-    local color = QUALITY_COLOR[quality] or QUALITY_COLOR[1]
-    return "|c" .. color .. "|Hitem:" .. id .. ":0:0:0:0:0:0:0|h[" .. name .. "]|h|r"
-end
-
--- Priority: live GetItemInfo link → pipeline name fallback → bare item ID.
-local function resolveItemLink(id, pipelineName, pipelineQuality)
-    local _, link = GetItemInfo(id)
-    if link then return link end
-    if pipelineName then return makeItemLink(id, pipelineName, pipelineQuality) end
-    return "|cffffff00[" .. id .. "]|r"
-end
-
--- Priority: pipeline icon → live GetItemInfo texture → question mark.
-local function resolveItemIcon(id, pipelineIcon)
-    if pipelineIcon then return "Interface\\Icons\\" .. pipelineIcon end
-    local _, _, _, _, _, _, _, _, _, tex = GetItemInfo(id)
-    return tex or "Interface\\Icons\\INV_Misc_QuestionMark"
-end
-
--- Inserts a hyperlink into the active chat input; falls back to printing in the chat frame.
-local function insertLink(link)
-    DEFAULT_CHAT_FRAME:AddMessage(link)
-    ChatEdit_InsertLink(link)
-end
-
--- Collects all recipe sources into an ordered list of {header, lines} sections for display.
-local function buildSourceSections(recipe)
-    local sections = {}
-    local sources  = recipe.sources or {}
-
-    local function addSection(header, lines)
-        if #lines > 0 then sections[#sections + 1] = { header = header, lines = lines } end
-    end
-
-    local vendorLines = {}
-    for _, src in ipairs(sources) do
-        if src.type == "vendor" and src.vendors then
-            if src.reputation then
-                vendorLines[#vendorLines + 1] = "|cffffff00" .. src.reputation.faction .. " — " .. src.reputation.level .. " required|r"
-            end
-            for _, v in ipairs(src.vendors) do
-                vendorLines[#vendorLines + 1] = v.name .. "  —  " .. (v.zone or "")
-            end
-        end
-    end
-    addSection("Sold by:", vendorLines)
-
-    local trainerLines = {}
-    for _, src in ipairs(sources) do
-        if src.type == "trainer" and src.trainers then
-            for _, t in ipairs(src.trainers) do
-                trainerLines[#trainerLines + 1] = t.name .. "  —  " .. (t.zone or "")
-            end
-        elseif src.type == "npc" and src.npcs then
-            for _, n in ipairs(src.npcs) do
-                trainerLines[#trainerLines + 1] = n.name .. "  —  " .. (n.zone or "")
-            end
-        end
-    end
-    addSection("Taught by:", trainerLines)
-
-    local drops = {}
-    for _, src in ipairs(sources) do
-        if src.type == "drop" and src.creatures then
-            for _, c in ipairs(src.creatures) do drops[#drops + 1] = c end
-        end
-    end
-    table.sort(drops, function(a, b) return (a.rate or 0) > (b.rate or 0) end)
-    local dropLines = {}
-    for i = 1, math.min(#drops, 8) do
-        local c    = drops[i]
-        local line = c.name
-        if c.zone then
-            -- World boss creatures carry multiple spawn zones as an array rather than a string.
-            local z = type(c.zone) == "table" and table.concat(c.zone, ", ") or c.zone
-            line = line .. "  —  " .. z
-        end
-        if c.rate then line = line .. "  |cffaaaaaa(" .. string.format("%.2f", c.rate) .. "%)|r" end
-        dropLines[#dropLines + 1] = line
-    end
-    addSection("Drops from:", dropLines)
-
-    local containerLines = {}
-    local CONTAINER = { chest = true, lockbox = true, other = true, decoded = true }
-    for _, src in ipairs(sources) do
-        if CONTAINER[src.type] and src.containers then
-            for _, c in ipairs(src.containers) do
-                local line = c.name
-                if c.rate then line = line .. "  |cffaaaaaa(" .. string.format("%.2f", c.rate) .. "%)|r" end
-                containerLines[#containerLines + 1] = line
-            end
-        end
-    end
-    if #containerLines > 0 then table.sort(containerLines) end
-    addSection("Found in:", containerLines)
-
-    local miscLines = {}
-    for _, src in ipairs(sources) do
-        if src.type == "world_drop" then
-            local line = "World drop"
-            if src.level_range then
-                line = line .. "  |cffaaaaaa(level " .. src.level_range[1] .. "–" .. src.level_range[2] .. ")|r"
-            end
-            miscLines[#miscLines + 1] = line
-        elseif src.type == "holiday" then
-            miscLines[#miscLines + 1] = "Holiday: " .. (src.event or "")
-        elseif src.type == "object" then
-            miscLines[#miscLines + 1] = "Clickable object" .. (src.zone and ("  —  " .. src.zone) or "")
-        elseif src.type == "note" then
-            miscLines[#miscLines + 1] = src.text or ""
-        end
-    end
-    addSection("Also from:", miscLines)
-
-    return sections
-end
-
 -- Row 1: recipe item link if available, else spell link. Position is fixed at y = -40.
 local function layoutSpellRow(recipe, spellLink)
     if recipe.recipeItemId then
-        local link = resolveItemLink(recipe.recipeItemId, recipe.recipeItemName, recipe.recipeItemQuality)
+        local link = ACC.resolveItemLink(recipe.recipeItemId, recipe.recipeItemName, recipe.recipeItemQuality)
         RDS.spellButton.text:SetText(link)
-        RDS.spellButton.icon:SetTexture(resolveItemIcon(recipe.recipeItemId, recipe.recipeItemIcon))
+        RDS.spellButton.icon:SetTexture(ACC.resolveItemIcon(recipe.recipeItemId, recipe.recipeItemIcon))
         RDS.spellButton:SetScript("OnEnter", function()
             GameTooltip:SetOwner(RDS.spellButton, "ANCHOR_NONE")
             GameTooltip:SetPoint("BOTTOMLEFT", RDS.spellButton, "TOPLEFT", 0, 2)
@@ -147,7 +23,7 @@ local function layoutSpellRow(recipe, spellLink)
         RDS.spellButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
         RDS.spellButton:SetScript("OnClick", function()
             local _, freshLink = GetItemInfo(recipe.recipeItemId)
-            insertLink(freshLink or spellLink)
+            ACC.insertLink(freshLink or spellLink)
         end)
     else
         RDS.spellButton.text:SetText(spellLink)
@@ -160,7 +36,7 @@ local function layoutSpellRow(recipe, spellLink)
             GameTooltip:Show()
         end)
         RDS.spellButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
-        RDS.spellButton:SetScript("OnClick", function() insertLink(spellLink) end)
+        RDS.spellButton:SetScript("OnClick", function() ACC.insertLink(spellLink) end)
     end
 end
 
@@ -219,7 +95,7 @@ local function layoutCreates(recipe, spellLink, y)
         RDS.createsButton:Hide()
         return y
     end
-    local link = resolveItemLink(recipe.creates.id, recipe.creates.name, recipe.creates.quality)
+    local link = ACC.resolveItemLink(recipe.creates.id, recipe.creates.name, recipe.creates.quality)
     local displayText = "Creates: " .. link
     if recipe.creates.count and recipe.creates.count > 1 then
         displayText = displayText .. " x" .. recipe.creates.count
@@ -227,7 +103,7 @@ local function layoutCreates(recipe, spellLink, y)
     RDS.createsButton:ClearAllPoints()
     RDS.createsButton:SetPoint("TOPLEFT",  RDS.frame, "TOPLEFT",  RDS.PADDING, y)
     RDS.createsButton:SetPoint("TOPRIGHT", RDS.frame, "TOPRIGHT", -(RDS.PADDING + 20), y)
-    RDS.createsButton.icon:SetTexture(resolveItemIcon(recipe.creates.id, recipe.creates.icon))
+    RDS.createsButton.icon:SetTexture(ACC.resolveItemIcon(recipe.creates.id, recipe.creates.icon))
     RDS.createsButton.text:SetText(displayText)
     RDS.createsButton:SetScript("OnEnter", function()
         GameTooltip:SetOwner(RDS.createsButton, "ANCHOR_NONE")
@@ -238,7 +114,7 @@ local function layoutCreates(recipe, spellLink, y)
     RDS.createsButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
     RDS.createsButton:SetScript("OnClick", function()
         local _, freshLink = GetItemInfo(recipe.creates.id)
-        insertLink(freshLink or spellLink)
+        ACC.insertLink(freshLink or spellLink)
     end)
     RDS.createsButton:Show()
     return y - RDS.ROW_HEIGHT - RDS.ROW_GAP
@@ -249,7 +125,7 @@ local function layoutMaterials(recipe, y)
     local reagents = recipe.reagents or {}
     if #reagents == 0 then
         RDS.materialsHeader:Hide()
-        for i = 1, 8 do
+        for i = 1, 16 do
             RDS.reagentButtons[i]:SetScript("OnEnter", nil)
             RDS.reagentButtons[i]:SetScript("OnLeave", nil)
             RDS.reagentButtons[i]:SetScript("OnClick", nil)
@@ -262,15 +138,15 @@ local function layoutMaterials(recipe, y)
     RDS.materialsHeader:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.PADDING, y)
     RDS.materialsHeader:Show()
     y = y - RDS.ROW_HEIGHT - 2
-    for i = 1, 8 do
+    for i = 1, 16 do
         local reagent = reagents[i]
         local rbtn    = RDS.reagentButtons[i]
         if reagent then
-            local link = resolveItemLink(reagent.id, reagent.name, reagent.quality)
+            local link = ACC.resolveItemLink(reagent.id, reagent.name, reagent.quality)
             rbtn:ClearAllPoints()
             rbtn:SetPoint("TOPLEFT",  RDS.frame, "TOPLEFT",  RDS.PADDING + 4, y)
             rbtn:SetPoint("TOPRIGHT", RDS.frame, "TOPRIGHT", -(RDS.PADDING + 20), y)
-            rbtn.icon:SetTexture(resolveItemIcon(reagent.id, reagent.icon))
+            rbtn.icon:SetTexture(ACC.resolveItemIcon(reagent.id, reagent.icon))
             rbtn.text:SetText(link .. " x" .. reagent.count)
             local r = reagent
             rbtn:SetScript("OnEnter", function()
@@ -282,7 +158,7 @@ local function layoutMaterials(recipe, y)
             rbtn:SetScript("OnLeave", function() GameTooltip:Hide() end)
             rbtn:SetScript("OnClick", function()
                 local _, freshLink = GetItemInfo(r.id)
-                if freshLink then insertLink(freshLink) end
+                if freshLink then ACC.insertLink(freshLink) end
             end)
             rbtn:Show()
             y = y - RDS.ROW_HEIGHT
@@ -294,36 +170,6 @@ local function layoutMaterials(recipe, y)
             rbtn:Hide()
         end
     end
-    return y
-end
-
--- Source sections (Sold by, Taught by, Drops from, etc.). Returns updated y.
-local function layoutSources(recipe, y)
-    local sections       = buildSourceSections(recipe)
-    local hdrIdx, lblIdx = 0, 0
-    for _, sec in ipairs(sections) do
-        hdrIdx = hdrIdx + 1
-        if hdrIdx > RDS.MAX_SOURCE_HEADERS then break end
-        local hdr = RDS.sourceHeaders[hdrIdx]
-        hdr:ClearAllPoints()
-        hdr:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.PADDING, y)
-        hdr:SetText(sec.header)
-        hdr:Show()
-        y = y - RDS.ROW_HEIGHT - 2
-        for _, line in ipairs(sec.lines) do
-            lblIdx = lblIdx + 1
-            if lblIdx > RDS.MAX_SOURCE_LINES then break end
-            local lbl = RDS.sourceLabels[lblIdx]
-            lbl:ClearAllPoints()
-            lbl:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.INDENT, y)
-            lbl:SetText(line)
-            lbl:Show()
-            y = y - RDS.ROW_HEIGHT
-        end
-        y = y - RDS.ROW_GAP
-    end
-    for i = hdrIdx + 1, RDS.MAX_SOURCE_HEADERS do RDS.sourceHeaders[i]:Hide() end
-    for i = lblIdx + 1, RDS.MAX_SOURCE_LINES   do RDS.sourceLabels[i]:Hide()  end
     return y
 end
 
@@ -400,7 +246,11 @@ local function autoSize(recipe)
         if RDS.charLabels[i]:IsShown() then measure(RDS.charLabels[i]) end
     end
     if recipe.creates then measure(RDS.createsButton.text) end
-    for i = 1, #(recipe.reagents or {}) do measure(RDS.reagentButtons[i].text) end
+    -- Check IsShown() rather than iterating by reagent count: layoutZone reuses
+    -- reagentButtons for fish rows which have no recipe.reagents entry.
+    for i = 1, 16 do
+        if RDS.reagentButtons[i]:IsShown() then measure(RDS.reagentButtons[i].text) end
+    end
     for i = 1, RDS.MAX_SOURCE_HEADERS do
         if RDS.sourceHeaders[i]:IsShown() then measure(RDS.sourceHeaders[i]) end
     end
@@ -422,6 +272,14 @@ function ACC.showRecipeDetail(recipe, btn)
         RDS.frame:SetPoint("CENTER", UIParent, "CENTER", 320, 0)
     end
 
+    if recipe._zone then
+        local y = ACC.layoutZone(recipe)
+        RDS.frame:SetHeight(math.abs(y) + RDS.PADDING)
+        autoSize(recipe)
+        RDS.frame:Show()
+        return
+    end
+
     local spellLink = ACC.makeSpellLink(recipe)
     layoutSpellRow(recipe, spellLink)
 
@@ -430,7 +288,7 @@ function ACC.showRecipeDetail(recipe, btn)
     y = layoutKnownStatus(recipe, y)
     y = layoutCreates(recipe, spellLink, y)
     y = layoutMaterials(recipe, y)
-    y = layoutSources(recipe, y)
+    y = ACC.layoutSources(recipe, y)
     y = layoutQuests(recipe, y)
 
     RDS.frame:SetHeight(math.abs(y) + RDS.PADDING)

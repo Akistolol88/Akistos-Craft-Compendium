@@ -1,7 +1,30 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "WebFetch(domain:www.wowhead.com)",
+      "WebFetch(domain:classicdb.ch)",
+      "Bash(curl -s -L --max-time 30 -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" \"https://www.wowhead.com/classic/guide/best-fishing-pools-farming-locations-classic-wow\")",
+      "Bash(curl -s \"https://classicdb.ch/?item=9004\")",
+      "Bash(curl -s \"https://classicdb.ch/?item=9005\")",
+      "Bash(curl -s \"https://classicdb.ch/?item=9006\")",
+      "Bash(curl -s \"https://classicdb.ch/?item=9007\")",
+      "Bash(curl -s \"https://www.wowhead.com/classic/object=180682/oily-blackmouth-school\")",
+      "Bash(curl -s -L \"https://www.wowhead.com/classic/item=13422/stonescale-eel\")",
+      "Bash(grep -o 'Listview[^;]\\\\{0,200\\\\}')",
+      "Bash(curl -s -L \"https://www.wowhead.com/classic/item=19975/zulian-mudskunk\")",
+      "Bash(node -e \"require\\('puppeteer'\\); console.log\\('ok'\\)\")",
+      "Bash(node scripts/fetchFishZones.js --item=13422)",
+      "Bash(node -e \"const c=require\\('./scripts/fish_zones_cache.json'\\); console.log\\(JSON.stringify\\(c[13422], null, 2\\)\\)\")",
+      "Bash(node scripts/fetchFishZones.js)",
+      "Bash(node scripts/fetchFishZones.js --item=6308)",
+      "Bash(node -e \"const c=require\\('./scripts/fish_zones_cache.json'\\); console.log\\(JSON.stringify\\(c[6308], null, 2\\)\\)\")",
+      "Bash(curl -s -L \"https://www.wowhead.com/classic/item=13760\")",
+      "Bash(luacheck View/ui/BrowserSelectProfession.lua View/ui/BrowserCategory.lua View/ui/BrowserRender.lua)",
+      "Bash(luacheck View/ui/RecipeDetailZone.lua View/ui/BrowserSelectProfession.lua)",
+      "Bash(luacheck View/ui/BrowserSelectProfession.lua)",
+      "Bash(node scripts/fetchFishZones.js --force)",
+      "Bash(node scripts/applyFishZones.js)"
     ]
   }
 }

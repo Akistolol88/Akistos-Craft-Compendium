@@ -17,8 +17,8 @@ function CreateFrame()
 end
 
 function hooksecurefunc() end
-GameTooltip = {}
-ItemRefTooltip = {}
+GameTooltip    = { HookScript = function() end }
+ItemRefTooltip = { HookScript = function() end }
 
 dofile("Model/core/Tracker.lua")
 

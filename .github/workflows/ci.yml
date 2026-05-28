@@ -57,7 +57,7 @@ jobs:
         run: |
           echo "Fetching game versions..."
           VERSIONS=$(curl -sL -H "X-Api-Token: $CF_API_KEY" \
-            "https://wow.curseforge.com/api/game/1/versions")
+            "https://wow.curseforge.com/api/game/versions")
           echo "Response: $VERSIONS"
           VERSION_ID=$(echo "$VERSIONS" | jq -r '.[] | select(.name == "1.15.8") | .id')
           echo "Version ID: $VERSION_ID"

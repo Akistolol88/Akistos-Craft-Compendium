@@ -9,19 +9,21 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    container: alpine:3
     steps:
       - uses: actions/checkout@v4
       - name: Install luacheck
-        run: sudo apt-get install -y luarocks && sudo luarocks install luacheck
+        run: apk add --no-cache luacheck
       - name: Run luacheck
         run: luacheck .
 
   test:
     runs-on: ubuntu-latest
+    container: alpine:3
     steps:
       - uses: actions/checkout@v4
       - name: Install Lua
-        run: sudo apt-get install -y lua5.4
+        run: apk add --no-cache lua5.4
       - name: Run tests
         run: lua5.4 tests/test_tracker.lua
 

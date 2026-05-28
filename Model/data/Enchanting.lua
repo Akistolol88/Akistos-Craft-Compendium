@@ -6,15 +6,17 @@
 ACC_Data = ACC_Data or {}
 ACC_Data["Enchanting"] = {
     {
+        -- MANUAL OVERRIDE: renamed from "Enchanting", skill changed 9999→1 so it appears in the Misc tab.
+        -- Re-apply if buildLua.js regenerates this file.
         spellId = 7411,
-        name = "Enchanting",
-        skill = 9999,
+        name = "Apprentice Enchanting",
+        skill = 1,
         creates = nil,
         reagents = {},
         tool = nil,
         sources = { { type = "trainer", cost = 10, trainers = {
             { name = "Alanna Raveneye", zone = "Teldrassil", faction = "alliance" },
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Betty Quin", zone = "Stormwind City", faction = "alliance" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
@@ -37,14 +39,15 @@ ACC_Data["Enchanting"] = {
         faction = nil,
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Enchanting". Re-apply if buildLua.js regenerates this file.
         spellId = 7412,
-        name = "Enchanting",
+        name = "Journeyman Enchanting",
         skill = 50,
         creates = nil,
         reagents = {},
         tool = "Runed Copper Rod",
         sources = { { type = "trainer", cost = 500, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -61,14 +64,15 @@ ACC_Data["Enchanting"] = {
         category = "Misc",
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Enchanting". Re-apply if buildLua.js regenerates this file.
         spellId = 7413,
-        name = "Enchanting",
+        name = "Expert Enchanting",
         skill = 125,
         creates = nil,
         reagents = {},
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 5000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -105,7 +109,7 @@ ACC_Data["Enchanting"] = {
         tool = "Runed Copper Rod",
         sources = { { type = "trainer", cost = 50, trainers = {
             { name = "Alanna Raveneye", zone = "Teldrassil", faction = "alliance" },
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Betty Quin", zone = "Stormwind City", faction = "alliance" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
@@ -159,7 +163,7 @@ ACC_Data["Enchanting"] = {
         tool = "Runed Copper Rod",
         sources = { { type = "trainer", cost = 100, trainers = {
             { name = "Alanna Raveneye", zone = "Teldrassil", faction = "alliance" },
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Betty Quin", zone = "Stormwind City", faction = "alliance" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
@@ -255,7 +259,7 @@ ACC_Data["Enchanting"] = {
         tool = "Runed Copper Rod",
         sources = { { type = "trainer", cost = 100, trainers = {
             { name = "Alanna Raveneye", zone = "Teldrassil", faction = "alliance" },
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Betty Quin", zone = "Stormwind City", faction = "alliance" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
@@ -290,7 +294,7 @@ ACC_Data["Enchanting"] = {
         tool = "Runed Copper Rod",
         sources = { { type = "trainer", cost = 250, trainers = {
             { name = "Alanna Raveneye", zone = "Teldrassil", faction = "alliance" },
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Betty Quin", zone = "Stormwind City", faction = "alliance" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
@@ -325,7 +329,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 500, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -354,7 +358,7 @@ ACC_Data["Enchanting"] = {
         tool = "Runed Copper Rod",
         sources = { { type = "trainer", cost = 250, trainers = {
             { name = "Alanna Raveneye", zone = "Teldrassil", faction = "alliance" },
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Betty Quin", zone = "Stormwind City", faction = "alliance" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
@@ -426,7 +430,7 @@ ACC_Data["Enchanting"] = {
         tool = "Runed Copper Rod",
         sources = { { type = "trainer", cost = 200, trainers = {
             { name = "Alanna Raveneye", zone = "Teldrassil", faction = "alliance" },
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Betty Quin", zone = "Stormwind City", faction = "alliance" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
@@ -485,7 +489,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Copper Rod",
         sources = { { type = "trainer", cost = 400, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -585,7 +589,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Copper Rod",
         sources = { { type = "trainer", cost = 500, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -640,7 +644,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = nil,
         sources = { { type = "trainer", cost = 1000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -668,7 +672,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 1000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -730,7 +734,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 1250, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -757,7 +761,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 1400, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -823,7 +827,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 600, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -927,7 +931,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 800, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -989,7 +993,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 1500, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -1016,7 +1020,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 1500, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -1044,7 +1048,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 2000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -1106,7 +1110,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 2400, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -1158,7 +1162,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 2500, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -1186,7 +1190,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Silver Rod",
         sources = { { type = "trainer", cost = 2400, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -1294,7 +1298,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 2500, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -1323,7 +1327,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 2500, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -1353,7 +1357,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = nil,
         sources = { { type = "trainer", cost = 2500, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
@@ -1381,7 +1385,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 2600, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1402,7 +1406,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 2600, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1423,7 +1427,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 2800, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1443,7 +1447,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 2700, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1463,7 +1467,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 2800, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1483,7 +1487,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 2800, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1527,7 +1531,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 2800, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1617,7 +1621,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 3000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1638,7 +1642,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 3200, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1658,7 +1662,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 3600, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1678,7 +1682,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 3800, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1757,7 +1761,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 4000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1778,7 +1782,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 4000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1826,7 +1830,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 4000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1849,7 +1853,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = nil,
         sources = { { type = "trainer", cost = 4000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1869,7 +1873,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 4200, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1889,7 +1893,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 4200, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1910,7 +1914,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 4400, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1958,7 +1962,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 4400, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -1978,7 +1982,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 4600, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -2055,7 +2059,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 4800, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -2126,7 +2130,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 5000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -2148,7 +2152,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 5000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -2192,7 +2196,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 5400, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2250,7 +2254,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 5400, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2258,14 +2262,16 @@ ACC_Data["Enchanting"] = {
         category = "Chest",
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Enchanting". Re-apply if buildLua.js regenerates this file.
+        -- TODO: trainer Annora is in Uldaman (instance), not Silithus — fix zone field next session.
         spellId = 13920,
-        name = "Enchanting",
+        name = "Artisan Enchanting",
         skill = 200,
         creates = nil,
         reagents = {},
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 50000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2344,7 +2350,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 5800, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2363,7 +2369,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 6200, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2382,7 +2388,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 6200, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2402,7 +2408,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 6200, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2421,7 +2427,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 6200, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2520,7 +2526,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 6500, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2540,7 +2546,7 @@ ACC_Data["Enchanting"] = {
         tool = "Runed Copper Rod",
         sources = { { type = "trainer", cost = 50, trainers = {
             { name = "Alanna Raveneye", zone = "Teldrassil", faction = "alliance" },
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Betty Quin", zone = "Stormwind City", faction = "alliance" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
@@ -2576,7 +2582,7 @@ ACC_Data["Enchanting"] = {
         tool = "Runed Copper Rod",
         sources = { { type = "trainer", cost = 200, trainers = {
             { name = "Alanna Raveneye", zone = "Teldrassil", faction = "alliance" },
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Betty Quin", zone = "Stormwind City", faction = "alliance" },
             { name = "Gimble Thistlefuzz", zone = "Ironforge", faction = "alliance" },
             { name = "Godan", zone = "Orgrimmar", faction = "horde" },
@@ -2612,7 +2618,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 2600, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -2634,7 +2640,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Golden Rod",
         sources = { { type = "trainer", cost = 3000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
             { name = "Hgarth", zone = "Stonetalon Mountains", faction = "horde" },
             { name = "Kitta Firewind", zone = "Elwynn Forest", faction = "alliance" },
         } } },
@@ -2679,7 +2685,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 10000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2698,7 +2704,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "trainer", cost = 10000, trainers = {
-            { name = "Annora", zone = "Silithus" },
+            { name = "Annora", zone = "Uldaman" },
         } } },
         cooldown = nil,
         specialization = nil,

@@ -71,9 +71,10 @@ local _allTrainers = {
 }
 
 ACC_Data.SkinningTraining = {
-    { name = "Journeyman Skinning", spellId = 8617,  skill = 50,  trainers = _allTrainers },
-    { name = "Expert Skinning",     spellId = 8618,  skill = 125, trainers = _allTrainers },
-    { name = "Artisan Skinning",    spellId = 10768, skill = 200, trainers = _allTrainers },
+    { name = "Apprentice Skinning",  spellId = 8613,  skill = 1,   trainers = _allTrainers },
+    { name = "Journeyman Skinning", spellId = 8619,  skill = 50,  trainers = _allTrainers },
+    { name = "Expert Skinning",     spellId = 8620,  skill = 125, trainers = _allTrainers },
+    { name = "Artisan Skinning",    spellId = 10769, skill = 200, trainers = _allTrainers },
 }
 
 -- Formula reference entries shown in the Formula category.

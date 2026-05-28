@@ -406,6 +406,26 @@ ACC_Data.HerbalismTrainers = {
 ACC_Data.HerbalismTraining = {
 
     {
+        name     = "Apprentice Herbalist",
+        spellId  = 2366,
+        skill    = 1,
+        trainers = {
+            { name = "Malorne Bladeleaf", zone = "Teldrassil",          faction = "alliance" },
+            { name = "Herbalist Pomeroy", zone = "Elwynn Forest",       faction = "alliance" },
+            { name = "Shylamiir",         zone = "Stormwind City",      faction = "alliance" },
+            { name = "Brant Jasperbloom", zone = "Ironforge",           faction = "alliance" },
+            { name = "Flora Silverwind",  zone = "Darnassus",           faction = "alliance" },
+            { name = "Harlown Darkweave", zone = "Ashenvale",           faction = "alliance" },
+            { name = "Alma Jainrose",     zone = "Hillsbrad Foothills", faction = "alliance" },
+            { name = "Jandi",             zone = "Orgrimmar",           faction = "horde"    },
+            { name = "Komin Winterhoof",  zone = "Thunder Bluff",       faction = "horde"    },
+            { name = "Bena Winterhoof",   zone = "Thunder Bluff",       faction = "horde"    },
+            { name = "Reyna Stonebranch", zone = "Undercity",           faction = "horde"    },
+            { name = "Angrun",            zone = "Stranglethorn Vale",  faction = "horde"    },
+        },
+    },
+
+    {
         name     = "Journeyman Herbalist",
         spellId  = 2373,
         skill    = 50,

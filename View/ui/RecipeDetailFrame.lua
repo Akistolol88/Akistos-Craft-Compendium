@@ -15,18 +15,24 @@ ACC_RecipeDetailState = {
     -- URL shown in the static popup; set in layoutQuests() before StaticPopup_Show.
     urlPromptUrl = "",
 
+    -- Stored so the "show more drops" button can re-call showRecipeDetail without
+    -- needing the browser to pass the arguments again.
+    currentRecipe = nil,
+    currentBtn    = nil,
+
     -- Widget references — all populated by createDetailFrame() via ACC.initRecipeDetail().
-    frame           = nil,
-    spellButton     = nil,
-    knownLabel      = nil,
-    specLabel       = nil,
-    charLabels      = {},
-    createsButton   = nil,
-    materialsHeader = nil,
-    reagentButtons  = {},
-    questButtons    = {},
-    sourceHeaders   = {},
-    sourceLabels    = {},
+    frame                = nil,
+    spellButton          = nil,
+    knownLabel           = nil,
+    specLabel            = nil,
+    charLabels           = {},
+    createsButton        = nil,
+    materialsHeader      = nil,
+    reagentButtons       = {},
+    questButtons         = {},
+    sourceHeaders        = {},
+    sourceLabels         = {},
+    showMoreDropsButton  = nil,
 }
 
 local RDS = ACC_RecipeDetailState
@@ -137,6 +143,17 @@ local function createDetailFrame()
         lbl:Hide()
         RDS.sourceLabels[i] = lbl
     end
+
+    -- "Show more drops" button — shown below drop lines when the list is truncated.
+    RDS.showMoreDropsButton = CreateFrame("Button", nil, RDS.frame)
+    RDS.showMoreDropsButton:SetHeight(RDS.ROW_HEIGHT)
+    RDS.showMoreDropsButton:EnableMouse(true)
+    RDS.showMoreDropsButton:RegisterForClicks("LeftButtonUp")
+    local smText = RDS.showMoreDropsButton:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    smText:SetPoint("LEFT", RDS.showMoreDropsButton, "LEFT", 0, 0)
+    smText:SetJustifyH("LEFT")
+    RDS.showMoreDropsButton.text = smText
+    RDS.showMoreDropsButton:Hide()
 
     -- Quest buttons — pool of up to 4 clickable quest links.
     for i = 1, 4 do

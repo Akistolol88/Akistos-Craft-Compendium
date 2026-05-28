@@ -1202,7 +1202,7 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 3775,
-        recipeItemId = 217266,
+        recipeItemId = 4298,
         recipeItemName = "Pattern: Guardian Belt",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 3,
@@ -2869,7 +2869,7 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 10509,
-        recipeItemId = 217271,
+        recipeItemId = 8385,
         recipeItemName = "Pattern: Turtle Scale Gloves",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,
@@ -5981,7 +5981,7 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24703,
-        recipeItemId = 234325,
+        recipeItemId = 20382,
         recipeItemName = "Pattern: Dreamscale Breastplate",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,
@@ -6006,7 +6006,7 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24846,
-        recipeItemId = 234301,
+        recipeItemId = 20506,
         recipeItemName = "Pattern: Spitfire Bracers",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,
@@ -6073,7 +6073,7 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24849,
-        recipeItemId = 234295,
+        recipeItemId = 20509,
         recipeItemName = "Pattern: Sandstalker Bracers",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,
@@ -6097,7 +6097,7 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 24850,
-        recipeItemId = 234297,
+        recipeItemId = 20510,
         recipeItemName = "Pattern: Sandstalker Gauntlets",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,
@@ -6320,7 +6320,7 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 28472,
-        recipeItemId = 234311,
+        recipeItemId = 22771,
         recipeItemName = "Pattern: Bramblewood Helm",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,
@@ -6368,7 +6368,7 @@ ACC_Data["Leatherworking"] = {
     },
     {
         spellId = 28474,
-        recipeItemId = 234307,
+        recipeItemId = 22769,
         recipeItemName = "Pattern: Bramblewood Belt",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,

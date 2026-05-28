@@ -138,13 +138,21 @@ function ACC.renderPage()
                 S.rowButtons[i].recipe = recipe
                 S.rowButtons[i]:Show()
             else
-                local iconName = (recipe.creates and recipe.creates.icon) or recipe.recipeItemIcon
-                local iconTex  = iconName and ("Interface\\Icons\\" .. iconName)
-                if not iconTex then
-                    local id = (recipe.creates and recipe.creates.id) or recipe.recipeItemId
-                    iconTex = id and select(10, GetItemInfo(id))
-                        or profFallbackIcon[S.currentProfName]
-                        or "Interface\\Icons\\INV_Misc_QuestionMark"
+                local iconTex
+                if S.currentProfName == "Enchanting" then
+                    -- Enchanting recipes either produce nothing (enchants) or have formula scroll
+                    -- icons that vary wildly. Using the profession icon for every row gives a
+                    -- consistent look — the formula scroll is already shown in the detail panel.
+                    iconTex = profFallbackIcon["Enchanting"]
+                else
+                    local iconName = (recipe.creates and recipe.creates.icon) or recipe.recipeItemIcon
+                    iconTex = iconName and ("Interface\\Icons\\" .. iconName)
+                    if not iconTex then
+                        local id = (recipe.creates and recipe.creates.id) or recipe.recipeItemId
+                        iconTex = id and select(10, GetItemInfo(id))
+                            or profFallbackIcon[S.currentProfName]
+                            or "Interface\\Icons\\INV_Misc_QuestionMark"
+                    end
                 end
                 S.rowButtons[i].icon:SetTexture(iconTex)
                 if recipe._trainYellow then

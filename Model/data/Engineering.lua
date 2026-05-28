@@ -1722,7 +1722,7 @@ ACC_Data["Engineering"] = {
     },
     {
         spellId = 8895,
-        recipeItemId = 221339,
+        recipeItemId = 7192,
         recipeItemName = "Schematic: Goblin Rocket Boots",
         recipeItemIcon = "inv_scroll_06",
         recipeItemQuality = 2,

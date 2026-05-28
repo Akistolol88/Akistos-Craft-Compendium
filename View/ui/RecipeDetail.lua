@@ -361,18 +361,42 @@ local function autoSize(recipe)
 end
 
 -- Positions the frame, populates every section in order, then auto-sizes.
-function ACC.showRecipeDetail(recipe, btn)
-    RDS.frame:ClearAllPoints()
-    if btn then
-        RDS.frame:SetPoint("TOPLEFT", btn, "BOTTOMLEFT", 0, -2)
-    else
+-- Positions the detail frame relative to the clicked row button, flipping the anchor
+-- when the panel would clip off the bottom or right edge of the screen.
+-- Must be called AFTER SetHeight/autoSize so GetHeight()/GetWidth() return final values.
+local function anchorDetailFrame(btn)
+    if not btn then
         RDS.frame:SetPoint("CENTER", UIParent, "CENTER", 320, 0)
+        return
     end
+    local h         = RDS.frame:GetHeight()
+    local w         = RDS.frame:GetWidth()
+    local btnBottom = btn:GetBottom() or 0
+    local btnLeft   = btn:GetLeft()   or 0
+    local screenW   = UIParent:GetWidth()
+    local flipUp    = (btnBottom - h) < 0
+    local flipRight = (btnLeft + w) > screenW
+    if flipUp and flipRight then
+        RDS.frame:SetPoint("BOTTOMRIGHT", btn, "TOPRIGHT",    0,  2)
+    elseif flipUp then
+        RDS.frame:SetPoint("BOTTOMLEFT",  btn, "TOPLEFT",     0,  2)
+    elseif flipRight then
+        RDS.frame:SetPoint("TOPRIGHT",    btn, "BOTTOMRIGHT", 0, -2)
+    else
+        RDS.frame:SetPoint("TOPLEFT",     btn, "BOTTOMLEFT",  0, -2)
+    end
+end
 
+function ACC.showRecipeDetail(recipe, btn)
+    -- Store refs so the "show more drops" button can re-trigger this function.
+    RDS.currentRecipe = recipe
+    RDS.currentBtn    = btn
     if recipe._zone then
         local y = ACC.layoutZone(recipe)
         RDS.frame:SetHeight(math.abs(y) + RDS.PADDING)
         autoSize(recipe)
+        RDS.frame:ClearAllPoints()
+        anchorDetailFrame(btn)
         RDS.frame:Show()
         return
     end
@@ -391,5 +415,7 @@ function ACC.showRecipeDetail(recipe, btn)
 
     RDS.frame:SetHeight(math.abs(y) + RDS.PADDING)
     autoSize(recipe)
+    RDS.frame:ClearAllPoints()
+    anchorDetailFrame(btn)
     RDS.frame:Show()
 end

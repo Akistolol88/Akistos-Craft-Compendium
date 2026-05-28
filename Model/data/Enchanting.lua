@@ -95,7 +95,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 7420,
@@ -201,7 +201,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 7443,
@@ -280,7 +280,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 7457,
@@ -315,7 +315,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 7745,
@@ -415,7 +415,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 7771,
@@ -451,7 +451,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 7776,
@@ -503,7 +503,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 7782,
@@ -540,7 +540,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 7786,
@@ -720,7 +720,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 7861,
@@ -748,7 +748,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 7863,
@@ -917,7 +917,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 13421,
@@ -945,7 +945,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 13464,
@@ -1034,7 +1034,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13503,
@@ -1096,7 +1096,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 13529,
@@ -1147,7 +1147,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13538,
@@ -1231,7 +1231,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 13617,
@@ -1258,7 +1258,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 13620,
@@ -1285,7 +1285,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 13622,
@@ -1312,7 +1312,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13626,
@@ -1413,7 +1413,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 13637,
@@ -1474,7 +1474,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13644,
@@ -1518,7 +1518,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13648,
@@ -1538,7 +1538,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13653,
@@ -1628,7 +1628,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 13659,
@@ -1669,7 +1669,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13663,
@@ -1815,7 +1815,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 13700,
@@ -1880,7 +1880,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 13794,
@@ -1900,7 +1900,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 13815,
@@ -1921,7 +1921,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 13817,
@@ -1969,7 +1969,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13836,
@@ -2012,7 +2012,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 13846,
@@ -2046,7 +2046,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13858,
@@ -2092,7 +2092,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 13882,
@@ -2116,7 +2116,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 13887,
@@ -2137,7 +2137,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 13890,
@@ -2300,7 +2300,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13933,
@@ -2393,7 +2393,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13941,
@@ -2472,7 +2472,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 13947,
@@ -2512,7 +2512,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 13948,
@@ -2531,7 +2531,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 14293,
@@ -2731,7 +2731,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 20009,
@@ -2774,7 +2774,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 20010,
@@ -2797,7 +2797,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 20011,
@@ -2865,7 +2865,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 20012,
@@ -2888,7 +2888,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 20013,
@@ -2911,7 +2911,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 20014,
@@ -2938,7 +2938,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 20015,
@@ -2960,7 +2960,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 20016,
@@ -3313,6 +3313,10 @@ ACC_Data["Enchanting"] = {
     },
     {
         spellId = 20033,
+        recipeItemId = 16248,
+        recipeItemName = "Formula: Enchant Weapon - Unholy Weapon",
+        recipeItemIcon = "inv_misc_note_01",
+        recipeItemQuality = 4,
         name = "Enchant Weapon - Unholy Weapon",
         skill = 295,
         colors = { 295, 315, 335, 355 },
@@ -3592,10 +3596,14 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 23802,
+        recipeItemId = 19447,
+        recipeItemName = "Formula: Enchant Bracer - Healing Power",
+        recipeItemIcon = "inv_misc_note_01",
+        recipeItemQuality = 3,
         name = "Enchant Bracer - Healing Power",
         skill = 300,
         colors = { 300, 320, 340, 360 },
@@ -3609,13 +3617,11 @@ ACC_Data["Enchanting"] = {
         tool = "Runed Arcanite Rod",
         sources = { { type = "vendor", reputation = { faction = "Argent Dawn", level = "Revered" }, vendors = {
             { name = "Quartermaster Miranda Breechlock", zone = "Eastern Plaguelands" },
-            { name = "Argent Quartermaster Hasana", zone = "Undercity", faction = "horde" },
-            { name = "Argent Quartermaster Lightspark", zone = "Ironforge", faction = "alliance" },
         } } },
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Wrist",
+        category = "Bracers",
     },
     {
         spellId = 23803,
@@ -3687,7 +3693,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 25073,
@@ -3725,7 +3731,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 25074,
@@ -3763,7 +3769,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 25078,
@@ -3801,7 +3807,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 25079,
@@ -3839,7 +3845,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 25080,
@@ -3877,11 +3883,11 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Hands",
+        category = "Gloves",
     },
     {
         spellId = 25081,
-        recipeItemId = 229008,
+        recipeItemId = 20732,
         recipeItemName = "Formula: Enchant Cloak - Greater Fire Resistance",
         recipeItemIcon = "inv_misc_note_01",
         recipeItemQuality = 1,
@@ -3901,11 +3907,11 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 25082,
-        recipeItemId = 229009,
+        recipeItemId = 20733,
         recipeItemName = "Formula: Enchant Cloak - Greater Nature Resistance",
         recipeItemIcon = "inv_misc_note_01",
         recipeItemQuality = 1,
@@ -3925,7 +3931,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 25083,
@@ -3963,7 +3969,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 25084,
@@ -3987,7 +3993,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 25086,
@@ -4025,7 +4031,7 @@ ACC_Data["Enchanting"] = {
         cooldown = nil,
         specialization = nil,
         faction = nil,
-        category = "Back",
+        category = "Cloak",
     },
     {
         spellId = 25124,

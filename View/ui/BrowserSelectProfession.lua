@@ -36,6 +36,7 @@ function ACC.buildMiningList(list)
             category     = "Misc",
             displayGroup = 100,
             _train       = true,
+            _trainYellow = true,
             trainers     = train.trainers or {},
         }
     end
@@ -62,6 +63,7 @@ function ACC.buildHerbalismList(list)
             category     = "Misc",
             displayGroup = 100,
             _train       = true,
+            _trainYellow = true,
             trainers     = train.trainers or {},
         }
     end
@@ -76,6 +78,7 @@ function ACC.buildSkinningList(list)
             category     = "Misc",
             displayGroup = 100,
             _train       = true,
+            _trainYellow = true,
             trainers     = train.trainers or {},
         }
     end
@@ -127,6 +130,7 @@ function ACC.buildFishingList(list)
                 category     = "Misc",
                 displayGroup = 100,
                 _train       = true,
+                _trainYellow = true,
                 trainers     = train.trainers or {},
             }
         end
@@ -143,13 +147,14 @@ function ACC.buildFishingList(list)
     end
     for _, catch in ipairs(ACC_Data.FishingCatches or {}) do
         list[#list + 1] = {
-            name         = catch.name,
-            recipeItemId = catch.itemId,
-            skill        = catch.minSkill,
-            displayGroup = catch.minSkill,
-            category     = "Fish",
-            _fish        = true,
-            _catch       = catch,
+            name           = catch.name,
+            recipeItemId   = catch.itemId,
+            recipeItemIcon = catch.icon,  -- pre-loaded from data so GetItemInfo is not needed on first render
+            skill          = catch.minSkill,
+            displayGroup   = catch.minSkill,
+            category       = "Fish",
+            _fish          = true,
+            _catch         = catch,
         }
     end
     local ZONE_CONTINENT = {
@@ -198,6 +203,7 @@ function ACC.buildFishingList(list)
             _zone         = true,
             minCast       = zone.minCast,
             guaranteed    = zone.guaranteed,
+            recipeItemIcon = zone.icon,  -- optional per-zone flavor icon defined in Fishing.lua
             pools         = zone.pools,  -- passed through so layoutZone can render clickable pool-fish rows
         }
     end
@@ -279,6 +285,7 @@ function ACC.buildGeneralList(list, profName, pendingByItemId, mainFrame)
                     category     = "Misc",
                     displayGroup = 100,
                     _train       = true,
+                    _trainYellow = true,
                     trainers     = (src and src.trainers) or {},
                 }
             else

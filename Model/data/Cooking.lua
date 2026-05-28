@@ -379,9 +379,11 @@ ACC_Data["Cooking"] = {
         category = "Stamina",
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Cooking", skill changed 9999→1 so it appears in the Misc tab.
+        -- Re-apply if buildLua.js regenerates this file.
         spellId = 2550,
-        name = "Cooking",
-        skill = 9999,
+        name = "Apprentice Cooking",
+        skill = 1,
         creates = nil,
         reagents = {},
         tool = nil,
@@ -435,7 +437,7 @@ ACC_Data["Cooking"] = {
     },
     {
         spellId = 3102,
-        name = "Cooking",
+        name = "Journeyman Cooking",
         skill = 50,
         creates = nil,
         reagents = {},

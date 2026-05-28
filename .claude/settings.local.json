@@ -24,7 +24,14 @@
       "Bash(luacheck View/ui/RecipeDetailZone.lua View/ui/BrowserSelectProfession.lua)",
       "Bash(luacheck View/ui/BrowserSelectProfession.lua)",
       "Bash(node scripts/fetchFishZones.js --force)",
-      "Bash(node scripts/applyFishZones.js)"
+      "Bash(node scripts/applyFishZones.js)",
+      "Bash(node scripts/applyFishIcons.js)",
+      "WebFetch(domain:nether.wowhead.com)",
+      "WebFetch(domain:wow.zamimg.com)",
+      "WebFetch(domain:wowwiki-archive.fandom.com)",
+      "WebFetch(domain:vanilla.database.turtle-wow.org)",
+      "WebFetch(domain:api.wowhead.com)",
+      "WebFetch(domain:www.turtlewow.org)"
     ]
   }
 }

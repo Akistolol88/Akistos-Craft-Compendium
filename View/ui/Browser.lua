@@ -51,6 +51,7 @@ local function createMainFrame()
     end)
     S.mainFrame:RegisterEvent("PLAYER_LOGIN")
     S.mainFrame:Hide()
+    tinsert(UISpecialFrames, "AccMainFrame")
 end
 
 local function createCategoryPanel()

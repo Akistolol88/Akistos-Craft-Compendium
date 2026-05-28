@@ -1491,9 +1491,11 @@ ACC_Data["Engineering"] = {
         category = "Scopes",
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Engineering", skill changed 9999→1 so it appears in the Misc tab.
+        -- Re-apply if buildLua.js regenerates this file.
         spellId = 4036,
-        name = "Engineering",
-        skill = 9999,
+        name = "Apprentice Engineering",
+        skill = 1,
         creates = nil,
         reagents = {},
         tool = nil,
@@ -1522,8 +1524,9 @@ ACC_Data["Engineering"] = {
         faction = nil,
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Engineering". Re-apply if buildLua.js regenerates this file.
         spellId = 4037,
-        name = "Engineering",
+        name = "Journeyman Engineering",
         skill = 50,
         creates = nil,
         reagents = {},
@@ -1544,8 +1547,9 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Engineering". Re-apply if buildLua.js regenerates this file.
         spellId = 4038,
-        name = "Engineering",
+        name = "Expert Engineering",
         skill = 125,
         creates = nil,
         reagents = {},
@@ -2473,8 +2477,9 @@ ACC_Data["Engineering"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Engineering". Re-apply if buildLua.js regenerates this file.
         spellId = 12656,
-        name = "Engineering",
+        name = "Artisan Engineering",
         skill = 200,
         creates = nil,
         reagents = {},

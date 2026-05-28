@@ -1771,9 +1771,11 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Tailoring", skill changed 9999→1 so it appears in the Misc tab.
+        -- Re-apply if buildLua.js regenerates this file.
         spellId = 3908,
-        name = "Tailoring",
-        skill = 9999,
+        name = "Apprentice Tailoring",
+        skill = 1,
         creates = nil,
         reagents = {},
         tool = nil,
@@ -1807,8 +1809,9 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Tailoring". Re-apply if buildLua.js regenerates this file.
         spellId = 3909,
-        name = "Tailoring",
+        name = "Journeyman Tailoring",
         skill = 50,
         creates = nil,
         reagents = {},
@@ -1835,8 +1838,9 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Tailoring". Re-apply if buildLua.js regenerates this file.
         spellId = 3910,
-        name = "Tailoring",
+        name = "Expert Tailoring",
         skill = 125,
         creates = nil,
         reagents = {},
@@ -4191,8 +4195,9 @@ ACC_Data["Tailoring"] = {
         faction = nil,
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Tailoring". Re-apply if buildLua.js regenerates this file.
         spellId = 12180,
-        name = "Tailoring",
+        name = "Artisan Tailoring",
         skill = 200,
         creates = nil,
         reagents = {},

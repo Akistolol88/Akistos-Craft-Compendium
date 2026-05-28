@@ -26,6 +26,7 @@ read_globals = {
     "IsShiftKeyDown", "ChatEdit_InsertLink", "DEFAULT_CHAT_FRAME",
     "StaticPopup_Show",
     "Minimap", "GetCursorPosition",
+    "tinsert", "UISpecialFrames",
 }
 
 files["tests/test_tracker.lua"] = {

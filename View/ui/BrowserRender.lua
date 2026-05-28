@@ -6,6 +6,14 @@ local S                = ACC_BrowserState
 local rowsPerPage      = 40
 local profFallbackIcon = ACC_BrowserConfig.profFallbackIcon
 
+-- Per-label colors for the continent/instance separator rows in the Fishing zone browser.
+-- Any separator without an entry falls back to grey ("888888").
+local SEPARATOR_COLOR = {
+    ["Kalimdor"]         = "00cc44",  -- green
+    ["Eastern Kingdoms"] = "4488ff",  -- blue
+    ["Instances"]        = "a335ee",  -- epic purple
+}
+
 local function getSkinningSkill()
     for i = 1, GetNumSkillLines() do
         local name, _, _, rank = GetSkillLineInfo(i)
@@ -65,7 +73,8 @@ function ACC.renderPage()
         if recipe then
             if recipe._separator then
                 S.rowButtons[i].icon:SetTexture(nil)
-                S.rowButtons[i].recipeName:SetText(recipe.label and ("|cff888888— " .. recipe.label .. " —|r") or "")
+                local sepCol = recipe.label and (SEPARATOR_COLOR[recipe.label] or "888888") or "888888"
+                S.rowButtons[i].recipeName:SetText(recipe.label and ("|cff" .. sepCol .. "— " .. recipe.label .. " —|r") or "")
                 S.rowButtons[i].skillText:SetText("")
                 S.rowButtons[i].recipe = nil
                 S.rowButtons[i]:Show()
@@ -138,7 +147,11 @@ function ACC.renderPage()
                         or "Interface\\Icons\\INV_Misc_QuestionMark"
                 end
                 S.rowButtons[i].icon:SetTexture(iconTex)
-                S.rowButtons[i].recipeName:SetText(ACC.makeSpellLink(recipe))
+                if recipe._trainYellow then
+                    S.rowButtons[i].recipeName:SetText("|cffffd700[" .. recipe.name .. "]|r")
+                else
+                    S.rowButtons[i].recipeName:SetText(ACC.makeSpellLink(recipe))
+                end
                 local skillDisplay = recipe.skillLabel
                 if skillDisplay == nil then
                     local s = recipe.skill
@@ -214,6 +227,8 @@ function ACC.onRecipeClick(recipe, btn)
         if IsShiftKeyDown() and recipe.recipeItemId then
             local _, link = GetItemInfo(recipe.recipeItemId)
             if link then ChatEdit_InsertLink(link) end
+        else
+            ACC.showRecipeDetail(recipe, btn)
         end
         return
     end
@@ -228,7 +243,20 @@ function ACC.onRecipeClick(recipe, btn)
     end
     if recipe._smelt or recipe._train then
         if IsShiftKeyDown() then
-            if recipe.spellId then ChatEdit_InsertLink(ACC.makeSpellLink(recipe)) end
+            if recipe.spellId then
+                if recipe._train then
+                    -- Use the real WoW spell name so the link renders correctly in chat.
+                    -- Passive rank spells (Skinning, Fishing) have names like "Skinning", not
+                    -- "Journeyman Skinning", and a name mismatch causes raw text in chat.
+                    local realName = GetSpellInfo(recipe.spellId)
+                    local link = realName
+                        and ("|cff71d5ff|Hspell:" .. recipe.spellId .. "|h[" .. realName .. "]|h|r")
+                        or  ACC.makeSpellLink(recipe)
+                    ChatEdit_InsertLink(link)
+                else
+                    ChatEdit_InsertLink(ACC.makeSpellLink(recipe))
+                end
+            end
         elseif recipe._smelt then
             ACC.showRecipeDetail(recipe, btn)
         end

@@ -1,44 +1,44 @@
-**Akistos Craft Compendium**
+# Akistos Craft Compendium
 
-A World of Warcraft Classic (Vanilla) addon that lets you browse every crafting recipe in the game, see where to find it, what it costs to make — and track which recipes each of your characters has learned.
+A World of Warcraft Classic Era addon for browsing every crafting and gathering recipe in the game — where to learn it, what it costs to make, and which of your characters already knows it.
 
-**Features**
+## Features
 
-Browse all professions: Blacksmithing, Leatherworking, Tailoring, Alchemy, Engineering, Enchanting, First Aid, Cooking, and Fishing
-View each recipe's source — vendor name and location, creature drop, or quest
-See the full material list with exact quantities required to craft
-Engineering recipes are flagged as requiring Goblin or Gnomish specialization
-Account-wide recipe tracking — see which recipes you know and on which character
-(Planned) Search and filter recipes by name, profession, or source type
+- **All professions** — Alchemy, Blacksmithing, Cooking, Enchanting, Engineering, Fishing, First Aid, Herbalism, Leatherworking, Mining, Skinning, Tailoring
+- **Recipe sources** — trainer name and location, vendor (with reputation requirements), creature drop with drop rate, quest reward, world drop, book, or holiday event
+- **Full material list** with quantities for every craftable recipe
+- **Training ranks** — Apprentice through Artisan shown in every profession's Misc tab, with shift-click linking
+- **Gathering info** — Mining vein locations and smelting recipes; Herbalism herb zones; Skinning skill colour bands and max mob level calculator
+- **Account-wide tracking** — Known / Not Known label on every recipe; lists which alts know it
+- **Tooltip integration** — hover any recipe item link in chat or inventory to see Known / Not Known status
+- **Shift-click linking** — insert recipe, item, or quest links directly into chat
+- **Minimap button** — drag to reposition, right-click for options, toggle with `/acc minimap`
+- **Persistent state** — selected profession, category, and page remembered across sessions
+- **Engineering specialization** — Gnomish and Goblin recipes flagged accordingly
 
+## Installation
 
-**Installation**
+1. Download or clone this repository
+2. Copy the `AkistosCraftCompendium` folder into your WoW Classic Era addons directory:
+   ```
+   World of Warcraft/_classic_era_/Interface/AddOns/AkistosCraftCompendium
+   ```
+3. Launch WoW Classic Era and log in
+4. Type `/acc` in chat to open the compendium
 
-Download the addon folder
-Place the AkistosCraftCompendium folder into your WoW Classic addons directory:
+## Commands
 
-   World of Warcraft/_classic_/Interface/AddOns/AkistosCraftCompendium
+| Command | Description |
+|---|---|
+| `/acc` | Toggle the compendium window |
+| `/acc minimap` | Toggle the minimap button |
+| `/acc help` | Show all available commands |
 
-Launch WoW Classic and log in
-Type /acr or /craftcomp in chat to open the interface
+## Features to Come
 
+- **Recipe search** — filter recipes by name directly inside your Blizzard profession window
+- **Missing recipe scanner** — see at a glance which recipes your current character is still missing for each profession they have trained
 
-**Tech stack**
+## Project Status
 
-Lua — all addon logic and UI behaviour
-WoW XML (FrameXML) — UI layout and frame definitions
-SavedVariables — persistent per-character recipe tracking
-Static data tables — hand-curated recipe database (sources, materials, costs)
-
-
-**Project status**
-🚧 In development — WoW Addon
-
-**Documentation**
-Full project documentation lives in the Wiki:
-
-Project Vision
-Project Plan & Risks (coming soon)
-Architecture (coming soon)
-Design (coming soon)
-Requirements (coming soon)
+🚧 In active development — WoW Classic Era (patch 1.15)

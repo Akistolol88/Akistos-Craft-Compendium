@@ -1352,7 +1352,7 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3857,
-        recipeItemId = 217258,
+        recipeItemId = 14630,
         recipeItemName = "Pattern: Enchanter's Cowl",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,
@@ -1426,7 +1426,7 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 3860,
-        recipeItemId = 217254,
+        recipeItemId = 4352,
         recipeItemName = "Pattern: Boots of the Enchanter",
         recipeItemIcon = "inv_scroll_06",
         recipeItemQuality = 2,
@@ -2996,7 +2996,7 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 8793,
-        recipeItemId = 217251,
+        recipeItemId = 7084,
         recipeItemName = "Pattern: Crimson Silk Shoulders",
         recipeItemIcon = "inv_scroll_06",
         recipeItemQuality = 2,
@@ -3064,7 +3064,7 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 8797,
-        recipeItemId = 217249,
+        recipeItemId = 7086,
         recipeItemName = "Pattern: Earthen Silk Belt",
         recipeItemIcon = "inv_scroll_06",
         recipeItemQuality = 2,
@@ -3441,6 +3441,9 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 12056,
+        recipeItemId = 10300,
+        recipeItemName = "Pattern: Red Mageweave Vest",
+        recipeItemIcon = "inv_scroll_06",
         name = "Red Mageweave Vest",
         skill = 215,
         colors = { 215, 230, 245, 260 },
@@ -5634,7 +5637,7 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 18455,
-        recipeItemId = 228993,
+        recipeItemId = 14510,
         recipeItemName = "Pattern: Bottomless Bag",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 3,
@@ -6793,7 +6796,7 @@ ACC_Data["Tailoring"] = {
     },
     {
         spellId = 28482,
-        recipeItemId = 234314,
+        recipeItemId = 22772,
         recipeItemName = "Pattern: Sylvan Shoulders",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,

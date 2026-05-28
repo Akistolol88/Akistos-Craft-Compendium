@@ -17,7 +17,7 @@ ACC_BrowserConfig.professionCategoryOrder = {
         "Parts", "Fireworks", "Pets", "Misc",
     },
     Enchanting = {
-        "Chest", "Cloak", "Gloves", "Boots", "Bracer",
+        "Chest", "Cloak", "Gloves", "Boots", "Bracers",
         "Weapon", "2H Weapon", "Shield",
         "---",
         "Oils", "Wands", "Rods", "Misc",

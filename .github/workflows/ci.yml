@@ -43,3 +43,25 @@ jobs:
         with:
           name: AkistosCraftCompendium
           path: AkistosCraftCompendium.zip
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: package
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: AkistosCraftCompendium
+      - name: Upload to CurseForge
+        run: |
+          VERSION_ID=$(curl -sf -H "X-Api-Token: $CF_API_KEY" \
+            "https://wow.curseforge.com/api/game/1/versions" | \
+            jq -r '.[] | select(.name == "1.15.8") | .id')
+          curl -sf -X POST \
+            -H "X-Api-Token: $CF_API_KEY" \
+            -F "metadata={\"gameVersions\":[$VERSION_ID],\"releaseType\":\"release\"}" \
+            -F "file=@AkistosCraftCompendium.zip" \
+            "https://wow.curseforge.com/api/projects/1546116/upload-file"
+        env:
+          CF_API_KEY: ${{ secrets.ACCToken }}

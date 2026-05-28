@@ -67,7 +67,7 @@ jobs:
           fi
           curl -sL --fail-with-body -X POST \
             -H "X-Api-Token: $CF_API_KEY" \
-            -F "metadata={\"gameVersions\":[$VERSION_ID],\"releaseType\":\"release\"}" \
+            -F "metadata={\"gameVersions\":[$VERSION_ID],\"releaseType\":\"release\",\"changelog\":\"\"}" \
             -F "file=@AkistosCraftCompendium.zip" \
             "https://wow.curseforge.com/api/projects/1546116/upload-file"
         env:

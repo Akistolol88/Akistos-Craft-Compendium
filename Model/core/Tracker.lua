@@ -133,45 +133,30 @@ local function appendKnownStatus(self, spellId)
     self:Show()
 end
 
--- When an item isn't in the client cache, WoW fills the tooltip asynchronously after
--- SetHyperlink returns, wiping any lines we added in the hook. Deferring one frame
--- ensures the tooltip is fully settled before we append our known-status lines.
-local pendingTooltip = nil  -- tooltip frame waiting for known-status lines
-local pendingSpellId = nil  -- spellId for the pending tooltip
+-- OnTooltipSetItem fires after WoW has fully populated the tooltip for any item,
+-- regardless of where it came from (bags, AH, merchant, loot, chat links, etc.).
+-- GetItem() returns the name and full hyperlink of whatever item is shown.
+-- tooltipLastLink guards against double-firing (e.g. AH triggers the event twice
+-- for recipe items — once for base info, once after adding the materials list).
+local tooltipLastLink = {}
 
--- Hidden frame used purely as a one-frame timer via OnUpdate.
-local tooltipDeferFrame = CreateFrame("Frame")
-tooltipDeferFrame:Hide()
-tooltipDeferFrame:SetScript("OnUpdate", function(self)
-    -- Disable immediately so this only fires once per queued tooltip.
-    self:Hide()
-    -- Only append if the tooltip is still visible; user may have moved the mouse away.
-    if pendingTooltip and pendingSpellId and pendingTooltip:IsShown() then
-        appendKnownStatus(pendingTooltip, pendingSpellId)
-    end
-    pendingTooltip = nil
-    pendingSpellId = nil
-end)
-
--- Hooks SetHyperlink on a tooltip frame to inject known-status lines for recipe items.
--- Clicking a chat hyperlink shows ItemRefTooltip; hovering in-world uses GameTooltip —
--- both frames need the same hook so the feature works in either context.
-local function hookTooltipFrame(frame)
-    hooksecurefunc(frame, "SetHyperlink", function(self, link)
-        -- Extract the numeric item ID from the hyperlink (e.g. "item:14043:0:0:...").
-        local itemId = tonumber(link:match("item:(%d+)"))
-        if not itemId then return end
-        -- itemToSpell maps recipe item IDs to the spell they teach; non-recipe items return nil.
-        local spellId = ACC_DataManager.itemToSpell[itemId]
-        if not spellId then return end
-        -- Queue the append for next frame rather than running immediately,
-        -- so WoW has time to finish populating the tooltip with item data.
-        pendingTooltip = self
-        pendingSpellId = spellId
-        tooltipDeferFrame:Show()
-    end)
+local function onTooltipSetItem(self)
+    local _, link = self:GetItem()
+    if not link or tooltipLastLink[self] == link then return end
+    tooltipLastLink[self] = link
+    local itemId = tonumber(link:match("item:(%d+)"))
+    if not itemId then return end
+    local spellId = ACC_DataManager.itemToSpell[itemId]
+    if not spellId then return end
+    appendKnownStatus(self, spellId)
 end
 
-hookTooltipFrame(GameTooltip)
-hookTooltipFrame(ItemRefTooltip)
+local function onTooltipCleared(self)
+    tooltipLastLink[self] = nil
+end
+
+GameTooltip:HookScript("OnTooltipSetItem", onTooltipSetItem)
+GameTooltip:HookScript("OnTooltipCleared", onTooltipCleared)
+ItemRefTooltip:HookScript("OnTooltipSetItem", onTooltipSetItem)
+ItemRefTooltip:HookScript("OnTooltipCleared", onTooltipCleared)
 

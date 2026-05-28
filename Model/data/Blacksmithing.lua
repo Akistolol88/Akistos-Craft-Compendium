@@ -1722,7 +1722,7 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3496,
-        recipeItemId = 217282,
+        recipeItemId = 12163,
         recipeItemName = "Plans: Moonsteel Broadsword",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,
@@ -1903,7 +1903,7 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3503,
-        recipeItemId = 217280,
+        recipeItemId = 6047,
         recipeItemName = "Plans: Golden Scale Coif",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,
@@ -1959,7 +1959,7 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3505,
-        recipeItemId = 217284,
+        recipeItemId = 3871,
         recipeItemName = "Plans: Golden Scale Shoulders",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 3,
@@ -2003,7 +2003,7 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3507,
-        recipeItemId = 217286,
+        recipeItemId = 3872,
         recipeItemName = "Plans: Golden Scale Leggings",
         recipeItemIcon = "inv_scroll_06",
         recipeItemQuality = 2,
@@ -2054,7 +2054,7 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3511,
-        recipeItemId = 217278,
+        recipeItemId = 3873,
         recipeItemName = "Plans: Golden Scale Cuirass",
         recipeItemIcon = "inv_scroll_06",
         recipeItemQuality = 2,
@@ -2133,7 +2133,7 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 3515,
-        recipeItemId = 217276,
+        recipeItemId = 3875,
         recipeItemName = "Plans: Golden Scale Boots",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 3,
@@ -6241,7 +6241,7 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 21161,
-        recipeItemId = 227727,
+        recipeItemId = 18592,
         recipeItemName = "Plans: Sulfuron Hammer",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 4,
@@ -6889,7 +6889,7 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 27586,
-        recipeItemId = 234458,
+        recipeItemId = 22219,
         recipeItemName = "Plans: Jagged Obsidian Shield",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,
@@ -6988,7 +6988,7 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 27590,
-        recipeItemId = 234461,
+        recipeItemId = 22221,
         recipeItemName = "Plans: Obsidian Mail Tunic",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,
@@ -7182,7 +7182,7 @@ ACC_Data["Blacksmithing"] = {
     },
     {
         spellId = 28461,
-        recipeItemId = 234293,
+        recipeItemId = 22766,
         recipeItemName = "Plans: Ironvine Breastplate",
         recipeItemIcon = "inv_scroll_03",
         recipeItemQuality = 1,

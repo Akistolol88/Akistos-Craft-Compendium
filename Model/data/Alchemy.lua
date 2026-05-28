@@ -7,8 +7,8 @@ ACC_Data = ACC_Data or {}
 ACC_Data["Alchemy"] = {
     {
         spellId = 2259,
-        name = "Alchemy",
-        skill = 9999,
+        name = "Apprentice Alchemy",
+        skill = 1,
         creates = nil,
         reagents = {},
         tool = nil,
@@ -330,8 +330,9 @@ ACC_Data["Alchemy"] = {
         displayGroup = 1,
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Alchemy". Re-apply if buildLua.js regenerates this file.
         spellId = 3101,
-        name = "Alchemy",
+        name = "Journeyman Alchemy",
         skill = 50,
         creates = nil,
         reagents = {},
@@ -957,8 +958,9 @@ ACC_Data["Alchemy"] = {
         category = "Oils",
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Alchemy". Re-apply if buildLua.js regenerates this file.
         spellId = 3464,
-        name = "Alchemy",
+        name = "Expert Alchemy",
         skill = 125,
         creates = nil,
         reagents = {},
@@ -2193,8 +2195,9 @@ ACC_Data["Alchemy"] = {
         displayGroup = 1,
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Alchemy". Re-apply if buildLua.js regenerates this file.
         spellId = 11611,
-        name = "Alchemy",
+        name = "Artisan Alchemy",
         skill = 200,
         creates = nil,
         reagents = {},

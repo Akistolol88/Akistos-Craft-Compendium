@@ -6,9 +6,11 @@
 ACC_Data = ACC_Data or {}
 ACC_Data["Blacksmithing"] = {
     {
+        -- MANUAL OVERRIDE: renamed from "Blacksmithing", skill changed 9999→1 so it appears in the Misc tab.
+        -- Re-apply if buildLua.js regenerates this file.
         spellId = 2018,
-        name = "Blacksmithing",
-        skill = 9999,
+        name = "Apprentice Blacksmithing",
+        skill = 1,
         creates = nil,
         reagents = {},
         tool = nil,
@@ -678,8 +680,9 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Blacksmithing". Re-apply if buildLua.js regenerates this file.
         spellId = 3100,
-        name = "Blacksmithing",
+        name = "Journeyman Blacksmithing",
         skill = 50,
         creates = nil,
         reagents = {},
@@ -2157,8 +2160,9 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Blacksmithing". Re-apply if buildLua.js regenerates this file.
         spellId = 3538,
-        name = "Blacksmithing",
+        name = "Expert Blacksmithing",
         skill = 125,
         creates = nil,
         reagents = {},
@@ -2559,8 +2563,9 @@ ACC_Data["Blacksmithing"] = {
         crafting_location = { type = "anvil" },
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Blacksmithing". Re-apply if buildLua.js regenerates this file.
         spellId = 9785,
-        name = "Blacksmithing",
+        name = "Artisan Blacksmithing",
         skill = 200,
         creates = nil,
         reagents = {},

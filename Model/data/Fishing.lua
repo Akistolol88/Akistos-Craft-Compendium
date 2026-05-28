@@ -29,8 +29,40 @@ ACC_Data = ACC_Data or {}
 
 ACC_Data.FishingTraining = {
     {
+        name    = "Apprentice Fishing",
+        spellId = 7620,
+        skill   = 1,
+        _train  = true,
+        trainers = {
+            -- Alliance only
+            { name = "Astaia",             zone = "Darnassus",           faction = "alliance" },
+            { name = "Grimnur Stonebrand", zone = "Ironforge",           faction = "alliance" },
+            { name = "Lee Brown",          zone = "Elwynn Forest",       faction = "alliance" },
+            { name = "Matthew Hooper",     zone = "Redridge Mountains",  faction = "alliance" },
+            { name = "Paxton Ganter",      zone = "Dun Morogh",          faction = "alliance" },
+            -- Horde only
+            { name = "Armand Cromwell",    zone = "Undercity",           faction = "horde"    },
+            { name = "Kah Mistrunner",     zone = "Thunder Bluff",       faction = "horde"    },
+            { name = "Katoom the Angler",  zone = "The Hinterlands",     faction = "horde"    },
+            { name = "Lau'Tiki",           zone = "Durotar",             faction = "horde"    },
+            { name = "Lumak",              zone = "Orgrimmar",           faction = "horde"    },
+            { name = "Uthan Stillwater",   zone = "Mulgore",             faction = "horde"    },
+            -- Neutral (reacts to both)
+            { name = "Androl Oakhand",     zone = "Teldrassil"           },
+            { name = "Arnold Leland",      zone = "Stormwind City"       },
+            { name = "Brannock",           zone = "Feralas"              },
+            { name = "Clyde Kellen",       zone = "Tirisfal Glades"      },
+            { name = "Donald Rabonne",     zone = "Hillsbrad Foothills"  },
+            { name = "Harold Riggs",       zone = "Wetlands"             },
+            { name = "Kil'Hiwana",         zone = "Ashenvale"            },
+            { name = "Lui'Mala",           zone = "Desolace"             },
+            { name = "Myizz Luckycatch",   zone = "Stranglethorn Vale"   },
+            { name = "Warg Deepwater",     zone = "Loch Modan"           },
+        },
+    },
+    {
         name    = "Journeyman Fishing",
-        spellId = 8988,
+        spellId = 7734,
         skill   = 50,
         _train  = true,
         trainers = {
@@ -142,18 +174,19 @@ ACC_Data.FishingPoles = {
 --   minCast     minimum fishing skill to cast (avoids most "fish got away")
 --   guaranteed  minimum fishing skill for a guaranteed catch (never "fish got away")
 --   note        optional clarification (e.g. specific sub-area)
+--   icon        optional icon name (without "Interface\\Icons\\") used as the row icon in the browser
 
 ACC_Data.FishingZones = {
     -- ── Tier 1: minCast 1, guaranteed 96 ─────────────────────────────────────
     -- Cities (no pools)
-    { name = "Darnassus",      minCast = 1, guaranteed = 96 },
-    { name = "Ironforge",      minCast = 1, guaranteed = 96 },
-    { name = "Orgrimmar",      minCast = 1, guaranteed = 96 },
-    { name = "Stormwind City", minCast = 1, guaranteed = 96 },
-    { name = "Thunder Bluff",  minCast = 1, guaranteed = 96 },
-    { name = "Undercity",      minCast = 1, guaranteed = 96 },
+    { name = "Darnassus",      minCast = 1, guaranteed = 96, icon = "spell_frost_wisp"              },  -- Night Elf wisp
+    { name = "Ironforge",      minCast = 1, guaranteed = 96, icon = "spell_arcane_teleportironforge"  },  -- Mage Teleport: Ironforge
+    { name = "Orgrimmar",      minCast = 1, guaranteed = 96, icon = "spell_arcane_teleportorgrimmar" },  -- Warchief's Blessing
+    { name = "Stormwind City", minCast = 1, guaranteed = 96, icon = "spell_arcane_teleportstormwind"   },  -- Mage Teleport: Stormwind
+    { name = "Thunder Bluff",  minCast = 1, guaranteed = 96, icon = "achievement_character_tauren_male" },  -- Tauren
+    { name = "Undercity",      minCast = 1, guaranteed = 96, icon = "inv_misc_head_elf_02"  },  -- Sylvanas Dark Ranger
     -- Zones
-    { name = "Darkshore",      minCast = 1, guaranteed = 96,
+    { name = "Darkshore",      minCast = 1, guaranteed = 96, icon = "spell_frost_wisp",                -- Night Elf wisp
       pools = {
           { name = "Firefin Snapper School", fish = "Firefin Snapper"       },
           { name = "Oily Blackmouth School", fish = "Oily Blackmouth"        },
@@ -161,16 +194,16 @@ ACC_Data.FishingZones = {
           { name = "Floating Debris Pool",   fish = "Tightly Sealed Trunk"   },
       },
     },
-    { name = "Dun Morogh",        minCast = 1, guaranteed = 96 },
-    { name = "Durotar",           minCast = 1, guaranteed = 96 },
-    { name = "Elwynn Forest",     minCast = 1, guaranteed = 96 },
-    { name = "Loch Modan",        minCast = 1, guaranteed = 96,
+    { name = "Dun Morogh",        minCast = 1, guaranteed = 96, icon = "ability_mount_mountainram"       },  -- Dwarf ram mount
+    { name = "Durotar",           minCast = 1, guaranteed = 96, icon = "spell_arcane_teleportorgrimmar" },  -- Warchief's Blessing
+    { name = "Elwynn Forest",     minCast = 1, guaranteed = 96, icon = "spell_arcane_teleportstormwind"   },  -- Human homeland / Stormwind
+    { name = "Loch Modan",        minCast = 1, guaranteed = 96, icon = "ability_mount_mountainram",       -- Dwarf ram mount
       pools = {
           { name = "Sagefish School", fish = "Raw Sagefish" },
       },
     },
-    { name = "Mulgore",           minCast = 1, guaranteed = 96 },
-    { name = "Silverpine Forest", minCast = 1, guaranteed = 96,
+    { name = "Mulgore",           minCast = 1, guaranteed = 96, icon = "ability_hunter_pet_tallstrider"   },  -- Tallstrider (Mulgore)
+    { name = "Silverpine Forest", minCast = 1, guaranteed = 96, icon = "ability_creature_cursed_01",     -- Worgen curse
       pools = {
           { name = "Firefin Snapper School", fish = "Firefin Snapper"     },
           { name = "Oily Blackmouth School", fish = "Oily Blackmouth"      },
@@ -178,8 +211,8 @@ ACC_Data.FishingZones = {
           { name = "Floating Debris Pool",   fish = "Tightly Sealed Trunk" },
       },
     },
-    { name = "Teldrassil",        minCast = 1, guaranteed = 96 },
-    { name = "The Barrens",       minCast = 1, guaranteed = 96,
+    { name = "Teldrassil",        minCast = 1, guaranteed = 96, icon = "spell_frost_wisp"              },  -- Night Elf wisp
+    { name = "The Barrens",       minCast = 1, guaranteed = 96, icon = "spell_arcane_teleportorgrimmar",  -- Warchief's Blessing
       pools = {
           { name = "Firefin Snapper School", fish = "Firefin Snapper"     },
           { name = "Oily Blackmouth School", fish = "Oily Blackmouth"      },
@@ -188,8 +221,8 @@ ACC_Data.FishingZones = {
           { name = "Floating Debris Pool",   fish = "Tightly Sealed Trunk" },
       },
     },
-    { name = "Tirisfal Glades",   minCast = 1, guaranteed = 96 },
-    { name = "Westfall",          minCast = 1, guaranteed = 96,
+    { name = "Tirisfal Glades",   minCast = 1, guaranteed = 96, icon = "spell_arcane_teleportundercity"   },  -- Forsaken homeland / Undercity
+    { name = "Westfall",          minCast = 1, guaranteed = 96, icon = "inv_misc_coin_01",               -- Gold coin / farmland wealth
       pools = {
           { name = "Firefin Snapper School", fish = "Firefin Snapper"     },
           { name = "Oily Blackmouth School", fish = "Oily Blackmouth"      },
@@ -198,12 +231,12 @@ ACC_Data.FishingZones = {
       },
     },
     -- Dungeons
-    { name = "Blackfathom Deeps", minCast = 1, guaranteed = 96 },
-    { name = "The Deadmines",     minCast = 1, guaranteed = 96 },
-    { name = "Wailing Caverns",   minCast = 1, guaranteed = 96 },
+    { name = "Blackfathom Deeps", minCast = 1, guaranteed = 96, icon = "spell_frost_summonwaterelemental" },  -- Water elemental
+    { name = "The Deadmines",     minCast = 1, guaranteed = 96, icon = "inv_misc_bandana_01"              },  -- Defias bandana
+    { name = "Wailing Caverns",   minCast = 1, guaranteed = 96, icon = "ability_hunter_pet_windserpent"  },  -- Wind serpent (Wailing Caverns)
 
     -- ── Tier 2: minCast 55, guaranteed 150 ───────────────────────────────────
-    { name = "Ashenvale",           minCast = 55, guaranteed = 150,
+    { name = "Ashenvale",           minCast = 55, guaranteed = 150, icon = "inv_misc_head_dragon_green",  -- Emerald dragon world boss
       pools = {
           { name = "Firefin Snapper School", fish = "Firefin Snapper"     },
           { name = "Oily Blackmouth School", fish = "Oily Blackmouth"      },
@@ -211,13 +244,13 @@ ACC_Data.FishingZones = {
           { name = "Schooner Wreckage Pool", fish = "Watertight Trunk"     },
       },
     },
-    { name = "Duskwood",            minCast = 55, guaranteed = 150,
+    { name = "Duskwood",            minCast = 55, guaranteed = 150, icon = "inv_misc_head_dragon_green",  -- Emerald dragon world boss
       pools = {
           { name = "Sagefish School",      fish = "Raw Sagefish"         },
           { name = "Floating Debris Pool", fish = "Tightly Sealed Trunk" },
       },
     },
-    { name = "Hillsbrad Foothills", minCast = 55, guaranteed = 150,
+    { name = "Hillsbrad Foothills", minCast = 55, guaranteed = 150, icon = "inv_wand_09",                 -- Helcular's Rod
       pools = {
           { name = "Firefin Snapper School", fish = "Firefin Snapper"     },
           { name = "Oily Blackmouth School", fish = "Oily Blackmouth"      },
@@ -225,20 +258,20 @@ ACC_Data.FishingZones = {
           { name = "Schooner Wreckage Pool", fish = "Watertight Trunk"     },
       },
     },
-    { name = "Redridge Mountains",  minCast = 55, guaranteed = 150,
+    { name = "Redridge Mountains",  minCast = 55, guaranteed = 150, icon = "inv_misc_pelt_wolf_ruin_03",   -- Gnoll/wolf pelt (Redridge gnolls)
       pools = {
           { name = "Sagefish School",      fish = "Raw Sagefish"         },
           { name = "Floating Debris Pool", fish = "Tightly Sealed Trunk" },
       },
     },
-    { name = "Stonetalon Mountains", minCast = 55, guaranteed = 150,
+    { name = "Stonetalon Mountains", minCast = 55, guaranteed = 150, icon = "inv_feather_12",              -- Harpy feather (Blood Feather harpies)
       pools = {
           { name = "Greater Sagefish School",   fish = "Raw Greater Sagefish"                       },
           { name = "Oil Spill (Cragpool Lake)", fish = "Firefin Snapper", note = "Windshear Crag"   },
           { name = "Schooner Wreckage Pool",    fish = "Watertight Trunk"                           },
       },
     },
-    { name = "Wetlands",            minCast = 55, guaranteed = 150,
+    { name = "Wetlands",            minCast = 55, guaranteed = 150, icon = "spell_nature_abolishmagic",   -- Swamp / nature magic
       pools = {
           { name = "Firefin Snapper School", fish = "Firefin Snapper"     },
           { name = "Oily Blackmouth School", fish = "Oily Blackmouth"      },
@@ -248,12 +281,12 @@ ACC_Data.FishingZones = {
     },
 
     -- ── Tier 3: minCast 130, guaranteed 225 ──────────────────────────────────
-    { name = "Alterac Mountains", minCast = 130, guaranteed = 225,
+    { name = "Alterac Mountains", minCast = 130, guaranteed = 225, icon = "inv_misc_flower_03",      -- Wintersbite herb
       pools = {
           { name = "Greater Sagefish School", fish = "Raw Greater Sagefish" },
       },
     },
-    { name = "Arathi Highlands",  minCast = 130, guaranteed = 225,
+    { name = "Arathi Highlands",  minCast = 130, guaranteed = 225, icon = "inv_shield_06",               -- Stromgarde / warrior shield
       pools = {
           { name = "Firefin Snapper School",  fish = "Firefin Snapper"                           },
           { name = "Oily Blackmouth School",  fish = "Oily Blackmouth"                            },
@@ -261,7 +294,7 @@ ACC_Data.FishingZones = {
           { name = "Schooner Wreckage Pool",  fish = "Watertight Trunk", note = "Faldir's Cove"   },
       },
     },
-    { name = "Desolace",          minCast = 130, guaranteed = 225,
+    { name = "Desolace",          minCast = 130, guaranteed = 225, icon = "inv_misc_head_centaur_01",  -- Centaur
       pools = {
           { name = "Firefin Snapper School",    fish = "Firefin Snapper"     },
           { name = "Oily Blackmouth School",    fish = "Oily Blackmouth"      },
@@ -269,7 +302,7 @@ ACC_Data.FishingZones = {
           { name = "Waterlogged Wreckage Pool", fish = "Iron Bound Trunk"     },
       },
     },
-    { name = "Dustwallow Marsh",  minCast = 130, guaranteed = 225,
+    { name = "Dustwallow Marsh",  minCast = 130, guaranteed = 225, icon = "inv_misc_head_dragon_black",  -- Onyxia / black dragon
       pools = {
           { name = "Firefin Snapper School",    fish = "Firefin Snapper"     },
           { name = "Oily Blackmouth School",    fish = "Oily Blackmouth"      },
@@ -277,7 +310,7 @@ ACC_Data.FishingZones = {
           { name = "Waterlogged Wreckage Pool", fish = "Iron Bound Trunk"     },
       },
     },
-    { name = "Stranglethorn Vale", minCast = 130, guaranteed = 225,
+    { name = "Stranglethorn Vale", minCast = 130, guaranteed = 225, icon = "inv_misc_head_tiger_01",  -- King Bangalash (white tiger)
       pools = {
           { name = "Mixed Ocean School",      fish = "Firefin Snapper + Oily Blackmouth" },
           { name = "Sagefish School",         fish = "Raw Sagefish"                      },
@@ -285,7 +318,7 @@ ACC_Data.FishingZones = {
           { name = "Bloodsail Wreckage Pool", fish = "Iron Bound Trunk"                  },
       },
     },
-    { name = "Swamp of Sorrows",   minCast = 130, guaranteed = 225,
+    { name = "Swamp of Sorrows",   minCast = 130, guaranteed = 225, icon = "inv_misc_herb_14",              -- Blindweed
       pools = {
           { name = "Firefin Snapper School", fish = "Firefin Snapper"    },
           { name = "Oily Blackmouth School", fish = "Oily Blackmouth"     },
@@ -293,7 +326,7 @@ ACC_Data.FishingZones = {
           { name = "Floating Wreckage Pool", fish = "Mithril Bound Trunk" },
       },
     },
-    { name = "Thousand Needles",   minCast = 130, guaranteed = 225,
+    { name = "Thousand Needles",   minCast = 130, guaranteed = 225, icon = "inv_misc_head_tauren_01",     -- Tauren
       pools = {
           { name = "Firefin Snapper School", fish = "Firefin Snapper"    },
           { name = "Oily Blackmouth School", fish = "Oily Blackmouth"     },
@@ -302,10 +335,10 @@ ACC_Data.FishingZones = {
       },
     },
     -- Dungeons
-    { name = "Scarlet Monastery", minCast = 130, guaranteed = 225 },
+    { name = "Scarlet Monastery", minCast = 130, guaranteed = 225, icon = "spell_holy_holybolt"             },  -- Holy Light / Scarlet Crusade
 
     -- ── Tier 4: minCast 205, guaranteed 300 ──────────────────────────────────
-    { name = "Azshara",                           minCast = 205, guaranteed = 300,
+    { name = "Azshara",                           minCast = 205, guaranteed = 300, icon = "inv_misc_head_dragon_blue",  -- Azuregos blue dragon
       pools = {
           { name = "Firefin Snapper School", fish = "Firefin Snapper"     },
           { name = "Oily Blackmouth School", fish = "Oily Blackmouth"      },
@@ -313,8 +346,8 @@ ACC_Data.FishingZones = {
           { name = "Floating Debris Pool",   fish = "Tightly Sealed Trunk" },
       },
     },
-    { name = "Felwood",                           minCast = 205, guaranteed = 300 },
-    { name = "Feralas",                           minCast = 205, guaranteed = 300,
+    { name = "Felwood",                           minCast = 205, guaranteed = 300, icon = "inv_fabric_felrag"           },  -- Felcloth
+    { name = "Feralas",                           minCast = 205, guaranteed = 300, icon = "inv_misc_head_dragon_green",  -- Emerald dragon world boss
       pools = {
           { name = "Firefin Snapper School",    fish = "Firefin Snapper"     },
           { name = "Oily Blackmouth School",    fish = "Oily Blackmouth"      },
@@ -322,13 +355,13 @@ ACC_Data.FishingZones = {
           { name = "Waterlogged Wreckage Pool", fish = "Iron Bound Trunk"     },
       },
     },
-    { name = "Moonglade",                         minCast = 205, guaranteed = 300,
+    { name = "Moonglade",                         minCast = 205, guaranteed = 300, icon = "spell_arcane_teleportmoonglade",  -- Teleport: Moonglade druid spell
       pools = {
           { name = "Greater Sagefish School", fish = "Raw Greater Sagefish" },
       },
     },
-    { name = "Stranglethorn Vale (Jaguero Isle)", minCast = 205, guaranteed = 300 },
-    { name = "Tanaris",                           minCast = 205, guaranteed = 300,
+    { name = "Stranglethorn Vale (Jaguero Isle)", minCast = 205, guaranteed = 300, icon = "ability_hunter_pet_gorilla"  },  -- Gorilla (Jaguero Isle)
+    { name = "Tanaris",                           minCast = 205, guaranteed = 300, icon = "inv_misc_head_dragon_bronze",  -- Brood Affliction: Bronze / Nozdormu
       pools = {
           { name = "Firefin Snapper School", fish = "Firefin Snapper"    },
           { name = "Oily Blackmouth School", fish = "Oily Blackmouth"     },
@@ -336,45 +369,45 @@ ACC_Data.FishingZones = {
           { name = "Floating Wreckage Pool", fish = "Mithril Bound Trunk" },
       },
     },
-    { name = "The Hinterlands",                   minCast = 205, guaranteed = 300,
+    { name = "The Hinterlands",                   minCast = 205, guaranteed = 300, icon = "inv_misc_head_dragon_green",  -- Emerald dragon world boss
       pools = {
           { name = "Firefin Snapper School",  fish = "Firefin Snapper"     },
           { name = "Oily Blackmouth School",  fish = "Oily Blackmouth"      },
           { name = "Greater Sagefish School", fish = "Raw Greater Sagefish" },
       },
     },
-    { name = "Un'Goro Crater",                    minCast = 205, guaranteed = 300,
+    { name = "Un'Goro Crater",                    minCast = 205, guaranteed = 300, icon = "ability_mount_raptor",       -- Swift Razzashi Raptor / dinosaur
       pools = {
           { name = "Greater Sagefish School", fish = "Raw Greater Sagefish" },
       },
     },
-    { name = "Western Plaguelands",               minCast = 205, guaranteed = 300,
+    { name = "Western Plaguelands",               minCast = 205, guaranteed = 300, icon = "inv_misc_herb_plaguebloom",  -- Plaguebloom herb (Plaguelands exclusive)
       pools = {
           { name = "Greater Sagefish School",   fish = "Raw Greater Sagefish" },
           { name = "Waterlogged Wreckage Pool", fish = "Iron Bound Trunk"     },
       },
     },
     -- Dungeons
-    { name = "Maraudon",  minCast = 205, guaranteed = 300 },
-    { name = "Sunken Temple", minCast = 205, guaranteed = 300 },
+    { name = "Maraudon",     minCast = 205, guaranteed = 300, icon = "inv_staff_16"                  },  -- Scepter of Celebras attunement
+    { name = "Sunken Temple", minCast = 205, guaranteed = 300, icon = "inv_misc_head_dragon_green"  },  -- Green dragonkin (Shade of Eranikus)
 
     -- ── Tier 5: minCast 330, guaranteed 425 ──────────────────────────────────
-    { name = "Azshara (Bay of Storms)", minCast = 330, guaranteed = 425 },
-    { name = "Deadwind Pass",           minCast = 330, guaranteed = 425 },
-    { name = "Eastern Plaguelands",     minCast = 330, guaranteed = 425,
+    { name = "Azshara (Bay of Storms)", minCast = 330, guaranteed = 425, icon = "inv_misc_fish_11"             },  -- Stonescale Eel
+    { name = "Deadwind Pass",           minCast = 330, guaranteed = 425, icon = "inv_misc_bone_elfskull_01"   },  -- Skull of Impending Doom / dark ominous
+    { name = "Eastern Plaguelands",     minCast = 330, guaranteed = 425, icon = "achievement_dungeon_naxxramas_10man",  -- Naxxramas
       pools = {
           { name = "Greater Sagefish School", fish = "Raw Greater Sagefish" },
           { name = "Floating Wreckage Pool",  fish = "Mithril Bound Trunk"  },
       },
     },
-    { name = "Feralas (Jademir Lake)", minCast = 330, guaranteed = 425 },
-    { name = "Silithus",               minCast = 330, guaranteed = 425 },
-    { name = "Winterspring",           minCast = 330, guaranteed = 425 },
+    { name = "Feralas (Jademir Lake)", minCast = 330, guaranteed = 425, icon = "inv_misc_head_dragon_green" },  -- Emerald dragon world boss
+    { name = "Silithus",               minCast = 330, guaranteed = 425, icon = "spell_nature_insectswarm"   },  -- Insect Swarm / silithid bugs
+    { name = "Winterspring",           minCast = 330, guaranteed = 425, icon = "inv_potion_92"              },  -- ⚠️ Winterfall Firewater (verify in-game)
     -- Dungeons
-    { name = "Scholomance", minCast = 330, guaranteed = 425 },
-    { name = "Stratholme",  minCast = 330, guaranteed = 425 },
+    { name = "Scholomance", minCast = 330, guaranteed = 425, icon = "inv_misc_book_01"                 },  -- Dark magic / necromancy school
+    { name = "Stratholme",  minCast = 330, guaranteed = 425, icon = "inv_misc_gem_pearl_03"         },  -- Righteous Orb
     -- Raids
-    { name = "Zul'Gurub",   minCast = 330, guaranteed = 425 },
+    { name = "Zul'Gurub",   minCast = 330, guaranteed = 425, icon = "ability_mount_jungletiger"   },  -- Swift Zulian Tiger
 }
 
 ACC_Data.FishingLures = {
@@ -435,72 +468,72 @@ ACC_Data.FishingTournament = {
 --   waterType     "coastal" | "inland" | "both"
 --   pool          pool name if primarily caught from pools (nil = open water)
 --   timeOfDay     "night" | "day" | nil  (nil = catchable any time)
---   season        { start="MM-DD", stop="MM-DD", label="..." } or nil
+--   season        { start="MM-DD", stop="MM-DD", label="Name (dates)", color="rrggbb" } or nil
+--                 color drives the season-name text; date range always renders orange
 --   zones         recommended farming zones (best catch rate)
---   note          optional clarification
+--   zoneRates     catch-rate % per zone from Wowhead Classic ERA data
+--   note          soft time preference or clarification (shown yellow; not a hard restriction)
 
 ACC_Data.FishingCatches = {
 
     -- ── minSkill 1, avoidGetaway 25 ──────────────────────────────────────────
     {
         name = "Raw Brilliant Smallfish", itemId = 6291,
+        icon = "inv_misc_fish_08",
         minSkill = 1, avoidGetaway = 25, waterType = "inland",
         zones = {
             "Dun Morogh", "Mulgore", "Elwynn Forest", "Tirisfal Glades",
-            "Teldrassil", "Durotar", "Duskwood", "Darnassus",
-            "Orgrimmar", "Stormwind City", "Thunder Bluff", "Undercity",
-            "Loch Modan", "The Barrens", "Darkshore", "Silverpine Forest",
-            "Westfall", "Blackfathom Deeps", "The Deadmines", "Wailing Caverns",
+            "Teldrassil", "Durotar", "Darnassus", "Orgrimmar",
+            "Stormwind City", "Thunder Bluff", "Undercity", "The Barrens",
+            "Darkshore", "Blackfathom Deeps", "The Deadmines", "Wailing Caverns",
         },
         zoneRates = {
             ["Dun Morogh"] = 60.0, ["Mulgore"] = 60.0, ["Elwynn Forest"] = 59.0,
             ["Tirisfal Glades"] = 45.0, ["Teldrassil"] = 26.0, ["Durotar"] = 22.0,
-            ["Duskwood"] = 20.0, ["Darnassus"] = 17.0, ["Orgrimmar"] = 17.0,
-            ["Stormwind City"] = 17.0, ["Thunder Bluff"] = 17.0, ["Undercity"] = 12.0,
-            ["Loch Modan"] = 9.0, ["The Barrens"] = 5.0, ["Darkshore"] = 3.0,
-            ["Silverpine Forest"] = 1.3, ["Westfall"] = 1.2,
+            ["Darnassus"] = 17.0, ["Orgrimmar"] = 17.0, ["Stormwind City"] = 17.0,
+            ["Thunder Bluff"] = 17.0, ["Undercity"] = 12.0, ["The Barrens"] = 5.0,
+            ["Darkshore"] = 3.0,
         },
     },
     {
         name = "Raw Slitherskin Mackerel", itemId = 6303,
+        icon = "inv_misc_fish_24",
         minSkill = 1, avoidGetaway = 25, waterType = "coastal",
         zones = {
             "Durotar", "Teldrassil", "Westfall", "Darkshore",
-            "Silverpine Forest", "The Barrens", "Tirisfal Glades",
+            "Silverpine Forest", "The Barrens",
         },
         zoneRates = {
             ["Durotar"] = 60.0, ["Teldrassil"] = 56.0, ["Westfall"] = 14.0,
             ["Darkshore"] = 13.0, ["Silverpine Forest"] = 12.0, ["The Barrens"] = 5.0,
-            ["Tirisfal Glades"] = 1.3,
         },
     },
 
     -- ── minSkill 1, avoidGetaway 75 ──────────────────────────────────────────
     {
         name = "Raw Longjaw Mud Snapper", itemId = 6289,
+        icon = "inv_misc_fish_32",
         minSkill = 1, avoidGetaway = 75, waterType = "inland",
         zones = {
             "Darnassus", "Orgrimmar", "Stormwind City", "Thunder Bluff",
             "Undercity", "Dun Morogh", "Mulgore", "Elwynn Forest",
-            "Redridge Mountains", "Duskwood", "Loch Modan", "Tirisfal Glades",
-            "Stonetalon Mountains", "Ashenvale", "The Barrens", "Teldrassil",
-            "Durotar", "Darkshore", "Hillsbrad Foothills", "Silverpine Forest",
-            "Westfall", "Wetlands", "Blackfathom Deeps", "The Deadmines",
+            "Redridge Mountains", "Loch Modan", "Tirisfal Glades", "Stonetalon Mountains",
+            "Ashenvale", "The Barrens", "Teldrassil", "Durotar",
+            "Darkshore", "Hillsbrad Foothills", "Blackfathom Deeps", "The Deadmines",
             "Wailing Caverns",
         },
         zoneRates = {
             ["Darnassus"] = 60.0, ["Orgrimmar"] = 60.0, ["Stormwind City"] = 60.0,
             ["Thunder Bluff"] = 60.0, ["Undercity"] = 42.0, ["Dun Morogh"] = 38.0,
             ["Mulgore"] = 38.0, ["Elwynn Forest"] = 37.0, ["Redridge Mountains"] = 35.0,
-            ["Duskwood"] = 30.0, ["Loch Modan"] = 30.0, ["Tirisfal Glades"] = 29.0,
-            ["Stonetalon Mountains"] = 27.0, ["Ashenvale"] = 21.0, ["The Barrens"] = 18.0,
-            ["Teldrassil"] = 16.0, ["Durotar"] = 15.0, ["Darkshore"] = 10.0,
-            ["Hillsbrad Foothills"] = 7.0, ["Silverpine Forest"] = 5.0, ["Westfall"] = 4.0,
-            ["Wetlands"] = 1.0,
+            ["Loch Modan"] = 30.0, ["Tirisfal Glades"] = 29.0, ["Stonetalon Mountains"] = 27.0,
+            ["Ashenvale"] = 21.0, ["The Barrens"] = 18.0, ["Teldrassil"] = 16.0,
+            ["Durotar"] = 15.0, ["Darkshore"] = 10.0, ["Hillsbrad Foothills"] = 7.0,
         },
     },
     {
         name = "Raw Rainbow Fin Albacore", itemId = 6361,
+        icon = "inv_misc_fish_25",
         minSkill = 1, avoidGetaway = 75, waterType = "coastal",
         zones = {
             "Wetlands", "Westfall", "Ashenvale", "Darkshore",
@@ -514,48 +547,48 @@ ACC_Data.FishingCatches = {
     },
     {
         name = "Deviate Fish", itemId = 6522,
+        icon = "inv_misc_monsterhead_01",
         minSkill = 1, avoidGetaway = 75, waterType = "inland",
         pool = "School of Deviate Fish",
-        zones = { "The Barrens", "Undercity" },
-        zoneRates = { ["The Barrens"] = 27.0, ["Undercity"] = 9.0 },
+        zones = { "The Barrens" },
+        zoneRates = { ["The Barrens"] = 27.0 },
         note = "Oases only: Forgotten Pools, Stagnant Oasis, Lushwater Oasis",
     },
     {
         name = "Oily Blackmouth", itemId = 6358,
+        icon = "inv_misc_monsterhead_04",
         minSkill = 1, avoidGetaway = 75, waterType = "coastal",
         pool = "Oily Blackmouth School",
         zones = {
             "Westfall", "Silverpine Forest", "Wetlands", "The Barrens",
             "Darkshore", "Hillsbrad Foothills", "Stranglethorn Vale", "Desolace",
             "Dustwallow Marsh", "Felwood", "Moonglade", "Swamp of Sorrows",
-            "Un'Goro Crater", "Western Plaguelands", "Feralas", "Ashenvale",
-            "Tanaris", "Arathi Highlands", "The Hinterlands", "Azshara",
+            "Western Plaguelands", "Feralas", "Ashenvale", "Tanaris",
+            "The Hinterlands", "Azshara",
         },
         zoneRates = {
             ["Westfall"] = 41.0, ["Silverpine Forest"] = 36.0, ["Wetlands"] = 24.0,
             ["The Barrens"] = 18.0, ["Darkshore"] = 16.0, ["Hillsbrad Foothills"] = 16.0,
             ["Stranglethorn Vale"] = 16.0, ["Desolace"] = 11.0, ["Dustwallow Marsh"] = 10.0,
             ["Felwood"] = 10.0, ["Moonglade"] = 10.0, ["Swamp of Sorrows"] = 10.0,
-            ["Un'Goro Crater"] = 10.0, ["Western Plaguelands"] = 10.0, ["Feralas"] = 9.0,
-            ["Ashenvale"] = 8.0, ["Tanaris"] = 8.0, ["Arathi Highlands"] = 5.0,
-            ["The Hinterlands"] = 5.0, ["Azshara"] = 1.7,
+            ["Western Plaguelands"] = 10.0, ["Feralas"] = 9.0, ["Ashenvale"] = 8.0,
+            ["Tanaris"] = 8.0, ["The Hinterlands"] = 5.0, ["Azshara"] = 1.7,
         },
     },
     {
         name = "Raw Sagefish", itemId = 21071,
+        icon = "inv_misc_fish_20",
         minSkill = 1, avoidGetaway = 75, waterType = "inland",
         pool = "Sagefish School",
-        zones = {
-            "Hillsbrad Foothills", "Loch Modan", "Stonetalon Mountains", "Ashenvale",
-            "Silverpine Forest",
-        },
+        zones = { "Hillsbrad Foothills", "Loch Modan", "Stonetalon Mountains", "Ashenvale" },
         zoneRates = {
             ["Hillsbrad Foothills"] = 25.0, ["Loch Modan"] = 21.0, ["Stonetalon Mountains"] = 7.0,
-            ["Ashenvale"] = 6.0, ["Silverpine Forest"] = 5.0,
+            ["Ashenvale"] = 6.0,
         },
     },
     {
         name = "Raw Loch Frenzy", itemId = 6317,
+        icon = "inv_misc_fish_03",
         minSkill = 1, avoidGetaway = 75, waterType = "inland",
         zones = { "Loch Modan" },
         zoneRates = { ["Loch Modan"] = 22.0 },
@@ -565,49 +598,47 @@ ACC_Data.FishingCatches = {
     -- ── minSkill 55, avoidGetaway 150 ─────────────────────────────────────────
     {
         name = "Firefin Snapper", itemId = 6359,
+        icon = "inv_misc_monsterhead_01",
         minSkill = 55, avoidGetaway = 150, waterType = "coastal",
         pool = "Firefin Snapper School",
         zones = {
             "Stranglethorn Vale", "Wetlands", "Desolace", "Tanaris",
             "Hillsbrad Foothills", "Dustwallow Marsh", "Swamp of Sorrows", "Stonetalon Mountains",
-            "Arathi Highlands", "Feralas", "The Hinterlands", "Ashenvale",
-            "Azshara",
+            "Feralas", "The Hinterlands", "Ashenvale", "Azshara",
         },
         zoneRates = {
             ["Stranglethorn Vale"] = 18.0, ["Wetlands"] = 17.0, ["Desolace"] = 15.0,
             ["Tanaris"] = 14.0, ["Hillsbrad Foothills"] = 12.0, ["Dustwallow Marsh"] = 11.0,
-            ["Swamp of Sorrows"] = 10.0, ["Stonetalon Mountains"] = 9.0, ["Arathi Highlands"] = 6.0,
-            ["Feralas"] = 5.0, ["The Hinterlands"] = 5.0, ["Ashenvale"] = 3.0,
-            ["Azshara"] = 3.0,
+            ["Swamp of Sorrows"] = 10.0, ["Stonetalon Mountains"] = 9.0, ["Feralas"] = 5.0,
+            ["The Hinterlands"] = 5.0, ["Ashenvale"] = 3.0, ["Azshara"] = 3.0,
         },
         note = "In Stonetalon found inland in Oil Spills at Cragpool Lake",
     },
     {
         name = "Raw Bristle Whisker Catfish", itemId = 6308,
+        icon = "inv_misc_fish_30",
         minSkill = 55, avoidGetaway = 150, waterType = "inland",
         zones = {
-            "Redridge Mountains", "Stonetalon Mountains", "Duskwood", "Ashenvale",
-            "Thousand Needles", "Arathi Highlands", "Darnassus", "Orgrimmar",
-            "Stormwind City", "Thunder Bluff", "Undercity", "Desolace",
-            "Dustwallow Marsh", "Hillsbrad Foothills", "Alterac Mountains", "Loch Modan",
-            "The Barrens", "Darkshore", "Swamp of Sorrows", "Silverpine Forest",
-            "Wetlands", "Westfall", "Stranglethorn Vale", "Scarlet Monastery",
+            "Redridge Mountains", "Stonetalon Mountains", "Ashenvale", "Arathi Highlands",
+            "Darnassus", "Orgrimmar", "Stormwind City", "Thunder Bluff",
+            "Undercity", "Desolace", "Dustwallow Marsh", "Hillsbrad Foothills",
+            "Alterac Mountains", "The Barrens", "Darkshore", "Stranglethorn Vale",
+            "Scarlet Monastery",
         },
         zoneRates = {
-            ["Redridge Mountains"] = 64.0, ["Stonetalon Mountains"] = 49.0, ["Duskwood"] = 47.0,
-            ["Ashenvale"] = 39.0, ["Thousand Needles"] = 35.0, ["Arathi Highlands"] = 26.0,
-            ["Darnassus"] = 22.0, ["Orgrimmar"] = 22.0, ["Stormwind City"] = 22.0,
-            ["Thunder Bluff"] = 22.0, ["Undercity"] = 15.0, ["Desolace"] = 14.0,
-            ["Dustwallow Marsh"] = 13.0, ["Hillsbrad Foothills"] = 13.0, ["Alterac Mountains"] = 12.0,
-            ["Loch Modan"] = 12.0, ["The Barrens"] = 6.0, ["Darkshore"] = 4.0,
-            ["Swamp of Sorrows"] = 4.0, ["Silverpine Forest"] = 1.9, ["Wetlands"] = 1.8,
-            ["Westfall"] = 1.7, ["Stranglethorn Vale"] = 1.5,
+            ["Redridge Mountains"] = 64.0, ["Stonetalon Mountains"] = 49.0, ["Ashenvale"] = 39.0,
+            ["Arathi Highlands"] = 26.0, ["Darnassus"] = 22.0, ["Orgrimmar"] = 22.0,
+            ["Stormwind City"] = 22.0, ["Thunder Bluff"] = 22.0, ["Undercity"] = 15.0,
+            ["Desolace"] = 14.0, ["Dustwallow Marsh"] = 13.0, ["Hillsbrad Foothills"] = 13.0,
+            ["Alterac Mountains"] = 12.0, ["The Barrens"] = 6.0, ["Darkshore"] = 4.0,
+            ["Stranglethorn Vale"] = 1.5,
         },
     },
 
     -- ── minSkill 130, avoidGetaway 225 ────────────────────────────────────────
     {
         name = "Raw Greater Sagefish", itemId = 21153,
+        icon = "inv_misc_fish_21",
         minSkill = 130, avoidGetaway = 225, waterType = "inland",
         pool = "Greater Sagefish School",
         zones = { "Alterac Mountains", "Stranglethorn Vale" },
@@ -615,42 +646,42 @@ ACC_Data.FishingCatches = {
     },
     {
         name = "Raw Mithril Head Trout", itemId = 8365,
+        icon = "inv_misc_fish_02",
         minSkill = 130, avoidGetaway = 225, waterType = "inland",
         zones = {
-            "Thousand Needles", "Arathi Highlands", "Desolace", "Dustwallow Marsh",
-            "Alterac Mountains", "Felwood", "Moonglade", "Un'Goro Crater",
-            "Western Plaguelands", "Swamp of Sorrows", "Feralas", "The Hinterlands",
-            "Stranglethorn Vale", "Tirisfal Glades", "Maraudon", "Scarlet Monastery",
+            "Arathi Highlands", "Desolace", "Dustwallow Marsh", "Alterac Mountains",
+            "Felwood", "Moonglade", "Western Plaguelands", "Feralas",
+            "The Hinterlands", "Stranglethorn Vale", "Maraudon", "Scarlet Monastery",
             "Sunken Temple",
         },
         zoneRates = {
-            ["Thousand Needles"] = 63.0, ["Arathi Highlands"] = 46.0, ["Desolace"] = 27.0,
-            ["Dustwallow Marsh"] = 24.0, ["Alterac Mountains"] = 23.0, ["Felwood"] = 10.0,
-            ["Moonglade"] = 10.0, ["Un'Goro Crater"] = 10.0, ["Western Plaguelands"] = 10.0,
-            ["Swamp of Sorrows"] = 8.0, ["Feralas"] = 6.0, ["The Hinterlands"] = 5.0,
-            ["Stranglethorn Vale"] = 3.0, ["Tirisfal Glades"] = 1.2,
+            ["Arathi Highlands"] = 46.0, ["Desolace"] = 27.0, ["Dustwallow Marsh"] = 24.0,
+            ["Alterac Mountains"] = 23.0, ["Felwood"] = 10.0, ["Moonglade"] = 10.0,
+            ["Western Plaguelands"] = 10.0, ["Feralas"] = 6.0, ["The Hinterlands"] = 5.0,
+            ["Stranglethorn Vale"] = 3.0,
         },
     },
     {
         name = "Raw Rockscale Cod", itemId = 6362,
+        icon = "inv_misc_fish_04",
         minSkill = 130, avoidGetaway = 225, waterType = "coastal",
         zones = {
             "Swamp of Sorrows", "Dustwallow Marsh", "Desolace", "Stranglethorn Vale",
-            "Arathi Highlands", "Tanaris", "The Hinterlands", "Tirisfal Glades",
-            "Azshara", "Feralas",
+            "Tanaris", "The Hinterlands", "Azshara", "Feralas",
         },
         zoneRates = {
             ["Swamp of Sorrows"] = 49.0, ["Dustwallow Marsh"] = 27.0, ["Desolace"] = 18.0,
-            ["Stranglethorn Vale"] = 18.0, ["Arathi Highlands"] = 9.0, ["Tanaris"] = 7.0,
-            ["The Hinterlands"] = 5.0, ["Tirisfal Glades"] = 5.0, ["Azshara"] = 2.0,
-            ["Feralas"] = 2.0,
+            ["Stranglethorn Vale"] = 18.0, ["Tanaris"] = 7.0, ["The Hinterlands"] = 5.0,
+            ["Azshara"] = 2.0, ["Feralas"] = 2.0,
         },
     },
 
     -- ── minSkill 205, avoidGetaway 300 ────────────────────────────────────────
     {
         name = "Raw Glossy Mightfish", itemId = 13754,
+        icon = "inv_misc_monsterhead_03",
         minSkill = 205, avoidGetaway = 300, waterType = "coastal",
+        note = "Best 00:00–06:00 server time (18% rate); drops to ~4% midday",
         zones = { "Tanaris", "The Hinterlands", "Azshara", "Feralas" },
         zoneRates = {
             ["Tanaris"] = 6.0, ["The Hinterlands"] = 6.0, ["Azshara"] = 2.0,
@@ -659,86 +690,86 @@ ACC_Data.FishingCatches = {
     },
     {
         name = "Raw Redgill", itemId = 13758,
+        icon = "inv_misc_fish_06",
         minSkill = 205, avoidGetaway = 300, waterType = "inland",
         zones = {
             "Felwood", "Moonglade", "Un'Goro Crater", "Western Plaguelands",
-            "Feralas", "The Hinterlands", "Eastern Plaguelands", "Deadwind Pass",
-            "Winterspring", "Azshara", "Silithus", "Desolace",
-            "Maraudon", "Sunken Temple",
+            "Feralas", "The Hinterlands", "Azshara", "Maraudon",
+            "Sunken Temple",
         },
         zoneRates = {
             ["Felwood"] = 51.0, ["Moonglade"] = 50.0, ["Un'Goro Crater"] = 50.0,
             ["Western Plaguelands"] = 50.0, ["Feralas"] = 32.0, ["The Hinterlands"] = 24.0,
-            ["Eastern Plaguelands"] = 7.0, ["Deadwind Pass"] = 5.0, ["Winterspring"] = 5.0,
-            ["Azshara"] = 4.0, ["Silithus"] = 4.0, ["Desolace"] = 1.0,
+            ["Azshara"] = 4.0,
         },
     },
     {
         name = "Raw Spotted Yellowtail", itemId = 4603,
+        icon = "inv_misc_fish_01",
         minSkill = 205, avoidGetaway = 300, waterType = "coastal",
         zones = {
             "Tanaris", "The Hinterlands", "Swamp of Sorrows", "Azshara",
             "Dustwallow Marsh", "Feralas", "Stranglethorn Vale", "Desolace",
-            "Arathi Highlands", "Eastern Plaguelands",
         },
         zoneRates = {
             ["Tanaris"] = 27.0, ["The Hinterlands"] = 21.0, ["Swamp of Sorrows"] = 18.0,
             ["Azshara"] = 11.0, ["Dustwallow Marsh"] = 10.0, ["Feralas"] = 9.0,
-            ["Stranglethorn Vale"] = 7.0, ["Desolace"] = 6.0, ["Arathi Highlands"] = 3.0,
-            ["Eastern Plaguelands"] = 3.0,
+            ["Stranglethorn Vale"] = 7.0, ["Desolace"] = 6.0,
         },
     },
     {
         name = "Stonescale Eel", itemId = 13422,
+        icon = "inv_misc_fish_11",
         minSkill = 205, avoidGetaway = 300, waterType = "coastal",
+        note = "Best 00:00–06:00 server time (18% rate); drops to ~6% midday",
         pool = "Stonescale Eel Swarm",
         zones = {
-            "Tanaris", "Azshara", "Eastern Plaguelands", "Feralas",
-            "Stranglethorn Vale", "The Hinterlands",
+            "Tanaris", "Azshara", "Feralas", "Stranglethorn Vale",
+            "The Hinterlands",
         },
         zoneRates = {
-            ["Tanaris"] = 14.0, ["Azshara"] = 12.0, ["Eastern Plaguelands"] = 11.0,
-            ["Feralas"] = 5.0, ["Stranglethorn Vale"] = 5.0, ["The Hinterlands"] = 5.0,
+            ["Tanaris"] = 14.0, ["Azshara"] = 12.0, ["Feralas"] = 5.0,
+            ["Stranglethorn Vale"] = 5.0, ["The Hinterlands"] = 5.0,
         },
     },
     {
         name = "Raw Nightfin Snapper", itemId = 13759,
+        icon = "inv_misc_fish_23",
         minSkill = 205, avoidGetaway = 300, waterType = "inland",
         timeOfDay = "night",
         zones = {
             "Moonglade", "Un'Goro Crater", "Western Plaguelands", "Winterspring",
             "Deadwind Pass", "Eastern Plaguelands", "Felwood", "Feralas",
-            "The Hinterlands", "Silithus", "Duskwood", "Azshara",
+            "The Hinterlands", "Azshara",
         },
         zoneRates = {
             ["Moonglade"] = 22.0, ["Un'Goro Crater"] = 22.0, ["Western Plaguelands"] = 20.0,
             ["Winterspring"] = 20.0, ["Deadwind Pass"] = 19.0, ["Eastern Plaguelands"] = 19.0,
             ["Felwood"] = 19.0, ["Feralas"] = 12.0, ["The Hinterlands"] = 10.0,
-            ["Silithus"] = 6.0, ["Duskwood"] = 2.0, ["Azshara"] = 1.4,
+            ["Azshara"] = 1.4,
         },
         note = "Best 00:00–06:00 server time; cannot catch 12:00–18:00 server time",
     },
     {
         name = "Raw Sunscale Salmon", itemId = 13760,
+        icon = "inv_misc_fish_19",
         minSkill = 205, avoidGetaway = 300, waterType = "inland",
         timeOfDay = "day",
         zones = {
-            "Silithus", "Deadwind Pass", "Eastern Plaguelands", "Winterspring",
-            "Felwood", "Western Plaguelands", "Feralas", "Moonglade",
-            "Un'Goro Crater", "Blasted Lands", "The Hinterlands", "Duskwood",
+            "Eastern Plaguelands", "Winterspring", "Western Plaguelands", "Feralas",
+            "Moonglade", "The Hinterlands",
         },
         zoneRates = {
-            ["Silithus"] = 22.0, ["Deadwind Pass"] = 11.0, ["Eastern Plaguelands"] = 11.0,
-            ["Winterspring"] = 11.0, ["Felwood"] = 9.0, ["Western Plaguelands"] = 8.0,
-            ["Feralas"] = 6.0, ["Moonglade"] = 6.0, ["Un'Goro Crater"] = 6.0,
-            ["Blasted Lands"] = 3.0, ["The Hinterlands"] = 3.0, ["Duskwood"] = 2.0,
+            ["Eastern Plaguelands"] = 11.0, ["Winterspring"] = 11.0, ["Western Plaguelands"] = 8.0,
+            ["Feralas"] = 6.0, ["Moonglade"] = 6.0, ["The Hinterlands"] = 3.0,
         },
         note = "Cannot catch 00:00–06:00 server time; best 12:00–18:00",
     },
     {
         name = "Winter Squid", itemId = 13755,
+        icon = "inv_misc_fish_13",
         minSkill = 205, avoidGetaway = 300, waterType = "coastal",
-        season = { start = "09-22", stop = "03-20", label = "Sep 22 – Mar 20" },
+        season = { start = "09-22", stop = "03-20", label = "Autumn & Winter (Sep 22 – Mar 20)", color = "ffffff" },
         zones = { "Azshara", "Tanaris", "The Hinterlands", "Feralas" },
         zoneRates = {
             ["Azshara"] = 14.0, ["Tanaris"] = 5.0, ["The Hinterlands"] = 3.0,
@@ -748,13 +779,12 @@ ACC_Data.FishingCatches = {
     },
     {
         name = "Raw Summer Bass", itemId = 13756,
+        icon = "inv_misc_fish_03",
         minSkill = 205, avoidGetaway = 300, waterType = "coastal",
-        season = { start = "03-20", stop = "09-21", label = "Mar 20 – Sep 21" },
-        zones = { "Eastern Plaguelands", "The Hinterlands", "Tanaris", "Azshara" },
-        zoneRates = {
-            ["Eastern Plaguelands"] = 20.0, ["The Hinterlands"] = 2.0, ["Tanaris"] = 1.6,
-            ["Azshara"] = 1.1,
-        },
+        timeOfDay = "day",
+        season = { start = "03-20", stop = "09-21", label = "Spring & Summer (Mar 20 – Sep 21)", color = "00cc44" },
+        zones = { "The Hinterlands", "Tanaris", "Azshara" },
+        zoneRates = { ["The Hinterlands"] = 2.0, ["Tanaris"] = 1.6, ["Azshara"] = 1.1 },
         note = "Cannot catch 00:00–06:00 server time (except Azshara Bay of Storms)",
     },
 
@@ -764,31 +794,30 @@ ACC_Data.FishingCatches = {
         minSkill = 330, avoidGetaway = 425, waterType = "inland",
         pool = "Zulian Mudskunk Pool",
         zones = { "Zul'Gurub" },
-        note = "5 fish needed to summon Gahz'Ranka",
+        note = "Used for summoning Gahz'Ranka (5 needed)",
     },
     {
         name = "Raw Whitescale Salmon", itemId = 13889,
+        icon = "inv_misc_fish_20",
         minSkill = 330, avoidGetaway = 425, waterType = "inland",
         zones = {
-            "Deadwind Pass", "Winterspring", "Eastern Plaguelands", "Silithus",
-            "Duskwood", "Blasted Lands", "Zul'Gurub", "Scholomance",
-            "Stratholme",
+            "Deadwind Pass", "Winterspring", "Eastern Plaguelands", "Zul'Gurub",
+            "Scholomance", "Stratholme",
         },
-        zoneRates = {
-            ["Deadwind Pass"] = 40.0, ["Winterspring"] = 39.0, ["Eastern Plaguelands"] = 37.0,
-            ["Silithus"] = 37.0, ["Duskwood"] = 5.0, ["Blasted Lands"] = 3.0,
-        },
+        zoneRates = { ["Deadwind Pass"] = 40.0, ["Winterspring"] = 39.0, ["Eastern Plaguelands"] = 37.0 },
     },
     {
         name = "Darkclaw Lobster", itemId = 13888,
+        icon = "inv_misc_fish_14",
         minSkill = 330, avoidGetaway = 425, waterType = "coastal",
-        zones = { "Eastern Plaguelands", "Azshara" },
-        zoneRates = { ["Eastern Plaguelands"] = 45.0, ["Azshara"] = 26.0 },
+        zones = { "Azshara" },
+        zoneRates = { ["Azshara"] = 26.0 },
     },
     {
         name = "Large Raw Mightfish", itemId = 13893,
+        icon = "inv_misc_monsterhead_02",
         minSkill = 330, avoidGetaway = 425, waterType = "coastal",
-        zones = { "Eastern Plaguelands", "Azshara" },
-        zoneRates = { ["Eastern Plaguelands"] = 8.0, ["Azshara"] = 5.0 },
+        zones = { "Azshara" },
+        zoneRates = { ["Azshara"] = 5.0 },
     },
 }

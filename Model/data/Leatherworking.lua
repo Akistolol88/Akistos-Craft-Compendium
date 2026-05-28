@@ -6,9 +6,11 @@
 ACC_Data = ACC_Data or {}
 ACC_Data["Leatherworking"] = {
     {
+        -- MANUAL OVERRIDE: renamed from "Leatherworking", skill changed 9999→1 so it appears in the Misc tab.
+        -- Re-apply if buildLua.js regenerates this file.
         spellId = 2108,
-        name = "Leatherworking",
-        skill = 9999,
+        name = "Apprentice Leatherworking",
+        skill = 1,
         creates = nil,
         reagents = {},
         tool = nil,
@@ -556,8 +558,9 @@ ACC_Data["Leatherworking"] = {
         category = "Skins",
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Leatherworking". Re-apply if buildLua.js regenerates this file.
         spellId = 3104,
-        name = "Leatherworking",
+        name = "Journeyman Leatherworking",
         skill = 50,
         creates = nil,
         reagents = {},
@@ -1351,8 +1354,9 @@ ACC_Data["Leatherworking"] = {
         category = "Armorkits",
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Leatherworking". Re-apply if buildLua.js regenerates this file.
         spellId = 3811,
-        name = "Leatherworking",
+        name = "Expert Leatherworking",
         skill = 125,
         creates = nil,
         reagents = {},
@@ -3609,8 +3613,9 @@ ACC_Data["Leatherworking"] = {
         faction = nil,
     },
     {
+        -- MANUAL OVERRIDE: renamed from "Leatherworking". Re-apply if buildLua.js regenerates this file.
         spellId = 10662,
-        name = "Leatherworking",
+        name = "Artisan Leatherworking",
         skill = 200,
         creates = nil,
         reagents = {},

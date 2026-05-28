@@ -6,9 +6,11 @@
 ACC_Data = ACC_Data or {}
 ACC_Data["First Aid"] = {
     {
+        -- MANUAL OVERRIDE: renamed from "First Aid", skill changed 9999→1 so it appears in the Misc tab.
+        -- Re-apply if buildLua.js regenerates this file.
         spellId = 3273,
-        name = "First Aid",
-        skill = 9999,
+        name = "Apprentice First Aid",
+        skill = 1,
         creates = nil,
         reagents = {},
         tool = nil,
@@ -33,8 +35,9 @@ ACC_Data["First Aid"] = {
         faction = nil,
     },
     {
+        -- MANUAL OVERRIDE: renamed from "First Aid". Re-apply if buildLua.js regenerates this file.
         spellId = 3274,
-        name = "First Aid",
+        name = "Journeyman First Aid",
         skill = 50,
         creates = nil,
         reagents = {},

@@ -215,8 +215,8 @@ local function layoutQuests(recipe, y)
                 if q.wowheadUrl then
                     RDS.urlPromptUrl = q.wowheadUrl
                     StaticPopup_Show("ACC_URL")
-                elseif not ChatEdit_InsertLink(questLink) then
-                    DEFAULT_CHAT_FRAME:AddMessage(questLink)
+                else
+                    ACC.insertLink(questLink)
                 end
             end)
             qbtn:Show()
@@ -233,6 +233,103 @@ local function layoutQuests(recipe, y)
 end
 
 -- Measures the widest visible text element and resizes the frame to fit.
+-- "When to fish:" + "Fished in:" sections for fish-category entries. Returns updated y.
+-- Safe to reuse sourceHeaders/Labels starting at index 1 because layoutSources (called
+-- before this) hides all of them when a recipe has no sources — which fish never do.
+local function layoutFishInfo(recipe, y)
+    if not recipe._fish then return y end
+    local catch = recipe._catch
+    if not catch then return y end
+
+    local hdrIdx, lblIdx = 0, 0
+
+    -- "When to fish:" section — only shown when there is time/season/note data.
+    local timeLines = {}
+    if catch.timeOfDay == "night" then
+        -- Hard restriction: impossible to catch 12:00–18:00 server time.
+        timeLines[#timeLines + 1] = "|cff4488ffNight only|r  |cffaaaaaa(best 00:00–06:00; not found 12:00–18:00)|r"
+    elseif catch.timeOfDay == "day" then
+        -- Hard restriction: impossible to catch 00:00–06:00 server time.
+        timeLines[#timeLines + 1] = "|cffffff00Day only|r  |cffaaaaaa(best 12:00–18:00; not found 00:00–06:00)|r"
+    end
+    if catch.season then
+        -- Split "Name (dates)" so the season name uses catch.season.color and the date range stays orange.
+        local sCol = catch.season.color or "ff6600"
+        local sName, sDates = catch.season.label:match("^(.-)%s*%((.-)%)$")
+        if sName then
+            timeLines[#timeLines + 1] = "|cff" .. sCol .. sName .. "|r  |cffff6600(" .. sDates .. ") only|r"
+        else
+            timeLines[#timeLines + 1] = "|cff" .. sCol .. catch.season.label .. " only|r"
+        end
+    end
+    if catch.note then
+        -- Soft time preference (e.g. Stonescale Eel, Glossy Mightfish): catchable all day but rates vary.
+        timeLines[#timeLines + 1] = "|cffffff00" .. catch.note .. "|r"
+    end
+
+    if #timeLines > 0 then
+        hdrIdx = hdrIdx + 1
+        local hdr = RDS.sourceHeaders[hdrIdx]
+        hdr:ClearAllPoints()
+        hdr:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.PADDING, y)
+        hdr:SetText("When to fish:")
+        hdr:Show()
+        y = y - RDS.ROW_HEIGHT - 2
+        for _, line in ipairs(timeLines) do
+            lblIdx = lblIdx + 1
+            local lbl = RDS.sourceLabels[lblIdx]
+            lbl:ClearAllPoints()
+            lbl:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.INDENT, y)
+            lbl:SetText(line)
+            lbl:Show()
+            y = y - RDS.ROW_HEIGHT
+        end
+        y = y - RDS.ROW_GAP
+    end
+
+    -- "Fished in:" section — zones sorted by catch rate descending.
+    local zoneList = {}
+    for _, z in ipairs(catch.zones or {}) do
+        zoneList[#zoneList + 1] = { zone = z, rate = catch.zoneRates and catch.zoneRates[z] }
+    end
+    table.sort(zoneList, function(a, b)
+        if a.rate and b.rate then return a.rate > b.rate end
+        if a.rate then return true end
+        if b.rate then return false end
+        return a.zone < b.zone
+    end)
+
+    if #zoneList > 0 then
+        hdrIdx = hdrIdx + 1
+        local hdr = RDS.sourceHeaders[hdrIdx]
+        hdr:ClearAllPoints()
+        hdr:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.PADDING, y)
+        hdr:SetText("Fished in:")
+        hdr:Show()
+        y = y - RDS.ROW_HEIGHT - 2
+        for _, entry in ipairs(zoneList) do
+            lblIdx = lblIdx + 1
+            if lblIdx > RDS.MAX_SOURCE_LINES then break end
+            local lbl = RDS.sourceLabels[lblIdx]
+            lbl:ClearAllPoints()
+            lbl:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.INDENT, y)
+            local line = entry.zone
+            if entry.rate then
+                line = line .. "  |cff40ff40" .. string.format("%.1f%%", entry.rate) .. "|r"
+            end
+            lbl:SetText(line)
+            lbl:Show()
+            y = y - RDS.ROW_HEIGHT
+        end
+        y = y - RDS.ROW_GAP
+    end
+
+    for i = hdrIdx + 1, RDS.MAX_SOURCE_HEADERS do RDS.sourceHeaders[i]:Hide() end
+    for i = lblIdx + 1, RDS.MAX_SOURCE_LINES   do RDS.sourceLabels[i]:Hide()  end
+
+    return y
+end
+
 local function autoSize(recipe)
     local maxTextW = 0
     local function measure(fs)
@@ -289,6 +386,7 @@ function ACC.showRecipeDetail(recipe, btn)
     y = layoutCreates(recipe, spellLink, y)
     y = layoutMaterials(recipe, y)
     y = ACC.layoutSources(recipe, y)
+    y = layoutFishInfo(recipe, y)
     y = layoutQuests(recipe, y)
 
     RDS.frame:SetHeight(math.abs(y) + RDS.PADDING)

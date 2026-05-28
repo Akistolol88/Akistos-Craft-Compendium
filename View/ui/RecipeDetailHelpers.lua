@@ -27,8 +27,7 @@ function ACC.resolveItemIcon(id, pipelineIcon)
     return tex or "Interface\\Icons\\INV_Misc_QuestionMark"
 end
 
--- Inserts a hyperlink into the active chat input; falls back to printing in the chat frame.
+-- Inserts a hyperlink into the active chat input box.
 function ACC.insertLink(link)
-    DEFAULT_CHAT_FRAME:AddMessage(link)
     ChatEdit_InsertLink(link)
 end

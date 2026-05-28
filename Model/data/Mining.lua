@@ -747,6 +747,24 @@ ACC_Data.MiningSmelt = {
 ACC_Data.MiningTraining = {
 
     {
+        name     = "Apprentice Miner",
+        spellId  = 2575,
+        skill    = 1,
+        trainers = {
+            { name = "Geofram Bouldertoe",  zone = "Ironforge",         faction = "alliance" },
+            { name = "Gelman Stonehand",    zone = "Stormwind City",    faction = "alliance" },
+            { name = "Kurdram Stonehammer", zone = "Darkshore",         faction = "alliance" },
+            { name = "Matt Johnson",        zone = "Duskwood",          faction = "alliance" },
+            { name = "Yarr Hammerstone",    zone = "Dun Morogh",        faction = "alliance" },
+            { name = "Makaru",              zone = "Orgrimmar",         faction = "horde"    },
+            { name = "Brom Killian",        zone = "Undercity",         faction = "horde"    },
+            { name = "Johan Focht",         zone = "Silverpine Forest", faction = "horde"    },
+            { name = "Krunn",               zone = "Durotar",           faction = "horde"    },
+            { name = "Pikkle",              zone = "Tanaris",           faction = "neutral"  },
+        },
+    },
+
+    {
         name     = "Journeyman Miner",
         spellId  = 2582,
         skill    = 50,

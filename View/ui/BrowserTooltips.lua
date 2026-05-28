@@ -181,7 +181,27 @@ function ACC.showHoverTooltip(recipe)
                 GameTooltip:AddLine(line, 1, 1, 1)
             end
         end
-        GameTooltip:AddLine("Shift-click to link in chat", 0, 1, 0)
+        -- Time-of-day restriction (hard: certain windows are impossible to catch).
+        if catch.timeOfDay == "night" then
+            GameTooltip:AddLine("|cff4488ffNight only|r  |cffaaaaaa(best 00:00–06:00)|r", 1, 1, 1)
+        elseif catch.timeOfDay == "day" then
+            GameTooltip:AddLine("|cffffff00Day only|r  |cffaaaaaa(best 12:00–18:00)|r", 1, 1, 1)
+        end
+        -- Season window: split "Name (dates)" so name uses catch.season.color, dates stay orange.
+        if catch.season then
+            local sCol = catch.season.color or "ff6600"
+            local sName, sDates = catch.season.label:match("^(.-)%s*%((.-)%)$")
+            if sName then
+                GameTooltip:AddLine("|cff" .. sCol .. sName .. "|r  |cffff6600(" .. sDates .. ") only|r", 1, 1, 1)
+            else
+                GameTooltip:AddLine("|cff" .. sCol .. catch.season.label .. " only|r", 1, 1, 1)
+            end
+        end
+        -- Soft time preference (rate varies by time but fish is always catchable).
+        if catch.note then
+            GameTooltip:AddLine("|cffffff00" .. catch.note .. "|r", 1, 1, 1)
+        end
+        GameTooltip:AddLine("Click for details  |cffaaaaaaShift-click to link|r", 0, 1, 0)
         GameTooltip:Show()
     elseif recipe._fishingItem then
         showFishingItemTooltip(recipe)

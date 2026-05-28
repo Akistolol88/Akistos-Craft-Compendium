@@ -84,7 +84,8 @@ function ACC.layoutZone(recipe)
                 rbtn:SetPoint("TOPRIGHT", RDS.frame, "TOPRIGHT", -(RDS.PADDING + 20), y)
                 if fId then
                     rbtn.icon:SetTexture(ACC.resolveItemIcon(fId, nil))
-                    local text = ACC.resolveItemLink(fId, pool.fish, nil) .. "  |cffaaaaaa(" .. pool.name .. ")"
+                    -- Pool name in blue to distinguish it from the fish item link.
+                    local text = ACC.resolveItemLink(fId, pool.fish, nil) .. "  |cff4488ff(" .. pool.name .. ")"
                     if pool.note then text = text .. "  —  " .. pool.note end
                     rbtn.text:SetText(text .. "|r")
                     -- Capture fId per-iteration; the loop variable would be stale in closures.
@@ -102,7 +103,7 @@ function ACC.layoutZone(recipe)
                     end)
                 else
                     rbtn.icon:SetTexture("Interface\\Icons\\Trade_Fishing")
-                    local text = "|cffffff00" .. pool.fish .. "|r  |cffaaaaaa(" .. pool.name .. ")"
+                    local text = "|cffffff00" .. pool.fish .. "|r  |cff4488ff(" .. pool.name .. ")"
                     if pool.note then text = text .. "  —  " .. pool.note end
                     rbtn.text:SetText(text .. "|r")
                     rbtn:SetScript("OnEnter", nil)
@@ -164,9 +165,19 @@ function ACC.layoutZone(recipe)
                 local extraParts = { "|cffff4040Min " .. (catch.minSkill or "?") .. "|r" }
                 local rate = catch.zoneRates and catch.zoneRates[entry.matchedZone]
                 if rate then extraParts[#extraParts + 1] = string.format("|cff40ff40%.1f%%|r", rate) end
+                -- Hard time restriction badge.
                 if     catch.timeOfDay == "night" then extraParts[#extraParts + 1] = "|cff4488ffNight Only|r"
                 elseif catch.timeOfDay == "day"   then extraParts[#extraParts + 1] = "|cffffff00Day Only|r" end
-                if catch.season then extraParts[#extraParts + 1] = "|cffaaaaaa" .. catch.season.label .. "|r" end
+                -- Season: name uses catch.season.color, date range stays orange.
+                if catch.season then
+                    local sCol = catch.season.color or "ff6600"
+                    local sName, sDates = catch.season.label:match("^(.-)%s*%((.-)%)$")
+                    if sName then
+                        extraParts[#extraParts + 1] = "|cff" .. sCol .. sName .. "|r  |cffff6600(" .. sDates .. ")|r"
+                    else
+                        extraParts[#extraParts + 1] = "|cff" .. sCol .. catch.season.label .. "|r"
+                    end
+                end
                 rbtn.text:SetText(ACC.resolveItemLink(fId, catch.name, nil) .. "  |cffaaaaaa(|r" .. table.concat(extraParts, "  ") .. "|cffaaaaaa)|r")
                 -- Capture fId per-iteration; the loop variable would be stale in closures.
                 local capturedId = fId

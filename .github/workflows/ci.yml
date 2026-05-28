@@ -33,7 +33,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Create zip
-        run: zip -r AkistosCraftCompendium.zip AkistosCraftCompendium.toc Namespace.lua Controller/ Model/ View/
+        run: |
+          mkdir AkistosCraftCompendium
+          cp AkistosCraftCompendium.toc Namespace.lua AkistosCraftCompendium/
+          cp -r Controller Model View AkistosCraftCompendium/
+          zip -r AkistosCraftCompendium.zip AkistosCraftCompendium/
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

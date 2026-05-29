@@ -178,6 +178,7 @@ function ACC.renderPage()
             S.rowButtons[i]:Hide()
         end
     end
+    ACC.updateCategoryHighlight()
 end
 
 -- Opens the detail panel for the clicked recipe, anchored below the row button.

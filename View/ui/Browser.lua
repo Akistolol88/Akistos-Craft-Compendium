@@ -26,6 +26,7 @@ local function createMainFrame()
     S.mainFrame:RegisterForDrag("LeftButton")
     S.mainFrame:SetScript("OnDragStart", S.mainFrame.StartMoving)
     S.mainFrame:SetScript("OnDragStop",  S.mainFrame.StopMovingOrSizing)
+    S.mainFrame:SetToplevel(true)
     S.mainFrame:SetScript("OnHide", function() ACC.closeAllBrowserWindows() end)
     S.mainFrame:SetScript("OnEvent", function(_, event, arg1)
         if event == "PLAYER_LOGIN" then
@@ -160,6 +161,10 @@ local function createNavButtons()
     S.pageLabel = S.mainFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     S.pageLabel:SetPoint("BOTTOM", S.mainFrame, "BOTTOM", 0, 13)
     S.pageLabel:SetText("")
+
+    S.activeCategoryLabel = S.mainFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+    S.activeCategoryLabel:SetPoint("TOP", S.mainFrame, "TOP", -40, -45)
+    S.activeCategoryLabel:SetText("")
 end
 
 -- ── Public API ────────────────────────────────────────────────────────────────
@@ -175,6 +180,7 @@ end
 
 function ACC.showBrowser()
     S.mainFrame:Show()
+    S.mainFrame:Raise()
 end
 
 function ACC.hideBrowser()

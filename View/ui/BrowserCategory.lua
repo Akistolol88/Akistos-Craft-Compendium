@@ -105,8 +105,20 @@ function ACC.renderCategoryPanel(categoryList)
             local label = button:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
             label:SetPoint("LEFT", button, "LEFT", 0, 0)
             label:SetText(category)
+            button.categoryName = category
+            button.label = label
             S.categoryButtons[#S.categoryButtons + 1] = button
             yOffset = yOffset + 20
+        end
+    end
+end
+
+function ACC.updateCategoryHighlight()
+    for _, btn in ipairs(S.categoryButtons) do
+        if btn.categoryName == S.activeCategory then
+            btn.label:SetTextColor(1, 0.82, 0)
+        else
+            btn.label:SetTextColor(1, 1, 1)
         end
     end
 end

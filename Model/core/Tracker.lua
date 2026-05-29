@@ -29,6 +29,14 @@ local function scanSpellbook()
     end
 end
 
+-- Writes knownNames into ACC_AccountData so it survives across sessions and is
+-- visible to WhoKnows queries from other characters on the same account.
+local function persist()
+    if not ACC_AccountData then ACC_AccountData = {} end
+    if not ACC_AccountData.characters then ACC_AccountData.characters = {} end
+    ACC_AccountData.characters[currentChar] = knownNames
+end
+
 -- Supplements the spellbook scan with the open trade-skill window.
 -- Catches newly-learned recipes that may not have propagated to the spellbook yet.
 local function scanTradeSkill()
@@ -65,14 +73,6 @@ local function scanCraft()
         end
     end
     persist()
-end
-
--- Writes knownNames into ACC_AccountData so it survives across sessions and is
--- visible to WhoKnows queries from other characters on the same account.
-local function persist()
-    if not ACC_AccountData then ACC_AccountData = {} end
-    if not ACC_AccountData.characters then ACC_AccountData.characters = {} end
-    ACC_AccountData.characters[currentChar] = knownNames
 end
 
 local trackerFrame = CreateFrame("Frame")

@@ -49,12 +49,14 @@ jobs:
     needs: package
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
+      - uses: actions/checkout@v4
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: AkistosCraftCompendium
       - name: Upload to CurseForge
         run: |
+          CHANGELOG=$(awk '/^## /{count++; if(count==2)exit} count==1 && !/^## /{print}' CHANGELOG.md)
           echo "Fetching game versions..."
           VERSIONS=$(curl -sL -H "X-Api-Token: $CF_API_KEY" \
             "https://wow.curseforge.com/api/game/versions")
@@ -65,9 +67,11 @@ jobs:
             echo "ERROR: Could not find version ID for 1.15.8"
             exit 1
           fi
+          METADATA=$(jq -n --arg cl "$CHANGELOG" --argjson vid "$VERSION_ID" \
+            '{"gameVersions":[$vid],"releaseType":"release","changelog":$cl}')
           curl -sL --fail-with-body -X POST \
             -H "X-Api-Token: $CF_API_KEY" \
-            -F "metadata={\"gameVersions\":[$VERSION_ID],\"releaseType\":\"release\",\"changelog\":\"\"}" \
+            -F "metadata=$METADATA" \
             -F "file=@AkistosCraftCompendium.zip" \
             "https://wow.curseforge.com/api/projects/1546116/upload-file"
         env:

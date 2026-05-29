@@ -19,6 +19,11 @@ local function scanSpellbook()
             if id then
                 local name = GetSpellInfo(id)
                 if name then knownNames[name] = true end
+                -- Also store by our canonical recipe name so that any name mismatch
+                -- between GetSpellInfo and our data (common for Enchanting) doesn't
+                -- cause IsKnown to return false for known recipes.
+                local recipe = ACC_DataManager.recipeById[id]
+                if recipe then knownNames[recipe.name] = true end
             end
         end
     end
@@ -33,6 +38,33 @@ local function scanTradeSkill()
             knownNames[name] = true
         end
     end
+    persist()
+end
+
+-- Enchanting in Classic ERA Vanilla uses CraftFrame (not TradeSkillFrame) and fires
+-- CRAFT_SHOW / CRAFT_UPDATE instead of TRADE_SKILL_SHOW.  GetCraftRecipeLink returns
+-- |Henchant:spellId| links, giving us the real spell ID to look up our canonical name.
+local function scanCraft()
+    for i = 1, GetNumCrafts() do
+        local name = GetCraftInfo(i)
+        if name then
+            local link = GetCraftRecipeLink and GetCraftRecipeLink(i)
+            if link then
+                local spellId = tonumber(link:match("enchant:(%d+)"))
+                if spellId then
+                    local recipe = ACC_DataManager.recipeById[spellId]
+                    if recipe then
+                        knownNames[recipe.name] = true
+                    else
+                        knownNames[name] = true
+                    end
+                end
+            else
+                knownNames[name] = true
+            end
+        end
+    end
+    persist()
 end
 
 -- Writes knownNames into ACC_AccountData so it survives across sessions and is
@@ -47,6 +79,8 @@ local trackerFrame = CreateFrame("Frame")
 trackerFrame:RegisterEvent("PLAYER_LOGIN")
 trackerFrame:RegisterEvent("TRADE_SKILL_SHOW")
 trackerFrame:RegisterEvent("TRADE_SKILL_UPDATE")
+trackerFrame:RegisterEvent("CRAFT_SHOW")
+trackerFrame:RegisterEvent("CRAFT_UPDATE")
 trackerFrame:SetScript("OnEvent", function(_, event)
     if event == "PLAYER_LOGIN" then
         currentChar = UnitName("player")
@@ -60,9 +94,11 @@ trackerFrame:SetScript("OnEvent", function(_, event)
         persist()
 
     elseif event == "TRADE_SKILL_SHOW" or event == "TRADE_SKILL_UPDATE" then
-        -- Extra scan when a profession window is opened; catches anything the spellbook missed.
         scanTradeSkill()
-        persist()
+
+    elseif event == "CRAFT_SHOW" or event == "CRAFT_UPDATE" then
+        -- Enchanting uses CraftFrame in Classic ERA and fires these events instead.
+        scanCraft()
     end
 end)
 
@@ -70,6 +106,10 @@ end)
 -- Looks up by name (not spellId) because that is what the spellbook/trade-skill scans store.
 function ACC_Tracker.IsKnown(spellId)
     if not spellId then return false end
+    -- Fast path: direct spell-ID check for the current session.
+    -- Handles Enchanting and any other profession where GetSpellInfo names
+    -- don't exactly match our recipe.name, without relying on name matching.
+    if IsSpellKnown and IsSpellKnown(spellId) then return true end
     local recipe = ACC_DataManager.recipeById[spellId]
     if not recipe then return false end
     return knownNames[recipe.name] == true
@@ -159,4 +199,13 @@ GameTooltip:HookScript("OnTooltipSetItem", onTooltipSetItem)
 GameTooltip:HookScript("OnTooltipCleared", onTooltipCleared)
 ItemRefTooltip:HookScript("OnTooltipSetItem", onTooltipSetItem)
 ItemRefTooltip:HookScript("OnTooltipCleared", onTooltipCleared)
+
+-- Enchanting recipes link as |Henchant:spellId| in Classic ERA, not item links,
+-- so OnTooltipSetItem never fires for them. Hook SetItemRef instead.
+hooksecurefunc("SetItemRef", function(link)
+    local spellId = tonumber(link:match("^enchant:(%d+)$"))
+    if spellId and ItemRefTooltip:IsShown() then
+        appendKnownStatus(ItemRefTooltip, spellId)
+    end
+end)
 

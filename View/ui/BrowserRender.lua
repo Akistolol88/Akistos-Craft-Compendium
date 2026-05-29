@@ -62,6 +62,7 @@ function ACC.renderPage()
         S.nextButton:Show()
     end
     S.pageLabel:SetText("Page " .. S.pageIndex .. " / " .. totalPages)
+    S.activeCategoryLabel:SetText(S.activeCategory or "")
 
     if S.pageIndex == 1          then S.prevButton:Disable() else S.prevButton:Enable() end
     if S.pageIndex == totalPages then S.nextButton:Disable() else S.nextButton:Enable() end

@@ -100,8 +100,16 @@ function ACC.renderCategoryPanel(categoryList)
                 S.activeCategory = category
                 S.pageIndex = 1
                 ACC.saveNavState()
+                ACC.updateCategoryHighlight()
                 ACC.renderPage()
             end)
+            local bg = button:CreateTexture(nil, "BACKGROUND")
+            bg:SetAllPoints(button)
+            bg:SetTexture("Interface\\Buttons\\WHITE8X8")
+            bg:SetVertexColor(0.1, 0.6, 0.1, 0.35)
+            bg:Hide()
+            button.selectedBg = bg
+
             local label = button:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
             label:SetPoint("LEFT", button, "LEFT", 0, 0)
             label:SetText(category)
@@ -111,14 +119,17 @@ function ACC.renderCategoryPanel(categoryList)
             yOffset = yOffset + 20
         end
     end
+    ACC.updateCategoryHighlight()
 end
 
 function ACC.updateCategoryHighlight()
     for _, btn in ipairs(S.categoryButtons) do
         if btn.categoryName == S.activeCategory then
-            btn.label:SetTextColor(1, 0.82, 0)
+            btn.selectedBg:Show()
+            btn.label:SetText("|cff1eff00" .. btn.categoryName .. "|r")
         else
-            btn.label:SetTextColor(1, 1, 1)
+            btn.selectedBg:Hide()
+            btn.label:SetText(btn.categoryName)
         end
     end
 end

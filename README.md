@@ -39,6 +39,15 @@ A World of Warcraft Classic Era addon for browsing every crafting and gathering 
 - **Recipe search** — filter recipes by name directly inside your Blizzard profession window
 - **Missing recipe scanner** — see at a glance which recipes your current character is still missing for each profession they have trained
 
+## Data Sources
+
+Game data used in this addon was gathered from the following sources:
+
+- **[Wowhead](https://www.wowhead.com)** — drop rates, item data, NPC locations, and recipe sources were scraped from Wowhead's Classic Era database.
+- **[Blizzard Entertainment](https://develop.battle.net)** — additional game data retrieved via the official Battle.net / WoW Game Data API.
+
+This addon is a fan project and is not affiliated with or endorsed by Wowhead or Blizzard Entertainment. World of Warcraft is a trademark of Blizzard Entertainment, Inc.
+
 ## Project Status
 
 🚧 In active development — WoW Classic Era (patch 1.15)

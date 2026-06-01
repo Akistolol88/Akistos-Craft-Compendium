@@ -142,17 +142,17 @@ ACC_Data.FishingPoles = {
         sources = { { type = "vendor", vendors = { { name = "Fishing supply vendors", zone = "Most zones" } } } },
     },
     {
-        name = "Darkwood Fishing Pole", itemId = 6366, fishingBonus = 5,
+        name = "Darkwood Fishing Pole", itemId = 6366, fishingBonus = 15,
         sources = { { type = "note", text = "Fished in level 10-25 zones" } },
     },
     {
-        name = "Blump Family Fishing Pole", itemId = 12225, fishingBonus = 5,
+        name = "Blump Family Fishing Pole", itemId = 12225, fishingBonus = 3,
         sources = { { type = "quest", quests = {
             { id = 1141, name = "The Family and the Fishing Pole", level = 14, faction = "alliance" },
         } } },
     },
     {
-        name = "Strong Fishing Pole", itemId = 6365, fishingBonus = 20,
+        name = "Strong Fishing Pole", itemId = 6365, fishingBonus = 5,
         sources = { { type = "vendor", vendors = { { name = "Fishing supply vendors", zone = "Most zones" } } } },
     },
     {
@@ -165,6 +165,12 @@ ACC_Data.FishingPoles = {
         name = "Nat Pagle's Extreme Angler FC-5000", itemId = 19022, fishingBonus = 25,
         sources = { { type = "quest", quests = {
             { id = 7815, name = "Snapjaws, Mon!", level = 50, faction = "horde" },
+        } } },
+    },
+    {
+        name = "Arcanite Fishing Pole", itemId = 19970, fishingBonus = 35,
+        sources = { { type = "quest", quests = {
+            { id = 8193, name = "Master Angler", level = 60 },
         } } },
     },
 }

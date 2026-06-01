@@ -122,12 +122,18 @@ local function createRowButtons()
         button.recipeName = recipeName
 
         -- button.recipe is set per-render; closures reference it via the button local, not 'self'.
+        local rowYOffset = -65 - row * 22
         button:SetScript("OnClick", function() ACC.onRecipeClick(button.recipe, button) end)
         button:SetScript("OnEnter", function()
             if button.recipe then
-                GameTooltip:SetOwner(button, "ANCHOR_NONE")
-                GameTooltip:SetPoint("BOTTOMLEFT", button, "TOPLEFT", 0, 2)
+                GameTooltip:SetOwner(S.mainFrame, "ANCHOR_NONE")
+                GameTooltip:SetPoint("TOPRIGHT", S.mainFrame, "TOPLEFT", -5, rowYOffset)
                 ACC.showHoverTooltip(button.recipe)
+                local h = GameTooltip:GetHeight()
+                if h > 0 then
+                    GameTooltip:ClearAllPoints()
+                    GameTooltip:SetPoint("TOPRIGHT", S.mainFrame, "TOPLEFT", -5, rowYOffset + (h / 2) - 11)
+                end
             end
         end)
         button:SetScript("OnLeave", function() GameTooltip:Hide() end)

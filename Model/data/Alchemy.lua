@@ -454,24 +454,7 @@ ACC_Data["Alchemy"] = {
             { id = 3371, count = 1, name = "Empty Vial", icon = "inv_drink_06", quality = 1 },
         },
         tool = nil,
-        sources = {
-            { type = "drop", creatures = {
-                { name = "Singe", zone = "Redridge Mountains", rate = 0.1866, elite = "elite" },
-                { name = "Boahn", rate = 0.2545, elite = "rare-elite" },
-                { name = "Gatekeeper Kordurus", zone = "Stonetalon Mountains", rate = 0.4792, elite = "elite" },
-            } },
-            { type = "world_drop", level_range = { 15, 30 }, elite_types = { "elite" } },
-            { type = "chest", containers = {
-                { name = "Large Solid Chest", rate = 0.7299 },
-                { name = "Large Iron Bound Chest", rate = 8.3333 },
-                { name = "Alliance Chest", rate = 4.7619 },
-                { name = "Large Battered Chest", rate = 0.4796 },
-            } },
-            { type = "other", containers = {
-                { name = "Message in a Bottle", rate = 3.5714 },
-                { name = "Kolkars' Booty", rate = 0.7353 },
-            } },
-        },
+        sources = { { type = "world_drop", level_range = { 15, 30 } } },
         cooldown = nil,
         specialization = nil,
         faction = nil,
@@ -2444,8 +2427,8 @@ ACC_Data["Alchemy"] = {
             { id = 8925, count = 1, name = "Crystal Vial", icon = "inv_drink_06", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "other", containers = {
-            { name = "Small Brown-wrapped Package", rate = 2.0268 },
+        sources = { { type = "drop", containers = {
+            { name = "Small Brown-wrapped Package", rate = 2.03, note = "Repeatable quest in Un'Goro" },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2467,7 +2450,7 @@ ACC_Data["Alchemy"] = {
             { id = 7082, count = 1, name = "Essence of Air", icon = "spell_nature_earthbind", quality = 2 },
         },
         tool = "Philosopher's Stone",
-        sources = { { type = "vendor", vendors = {
+        sources = { { type = "vendor", reputation = { faction = "Argent Dawn", level = "Honored" }, vendors = {
             { name = "Argent Quartermaster Hasana", zone = "Tirisfal Glades", cost = 15789 },
             { name = "Argent Quartermaster Lightspark", zone = "Western Plaguelands", cost = 16875 },
             { name = "Quartermaster Miranda Breechlock", zone = "Eastern Plaguelands", cost = 16875 },
@@ -3152,11 +3135,13 @@ ACC_Data["Alchemy"] = {
             { id = 3372, count = 1, name = "Leaded Vial", icon = "inv_drink_06", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "other", containers = {
-            { name = "Smokywood Pastures Special Gift", rate = 15.3745 },
-            { name = "Ticking Present", rate = 3.0122 },
-            { name = "Ticking Present", rate = 9.5699 },
-        } } },
+        sources = {
+            { type = "holiday", event = "Feast of Winter Veil" },
+            { type = "chest", containers = {
+                { name = "Ticking Present", rate = 3.01 },
+                { name = "Smokywood Pastures Special Gift", rate = 15.37 },
+            } },
+        },
         cooldown = nil,
         specialization = nil,
         faction = nil,
@@ -3233,7 +3218,7 @@ ACC_Data["Alchemy"] = {
             { id = 13468, count = 1, name = "Black Lotus", icon = "inv_misc_herb_blacklotus", quality = 2 },
         },
         tool = nil,
-        sources = { { type = "object", zone = "Zul'Gurub" } },
+        sources = { { type = "object", name = "Tablet of Madness", zone = "Zul'Gurub", subzone = "Edge of Madness" } },
         cooldown = nil,
         specialization = nil,
         faction = nil,

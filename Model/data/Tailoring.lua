@@ -1366,7 +1366,7 @@ ACC_Data["Tailoring"] = {
             { id = 4337, count = 2, name = "Thick Spider's Silk", icon = "spell_nature_web", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "unknown" } },
+        sources = { { type = "world_drop", level_range = { 20, 40 } } },
         cooldown = nil,
         specialization = nil,
         faction = nil,
@@ -1440,7 +1440,7 @@ ACC_Data["Tailoring"] = {
             { id = 4337, count = 2, name = "Thick Spider's Silk", icon = "spell_nature_web", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "unknown" } },
+        sources = { { type = "world_drop", level_range = { 20, 40 } } },
         cooldown = nil,
         specialization = nil,
         faction = nil,
@@ -4030,7 +4030,7 @@ ACC_Data["Tailoring"] = {
             { id = 8343, count = 2, name = "Heavy Silken Thread", icon = "inv_fabric_silk_02", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "unknown" } },
+        sources = { { type = "world_drop", level_range = { 36, 51 } } },
         cooldown = nil,
         specialization = nil,
         faction = nil,
@@ -4817,7 +4817,9 @@ ACC_Data["Tailoring"] = {
             { id = 14341, count = 1, name = "Rune Thread", icon = "spell_shadow_antimagicshell", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "unknown" } },
+        sources = { { type = "drop", creatures = {
+            { name = "Dark Summoner", zone = "Eastern Plaguelands" },
+        } } },
         cooldown = nil,
         specialization = nil,
         faction = nil,
@@ -6604,7 +6606,7 @@ ACC_Data["Tailoring"] = {
             { id = 14341, count = 2, name = "Rune Thread", icon = "spell_shadow_antimagicshell", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "vendor", vendors = {
+        sources = { { type = "vendor", reputation = { faction = "Cenarion Circle", level = "Revered" }, vendors = {
             { name = "Mishta", zone = "Silithus", cost = 22500 },
         } } },
         cooldown = nil,
@@ -6629,7 +6631,7 @@ ACC_Data["Tailoring"] = {
             { id = 14227, count = 4, name = "Ironweb Spider Silk", icon = "spell_nature_web", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "vendor", vendors = {
+        sources = { { type = "vendor", reputation = { faction = "Cenarion Circle", level = "Friendly" }, vendors = {
             { name = "Mishta", zone = "Silithus", cost = 56250 },
         } } },
         cooldown = nil,
@@ -6738,7 +6740,7 @@ ACC_Data["Tailoring"] = {
             { id = 14227, count = 4, name = "Ironweb Spider Silk", icon = "spell_nature_web", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "vendor", vendors = {
+        sources = { { type = "vendor", reputation = { faction = "Cenarion Circle", level = "Revered" }, vendors = {
             { name = "Mishta", zone = "Silithus", cost = 95294 },
         } } },
         cooldown = nil,
@@ -6763,7 +6765,7 @@ ACC_Data["Tailoring"] = {
             { id = 14227, count = 2, name = "Ironweb Spider Silk", icon = "spell_nature_web", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "vendor", vendors = {
+        sources = { { type = "vendor", reputation = { faction = "Cenarion Circle", level = "Honored" }, vendors = {
             { name = "Mishta", zone = "Silithus", cost = 52941 },
         } } },
         cooldown = nil,
@@ -6788,7 +6790,9 @@ ACC_Data["Tailoring"] = {
             { id = 14227, count = 2, name = "Ironweb Spider Silk", icon = "spell_nature_web", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "unknown" } },
+        sources = { { type = "vendor", reputation = { faction = "Cenarion Circle", level = "Revered" }, vendors = {
+            { name = "Mishta", zone = "Silithus", cost = 52941 },
+        } } },
         cooldown = nil,
         specialization = nil,
         faction = nil,
@@ -6810,7 +6814,7 @@ ACC_Data["Tailoring"] = {
             { id = 14227, count = 2, name = "Ironweb Spider Silk", icon = "spell_nature_web", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "vendor", vendors = {
+        sources = { { type = "vendor", reputation = { faction = "Cenarion Circle", level = "Honored" }, vendors = {
             { name = "Mishta", zone = "Silithus", cost = 52941 },
         } } },
         cooldown = nil,

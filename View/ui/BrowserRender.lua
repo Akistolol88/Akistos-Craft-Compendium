@@ -23,7 +23,7 @@ local function getSkinningSkill()
 end
 
 -- Returns mob level ranges for each skinning difficulty colour given current skill.
--- Thresholds (your skill − required skill): orange 0–9, yellow 10–24, green 25–49, grey 50+.
+-- Thresholds (your skill − required skill): orange 0–24, yellow 25–49, green 50–99, grey 100+.
 local function getSkinningRanges(skill)
     local maxLevel = skill <= 100 and (math.floor(skill / 10) + 10) or math.floor(skill / 5)
     local function maxLvlForReq(req)
@@ -31,9 +31,9 @@ local function getSkinningRanges(skill)
         if req <= 100 then return math.floor(req / 10) + 10 end
         return math.floor(req / 5)
     end
-    local greyMax   = maxLvlForReq(skill - 50)
-    local greenMax  = maxLvlForReq(skill - 25)
-    local yellowMax = maxLvlForReq(skill - 10)
+    local greyMax   = maxLvlForReq(skill - 100)
+    local greenMax  = maxLvlForReq(skill - 50)
+    local yellowMax = maxLvlForReq(skill - 25)
     return {
         maxLevel = maxLevel,
         grey     = { max = greyMax },

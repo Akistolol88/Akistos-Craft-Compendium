@@ -39,11 +39,27 @@ end
 
 -- Supplements the spellbook scan with the open trade-skill window.
 -- Catches newly-learned recipes that may not have propagated to the spellbook yet.
+-- Resolves by spell ID so the canonical English name is stored regardless of client locale.
 local function scanTradeSkill()
     for i = 1, GetNumTradeSkills() do
         local name, skillType = GetTradeSkillInfo(i)
         if name and skillType ~= "header" then
-            knownNames[name] = true
+            local link = GetTradeSkillRecipeLink and GetTradeSkillRecipeLink(i)
+            if link then
+                local spellId = tonumber(link:match("enchant:(%d+)") or link:match("spell:(%d+)"))
+                if spellId then
+                    local recipe = ACC_DataManager.recipeById[spellId]
+                    if recipe then
+                        knownNames[recipe.name] = true
+                    else
+                        knownNames[name] = true
+                    end
+                else
+                    knownNames[name] = true
+                end
+            else
+                knownNames[name] = true
+            end
         end
     end
     persist()

@@ -9,6 +9,10 @@ globals = {
     "ACC_Tracker", "ACC_AccountData", "ACC_CharacterData",
     "SLASH_ACC1", "SlashCmdList",
     "StaticPopupDialogs",
+    -- TradeSkillFilter replaces these globals temporarily during filtered renders
+    "GetNumTradeSkills", "GetTradeSkillInfo",
+    "GetNumCrafts", "GetCraftInfo",
+    "TradeSkillFrame_Update", "CraftFrame_Update",
 }
 
 read_globals = {
@@ -16,12 +20,17 @@ read_globals = {
     "GameTooltip", "ItemRefTooltip",
     "GetItemInfo", "GetSpellInfo",
     "GetNumSpellTabs", "GetSpellTabInfo", "GetSpellBookItemInfo",
-    "GetNumTradeSkills", "GetTradeSkillInfo", "GetTradeSkillRecipeLink",
-    "GetNumCrafts", "GetCraftInfo", "GetCraftRecipeLink",
+    "GetTradeSkillRecipeLink",
+    "GetCraftRecipeLink",
     "IsSpellKnown",
     "GetTradeSkillLine",
     "GetNumSkillLines", "GetSkillLineInfo",
     "TradeSkillFrame", "CraftFrame",
+    "TradeSkillListScrollFrame", "CraftListScrollFrame",
+    "TradeSkillHighlightFrame",
+    "GetTradeSkillSelectionIndex",
+    "TRADE_SKILLS_DISPLAYED", "TRADE_SKILL_HEIGHT",
+    "CRAFTS_DISPLAYED",
     "FauxScrollFrame_GetOffset", "FauxScrollFrame_Update",
     "FauxScrollFrame_OnVerticalScroll", "FauxScrollFrame_SetOffset",
     "UnitName", "UnitFactionGroup",

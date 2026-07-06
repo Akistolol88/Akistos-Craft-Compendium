@@ -85,7 +85,6 @@ end
 
 local function fixTsButtonIDs()
     local n      = TRADE_SKILLS_DISPLAYED or 8
-    local rowH   = TRADE_SKILL_HEIGHT or 16
     local offset = FauxScrollFrame_GetOffset(TradeSkillListScrollFrame)
 
     for i = 1, n do

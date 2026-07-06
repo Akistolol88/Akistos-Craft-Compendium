@@ -393,7 +393,7 @@ local function anchorToParent(parent)
 
     toggleBtn:SetParent(parent)
     toggleBtn:ClearAllPoints()
-    toggleBtn:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -40, 2)
+    toggleBtn:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -40, 7)
 end
 
 -- ── Refresh ──────────────────────────────────────────────────────────────────

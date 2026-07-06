@@ -3,7 +3,7 @@
 local tsFilter    = ""
 local craftFilter = ""
 local tsBox, craftBox
-local tsHooked, craftHooked = false, false
+local tsHooked, craftHooked     = false, false
 local inWrappedTs, inWrappedCraft = false, false
 
 local tsFilt    = {}
@@ -62,7 +62,7 @@ end
 -- ── Post-render ID fix ────────────────────────────────────────────────────────
 
 local function fixTsButtonIDs()
-    local n      = TRADE_SKILLS_DISPLAYED or 8
+    local n = TRADE_SKILLS_DISPLAYED or 8
     local offset = FauxScrollFrame_GetOffset(TradeSkillListScrollFrame)
 
     for i = 1, n do
@@ -84,7 +84,7 @@ local function fixTsButtonIDs()
             local btn = _G["TradeSkillSkill" .. i]
             if btn and btn:IsShown() and btn:GetID() == sel then
                 TradeSkillHighlightFrame:ClearAllPoints()
-                TradeSkillHighlightFrame:SetPoint("TOPLEFT",     btn, "TOPLEFT",     0, 0)
+                TradeSkillHighlightFrame:SetPoint("TOPLEFT", btn, "TOPLEFT", 0, 0)
                 TradeSkillHighlightFrame:SetPoint("BOTTOMRIGHT", btn, "BOTTOMRIGHT", 0, 0)
                 TradeSkillHighlightFrame:Show()
                 found = true
@@ -96,7 +96,7 @@ local function fixTsButtonIDs()
 end
 
 local function fixCraftButtonIDs()
-    local n      = CRAFTS_DISPLAYED or 8
+    local n = CRAFTS_DISPLAYED or 8
     local offset = FauxScrollFrame_GetOffset(CraftListScrollFrame)
     for i = 1, n do
         local btn = _G["CraftSkill" .. i]
@@ -163,8 +163,8 @@ local function wrappedCraftUpdate()
 
     local ok = pcall(origCraftUpdate)
 
-    GetNumCrafts  = origGetNumCrafts
-    GetCraftInfo  = origGetCraftInfo
+    GetNumCrafts = origGetNumCrafts
+    GetCraftInfo = origGetCraftInfo
     inWrappedCraft = false
 
     if ok then fixCraftButtonIDs() end
@@ -266,10 +266,10 @@ eventFrame:RegisterEvent("CRAFT_CLOSE")
 eventFrame:SetScript("OnEvent", function(_, event)
     if event == "TRADE_SKILL_SHOW" then
         if not tsHooked then
-            tsHooked         = true
-            origTsUpdate     = TradeSkillFrame_Update
-            origGetNumTs     = GetNumTradeSkills
-            origGetTsInfo    = GetTradeSkillInfo
+            tsHooked = true
+            origTsUpdate = TradeSkillFrame_Update
+            origGetNumTs = GetNumTradeSkills
+            origGetTsInfo = GetTradeSkillInfo
             TradeSkillFrame_Update = wrappedTsUpdate
         end
         createTsBox()
@@ -288,8 +288,8 @@ eventFrame:SetScript("OnEvent", function(_, event)
 
     elseif event == "CRAFT_SHOW" then
         if not craftHooked then
-            craftHooked      = true
-            origCraftUpdate  = CraftFrame_Update
+            craftHooked = true
+            origCraftUpdate = CraftFrame_Update
             origGetNumCrafts = GetNumCrafts
             origGetCraftInfo = GetCraftInfo
             CraftFrame_Update = wrappedCraftUpdate

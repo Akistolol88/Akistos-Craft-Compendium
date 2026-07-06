@@ -1,11 +1,4 @@
--- TradeSkillFilter.lua — live text search on the native TradeSkill / CraftFrame.
---
--- Core strategy: redirect GetNumTradeSkills() and GetTradeSkillInfo() to serve
--- tsFilt data while Blizzard's own TradeSkillFrame_Update runs.  Blizzard then
--- handles all button text, colours, scroll-bar sizing, and positioning exactly as
--- it would for a real list — no manual SetText or ClearAllPoints on our part.
--- After the render we fix button IDs back to original skill indices so that
--- click handlers and the selection highlight work correctly.
+-- TradeSkillFilter.lua — live text search on the native TradeSkill and CraftFrame.
 
 local tsFilter    = ""
 local craftFilter = ""
@@ -16,39 +9,28 @@ local inWrappedTs, inWrappedCraft = false, false
 local tsFilt    = {}
 local craftFilt = {}
 
--- Headers remembered to have matching children for the current filter term.
--- Persists across expand/collapse so a collapsed header stays visible.
--- Cleared whenever the filter text itself changes.
+-- Cleared when the filter text changes; kept across expand/collapse so a
+-- collapsed category header remains visible and re-expandable during search.
 local tsMatchingHeaders = {}
 local lastTsFilter      = ""
 
--- saved originals – populated on first TRADE_SKILL_SHOW / CRAFT_SHOW
-local orig_TradeSkillFrame_Update
-local orig_GetNumTradeSkills
-local orig_GetTradeSkillInfo
-
-local orig_CraftFrame_Update
-local orig_GetNumCrafts
-local orig_GetCraftInfo
+local origTsUpdate, origGetNumTs, origGetTsInfo
+local origCraftUpdate, origGetNumCrafts, origGetCraftInfo
 
 -- ── Filter-list builders ──────────────────────────────────────────────────────
 
 local function buildTsFilt()
-    -- When the search text changes, forget which headers had matches so we start
-    -- fresh.  While the text stays the same (e.g. user collapses a header),
-    -- tsMatchingHeaders is preserved so the collapsed header stays visible.
     if tsFilter ~= lastTsFilter then
         tsMatchingHeaders = {}
         lastTsFilter = tsFilter
     end
 
     tsFilt = {}
-    local total = orig_GetNumTradeSkills()
-
-    -- Pass 1: scan currently visible (expanded) recipes to update tsMatchingHeaders.
+    local total = origGetNumTs()
     local lastHeader = nil
+
     for i = 1, total do
-        local name, skillType = orig_GetTradeSkillInfo(i)
+        local name, skillType = origGetTsInfo(i)
         if skillType == "header" then
             lastHeader = i
         elseif lastHeader and name and name:lower():find(tsFilter, 1, true) then
@@ -56,10 +38,8 @@ local function buildTsFilt()
         end
     end
 
-    -- Pass 2: include any header we know has matches (visible or collapsed) +
-    -- all visible matching recipes.
     for i = 1, total do
-        local name, skillType = orig_GetTradeSkillInfo(i)
+        local name, skillType = origGetTsInfo(i)
         if skillType == "header" then
             if tsMatchingHeaders[i] then tsFilt[#tsFilt + 1] = i end
         elseif name and name:lower():find(tsFilter, 1, true) then
@@ -70,9 +50,9 @@ end
 
 local function buildCraftFilt()
     craftFilt = {}
-    local total = orig_GetNumCrafts()
+    local total = origGetNumCrafts()
     for i = 1, total do
-        local name = orig_GetCraftInfo(i)
+        local name = origGetCraftInfo(i)
         if name and name:lower():find(craftFilter, 1, true) then
             craftFilt[#craftFilt + 1] = i
         end
@@ -80,8 +60,6 @@ local function buildCraftFilt()
 end
 
 -- ── Post-render ID fix ────────────────────────────────────────────────────────
--- Blizzard sets each button ID to its loop index (1..#tsFilt).  We replace those
--- with original skill indices so TradeSkillFrame_SetSelection gets the right value.
 
 local function fixTsButtonIDs()
     local n      = TRADE_SKILLS_DISPLAYED or 8
@@ -98,8 +76,7 @@ local function fixTsButtonIDs()
         end
     end
 
-    -- Re-anchor the selection highlight.  Blizzard matched by filtered index;
-    -- now that IDs are original indices the highlight needs re-positioning.
+    -- Blizzard matched highlight by filtered index; re-anchor to original index.
     local sel = GetTradeSkillSelectionIndex and GetTradeSkillSelectionIndex()
     if sel and sel > 0 and TradeSkillHighlightFrame then
         local found = false
@@ -132,48 +109,45 @@ end
 
 -- ── Wrapped update functions ──────────────────────────────────────────────────
 
-local function wrappedTradeSkillFrame_Update()
+local function wrappedTsUpdate()
     if tsFilter == "" then
-        orig_TradeSkillFrame_Update()
+        origTsUpdate()
         return
     end
 
     if inWrappedTs then
-        -- Re-entrant call (from FauxScrollFrame scroll callback inside orig update).
-        -- Redirects are already active; just run the original.
-        orig_TradeSkillFrame_Update()
+        -- Re-entrant from FauxScrollFrame scroll callback; redirects are active.
+        origTsUpdate()
         return
     end
 
     inWrappedTs = true
     buildTsFilt()
 
-    -- Redirect skill API to our filtered list for the duration of the Blizzard call.
     GetNumTradeSkills = function() return #tsFilt end
     GetTradeSkillInfo = function(i)
         local si = (i and i > 0 and i <= #tsFilt) and tsFilt[i]
-        if si then return orig_GetTradeSkillInfo(si) end
+        if si then return origGetTsInfo(si) end
         return nil, nil, 0, nil, nil
     end
 
-    local ok = pcall(orig_TradeSkillFrame_Update)
+    local ok = pcall(origTsUpdate)
 
-    -- Always restore originals, even on error.
-    GetNumTradeSkills = orig_GetNumTradeSkills
-    GetTradeSkillInfo = orig_GetTradeSkillInfo
+    GetNumTradeSkills = origGetNumTs
+    GetTradeSkillInfo = origGetTsInfo
     inWrappedTs = false
 
     if ok then fixTsButtonIDs() end
 end
 
-local function wrappedCraftFrame_Update()
+local function wrappedCraftUpdate()
     if craftFilter == "" then
-        orig_CraftFrame_Update()
+        origCraftUpdate()
         return
     end
 
     if inWrappedCraft then
-        orig_CraftFrame_Update()
+        origCraftUpdate()
         return
     end
 
@@ -183,14 +157,14 @@ local function wrappedCraftFrame_Update()
     GetNumCrafts = function() return #craftFilt end
     GetCraftInfo = function(i)
         local ci = (i and i > 0 and i <= #craftFilt) and craftFilt[i]
-        if ci then return orig_GetCraftInfo(ci) end
+        if ci then return origGetCraftInfo(ci) end
         return nil, nil, 0, nil, nil
     end
 
-    local ok = pcall(orig_CraftFrame_Update)
+    local ok = pcall(origCraftUpdate)
 
-    GetNumCrafts = orig_GetNumCrafts
-    GetCraftInfo = orig_GetCraftInfo
+    GetNumCrafts  = origGetNumCrafts
+    GetCraftInfo  = origGetCraftInfo
     inWrappedCraft = false
 
     if ok then fixCraftButtonIDs() end
@@ -216,7 +190,6 @@ local function createTsBox()
         tsFilter = self:GetText():lower()
         if not TradeSkillFrame:IsShown() then return end
         if tsFilter == "" then
-            -- Scroll back to top when clearing the filter.
             local sb = _G["TradeSkillListScrollFrameScrollBar"]
             if sb then sb:SetValue(0) end
         end
@@ -293,11 +266,11 @@ eventFrame:RegisterEvent("CRAFT_CLOSE")
 eventFrame:SetScript("OnEvent", function(_, event)
     if event == "TRADE_SKILL_SHOW" then
         if not tsHooked then
-            tsHooked = true
-            orig_TradeSkillFrame_Update = TradeSkillFrame_Update
-            orig_GetNumTradeSkills      = GetNumTradeSkills
-            orig_GetTradeSkillInfo      = GetTradeSkillInfo
-            TradeSkillFrame_Update      = wrappedTradeSkillFrame_Update
+            tsHooked         = true
+            origTsUpdate     = TradeSkillFrame_Update
+            origGetNumTs     = GetNumTradeSkills
+            origGetTsInfo    = GetTradeSkillInfo
+            TradeSkillFrame_Update = wrappedTsUpdate
         end
         createTsBox()
         positionTsBox()
@@ -315,11 +288,11 @@ eventFrame:SetScript("OnEvent", function(_, event)
 
     elseif event == "CRAFT_SHOW" then
         if not craftHooked then
-            craftHooked = true
-            orig_CraftFrame_Update = CraftFrame_Update
-            orig_GetNumCrafts      = GetNumCrafts
-            orig_GetCraftInfo      = GetCraftInfo
-            CraftFrame_Update      = wrappedCraftFrame_Update
+            craftHooked      = true
+            origCraftUpdate  = CraftFrame_Update
+            origGetNumCrafts = GetNumCrafts
+            origGetCraftInfo = GetCraftInfo
+            CraftFrame_Update = wrappedCraftUpdate
         end
         createCraftBox()
         positionCraftBox()

@@ -14,7 +14,7 @@ local craftFilt = {}
 local tsMatchingHeaders = {}
 local lastTsFilter      = ""
 
-local origTsUpdate, origGetNumTs, origGetTsInfo
+local origTsUpdate, origGetNumTs, origGetTsInfo, origGetTsSel
 local origCraftUpdate, origGetNumCrafts, origGetCraftInfo
 
 -- ── Filter-list builders ──────────────────────────────────────────────────────
@@ -27,21 +27,21 @@ local function buildTsFilt()
 
     tsFilt = {}
     local total = origGetNumTs()
-    local lastHeader = nil
+    local lastHeaderName = nil
 
     for i = 1, total do
         local name, skillType = origGetTsInfo(i)
         if skillType == "header" then
-            lastHeader = i
-        elseif lastHeader and name and name:lower():find(tsFilter, 1, true) then
-            tsMatchingHeaders[lastHeader] = true
+            lastHeaderName = name
+        elseif lastHeaderName and name and name:lower():find(tsFilter, 1, true) then
+            tsMatchingHeaders[lastHeaderName] = true
         end
     end
 
     for i = 1, total do
         local name, skillType = origGetTsInfo(i)
         if skillType == "header" then
-            if tsMatchingHeaders[i] then tsFilt[#tsFilt + 1] = i end
+            if tsMatchingHeaders[name] then tsFilt[#tsFilt + 1] = i end
         elseif name and name:lower():find(tsFilter, 1, true) then
             tsFilt[#tsFilt + 1] = i
         end
@@ -61,25 +61,18 @@ end
 
 -- ── Post-render ID fix ────────────────────────────────────────────────────────
 
-local function fixTsButtonIDs()
+-- Sole authority for TradeSkillHighlightFrame: always either anchors it to the
+-- one button showing the truly-selected recipe, or hides it. Run after every
+-- render (filtered or plain) so no stale/duplicate highlight can survive a
+-- scroll, a collapse, or a frame close/reopen.
+local function fixTsHighlight()
+    if not TradeSkillHighlightFrame then return end
+
     local n = TRADE_SKILLS_DISPLAYED or 8
-    local offset = FauxScrollFrame_GetOffset(TradeSkillListScrollFrame)
-
-    for i = 1, n do
-        local btn = _G["TradeSkillSkill" .. i]
-        if btn then
-            local fi = offset + i
-            if fi <= #tsFilt then
-                btn:SetID(tsFilt[fi])
-                btn.skillIndex = tsFilt[fi]
-            end
-        end
-    end
-
-    -- Blizzard matched highlight by filtered index; re-anchor to original index.
     local sel = GetTradeSkillSelectionIndex and GetTradeSkillSelectionIndex()
-    if sel and sel > 0 and TradeSkillHighlightFrame then
-        local found = false
+    local found = false
+
+    if sel and sel > 0 then
         for i = 1, n do
             local btn = _G["TradeSkillSkill" .. i]
             if btn and btn:IsShown() and btn:GetID() == sel then
@@ -91,8 +84,32 @@ local function fixTsButtonIDs()
                 break
             end
         end
-        if not found then TradeSkillHighlightFrame:Hide() end
     end
+
+    if not found then TradeSkillHighlightFrame:Hide() end
+end
+
+local function fixTsButtonIDs()
+    local n = TRADE_SKILLS_DISPLAYED or 8
+
+    -- Read back the fake (filtered-space) index Blizzard's own render just
+    -- assigned via SetID, rather than recomputing our own scroll offset —
+    -- the two can desync (e.g. the scrollbar clamping mid-render when the
+    -- filtered count shrinks), which would remap every row to the wrong
+    -- real recipe.
+    for i = 1, n do
+        local btn = _G["TradeSkillSkill" .. i]
+        if btn and btn:IsShown() then
+            local fakeIndex = btn:GetID()
+            local realIndex = fakeIndex and fakeIndex > 0 and tsFilt[fakeIndex]
+            if realIndex then
+                btn:SetID(realIndex)
+                btn.skillIndex = realIndex
+            end
+        end
+    end
+
+    fixTsHighlight()
 end
 
 local function fixCraftButtonIDs()
@@ -112,6 +129,7 @@ end
 local function wrappedTsUpdate()
     if tsFilter == "" then
         origTsUpdate()
+        fixTsHighlight()
         return
     end
 
@@ -130,11 +148,21 @@ local function wrappedTsUpdate()
         if si then return origGetTsInfo(si) end
         return nil, nil, 0, nil, nil
     end
+    -- Blizzard's update loop compares filtered (loop) index against the real
+    -- selection index to place the highlight — meaningless under our redirect
+    -- and can coincidentally match the wrong row. Force "nothing selected" here;
+    -- fixTsButtonIDs re-applies the real highlight afterward using real IDs.
+    if origGetTsSel then
+        GetTradeSkillSelectionIndex = function() return 0 end
+    end
 
     local ok = pcall(origTsUpdate)
 
     GetNumTradeSkills = origGetNumTs
     GetTradeSkillInfo = origGetTsInfo
+    if origGetTsSel then
+        GetTradeSkillSelectionIndex = origGetTsSel
+    end
     inWrappedTs = false
 
     if ok then fixTsButtonIDs() end
@@ -270,6 +298,7 @@ eventFrame:SetScript("OnEvent", function(_, event)
             origTsUpdate = TradeSkillFrame_Update
             origGetNumTs = GetNumTradeSkills
             origGetTsInfo = GetTradeSkillInfo
+            origGetTsSel = GetTradeSkillSelectionIndex
             TradeSkillFrame_Update = wrappedTsUpdate
         end
         createTsBox()

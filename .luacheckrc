@@ -10,7 +10,7 @@ globals = {
     "SLASH_ACC1", "SlashCmdList",
     "StaticPopupDialogs",
     -- TradeSkillFilter replaces these globals temporarily during filtered renders
-    "GetNumTradeSkills", "GetTradeSkillInfo",
+    "GetNumTradeSkills", "GetTradeSkillInfo", "GetTradeSkillSelectionIndex",
     "GetNumCrafts", "GetCraftInfo",
     "TradeSkillFrame_Update", "CraftFrame_Update",
 }
@@ -28,7 +28,6 @@ read_globals = {
     "TradeSkillFrame", "CraftFrame",
     "TradeSkillListScrollFrame", "CraftListScrollFrame",
     "TradeSkillHighlightFrame",
-    "GetTradeSkillSelectionIndex",
     "TRADE_SKILLS_DISPLAYED", "TRADE_SKILL_HEIGHT",
     "CRAFTS_DISPLAYED",
     "FauxScrollFrame_GetOffset", "FauxScrollFrame_Update",

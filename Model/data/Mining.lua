@@ -253,10 +253,12 @@ ACC_Data.Mining = {
         },
     },
 
+    -- Both Truesilver entries below were shifted 25 skill points too low (orange started at 205
+    -- instead of 230); corrected to the real 230/255/280/330 thresholds.
     {
         name   = "Truesilver Deposit",
         icon   = "inv_ore_truesilver_01",
-        colors = { 205, 230, 255, 305 },
+        colors = { 230, 255, 280, 330 },
         taps   = "2-4",
         ore    = {
             { name = "Truesilver Ore", rate = 100.0 },
@@ -278,7 +280,7 @@ ACC_Data.Mining = {
     {
         name   = "Ooze Covered Truesilver Deposit",
         icon   = "inv_ore_truesilver_01",
-        colors = { 205, 230, 255, 305 },
+        colors = { 230, 255, 280, 330 },
         taps   = "2-4",
         ore    = {
             { name = "Truesilver Ore", rate = 100.0 },

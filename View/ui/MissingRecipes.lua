@@ -102,18 +102,6 @@ local function factionColor(faction)
     return FACTION_COLOR[faction] or NEUTRAL_COLOR
 end
 
-local function formatCopper(copper)
-    if not copper or copper == 0 then return nil end
-    local gold   = math.floor(copper / 10000)
-    local silver = math.floor((copper % 10000) / 100)
-    local cop    = copper % 100
-    local parts  = {}
-    if gold   > 0 then parts[#parts + 1] = "|cffffd700" .. gold   .. "g|r" end
-    if silver > 0 then parts[#parts + 1] = "|cffc7c7cf" .. silver .. "s|r" end
-    if cop    > 0 then parts[#parts + 1] = "|cffeda55f" .. cop    .. "c|r" end
-    return table.concat(parts, " ")
-end
-
 -- ── Tooltip ──────────────────────────────────────────────────────────────────
 
 local function addNpcLine(name, zone, faction)
@@ -159,7 +147,9 @@ local function showRowTooltip(row)
                     for _, v in ipairs(src.vendors) do
                         addNpcLine(v.name, v.zone, v.faction)
                         local extras = {}
-                        local price = formatCopper(v.cost)
+                        -- formatCopper moved to ACC.formatCopper (RecipeDetailHelpers.lua) so the
+                        -- RecipeDetail "Sold by" panel could reuse it instead of duplicating it.
+                        local price = ACC.formatCopper(v.cost)
                         if price then extras[#extras + 1] = "Price: " .. price end
                         if v.limited_stock then extras[#extras + 1] = "|cffff4040Limited Supply|r" end
                         if #extras > 0 then

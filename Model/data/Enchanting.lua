@@ -3901,8 +3901,12 @@ ACC_Data["Enchanting"] = {
             { id = 7078, count = 4, name = "Essence of Fire", icon = "spell_fire_volcano", quality = 2 },
         },
         tool = "Runed Arcanite Rod",
-        sources = { { type = "vendor", vendors = {
-            { name = "Lokhtos Darkbargainer", zone = "Blackrock Depths", cost = 112500 },
+        -- MANUAL OVERRIDE: source_cache.json had this on Lokhtos Darkbargainer (BRD) with no
+        -- reputation gate — that's the Season of Discovery alternate vendor, not the base
+        -- Classic Era source. Fixed via manual_sources.json (spellId 25081); re-apply if
+        -- buildLua.js regenerates this file.
+        sources = { { type = "vendor", reputation = { faction = "Cenarion Circle", level = "Friendly" }, vendors = {
+            { name = "Kania", zone = "Silithus", cost = 100000 },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -3925,8 +3929,11 @@ ACC_Data["Enchanting"] = {
             { id = 12803, count = 4, name = "Living Essence", icon = "spell_nature_abolishmagic", quality = 2 },
         },
         tool = "Runed Arcanite Rod",
-        sources = { { type = "vendor", vendors = {
-            { name = "Lokhtos Darkbargainer", zone = "Blackrock Depths", cost = 112500 },
+        -- MANUAL OVERRIDE: same Lokhtos/BRD vs Kania/Silithus mixup as the Fire Resistance
+        -- formula above. Fixed via manual_sources.json (spellId 25082); re-apply if
+        -- buildLua.js regenerates this file.
+        sources = { { type = "vendor", reputation = { faction = "Cenarion Circle", level = "Honored" }, vendors = {
+            { name = "Kania", zone = "Silithus", cost = 100000 },
         } } },
         cooldown = nil,
         specialization = nil,

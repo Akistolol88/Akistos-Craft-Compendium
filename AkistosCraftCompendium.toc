@@ -1,4 +1,4 @@
-## Interface: 11508
+## Interface: 11509
 ## Title: Akistos Craft Compendium
 ## Notes: Crafting reference for all WoW Classic professions — recipes, sources, materials, and skill thresholds
 ## Author: Otsika

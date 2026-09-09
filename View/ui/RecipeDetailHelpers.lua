@@ -31,3 +31,16 @@ end
 function ACC.insertLink(link)
     ChatEdit_InsertLink(link)
 end
+
+-- Formats a copper amount as a colored "Xg Ys Zc" string; nil for zero/missing cost.
+function ACC.formatCopper(copper)
+    if not copper or copper == 0 then return nil end
+    local gold   = math.floor(copper / 10000)
+    local silver = math.floor((copper % 10000) / 100)
+    local cop    = copper % 100
+    local parts  = {}
+    if gold   > 0 then parts[#parts + 1] = "|cffffd700" .. gold   .. "g|r" end
+    if silver > 0 then parts[#parts + 1] = "|cffc7c7cf" .. silver .. "s|r" end
+    if cop    > 0 then parts[#parts + 1] = "|cffeda55f" .. cop    .. "c|r" end
+    return table.concat(parts, " ")
+end

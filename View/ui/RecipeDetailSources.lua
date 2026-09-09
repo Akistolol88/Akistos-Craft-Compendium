@@ -22,7 +22,14 @@ local function buildSourceSections(recipe)
                 vendorLines[#vendorLines + 1] = "|cffffff00" .. src.reputation.faction .. " — " .. src.reputation.level .. " required|r"
             end
             for _, v in ipairs(src.vendors) do
-                vendorLines[#vendorLines + 1] = v.name .. "  —  " .. (v.zone or "")
+                -- v.cost was already in the data but never rendered here; MissingRecipes.lua's
+                -- tooltip showed it, this panel didn't. Reuses that file's formatCopper, now
+                -- shared via ACC.formatCopper (RecipeDetailHelpers.lua) instead of duplicated.
+                local line  = v.name .. "  —  " .. (v.zone or "")
+                local price = ACC.formatCopper(v.cost)
+                if price then line = line .. "  —  " .. price end
+                if v.limited_stock then line = line .. "  |cffff4040(Limited Supply)|r" end
+                vendorLines[#vendorLines + 1] = line
             end
         end
     end

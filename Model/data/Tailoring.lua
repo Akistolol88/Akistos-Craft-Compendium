@@ -6156,7 +6156,10 @@ ACC_Data["Tailoring"] = {
             { id = 14227, count = 2, name = "Ironweb Spider Silk", icon = "spell_nature_web", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "vendor", vendors = {
+        -- MANUAL OVERRIDE: source_cache.json had this vendor source with no reputation gate.
+        -- Fixed via vendor_rep.json ("argent boots" → Honored); re-apply if buildLua.js
+        -- regenerates this file.
+        sources = { { type = "vendor", reputation = { faction = "Argent Dawn", level = "Honored" }, vendors = {
             { name = "Argent Quartermaster Hasana", zone = "Tirisfal Glades", cost = 23157 },
             { name = "Argent Quartermaster Lightspark", zone = "Western Plaguelands", cost = 23157 },
             { name = "Quartermaster Miranda Breechlock", zone = "Eastern Plaguelands", cost = 23157 },
@@ -6181,7 +6184,10 @@ ACC_Data["Tailoring"] = {
             { id = 14227, count = 2, name = "Ironweb Spider Silk", icon = "spell_nature_web", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "vendor", vendors = {
+        -- MANUAL OVERRIDE: same missing-reputation issue as Argent Boots above.
+        -- Fixed via vendor_rep.json ("argent shoulders" → Revered); re-apply if buildLua.js
+        -- regenerates this file.
+        sources = { { type = "vendor", reputation = { faction = "Argent Dawn", level = "Revered" }, vendors = {
             { name = "Argent Quartermaster Hasana", zone = "Tirisfal Glades", cost = 42105 },
             { name = "Argent Quartermaster Lightspark", zone = "Western Plaguelands", cost = 42105 },
             { name = "Quartermaster Miranda Breechlock", zone = "Eastern Plaguelands", cost = 45000 },

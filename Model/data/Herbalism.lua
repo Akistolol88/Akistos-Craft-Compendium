@@ -292,10 +292,11 @@ ACC_Data.Herbalism = {
         },
     },
 
+    -- Golden Sansam and Dreamfoil below had each other's icon; fixed to match their item IDs.
     {
         name    = "Golden Sansam",
         item    = 13463,
-        icon    = "inv_misc_herb_dreamfoil",
+        icon    = "inv_misc_herb_sansamroot",
         colors  = { 260, 285, 310, 360 },
         terrain = "Found in open terrain of high-level zones",
         zones   = {
@@ -307,7 +308,7 @@ ACC_Data.Herbalism = {
     {
         name    = "Dreamfoil",
         item    = 13464,
-        icon    = "inv_misc_herb_sansamroot",
+        icon    = "inv_misc_herb_dreamfoil",
         colors  = { 270, 295, 320, 370 },
         terrain = "Found in open fields and varied terrain of high-level zones",
         zones   = {

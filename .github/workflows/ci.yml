@@ -61,17 +61,17 @@ jobs:
           VERSIONS=$(curl -sL -H "X-Api-Token: $CF_API_KEY" \
             "https://wow.curseforge.com/api/game/versions")
           echo "Response: $VERSIONS"
-          VERSION_ID=$(echo "$VERSIONS" | jq -r '.[] | select(.name == "1.15.8") | .id')
+          VERSION_ID=$(echo "$VERSIONS" | jq -r '.[] | select(.name == "1.15.9") | .id')
           echo "Version ID: $VERSION_ID"
           if [ -z "$VERSION_ID" ]; then
-            echo "ERROR: Could not find version ID for 1.15.8"
+            echo "ERROR: Could not find version ID for 1.15.9"
             exit 1
           fi
           METADATA=$(jq -n --arg cl "$CHANGELOG" --argjson vid "$VERSION_ID" \
             '{"gameVersions":[$vid],"releaseType":"release","changelog":$cl}')
           curl -sL --fail-with-body -X POST \
             -H "X-Api-Token: $CF_API_KEY" \
-            -F "metadata=$METADATA" \
+            --form-string "metadata=$METADATA" \
             -F "file=@AkistosCraftCompendium.zip" \
             "https://wow.curseforge.com/api/projects/1546116/upload-file"
         env:

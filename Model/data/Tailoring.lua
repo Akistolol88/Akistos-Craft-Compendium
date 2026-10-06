@@ -2123,7 +2123,7 @@ ACC_Data["Tailoring"] = {
         },
         tool = nil,
         sources = { { type = "drop", creatures = {
-            { name = "Syndicate Spy", zone = "Deadmines", rate = 1.5342 },
+            { name = "Syndicate Spy", zone = "Alterac Mountains", rate = 1.5342 },
             { name = "Shadowy Assassin", zone = "Hillsbrad Foothills", rate = 1.4138 },
             { name = "Theramore Infiltrator", zone = "Dustwallow Marsh", rate = 2.5318 },
         } } },
@@ -3642,7 +3642,7 @@ ACC_Data["Tailoring"] = {
         tool = nil,
         sources = {
             { type = "drop", creatures = {
-                { name = "Targ", zone = "Deadmines", rate = 0.2290, elite = "elite" },
+                { name = "Targ", zone = "Alterac Mountains", rate = 0.2290, elite = "elite" },
                 { name = "Firemane Flamecaller", zone = "Dustwallow Marsh", rate = 0.1698 },
                 { name = "Anvilrage Overseer", rate = 0.2155, elite = "elite" },
             } },

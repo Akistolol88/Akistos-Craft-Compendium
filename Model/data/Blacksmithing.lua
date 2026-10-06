@@ -1943,7 +1943,7 @@ ACC_Data["Blacksmithing"] = {
         tool = "Blacksmith's Hammer",
         sources = {
             { type = "drop", creatures = {
-                { name = "Grandpa Vishas", zone = "Deadmines", rate = 0.2070, elite = "elite" },
+                { name = "Grandpa Vishas", zone = "Alterac Mountains", rate = 0.2070, elite = "elite" },
             } },
             { type = "world_drop", level_range = { 25, 41 }, elite_types = { "elite" } },
             { type = "chest", containers = {
@@ -2888,7 +2888,7 @@ ACC_Data["Blacksmithing"] = {
         tool = "Blacksmith's Hammer",
         sources = {
             { type = "drop", creatures = {
-                { name = "Crushridge Plunderer", zone = "Deadmines", rate = 0.3008, elite = "elite" },
+                { name = "Crushridge Plunderer", zone = "Alterac Mountains", rate = 0.3008, elite = "elite" },
                 { name = "Brutus", zone = "Stranglethorn Vale", rate = 1.4235 },
                 { name = "Withervine Creeper", zone = "Dustwallow Marsh", rate = 0.4132 },
             } },

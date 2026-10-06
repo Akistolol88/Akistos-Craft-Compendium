@@ -1,0 +1,16 @@
+## Interface: 11509
+## Title: Akistos Craft Compendium - Gather Timers
+## Notes: Respawn timers for Black Lotus (per zone) and Rich Thorium Veins (per subzone), shared across your characters
+## Author: Otsika
+## Version: 0.2.0-beta
+## Dependencies: AkistosCraftCompendium
+## SavedVariables: ACCGT_DB
+
+# Load order matters:
+#   1. Core   — node definitions, gather detection, timer storage, /accgt
+#   2. Groups — Rich Thorium spawn groups per zone (generated data)
+#   3. Map    — world map markers; reads timers through ACC.GatherTimers
+
+Core.lua
+Groups.lua
+Map.lua

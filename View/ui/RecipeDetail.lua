@@ -392,6 +392,7 @@ function ACC.showRecipeDetail(recipe, btn)
     RDS.currentRecipe = recipe
     RDS.currentBtn    = btn
     if recipe._zone then
+        ACC.hideVendorClicks(1)
         local y = ACC.layoutZone(recipe)
         RDS.frame:SetHeight(math.abs(y) + RDS.PADDING)
         autoSize(recipe)

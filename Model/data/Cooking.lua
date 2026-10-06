@@ -1355,7 +1355,7 @@ ACC_Data["Cooking"] = {
         tool = nil,
         sources = {
             { type = "vendor", vendors = {
-                { name = "Smudge Thunderwood", zone = "Deadmines", cost = 210 },
+                { name = "Smudge Thunderwood", zone = "Alterac Mountains", cost = 210 },
             } },
             { type = "quest", quests = {
                 { id = 2360, name = "Mathias and the Defias", faction = "alliance", level = 20 },
@@ -2182,7 +2182,6 @@ ACC_Data["Cooking"] = {
             { name = "Tarban Hearthgrain", zone = "The Barrens", faction = "horde", cost = 500 },
             { name = "Wulan", zone = "Desolace", faction = "horde", cost = 526 },
             { name = "Otho Moji'ko", zone = "The Hinterlands", faction = "horde", cost = 450 },
-            { name = "Carrie Hearthfire", zone = "Eastern Plaguelands", cost = 500 },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -2219,7 +2218,6 @@ ACC_Data["Cooking"] = {
             { name = "Tarban Hearthgrain", zone = "The Barrens", faction = "horde", cost = 5263 },
             { name = "Wulan", zone = "Desolace", faction = "horde", cost = 5263 },
             { name = "Otho Moji'ko", zone = "The Hinterlands", faction = "horde", cost = 4500 },
-            { name = "Carrie Hearthfire", zone = "Eastern Plaguelands", cost = 5000 },
         } } },
         cooldown = nil,
         specialization = nil,

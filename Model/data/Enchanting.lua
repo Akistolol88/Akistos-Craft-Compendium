@@ -2109,7 +2109,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "drop", creatures = {
-            { name = "Syndicate Assassin", zone = "Deadmines", rate = 1.8294 },
+            { name = "Syndicate Assassin", zone = "Alterac Mountains", rate = 1.8294 },
             { name = "Wastewander Assassin", zone = "Tanaris", rate = 1.7020 },
             { name = "Wastewander Scofflaw", zone = "Tanaris", rate = 1.5451 },
         } } },

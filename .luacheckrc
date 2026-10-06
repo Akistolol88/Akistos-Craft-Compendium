@@ -6,12 +6,13 @@ globals = {
     "ACC", "AkistosCraftCompendium",
     "ACC_Data", "ACC_BrowserConfig", "ACC_BrowserState", "ACC_DataManager",
     "ACC_RecipeDetailState",
-    "ACC_Tracker", "ACC_AccountData", "ACC_CharacterData",
+    "ACC_Tracker", "ACC_AccountData", "ACC_CharacterData", "ACC_VendorCoords",
     "SLASH_ACC1", "SlashCmdList",
     "StaticPopupDialogs",
+    "ACCGT_DB", "SLASH_ACCGT1",
     -- TradeSkillFilter replaces these globals temporarily during filtered renders
     "GetNumTradeSkills", "GetTradeSkillInfo", "GetTradeSkillSelectionIndex",
-    "GetNumCrafts", "GetCraftInfo",
+    "GetNumCrafts", "GetCraftInfo", "GetCraftSelectionIndex",
     "TradeSkillFrame_Update", "CraftFrame_Update",
 }
 
@@ -44,6 +45,12 @@ read_globals = {
     "StaticPopup_Show",
     "Minimap", "GetCursorPosition",
     "tinsert", "UISpecialFrames",
+    -- Gather Timers sub-addon
+    "WorldMapFrame", "C_Map", "GetServerTime", "GetRealmName",
+    "GetRealZoneText", "GetSubZoneText",
+    "GetPlayerFacing", "CreateVector2D",
+    "InCombatLockdown", "GetRaidTargetIndex", "SetRaidTarget",
+    "IsIndoors", "GetCVar", "UnitIsPlayer",
 }
 
 files["tests/test_tracker.lua"] = {
@@ -55,3 +62,4 @@ files["tests/test_tracker.lua"] = {
 
 files["Model/data"] = { max_line_length = false }
 files["View/ui"] = { max_line_length = false }
+files["AkistosCraftCompendium_GatherTimers/Groups.lua"] = { max_line_length = false }

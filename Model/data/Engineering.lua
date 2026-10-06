@@ -861,8 +861,8 @@ ACC_Data["Engineering"] = {
         tool = "Arclight Spanner",
         sources = { { type = "vendor", vendors = {
             { name = "Fradd Swiftgear", zone = "Wetlands", faction = "alliance", cost = 1500, limited_stock = true },
-            { name = "Namdo Bizzfizzle", zone = "Stranglethorn Vale", faction = "alliance", cost = 1578, limited_stock = true },
-            { name = "Namdo Bizzfizzle", zone = "Stranglethorn Vale", faction = "alliance", cost = 1578, limited_stock = true },
+            { name = "Namdo Bizzfizzle", zone = "Dun Morogh", faction = "alliance", cost = 1578, limited_stock = true },
+            { name = "Namdo Bizzfizzle", zone = "Dun Morogh", faction = "alliance", cost = 1578, limited_stock = true },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -1002,7 +1002,7 @@ ACC_Data["Engineering"] = {
         },
         tool = { "Arclight Spanner", "Blacksmith's Hammer" },
         sources = { { type = "vendor", vendors = {
-            { name = "Rizz Loosebolt", zone = "Deadmines", cost = 1800, limited_stock = true },
+            { name = "Rizz Loosebolt", zone = "Alterac Mountains", cost = 1800, limited_stock = true },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -1326,7 +1326,7 @@ ACC_Data["Engineering"] = {
         tool = { "Arclight Spanner", "Blacksmith's Hammer" },
         sources = {
             { type = "vendor", vendors = {
-                { name = "Zan Shivsproket", zone = "Deadmines", cost = 2526, limited_stock = true },
+                { name = "Zan Shivsproket", zone = "Alterac Mountains", cost = 2526, limited_stock = true },
             } },
             { type = "drop", creatures = {
                 { name = "Mekgineer Thermaplugg", zone = "Gnomeregan", rate = 0.2921, elite = "elite" },
@@ -2279,7 +2279,7 @@ ACC_Data["Engineering"] = {
         tool = "Arclight Spanner",
         sources = {
             { type = "drop", creatures = {
-                { name = "Targ", zone = "Deadmines", rate = 0.1527, elite = "elite" },
+                { name = "Targ", zone = "Alterac Mountains", rate = 0.1527, elite = "elite" },
                 { name = "Shadowforge Darkcaster", zone = "Silithus", rate = 0.1701, elite = "elite" },
                 { name = "Khan Hratha", zone = "Desolace", rate = 0.2053, elite = "elite" },
                 { name = "Occulus", zone = "Tanaris", rate = 3.0651, elite = "elite" },

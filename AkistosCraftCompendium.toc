@@ -2,7 +2,7 @@
 ## Title: Akistos Craft Compendium
 ## Notes: Crafting reference for all WoW Classic professions — recipes, sources, materials, and skill thresholds
 ## Author: Otsika
-## Version: 1.1.2
+## Version: 1.4.0
 ## SavedVariables: ACC_AccountData
 ## SavedVariablesPerCharacter: ACC_CharacterData
 
@@ -31,6 +31,7 @@ Model\data\Skinning.lua
 Model\data\Leatherworking.lua
 Model\data\Mining.lua
 Model\data\Tailoring.lua
+Model\data\VendorCoords.lua
 
 Model\core\DataManager.lua
 Model\core\Tracker.lua
@@ -50,5 +51,8 @@ View\ui\RecipeDetailZone.lua
 View\ui\RecipeDetail.lua
 View\ui\MissingRecipes.lua
 View\ui\TradeSkillFilter.lua
+View\ui\VendorWaypoint.lua
+View\ui\VendorPins.lua
+View\ui\DropTooltip.lua
 
 Controller\Main.lua

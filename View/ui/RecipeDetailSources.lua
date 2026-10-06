@@ -11,11 +11,13 @@ local function buildSourceSections(recipe)
     local sections = {}
     local sources  = recipe.sources or {}
 
-    local function addSection(header, lines)
-        if #lines > 0 then sections[#sections + 1] = { header = header, lines = lines } end
+    -- targets[i] is the vendor behind lines[i], for lines that can be clicked to mark a vendor.
+    local function addSection(header, lines, targets)
+        if #lines > 0 then sections[#sections + 1] = { header = header, lines = lines, targets = targets } end
     end
 
     local vendorLines = {}
+    local vendorTargets = {}
     for _, src in ipairs(sources) do
         if src.type == "vendor" and src.vendors then
             if src.reputation then
@@ -25,15 +27,19 @@ local function buildSourceSections(recipe)
                 -- v.cost was already in the data but never rendered here; MissingRecipes.lua's
                 -- tooltip showed it, this panel didn't. Reuses that file's formatCopper, now
                 -- shared via ACC.formatCopper (RecipeDetailHelpers.lua) instead of duplicated.
-                local line  = v.name .. "  —  " .. (v.zone or "")
+                local name  = v.name
+                -- Light blue marks a vendor whose position is known: the line is clickable.
+                if ACC.hasVendorCoords(v) then name = "|cff66bbff" .. name .. "|r" end
+                local line  = name .. "  —  " .. (v.zone or "")
                 local price = ACC.formatCopper(v.cost)
                 if price then line = line .. "  —  " .. price end
                 if v.limited_stock then line = line .. "  |cffff4040(Limited Supply)|r" end
                 vendorLines[#vendorLines + 1] = line
+                if ACC.hasVendorCoords(v) then vendorTargets[#vendorLines] = v end
             end
         end
     end
-    addSection("Sold by:", vendorLines)
+    addSection("Sold by:", vendorLines, vendorTargets)
 
     local trainerLines = {}
     for _, src in ipairs(sources) do
@@ -110,6 +116,7 @@ end
 function ACC.layoutSources(recipe, y)
     local sections, hiddenDrops = buildSourceSections(recipe)
     local hdrIdx, lblIdx        = 0, 0
+    local clickIdx              = 0
     local buttonShown           = false
 
     for _, sec in ipairs(sections) do
@@ -121,7 +128,7 @@ function ACC.layoutSources(recipe, y)
         hdr:SetText(sec.header)
         hdr:Show()
         y = y - RDS.ROW_HEIGHT - 2
-        for _, line in ipairs(sec.lines) do
+        for i, line in ipairs(sec.lines) do
             lblIdx = lblIdx + 1
             if lblIdx > RDS.MAX_SOURCE_LINES then break end
             local lbl = RDS.sourceLabels[lblIdx]
@@ -129,6 +136,10 @@ function ACC.layoutSources(recipe, y)
             lbl:SetPoint("TOPLEFT", RDS.frame, "TOPLEFT", RDS.INDENT, y)
             lbl:SetText(line)
             lbl:Show()
+            if sec.targets and sec.targets[i] then
+                clickIdx = clickIdx + 1
+                ACC.showVendorClick(clickIdx, lbl, sec.targets[i], recipe)
+            end
             y = y - RDS.ROW_HEIGHT
         end
         -- After drop lines, show "… N more" button if some were hidden.
@@ -151,6 +162,7 @@ function ACC.layoutSources(recipe, y)
     for i = hdrIdx + 1, RDS.MAX_SOURCE_HEADERS do RDS.sourceHeaders[i]:Hide() end
     for i = lblIdx + 1, RDS.MAX_SOURCE_LINES   do RDS.sourceLabels[i]:Hide()  end
     if not buttonShown then RDS.showMoreDropsButton:Hide() end
+    ACC.hideVendorClicks(clickIdx + 1)
 
     showAllDrops = false
     return y

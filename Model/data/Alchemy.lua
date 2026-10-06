@@ -933,7 +933,7 @@ ACC_Data["Alchemy"] = {
         },
         tool = nil,
         sources = { { type = "vendor", vendors = {
-            { name = "Bro'kin", zone = "Deadmines", cost = 2631, limited_stock = true },
+            { name = "Bro'kin", zone = "Alterac Mountains", cost = 2631, limited_stock = true },
         } } },
         cooldown = nil,
         specialization = nil,

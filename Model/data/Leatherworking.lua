@@ -1920,7 +1920,7 @@ ACC_Data["Leatherworking"] = {
         },
         tool = nil,
         sources = { { type = "vendor", vendors = {
-            { name = "Kalldan Felmoon", zone = "Darnassus", cost = 550, limited_stock = true },
+            { name = "Kalldan Felmoon", zone = "The Barrens", cost = 550, limited_stock = true },
         } } },
         cooldown = nil,
         specialization = nil,
@@ -1944,7 +1944,7 @@ ACC_Data["Leatherworking"] = {
         },
         tool = nil,
         sources = { { type = "vendor", vendors = {
-            { name = "Kalldan Felmoon", zone = "Darnassus", cost = 1500, limited_stock = true },
+            { name = "Kalldan Felmoon", zone = "The Barrens", cost = 1500, limited_stock = true },
         } } },
         cooldown = nil,
         specialization = nil,

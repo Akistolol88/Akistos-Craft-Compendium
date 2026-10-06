@@ -36,8 +36,8 @@ jobs:
         run: |
           mkdir AkistosCraftCompendium
           cp AkistosCraftCompendium.toc Namespace.lua AkistosCraftCompendium/
-          cp -r Controller Model View AkistosCraftCompendium/
-          zip -r AkistosCraftCompendium.zip AkistosCraftCompendium/
+          cp -r Controller Model View Media AkistosCraftCompendium/
+          zip -r AkistosCraftCompendium.zip AkistosCraftCompendium/ AkistosCraftCompendium_GatherTimers/
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

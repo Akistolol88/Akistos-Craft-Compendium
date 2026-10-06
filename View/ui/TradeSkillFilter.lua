@@ -18,7 +18,7 @@ local tsMatchingHeaders = {}
 local lastTsFilterKey   = ""
 
 local origTsUpdate, origGetNumTs, origGetTsInfo, origGetTsSel
-local origCraftUpdate, origGetNumCrafts, origGetCraftInfo
+local origCraftUpdate, origGetNumCrafts, origGetCraftInfo, origGetCraftSel
 
 -- ── Craftability checks ─────────────────────────────────────────────────────────
 
@@ -98,13 +98,17 @@ local function buildTsFilt()
     end
 end
 
+local craftFiltReverse = {}
+
 local function buildCraftFilt()
     craftFilt = {}
+    craftFiltReverse = {}
     local total = origGetNumCrafts()
     for i = 1, total do
         local name = origGetCraftInfo(i)
         if name and name:lower():find(craftFilter, 1, true) and (not craftMatsOnly or isCraftCraftable(i)) then
             craftFilt[#craftFilt + 1] = i
+            craftFiltReverse[i] = #craftFilt
         end
     end
 end
@@ -164,12 +168,16 @@ end
 
 local function fixCraftButtonIDs()
     local n = CRAFTS_DISPLAYED or 8
-    local offset = FauxScrollFrame_GetOffset(CraftListScrollFrame)
+
+    -- CraftFrame's rows are named "Craft1".."CraftN" (not "CraftSkillN" like
+    -- the TradeSkill frame). As in fixTsButtonIDs, read back the fake index
+    -- Blizzard's render just assigned instead of recomputing the scroll offset.
     for i = 1, n do
-        local btn = _G["CraftSkill" .. i]
-        if btn then
-            local fi = offset + i
-            if fi <= #craftFilt then btn:SetID(craftFilt[fi]) end
+        local btn = _G["Craft" .. i]
+        if btn and btn:IsShown() then
+            local fakeIndex = btn:GetID()
+            local realIndex = fakeIndex and fakeIndex > 0 and craftFilt[fakeIndex]
+            if realIndex then btn:SetID(realIndex) end
         end
     end
 end
@@ -245,11 +253,22 @@ local function wrappedCraftUpdate()
         if ci then return origGetCraftInfo(ci) end
         return nil, nil, 0, nil, nil
     end
+    -- Same translation as the TradeSkill side: Blizzard compares its loop
+    -- (filtered-space) index against the selection index to place the
+    -- highlight, so hand it the fake counterpart of the real selection.
+    if origGetCraftSel then
+        local realSel = origGetCraftSel()
+        local fakeSel = (realSel and realSel > 0 and craftFiltReverse[realSel]) or 0
+        GetCraftSelectionIndex = function() return fakeSel end
+    end
 
     local ok = pcall(origCraftUpdate)
 
     GetNumCrafts = origGetNumCrafts
     GetCraftInfo = origGetCraftInfo
+    if origGetCraftSel then
+        GetCraftSelectionIndex = origGetCraftSel
+    end
     inWrappedCraft = false
 
     if ok then fixCraftButtonIDs() end
@@ -461,6 +480,7 @@ eventFrame:SetScript("OnEvent", function(_, event)
             origCraftUpdate = CraftFrame_Update
             origGetNumCrafts = GetNumCrafts
             origGetCraftInfo = GetCraftInfo
+            origGetCraftSel = GetCraftSelectionIndex
             CraftFrame_Update = wrappedCraftUpdate
         end
         createCraftBox()

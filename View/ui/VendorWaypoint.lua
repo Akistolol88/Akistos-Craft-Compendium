@@ -1,16 +1,21 @@
--- VendorWaypoint.lua — one marked recipe vendor at a time.
--- Clicking a vendor in the recipe detail panel (or a vendor pin on the world map) marks it:
+-- VendorWaypoint.lua — one marked recipe vendor or trainer at a time.
+-- Clicking a vendor or trainer in the recipe detail panel (or a vendor pin on the world map) marks it:
 -- a highlighted marker appears on the world map and on the minimap, a "Target" button appears
--- on screen and, within ARROW_RANGE yards, an arrow points the way. Targeting the vendor puts the Square
+-- on screen and, within ARROW_RANGE yards, an arrow points the way. Targeting the NPC puts the Square
 -- raid marker on them. The mark persists per character in ACC_CharacterData.vendorWaypoint
--- and is removed when the vendor's shop window opens.
+-- and is removed when the vendor's shop window or the trainer's training window opens.
 
 local ARROW_RANGE = 100      -- yards; the arrow only shows this close to the vendor
 local RAID_MARKER = 6        -- Square
 local RAID_MARKER_ICON = "Interface\\TargetingFrame\\UI-RaidTargetingIcon_6"
 local UPDATE_INTERVAL = 0.05
 local ARROW_TEXTURE = "Interface\\AddOns\\AkistosCraftCompendium\\Media\\Arrow"
-local MARKER_ICON = "Interface\\GossipFrame\\VendorGossipIcon"
+-- Per waypoint kind: marker icon and the wording used in chat and tooltips.
+-- A waypoint saved before trainers could be marked has no kind and counts as a vendor.
+local KINDS = {
+    vendor  = { icon = "Interface\\GossipFrame\\VendorGossipIcon",  noun = "vendor",  title = "Recipe vendor" },
+    trainer = { icon = "Interface\\GossipFrame\\TrainerGossipIcon", noun = "trainer", title = "Trainer" },
+}
 local MARKER_SIZE = 22
 local MINIMAP_PIN_SIZE = 14
 -- Width of the area the minimap shows, in yards, per zoom level (0 = zoomed out).
@@ -27,6 +32,16 @@ local clickButtons = {}
 
 local function getWaypoint()
     return ACC_CharacterData and ACC_CharacterData.vendorWaypoint
+end
+
+local function kindOf(waypoint)
+    return KINDS[waypoint and waypoint.kind] or KINDS.vendor
+end
+
+-- Position of a recipe-source vendor or trainer entry ({ name, zone, ... }), nil when unknown.
+local function coordsFor(npc, kind)
+    local coords = kind == "trainer" and ACC_TrainerCoords or ACC_VendorCoords
+    return coords and coords[npc.name .. "|" .. (npc.zone or "")]
 end
 
 -- ── World map marker ──────────────────────────────────────────────────────────
@@ -53,9 +68,8 @@ local function refreshMarker()
         border:SetPoint("BOTTOMRIGHT", marker, "BOTTOMRIGHT", 2, -2)
         border:SetColorTexture(1, 0.82, 0)
 
-        local icon = marker:CreateTexture(nil, "ARTWORK")
-        icon:SetAllPoints(marker)
-        icon:SetTexture(MARKER_ICON)
+        marker.icon = marker:CreateTexture(nil, "ARTWORK")
+        marker.icon:SetAllPoints(marker)
 
         marker.label = marker:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
         marker.label:SetPoint("TOP", marker, "BOTTOM", 0, -3)
@@ -76,6 +90,7 @@ local function refreshMarker()
 
     marker:ClearAllPoints()
     marker:SetPoint("CENTER", canvas, "TOPLEFT", waypoint.x * canvas:GetWidth(), -waypoint.y * canvas:GetHeight())
+    marker.icon:SetTexture(kindOf(waypoint).icon)
     marker.label:SetText(waypoint.name)
     marker:Show()
 end
@@ -119,9 +134,8 @@ local function createMinimapPin()
     border:SetPoint("TOPLEFT", minimapPin, "TOPLEFT", -1, 1)
     border:SetPoint("BOTTOMRIGHT", minimapPin, "BOTTOMRIGHT", 1, -1)
     border:SetColorTexture(1, 0.82, 0)
-    local icon = minimapPin:CreateTexture(nil, "ARTWORK")
-    icon:SetAllPoints(minimapPin)
-    icon:SetTexture(MARKER_ICON)
+    minimapPin.icon = minimapPin:CreateTexture(nil, "ARTWORK")
+    minimapPin.icon:SetAllPoints(minimapPin)
 
     minimapPin:EnableMouse(true)
     minimapPin:SetScript("OnEnter", function(self)
@@ -137,9 +151,9 @@ local function createMinimapPin()
     minimapPin:SetScript("OnLeave", function() GameTooltip:Hide() end)
 end
 
--- Places the pin where the vendor is on the minimap, or on its edge in the vendor's
+-- Places the pin where the marked NPC is on the minimap, or on its edge in their
 -- direction while they are further away than the minimap shows.
-local function updateMinimapPin(dNorth, dWest, distance)
+local function updateMinimapPin(waypoint, dNorth, dWest, distance)
     if not dNorth then
         minimapPin:Hide()
         return
@@ -163,6 +177,7 @@ local function updateMinimapPin(dNorth, dWest, distance)
         x, y = x / length * edge, y / length * edge
     end
 
+    minimapPin.icon:SetTexture(kindOf(waypoint).icon)
     minimapPin.distance = distance
     minimapPin:ClearAllPoints()
     minimapPin:SetPoint("CENTER", Minimap, "CENTER", x, y)
@@ -182,7 +197,7 @@ local function updateArrow(self, elapsed)
 
     local dNorth, dWest = getOffset(waypoint)
     local distance = dNorth and math.sqrt(dNorth * dNorth + dWest * dWest)
-    updateMinimapPin(dNorth, dWest, distance)
+    updateMinimapPin(waypoint, dNorth, dWest, distance)
 
     local facing = GetPlayerFacing()
     if not distance or not facing or distance > ARROW_RANGE then
@@ -243,7 +258,7 @@ local function createArrow()
     body:SetScript("OnClick", function() ACC.clearVendorWaypoint() end)
     body:SetScript("OnEnter", function(self)
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOM")
-        GameTooltip:SetText("Recipe vendor", 1, 1, 1)
+        GameTooltip:SetText(kindOf(getWaypoint()).title, 1, 1, 1)
         GameTooltip:AddLine("Drag to move. Right-click to remove the mark.", 0.7, 0.7, 0.7)
         GameTooltip:Show()
     end)
@@ -323,9 +338,10 @@ local function createTargetButton()
     end)
     targetButton:SetScript("OnEnter", function(self)
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOM")
-        GameTooltip:SetText("Target recipe vendor", 1, 1, 1)
-        GameTooltip:AddLine("Click to target the vendor and mark them with Square.", 1, 0.82, 0, true)
-        GameTooltip:AddLine("Only works when the vendor is nearby. Shift-drag to move.", 0.7, 0.7, 0.7, true)
+        local noun = kindOf(getWaypoint()).noun
+        GameTooltip:SetText("Target " .. noun, 1, 1, 1)
+        GameTooltip:AddLine("Click to target the " .. noun .. " and mark them with Square.", 1, 0.82, 0, true)
+        GameTooltip:AddLine("Only works when the " .. noun .. " is nearby. Shift-drag to move.", 0.7, 0.7, 0.7, true)
         GameTooltip:Show()
     end)
     targetButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
@@ -343,16 +359,24 @@ end
 
 -- vendor is a recipe-source vendor entry ({ name, zone, ... }); true when it has a known position.
 function ACC.hasVendorCoords(vendor)
-    return ACC_VendorCoords ~= nil and ACC_VendorCoords[vendor.name .. "|" .. (vendor.zone or "")] ~= nil
+    return coordsFor(vendor, "vendor") ~= nil
+end
+
+-- Same for a recipe-source trainer entry.
+function ACC.hasTrainerCoords(trainer)
+    return coordsFor(trainer, "trainer") ~= nil
 end
 
 -- label is shown with the mark, e.g. the recipe the player was looking at.
-function ACC.setVendorWaypoint(vendor, label)
-    local coords = ACC_VendorCoords and ACC_VendorCoords[vendor.name .. "|" .. (vendor.zone or "")]
+-- kind is "trainer" to mark a trainer; a vendor when left out.
+function ACC.setVendorWaypoint(vendor, label, kind)
+    kind = KINDS[kind] and kind or "vendor"
+    local coords = coordsFor(vendor, kind)
     if not coords then return end
 
     ACC_CharacterData = ACC_CharacterData or {}
     ACC_CharacterData.vendorWaypoint = {
+        kind  = kind,
         name  = vendor.name,
         zone  = vendor.zone,
         label = label,
@@ -369,7 +393,8 @@ function ACC.setVendorWaypoint(vendor, label)
 end
 
 function ACC.clearVendorWaypoint(silent)
-    if not getWaypoint() then return end
+    local waypoint = getWaypoint()
+    if not waypoint then return end
     ACC_CharacterData.vendorWaypoint = nil
     if arrow then
         arrow.body:Hide()
@@ -379,14 +404,15 @@ function ACC.clearVendorWaypoint(silent)
     if minimapPin then minimapPin:Hide() end
     refreshTargetButton()
     if not silent then
-        DEFAULT_CHAT_FRAME:AddMessage(PREFIX .. "Vendor mark removed.")
+        DEFAULT_CHAT_FRAME:AddMessage(PREFIX .. (waypoint.kind == "trainer" and "Trainer" or "Vendor") .. " mark removed.")
     end
 end
 
--- ── Clickable vendor lines in the recipe detail panel ─────────────────────────
+-- ── Clickable vendor and trainer lines in the recipe detail panel ─────────────
 
--- Lays an invisible button over a "Sold by" line so clicking it marks that vendor.
-function ACC.showVendorClick(index, label, vendor, recipe)
+-- Lays an invisible button over a "Sold by" or "Taught by" line so clicking it marks that
+-- vendor or trainer (kind "trainer"; a vendor when left out).
+function ACC.showVendorClick(index, label, vendor, recipe, kind)
     local button = clickButtons[index]
     if not button then
         button = CreateFrame("Button", nil, ACC_RecipeDetailState.frame)
@@ -395,19 +421,20 @@ function ACC.showVendorClick(index, label, vendor, recipe)
         highlight:SetColorTexture(1, 1, 1, 0.12)
         button:SetScript("OnClick", function(self)
             local recipeName = self.recipe and (self.recipe.recipeItemName or self.recipe.name)
-            ACC.setVendorWaypoint(self.vendor, recipeName)
+            ACC.setVendorWaypoint(self.vendor, recipeName, self.kind)
         end)
         button:SetScript("OnEnter", function(self)
             GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
             GameTooltip:SetText(self.vendor.name, 1, 1, 1)
-            GameTooltip:AddLine("Click to mark this vendor on the world map.", 1, 0.82, 0, true)
+            GameTooltip:AddLine("Click to mark this " .. (KINDS[self.kind] or KINDS.vendor).noun
+                .. " on the world map.", 1, 0.82, 0, true)
             GameTooltip:Show()
         end)
         button:SetScript("OnLeave", function() GameTooltip:Hide() end)
         clickButtons[index] = button
     end
 
-    button.vendor, button.recipe = vendor, recipe
+    button.vendor, button.recipe, button.kind = vendor, recipe, kind
     button:ClearAllPoints()
     button:SetPoint("TOPLEFT", label, "TOPLEFT", -2, 1)
     button:SetPoint("BOTTOMRIGHT", label, "BOTTOMRIGHT", 2, -1)
@@ -428,6 +455,7 @@ loginFrame:RegisterEvent("PLAYER_LOGIN")
 loginFrame:RegisterEvent("PLAYER_TARGET_CHANGED")
 loginFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 loginFrame:RegisterEvent("MERCHANT_SHOW")
+loginFrame:RegisterEvent("TRAINER_SHOW")
 loginFrame:SetScript("OnEvent", function(_, event)
     if event == "PLAYER_TARGET_CHANGED" then
         markTargetIfVendor()
@@ -435,8 +463,8 @@ loginFrame:SetScript("OnEvent", function(_, event)
     elseif event == "PLAYER_REGEN_ENABLED" then
         if targetButtonDirty then refreshTargetButton() end
         return
-    elseif event == "MERCHANT_SHOW" then
-        -- Shop window of the marked vendor opened: the player has arrived.
+    elseif event == "MERCHANT_SHOW" or event == "TRAINER_SHOW" then
+        -- Shop or training window of the marked NPC opened: the player has arrived.
         local waypoint = getWaypoint()
         if waypoint and UnitName("npc") == waypoint.name then ACC.clearVendorWaypoint(true) end
         return

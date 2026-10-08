@@ -22,7 +22,7 @@ end
 
 -- Priority: pipeline icon → live GetItemInfo texture → question mark.
 function ACC.resolveItemIcon(id, pipelineIcon)
-    if pipelineIcon then return "Interface\\Icons\\" .. pipelineIcon end
+    if pipelineIcon then return ACC.iconPath(pipelineIcon) end
     local _, _, _, _, _, _, _, _, _, tex = GetItemInfo(id)
     return tex or "Interface\\Icons\\INV_Misc_QuestionMark"
 end

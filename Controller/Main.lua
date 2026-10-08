@@ -14,7 +14,7 @@ function ACC.helpCommand()
     DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/acc|r |cffffff00— open the browser window|r")
     DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/acc minimap|r |cffffff00— toggle the minimap button on or off|r")
     DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/acc vendors|r |cffffff00— toggle recipe vendor pins on the world map|r")
-    DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/acc unmark|r |cffffff00— remove the marked vendor and its arrow|r")
+    DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/acc unmark|r |cffffff00— remove the marked vendor or trainer and its arrow|r")
     DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/acc drops|r |cffffff00— toggle recipe drops in creature tooltips|r")
 
 end

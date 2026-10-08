@@ -12,7 +12,7 @@ function ACC.buildMiningList(list)
             colors         = vein.colors,
             displayGroup   = vein.displayGroup,
             category       = "Veins",
-            recipeItemIcon = vein.icon,
+            recipeItemIcon = ACC.nodeIcon(vein),
             _vein          = vein,
         }
     end

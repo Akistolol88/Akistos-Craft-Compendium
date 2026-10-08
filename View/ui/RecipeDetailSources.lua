@@ -11,9 +11,12 @@ local function buildSourceSections(recipe)
     local sections = {}
     local sources  = recipe.sources or {}
 
-    -- targets[i] is the vendor behind lines[i], for lines that can be clicked to mark a vendor.
-    local function addSection(header, lines, targets)
-        if #lines > 0 then sections[#sections + 1] = { header = header, lines = lines, targets = targets } end
+    -- targets[i] is the vendor or trainer behind lines[i], for lines that can be clicked to mark
+    -- them; targetKind is "trainer" when the targets are trainers.
+    local function addSection(header, lines, targets, targetKind)
+        if #lines > 0 then
+            sections[#sections + 1] = { header = header, lines = lines, targets = targets, targetKind = targetKind }
+        end
     end
 
     local vendorLines = {}
@@ -42,18 +45,19 @@ local function buildSourceSections(recipe)
     addSection("Sold by:", vendorLines, vendorTargets)
 
     local trainerLines = {}
+    local trainerTargets = {}
     for _, src in ipairs(sources) do
-        if src.type == "trainer" and src.trainers then
-            for _, t in ipairs(src.trainers) do
-                trainerLines[#trainerLines + 1] = t.name .. "  —  " .. (t.zone or "")
-            end
-        elseif src.type == "npc" and src.npcs then
-            for _, n in ipairs(src.npcs) do
-                trainerLines[#trainerLines + 1] = n.name .. "  —  " .. (n.zone or "")
-            end
+        local teachers = (src.type == "trainer" and src.trainers) or (src.type == "npc" and src.npcs)
+        for _, t in ipairs(teachers or {}) do
+            local name = t.name
+            -- Light blue as for vendors: the trainer's position is known and the line is clickable.
+            local known = ACC.hasTrainerCoords(t)
+            if known then name = "|cff66bbff" .. name .. "|r" end
+            trainerLines[#trainerLines + 1] = name .. "  —  " .. (t.zone or "")
+            if known then trainerTargets[#trainerLines] = t end
         end
     end
-    addSection("Taught by:", trainerLines)
+    addSection("Taught by:", trainerLines, trainerTargets, "trainer")
 
     local drops = {}
     for _, src in ipairs(sources) do
@@ -138,7 +142,7 @@ function ACC.layoutSources(recipe, y)
             lbl:Show()
             if sec.targets and sec.targets[i] then
                 clickIdx = clickIdx + 1
-                ACC.showVendorClick(clickIdx, lbl, sec.targets[i], recipe)
+                ACC.showVendorClick(clickIdx, lbl, sec.targets[i], recipe, sec.targetKind)
             end
             y = y - RDS.ROW_HEIGHT
         end

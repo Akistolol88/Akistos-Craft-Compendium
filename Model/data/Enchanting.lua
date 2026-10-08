@@ -2933,7 +2933,7 @@ ACC_Data["Enchanting"] = {
         },
         tool = "Runed Truesilver Rod",
         sources = { { type = "drop", creatures = {
-            { name = "Atal'ai Witch Doctor", zone = "The Temple of Atal'Hakkar", elite = "normal" },
+            { name = "Atal'ai Witch Doctor", zone = "The Temple of Atal'Hakkar", rate = 1.31, elite = "normal" },
         } } },
         cooldown = nil,
         specialization = nil,

@@ -4818,7 +4818,7 @@ ACC_Data["Tailoring"] = {
         },
         tool = nil,
         sources = { { type = "drop", creatures = {
-            { name = "Dark Summoner", zone = "Eastern Plaguelands" },
+            { name = "Dark Summoner", zone = "Eastern Plaguelands", rate = 2.09 },
         } } },
         cooldown = nil,
         specialization = nil,

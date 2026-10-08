@@ -147,7 +147,7 @@ function ACC.renderPage()
                     iconTex = profFallbackIcon["Enchanting"]
                 else
                     local iconName = (recipe.creates and recipe.creates.icon) or recipe.recipeItemIcon
-                    iconTex = iconName and ("Interface\\Icons\\" .. iconName)
+                    iconTex = ACC.iconPath(iconName)
                     if not iconTex then
                         local id = (recipe.creates and recipe.creates.id) or recipe.recipeItemId
                         iconTex = id and select(10, GetItemInfo(id))

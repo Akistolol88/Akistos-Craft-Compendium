@@ -6,7 +6,7 @@ globals = {
     "ACC", "AkistosCraftCompendium",
     "ACC_Data", "ACC_BrowserConfig", "ACC_BrowserState", "ACC_DataManager",
     "ACC_RecipeDetailState",
-    "ACC_Tracker", "ACC_AccountData", "ACC_CharacterData", "ACC_VendorCoords",
+    "ACC_Tracker", "ACC_AccountData", "ACC_CharacterData", "ACC_VendorCoords", "ACC_TrainerCoords",
     "SLASH_ACC1", "SlashCmdList",
     "StaticPopupDialogs",
     "ACCGT_DB", "SLASH_ACCGT1",
@@ -51,6 +51,7 @@ read_globals = {
     "GetPlayerFacing", "CreateVector2D",
     "InCombatLockdown", "GetRaidTargetIndex", "SetRaidTarget",
     "IsIndoors", "GetCVar", "UnitIsPlayer",
+    "WorldMapZoomOutButton", "ZOOM_OUT",
 }
 
 files["tests/test_tracker.lua"] = {

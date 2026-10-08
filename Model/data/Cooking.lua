@@ -2078,7 +2078,7 @@ ACC_Data["Cooking"] = {
         },
         tool = nil,
         sources = { { type = "drop", creatures = {
-            { name = "Pusillin", zone = "Dire Maul", elite = "boss" },
+            { name = "Pusillin", zone = "Dire Maul", rate = 82.7, elite = "boss" },
         } } },
         cooldown = nil,
         specialization = nil,

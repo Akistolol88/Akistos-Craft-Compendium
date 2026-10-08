@@ -5838,7 +5838,7 @@ ACC_Data["Blacksmithing"] = {
         },
         tool = "Blacksmith's Hammer",
         sources = { { type = "drop", creatures = {
-            { name = "Foreman Marcrid", zone = "Western Plaguelands", elite = "normal" },
+            { name = "Foreman Marcrid", zone = "Western Plaguelands", rate = 91.3, elite = "normal" },
         } } },
         cooldown = nil,
         specialization = "swordsmith",

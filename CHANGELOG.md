@@ -1,5 +1,18 @@
 ## Changelog
 
+### 1.4.2
+- Rich Thorium Vein and Ooze Covered Rich Thorium Vein now use GatherMate2's Rich Thorium node icon in the Mining list
+- Trainers can now be marked like recipe vendors: click a light blue trainer name in a recipe's "Taught by" list to get the world map marker, minimap icon, arrow and "Target" button for that trainer (203 trainers). The mark is removed when you open that trainer's training window
+- Added missing drop chances for Enchant Cloak - Greater Resistance, Frostguard, Runn Tum Tuber Surprise and Wizardweave Leggings
+
+#### Gather Timers
+- Black Lotus timers are now listed next to the world map's "Zoom Out" button instead of under the herb's icon, so they no longer cover Rich Thorium subzone names. Every running Black Lotus timer is listed there with its zone, one per row, whichever map is open
+- Rich Thorium subzones are labelled with the Rich Thorium node icon instead of "RTV"
+- Timer countdowns on the map are slightly larger, and subzone names are yellow
+- Timer colours on the map: the time left is red, "may be up" is green and "up" is epic purple; the "Black Lotus" name is shown in green
+- Rich Thorium Vein maximum respawn raised from 20 to 25 minutes
+- Mining a Truesilver Deposit on a Rich Thorium Vein spawn point now starts that subzone's timer, as the two share spawns
+
 ### 1.4.0
 - Recipe vendors are now shown as pins on the world map (206 vendors). Hover a pin to see the recipes that vendor sells with prices; recipes you already know are greyed out. Toggle with the "Recipe vendors" checkbox on the map or `/acc vendors`
 - Vendor pins that would overlap are spread apart so each one can be hovered

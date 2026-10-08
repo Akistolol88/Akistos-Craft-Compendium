@@ -10,6 +10,20 @@ function ACC.makeSpellLink(recipe)
     return "|cff71d5ff|Hspell:" .. recipe.spellId .. "|h[" .. recipe.name .. "]|h|r"
 end
 
+-- Texture path for an icon from the data files: a bare file name is looked up in the game's
+-- icon folder, anything with a folder in it is already a full path.
+function ACC.iconPath(icon)
+    if not icon then return nil end
+    if icon:find("\\", 1, true) then return icon end
+    return "Interface\\Icons\\" .. icon
+end
+
+-- Icon of a gathering node: its own node icon from Media when it has one (texture), else
+-- its item icon.
+function ACC.nodeIcon(node)
+    return node.texture or node.icon
+end
+
 -- Populates an already-owned GameTooltip with gathering-node info.
 -- Handles three node types — vein, herb, and smelt — via the recipe's _vein/_herb/_smelt fields.
 function ACC.showGatheringTooltip(recipe)

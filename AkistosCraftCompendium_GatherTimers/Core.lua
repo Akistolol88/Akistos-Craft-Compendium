@@ -26,7 +26,7 @@ GT.KINDS = {
         dataTable  = "Mining",
         dataName   = "Rich Thorium Vein",
         minRespawn = 5 * 60,
-        maxRespawn = 20 * 60,
+        maxRespawn = 25 * 60,
         perSubzone = true,
     },
 }
@@ -34,9 +34,18 @@ GT.KINDS = {
 -- Node name as reported by UNIT_SPELLCAST_SENT -> timer kind.
 -- These are the enUS names; add the localized names here for other clients.
 local NODE_KIND = {
-    ["Black Lotus"]                    = "lotus",
-    ["Rich Thorium Vein"]              = "thorium",
-    ["Ooze Covered Rich Thorium Vein"] = "thorium",
+    ["Black Lotus"]                     = "lotus",
+    ["Rich Thorium Vein"]               = "thorium",
+    ["Ooze Covered Rich Thorium Vein"]  = "thorium",
+    ["Truesilver Deposit"]              = "thorium",
+    ["Ooze Covered Truesilver Deposit"] = "thorium",
+}
+
+-- Truesilver rarely takes the place of a Rich Thorium Vein, but it also has spawns of its
+-- own, so these nodes only start a timer when mined on a known Rich Thorium spawn point.
+local SPAWN_ONLY = {
+    ["Truesilver Deposit"]              = true,
+    ["Ooze Covered Truesilver Deposit"] = true,
 }
 
 local FALLBACK_ICON = "Interface\\Icons\\INV_Misc_QuestionMark"
@@ -144,15 +153,12 @@ end
 
 -- A vein mined further than this from every known spawn point is not matched by position (% of map height).
 local GROUP_RANGE = 5
+-- Tighter range for nodes that only count when standing on a known spawn point.
+local SPAWN_RANGE = 1.5
 
--- Finds the spawn group ("subzone") a gather at x, y (0-1) belongs to: the group owning the
--- nearest known spawn point, else the group named like the subzone the player stands in.
--- Position comes first because a group can reach into a neighbouring subzone or a side area.
-function GT.findGroup(mapID, subzone, x, y)
-    local groups = GT.GROUPS and GT.GROUPS[mapID]
-    if not groups then return nil end
-
-    local best, bestDist = nil, GROUP_RANGE
+-- The group owning the known spawn point nearest to x, y (0-1), if one lies within range.
+local function nearestGroup(groups, x, y, range)
+    local best, bestDist = nil, range
     if x and y then
         for _, group in ipairs(groups) do
             for _, spawn in ipairs(group.spawns) do
@@ -165,7 +171,19 @@ function GT.findGroup(mapID, subzone, x, y)
             end
         end
     end
-    if best then return best end
+    return best
+end
+
+-- Finds the spawn group ("subzone") a gather at x, y (0-1) belongs to: the group owning the
+-- nearest known spawn point, else the group named like the subzone the player stands in.
+-- Position comes first because a group can reach into a neighbouring subzone or a side area.
+-- spawnOnly skips the subzone name, so only a gather on a known spawn point finds a group.
+function GT.findGroup(mapID, subzone, x, y, spawnOnly)
+    local groups = GT.GROUPS and GT.GROUPS[mapID]
+    if not groups then return nil end
+
+    local best = nearestGroup(groups, x, y, spawnOnly and SPAWN_RANGE or GROUP_RANGE)
+    if best or spawnOnly then return best end
 
     for _, group in ipairs(groups) do
         if group.name == subzone then return group end
@@ -177,7 +195,8 @@ local function notifyChanged()
     if GT.refreshMap then GT.refreshMap() end
 end
 
-function GT.startTimer(kind)
+-- spawnOnly: do nothing unless the player stands on a known spawn point of the kind.
+function GT.startTimer(kind, spawnOnly)
     local mapID = C_Map.GetBestMapForUnit("player")
     if not mapID then return end
 
@@ -191,9 +210,11 @@ function GT.startTimer(kind)
 
     -- Subzone timers are filed under their spawn group and pinned on its map marker.
     if GT.KINDS[kind].perSubzone then
-        local group = GT.findGroup(mapID, subzone, x, y)
+        local group = GT.findGroup(mapID, subzone, x, y, spawnOnly)
         if group then
             subzone, x, y = group.name, group.x / 100, group.y / 100
+        elseif spawnOnly then
+            return
         end
     end
 
@@ -249,28 +270,28 @@ end
 
 -- UNIT_SPELLCAST_SENT is the only event that carries the node's name, so remember
 -- the cast there and start the timer once the same cast succeeds.
-local pendingCast, pendingKind
+local pendingCast, pendingKind, pendingSpawnOnly
 
 local function onSpellcastSent(unit, target, castGUID)
     if unit ~= "player" then return end
     local kind = target and NODE_KIND[target]
     if kind then
-        pendingCast, pendingKind = castGUID, kind
+        pendingCast, pendingKind, pendingSpawnOnly = castGUID, kind, SPAWN_ONLY[target]
     else
-        pendingCast, pendingKind = nil, nil
+        pendingCast, pendingKind, pendingSpawnOnly = nil, nil, nil
     end
 end
 
 local function onSpellcastSucceeded(unit, castGUID)
     if unit ~= "player" or not pendingCast or castGUID ~= pendingCast then return end
-    local kind = pendingKind
-    pendingCast, pendingKind = nil, nil
-    GT.startTimer(kind)
+    local kind, spawnOnly = pendingKind, pendingSpawnOnly
+    pendingCast, pendingKind, pendingSpawnOnly = nil, nil, nil
+    GT.startTimer(kind, spawnOnly)
 end
 
 local function onSpellcastFailed(unit, castGUID)
     if unit == "player" and castGUID == pendingCast then
-        pendingCast, pendingKind = nil, nil
+        pendingCast, pendingKind, pendingSpawnOnly = nil, nil, nil
     end
 end
 

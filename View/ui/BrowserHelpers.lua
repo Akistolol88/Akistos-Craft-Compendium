@@ -18,14 +18,10 @@ function ACC.iconPath(icon)
     return "Interface\\Icons\\" .. icon
 end
 
--- Icon of a gathering node: GatherMate2's own node icon while that addon is loaded and the
--- node names one (gatherMateIcon), else the node's item icon.
+-- Icon of a gathering node: its own node icon from Media when it has one (texture), else
+-- its item icon.
 function ACC.nodeIcon(node)
-    local isLoaded = (C_AddOns and C_AddOns.IsAddOnLoaded) or IsAddOnLoaded
-    if node.gatherMateIcon and isLoaded and isLoaded("GatherMate2") then
-        return "Interface\\AddOns\\GatherMate2\\Artwork\\" .. node.gatherMateIcon
-    end
-    return node.icon
+    return node.texture or node.icon
 end
 
 -- Populates an already-owned GameTooltip with gathering-node info.

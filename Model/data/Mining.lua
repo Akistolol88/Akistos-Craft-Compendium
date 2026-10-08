@@ -2,8 +2,7 @@
 -- colors = { orange_start, yellow_start, green_start, grey_start }
 -- taps   = how many times the node can be mined before depleting
 -- rate   = drop chance per node (%) — Classic ERA, All phases
--- gatherMateIcon = node icon inside GatherMate2's Artwork folder, shown instead of icon while
---                  GatherMate2 is loaded (the file is read from that addon, not shipped here)
+-- texture = full path of a node icon shipped in Media, shown instead of icon
 
 ACC_Data = ACC_Data or {}
 ACC_Data.Mining = {
@@ -371,7 +370,7 @@ ACC_Data.Mining = {
     {
         name   = "Rich Thorium Vein",
         icon   = "inv_misc_gem_topaz_01",
-        gatherMateIcon = "Mine\\rich_thorium",
+        texture = "Interface\\AddOns\\AkistosCraftCompendium\\Media\\RichThorium",
         colors = { 275, 300, 325, 375 },
         taps   = "2-4",
         ore    = {
@@ -397,7 +396,7 @@ ACC_Data.Mining = {
     {
         name   = "Ooze Covered Rich Thorium Vein",
         icon   = "inv_misc_gem_topaz_01",
-        gatherMateIcon = "Mine\\rich_thorium",
+        texture = "Interface\\AddOns\\AkistosCraftCompendium\\Media\\RichThorium",
         colors = { 275, 300, 325, 375 },
         taps   = "2-4",
         ore    = {

@@ -29,9 +29,8 @@ local BANNER_ROW_GAP = 4
 -- Points added to the font of a countdown.
 local TIMER_FONT_BUMP = 2
 
--- GatherMate2's own Rich Thorium node icon. It is read from the player's GatherMate2 folder,
--- not shipped with this addon, so it is only used while GatherMate2 is loaded.
-local GATHERMATE_THORIUM_ICON = "Interface\\AddOns\\GatherMate2\\Artwork\\Mine\\rich_thorium.tga"
+-- Rich Thorium node icon shipped with the main addon (from GatherMate2's artwork).
+local THORIUM_ICON = "Interface\\AddOns\\AkistosCraftCompendium\\Media\\RichThorium"
 
 local OUTLINE_THICKNESS = 2
 -- Below the pins, so markers and text stay readable on top of the outlines.
@@ -60,15 +59,10 @@ local function stateText(entry, now)
     return "|c" .. color .. GT.formatState(entry, now) .. "|r"
 end
 
--- Icon in front of a Rich Thorium group name: GatherMate2's node icon when that addon is
--- loaded, else the vein's item icon from the main addon's data.
+-- Icon in front of a Rich Thorium group name. A whole node icon, so none of the trimming an
+-- item icon gets.
 local function thoriumLabelIcon()
-    local isLoaded = (C_AddOns and C_AddOns.IsAddOnLoaded) or IsAddOnLoaded
-    if isLoaded and isLoaded("GatherMate2") then
-        -- A whole node icon, so none of the trimming an item icon gets.
-        return "|T" .. GATHERMATE_THORIUM_ICON .. ":" .. LABEL_ICON_SIZE .. "|t"
-    end
-    return iconText(GT.getIcon("thorium"), LABEL_ICON_SIZE)
+    return "|T" .. THORIUM_ICON .. ":" .. LABEL_ICON_SIZE .. "|t"
 end
 
 -- The "Zoom Out" button above the map. Looked up by name first, then by its caption in case

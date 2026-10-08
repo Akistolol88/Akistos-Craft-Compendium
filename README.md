@@ -46,9 +46,10 @@ Game data used in this addon was gathered from the following sources:
 - **[Wowhead](https://www.wowhead.com)** — drop rates, item data, NPC locations, and recipe sources were scraped from Wowhead's Classic Era database.
 - **[Blizzard Entertainment](https://develop.battle.net)** — additional game data retrieved via the official Battle.net / WoW Game Data API.
 - **[Questie](https://github.com/Questie/Questie)** — world map positions of the recipe vendors come from Questie's NPC database.
+- **[GatherMate2](https://www.curseforge.com/wow/addons/gathermate2)** — the Rich Thorium Vein node icon (`Media/RichThorium.tga`) comes from GatherMate2's artwork (GPL-2.0-or-later).
 - **[cmangos classic-db](https://github.com/cmangos/classic-db)** — the Rich Thorium Vein spawn groups used by the Gather Timers sub-addon come from the cmangos Classic world database (GPL-3.0).
 
-This addon is a fan project and is not affiliated with or endorsed by Wowhead, Blizzard Entertainment, Questie or cmangos. World of Warcraft is a trademark of Blizzard Entertainment, Inc.
+This addon is a fan project and is not affiliated with or endorsed by Wowhead, Blizzard Entertainment, Questie, GatherMate2 or cmangos. World of Warcraft is a trademark of Blizzard Entertainment, Inc.
 
 ## Project Status
 

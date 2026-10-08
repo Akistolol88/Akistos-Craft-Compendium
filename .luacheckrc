@@ -51,7 +51,7 @@ read_globals = {
     "GetPlayerFacing", "CreateVector2D",
     "InCombatLockdown", "GetRaidTargetIndex", "SetRaidTarget",
     "IsIndoors", "GetCVar", "UnitIsPlayer",
-    "C_AddOns", "IsAddOnLoaded", "WorldMapZoomOutButton", "ZOOM_OUT",
+    "WorldMapZoomOutButton", "ZOOM_OUT",
 }
 
 files["tests/test_tracker.lua"] = {

@@ -1,11 +1,20 @@
 ## Changelog
 
-### 1.4.2
+### 1.5.0
 - Rich Thorium Vein and Ooze Covered Rich Thorium Vein now use GatherMate2's Rich Thorium node icon in the Mining list
 - Trainers can now be marked like recipe vendors: click a light blue trainer name in a recipe's "Taught by" list to get the world map marker, minimap icon, arrow and "Target" button for that trainer (203 trainers). The mark is removed when you open that trainer's training window
 - Added missing drop chances for Enchant Cloak - Greater Resistance, Frostguard, Runn Tum Tuber Surprise and Wizardweave Leggings
+- Recipe drops in creature tooltips are now coloured by the recipe's rarity; recipes you already know are marked "known" instead of greyed out
+- Recipe drops in creature tooltips are now also shown in combat. Hide them only while in combat with `/acc drops combat`, or everywhere with `/acc drops`
+- Recipes in the vendor pin tooltips on the world map are now coloured by rarity; known recipes are marked "known" instead of greyed out
+- The Missing Recipes panel no longer jumps back to the top while you scroll it, so the highest-skill recipes at the bottom of the list can be reached
+- Missing Recipes tooltips now show the quest name for quest recipes
+- Smoked Desert Dumplings is now listed as a quest reward (Desert Recipe / Sharing the Knowledge) instead of being sold by Calandrath
 
-#### Gather Timers
+#### Gather Timers 1.0.0 (out of beta)
+- Burning Steppes Rich Thorium subzones redone from in-game experience: 6 subzones (Draco'dar North and South, Blackrock Stronghold, The Pillar of Ash, Ruins of Thaurissan West and East) replace the old ones, including one that was spread over the whole zone
+- `/accgt map` shows or hides everything Gather Timers draws on the world map
+- `/accgt subzones` shows or hides the Rich Thorium subzone markers and outlines; running timers stay on the map
 - Black Lotus timers are now listed next to the world map's "Zoom Out" button instead of under the herb's icon, so they no longer cover Rich Thorium subzone names. Every running Black Lotus timer is listed there with its zone, one per row, whichever map is open
 - Rich Thorium subzones are labelled with the Rich Thorium node icon instead of "RTV"
 - Timer countdowns on the map are slightly larger, and subzone names are yellow

@@ -318,6 +318,14 @@ SlashCmdList["ACCGT"] = function(msg)
     if msg == "clear" then
         GT.clearTimers()
         say("Gather timers cleared.")
+    elseif msg == "map" then
+        ACCGT_DB.hideMap = not ACCGT_DB.hideMap
+        say("Gather timers on the world map " .. (ACCGT_DB.hideMap and "hidden" or "shown") .. ".")
+        notifyChanged()
+    elseif msg == "subzones" then
+        ACCGT_DB.hideSubzones = not ACCGT_DB.hideSubzones
+        say("Rich Thorium subzone markers " .. (ACCGT_DB.hideSubzones and "hidden" or "shown") .. ".")
+        notifyChanged()
     elseif testKind and GT.KINDS[testKind] then
         -- Starts a timer where you stand without needing the real node.
         GT.startTimer(testKind)
@@ -327,6 +335,9 @@ SlashCmdList["ACCGT"] = function(msg)
         say("Gather timer commands:")
         DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/accgt|r |cffffff00— list running timers|r")
         DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/accgt clear|r |cffffff00— remove all timers on this realm|r")
+        DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/accgt map|r |cffffff00— show or hide everything on the world map|r")
+        DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/accgt subzones|r |cffffff00— show or hide the subzone markers"
+            .. " (timers stay)|r")
         DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/accgt test lotus|r |cffffff00or|r |cffff0000/accgt test thorium|r"
             .. " |cffffff00— start a test timer where you stand|r")
     end

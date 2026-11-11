@@ -1,7 +1,8 @@
 -- DropTooltip.lua — adds "can drop this recipe" lines to the tooltip of a creature.
 -- Hovering a mob (in the world or on its nameplate) lists the recipes it drops according
--- to the recipe data, with the drop chance. Never shown in combat.
--- Toggle with /acc drops; the choice persists in ACC_AccountData.
+-- to the recipe data, with the drop chance, each recipe coloured by its item rarity.
+-- Toggle with /acc drops, or only while in combat with /acc drops combat; both choices
+-- persist in ACC_AccountData.
 
 -- Most recipes listed for one creature before the rest is summarised as "... and N more".
 local LINE_LIMIT = 6
@@ -36,10 +37,13 @@ local function dropTooltipsEnabled()
     return not (ACC_AccountData and ACC_AccountData.dropTooltipsHidden)
 end
 
+local function shownInCombat()
+    return not (ACC_AccountData and ACC_AccountData.dropTooltipsHiddenInCombat)
+end
+
 local function onTooltipSetUnit(tooltip)
     if not dropTooltipsEnabled() then return end
-    -- Never in combat, whatever the setting: tooltips should stay short while fighting.
-    if InCombatLockdown() then return end
+    if not shownInCombat() and UnitAffectingCombat("player") then return end
 
     local name, unit = tooltip:GetUnit()
     if not name or (unit and UnitIsPlayer(unit)) then return end
@@ -57,22 +61,35 @@ local function onTooltipSetUnit(tooltip)
             break
         end
         local recipe = drop.recipe
-        local left = (recipe.recipeItemName or recipe.name or "?") .. " |cff888888(" .. drop.profession .. ")|r"
-        local right = drop.rate and string.format("%.2f%%", drop.rate) or ""
-        -- Recipes this character already knows are greyed out.
+        -- Recipes this character already knows are marked after the profession name.
         local known = recipe.spellId and ACC_Tracker.IsKnown(recipe.spellId)
-        local shade = known and 0.5 or 1
-        tooltip:AddDoubleLine(left, right, shade, shade, shade, 0.7, 0.7, 0.7)
+        local left = (recipe.recipeItemName or recipe.name or "?") .. " |cff888888(" .. drop.profession
+            .. (known and ", known" or "") .. ")|r"
+        local right = drop.rate and string.format("%.2f%%", drop.rate) or ""
+        local r, g, b = ACC.recipeColor(recipe)
+        tooltip:AddDoubleLine(left, right, r, g, b, 0.7, 0.7, 0.7)
     end
     tooltip:Show()
 end
 
 GameTooltip:HookScript("OnTooltipSetUnit", onTooltipSetUnit)
 
+local function say(msg)
+    DEFAULT_CHAT_FRAME:AddMessage("|cff00ccffACC:|r " .. msg)
+end
+
 -- Called by /acc drops.
 function ACC.toggleDropTooltips()
     ACC_AccountData = ACC_AccountData or {}
     ACC_AccountData.dropTooltipsHidden = not ACC_AccountData.dropTooltipsHidden
-    DEFAULT_CHAT_FRAME:AddMessage("|cff00ccffACC:|r Recipe drops in creature tooltips "
-        .. (dropTooltipsEnabled() and "shown" or "hidden") .. ". Type |cffffffff/acc drops|r to toggle.")
+    say("Recipe drops in creature tooltips " .. (dropTooltipsEnabled() and "shown" or "hidden")
+        .. ". Type |cffffffff/acc drops|r to toggle.")
+end
+
+-- Called by /acc drops combat.
+function ACC.toggleDropTooltipsInCombat()
+    ACC_AccountData = ACC_AccountData or {}
+    ACC_AccountData.dropTooltipsHiddenInCombat = not ACC_AccountData.dropTooltipsHiddenInCombat
+    say("Recipe drops in creature tooltips " .. (shownInCombat() and "shown" or "hidden")
+        .. " while in combat. Type |cffffffff/acc drops combat|r to toggle.")
 end

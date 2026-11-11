@@ -44,3 +44,17 @@ function ACC.formatCopper(copper)
     if cop    > 0 then parts[#parts + 1] = "|cffeda55f" .. cop    .. "c|r" end
     return table.concat(parts, " ")
 end
+
+-- Rarity colour (r, g, b) of a recipe item: the live item data when the client has it cached,
+-- else the quality stored in the recipe data, else common (white).
+-- Used by the creature drop tooltip and the vendor map pin tooltip.
+function ACC.recipeColor(recipe)
+    local quality
+    if recipe.recipeItemId then
+        quality = select(3, GetItemInfo(recipe.recipeItemId))
+    end
+    quality = quality or recipe.recipeItemQuality or 1
+    local color = ITEM_QUALITY_COLORS and ITEM_QUALITY_COLORS[quality]
+    if color then return color.r, color.g, color.b end
+    return 1, 1, 1
+end

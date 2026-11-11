@@ -16,6 +16,7 @@ function ACC.helpCommand()
     DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/acc vendors|r |cffffff00— toggle recipe vendor pins on the world map|r")
     DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/acc unmark|r |cffffff00— remove the vendor/trainer mark and its arrow|r")
     DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/acc drops|r |cffffff00— toggle recipe drops in creature tooltips|r")
+    DEFAULT_CHAT_FRAME:AddMessage("|cffff0000/acc drops combat|r |cffffff00— toggle them while in combat|r")
 
 end
 
@@ -36,6 +37,8 @@ SlashCmdList["ACC"] = function(msg)
         ACC.toggleVendorPins()
     elseif msg == "drops" then
         ACC.toggleDropTooltips()
+    elseif msg == "drops combat" then
+        ACC.toggleDropTooltipsInCombat()
     elseif msg == "unmark" then
         ACC.clearVendorWaypoint()
     elseif msg == "help" then

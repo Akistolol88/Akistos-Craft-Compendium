@@ -46,6 +46,8 @@ local missingLabel = nil
 local scrollFrame  = nil
 local rows         = {}
 local missingList  = {}
+-- Profession the list was last filled for; nil after the window closes.
+local shownProfName = nil
 
 -- ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -206,8 +208,8 @@ local function showRowTooltip(row)
             elseif src.type == "quest" then
                 GameTooltip:AddLine(" ")
                 GameTooltip:AddLine("Source: Quest", 1, 1, 0)
-                if src.questName then
-                    GameTooltip:AddLine("  " .. src.questName, 1, 1, 1)
+                for _, q in ipairs(src.quests or {}) do
+                    GameTooltip:AddLine("  " .. q.name, 1, 1, 1)
                 end
 
             elseif src.type == "object" then
@@ -417,7 +419,14 @@ local function refresh()
     missingLabel:SetText("|cffff4040Missing: " .. missing .. "/" .. total .. " (" .. formatPct(missing, total) .. "%)|r")
     mainFrame.TitleText:SetText("Missing — " .. profName)
 
-    FauxScrollFrame_SetOffset(scrollFrame, 0)
+    -- Only jump back to the top for another profession: TRADE_SKILL_UPDATE fires on every bag
+    -- change and craft, which used to keep the bottom of the list out of reach.
+    if profName ~= shownProfName then
+        shownProfName = profName
+        FauxScrollFrame_SetOffset(scrollFrame, 0)
+        local bar = _G["AccMissingScrollFrameScrollBar"]
+        if bar then bar:SetValue(0) end
+    end
     updateRows()
 end
 
@@ -432,6 +441,7 @@ eventFrame:RegisterEvent("TRADE_SKILL_CLOSE")
 eventFrame:RegisterEvent("CRAFT_CLOSE")
 eventFrame:SetScript("OnEvent", function(_, event)
     if event == "TRADE_SKILL_CLOSE" or event == "CRAFT_CLOSE" then
+        shownProfName = nil
         if mainFrame then mainFrame:Hide() end
         if toggleBtn then toggleBtn:Hide() end
     else

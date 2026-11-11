@@ -2,7 +2,7 @@
 ## Title: Akistos Craft Compendium - Gather Timers
 ## Notes: Respawn timers for Black Lotus (per zone) and Rich Thorium Veins (per subzone), shared across your characters
 ## Author: Otsika
-## Version: 0.2.0-beta
+## Version: 1.0.0
 ## Dependencies: AkistosCraftCompendium
 ## SavedVariables: ACCGT_DB
 

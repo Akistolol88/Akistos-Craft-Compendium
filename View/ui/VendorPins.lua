@@ -103,16 +103,19 @@ local function showVendorTooltip(pin)
 
         local recipe = entry.recipe
         local left = recipe.recipeItemName or recipe.name or "?"
+        -- Recipes this character already knows are marked instead of greyed out, so the
+        -- name keeps its rarity colour.
+        if recipe.spellId and ACC_Tracker.IsKnown(recipe.spellId) then
+            left = left .. " |cff888888(known)|r"
+        end
         if entry.limited then left = left .. " |cffff4040(Limited)|r" end
         if entry.reputation then
             left = left .. " |cffffff00(" .. entry.reputation.faction .. " - " .. entry.reputation.level .. ")|r"
         end
-        local known = recipe.spellId and ACC_Tracker.IsKnown(recipe.spellId)
-        local shade = known and 0.5 or 1
-        GameTooltip:AddDoubleLine(left, ACC.formatCopper(entry.cost) or "", shade, shade, shade, 1, 1, 1)
+        local r, g, b = ACC.recipeColor(recipe)
+        GameTooltip:AddDoubleLine(left, ACC.formatCopper(entry.cost) or "", r, g, b, 1, 1, 1)
     end
 
-    GameTooltip:AddLine("Greyed out recipes are already known by this character.", 0.5, 0.5, 0.5, true)
     GameTooltip:AddLine("Click to mark this vendor.", 0.5, 0.5, 0.5, true)
     GameTooltip:Show()
 end

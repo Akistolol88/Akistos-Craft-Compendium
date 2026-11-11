@@ -3,8 +3,18 @@
 -- the middle; a running timer is shown in red under the name of the group it belongs to.
 -- Zone-wide timers (Black Lotus) of every zone are listed next to the map's "Zoom Out"
 -- button, clear of the group names, whichever map is open.
+-- /accgt map hides all of it; /accgt subzones hides only the group markers and outlines,
+-- leaving the running timers on the map.
 
 local GT = ACC.GatherTimers
+
+function GT.mapShown()
+    return not (ACCGT_DB and ACCGT_DB.hideMap)
+end
+
+function GT.subzonesShown()
+    return not (ACCGT_DB and ACCGT_DB.hideSubzones)
+end
 
 local MARKER_SIZE = 10
 local ICON_SIZE = 20
@@ -127,16 +137,17 @@ end
 
 -- Draws the closed outline of every spawn group of the map. The lines are anchored to the
 -- canvas in canvas units, so they only need redrawing when another map is opened.
-local function drawOutlines(mapID)
-    if outlinedMapID == mapID then return end
-    outlinedMapID = mapID
-
+local function drawOutlines(mapID, shown)
     local canvas = WorldMapFrame:GetCanvas()
     if not outlineFrame then
         outlineFrame = CreateFrame("Frame", nil, canvas)
         outlineFrame:SetAllPoints(canvas)
         outlineFrame:SetFrameLevel(math.min(canvas:GetFrameLevel() + OUTLINE_LEVEL_OFFSET, 8900))
     end
+    outlineFrame:SetShown(shown)
+
+    if outlinedMapID == mapID then return end
+    outlinedMapID = mapID
     -- Line objects are missing on very old clients; the markers still work without them.
     if not outlineFrame.CreateLine then return end
 
@@ -229,7 +240,17 @@ function GT.refreshMap()
     local now = GetServerTime()
     local used = 0
 
-    drawOutlines(mapID)
+    if not GT.mapShown() then
+        if outlineFrame then outlineFrame:Hide() end
+        if banner then showBanner({}) end
+        for i = 1, #pins do
+            pins[i]:Hide()
+        end
+        return
+    end
+
+    local subzonesShown = GT.subzonesShown()
+    drawOutlines(mapID, subzonesShown)
 
     -- Subzone timers of this map are looked up by group name below; zone timers are listed
     -- for every zone, as several can be running at once.
@@ -246,9 +267,12 @@ function GT.refreshMap()
     for _, group in ipairs((GT.GROUPS and GT.GROUPS[mapID]) or {}) do
         local entry = groupTimers[group.name]
         groupTimers[group.name] = nil
-        used = used + 1
-        showPin(used, group.x / 100, group.y / 100, nil, groupIcon .. " " .. group.name,
-            entry and stateText(entry, now))
+        -- With the subzone markers hidden, only groups with a running timer are labelled.
+        if subzonesShown or entry then
+            used = used + 1
+            showPin(used, group.x / 100, group.y / 100, nil, groupIcon .. " " .. group.name,
+                entry and stateText(entry, now))
+        end
     end
 
     -- Veins mined outside every known group have no outline, so they get a square where they were mined.

@@ -2119,8 +2119,9 @@ ACC_Data["Cooking"] = {
             { id = 3713, count = 1, name = "Soothing Spices", icon = "inv_misc_food_wheat_02", quality = 1 },
         },
         tool = nil,
-        sources = { { type = "vendor", vendors = {
-            { name = "Calandrath", zone = "Silithus" },
+        sources = { { type = "quest", quests = {
+            { id = 8307, name = "Desert Recipe", level = 56, wowheadUrl = "https://www.wowhead.com/classic/quest=8307/desert-recipe" },
+            { id = 8313, name = "Sharing the Knowledge", level = 56, wowheadUrl = "https://www.wowhead.com/classic/quest=8313/sharing-the-knowledge" },
         } } },
         cooldown = nil,
         specialization = nil,
